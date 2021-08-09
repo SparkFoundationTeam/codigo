@@ -13,9 +13,9 @@ export const OurCoursesSection = styled.div`
 
 export const SectionHeader = styled.div`
   text-align: center;
-  color: darkblue;
+  color: rgb(4, 163, 163);
   width: auto;
-  height: 15vh;
+  height: auto;
   display: grid;
   place-items: center;
   font-weight: 700;
@@ -28,25 +28,26 @@ export const SectionHeader = styled.div`
     width: auto;
     font-size: 5vh;
     height: auto;
-    margin: 2vh 0;
+    margin: 0;
   }
 `;
 
 export const ButtonContainerDiv = styled.div`
   width: 100%;
-  height: 15vh;
+  height: auto;
+  margin: 1vh 0 3vh 0;
   display: grid;
   place-items: center;
+
   @media (max-width: 600px) {
-    display: flex;
-    height: 15vw;
+    height: auto;
     margin: 0;
     width: auto;
   }
 `;
 
 export const CourseSelectorButtonContainer = styled.div`
-  width: 70%;
+  width: 90%;
   display: inline-block;
   place-items: center;
 
@@ -96,7 +97,7 @@ export const CoursesCardContainer = styled.div`
 `;
 
 export const CoursesCard = styled.div`
-  width: 25%;
+  width: 23%;
   height: auto;
   border-radius: 0.5rem;
   background: white;
@@ -197,7 +198,7 @@ export const Timing = styled.div`
   color: black;
   place-items: center;
   display: flex;
-  margin-left: 15%;
+  margin-left: 12%;
 
   @media (max-width: 600px) {
     font-size: 2vh;
