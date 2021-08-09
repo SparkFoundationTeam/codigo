@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+@mixin flexAlign {
+  display: flex;
+
+  justify-content: center;
+}
+
+.Section1 {
+  height: 100vh;
+  width: 100vw;
+
+  background-image: url(./res/team.jpg);
+  background-size: cover;
+
+  #nav {
+    height: 8vh;
+    width: 90vw;
+    margin: 0 5vw 0 5vw;
+
+    background-color: rgba(255, 255, 255, 0);
+
+    img {
+      margin-top: 5vh;
+      height: 10vh;
+      filter: brightness(170%);
+    }
+    button {
+      height: 4vh;
+      width: 10vw;
+      float: right;
+      margin: 2vh;
+      font-size: 2vh;
+      color: aqua;
+      border: 2px solid rgb(0, 200, 200);
+      background-color: rgba(255, 255, 255, 0);
+      font-weight: bold;
+      border-radius: 5px;
+    }
+    button:hover {
+      border: none;
+
+      cursor: pointer;
+      transition-duration: 0.5s;
+      color: black;
+      background-color: rgb(32, 234, 241);
+    }
+  }
+
+  #Content {
+    display: flex;
+    #Text {
+      
+      width: 75vw;
+      height: 92vh;
+      @include flexAlign();
+      flex-direction: column;
+      h1,
+      h2,
+      button {
+        margin-left: 5vw;
+      }
+      h1 {
+        font-size: 8vh;
+        color: rgba(255, 255, 255, 0.842);
+        text-shadow: 2px 2px rgba(255, 255, 255, 0.212);
+      }
+
+      h2 {
+        font-size: 5vh;
+        color: rgba(255, 255, 255, 0.596);
+      }
+
+      button {
+        margin-bottom: 5vh;
+        margin-top: 5vh;
+        width: 20vw;
+        height: 8vh;
+        font-size: 3vh;
+        background-color: rgb(39, 230, 255);
+        border-radius: 10px;
+        border: none;
+        transition-duration: 0.5s;
+        font-weight: bold;
+      }
+      button:hover {
+        border: 5px solid rgb(42, 211, 211);
+        color: aqua;
+        background-color: rgba(255, 255, 255, 0);
+        cursor: pointer;
+        transition-duration: 0.5s;
+      }
+    }
+    #introVideo {
+      video {
+        margin-top: 50vh;
+        margin-right: 5vw;
+        height: 30vh;
+        width: 30vw;
+        border-radius: 25px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .Section1 {
+    #nav {
+      img {
+        height: 5vh;
+        margin-top: 2vh;
+      }
+      button {
+        width: 20vw;
+      }
+    }
+
+    #Content {
+      flex-direction: column;
+      overflow: hidden;
+      height: 90vh;
+      width: 100vw;
+      
+      align-items: center;
+
+      #Text {
+        justify-content: center;
+        align-items: center;
+        margin-top:2vh;
+        width: 100vw;
+        height: 75vh;
+        text-align: center;
+        h1 {
+          width: 90vw;
+          font-size: 5vh;
+        }
+        h2 {
+          font-size: 3vh;
+        }
+
+        button {
+          width: 80vw;
+          height: 6vh;
+          margin-left: 0;
+          font-size: 2.5vh;
+        }
+      }
+      #introVideo {
+        video {
+          margin-top: -3vh;
+            margin-right: 0vw;
+          height: 20vh;
+          width: 90vw;
+        }
+      }
+    }
+  }
+}
