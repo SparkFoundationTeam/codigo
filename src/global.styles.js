@@ -35,13 +35,13 @@ export const SectionHeader = styled.div`
 export const ButtonContainerDiv = styled.div`
   width: 100%;
   height: 15vh;
-  display: flex;
+  display: grid;
   place-items: center;
   @media (max-width: 600px) {
+    display: flex;
     height: 15vw;
     margin: 0;
     width: auto;
-    margin: 5vh auto;
   }
 `;
 
@@ -87,6 +87,7 @@ export const CoursesCardContainer = styled.div`
   width: 100vw;
   height: auto;
   display: flex;
+  place-items: center;
   @media (max-width: 600px) {
     font-size: 0.4rem;
     width: 100%;
@@ -102,6 +103,7 @@ export const CoursesCard = styled.div`
   text-align: center;
   filter: drop-shadow(10px 10px 10px grey);
   transition: all ease-in-out 300ms;
+  margin: auto;
 
   &:hover {
     transform: scale(1.1);
