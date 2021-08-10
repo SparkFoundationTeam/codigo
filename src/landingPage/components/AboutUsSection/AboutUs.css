@@ -1,0 +1,158 @@
+.OurCoursesSection {
+  width: auto;
+  height: auto;
+  display: block;
+}
+.OwnerBlob1 {
+  position: absolute;
+  top: -50vh;
+  z-index: -1;
+  width: 50vw;
+  left: -50vh;
+}
+.OwnerBlob2 {
+  position: absolute;
+  top: 50vh;
+  z-index: -1;
+  width: 50vw;
+  right: -30vh;
+  transform: rotate(180deg);
+}
+.SectionHeader {
+  text-align: center;
+  color: rgb(4, 163, 163);
+  width: 100vw;
+  height: auto;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 3.5vw;
+  padding: 0.3rem;
+}
+
+.OurTeam {
+  text-align: center;
+  color: rgb(4, 163, 163);
+  width: 10vw;
+  height: 50vh;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 3.5vw;
+  /* padding: 0.3rem; */
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  position: absolute;
+  /* margin-right: 10vh; */
+  top: 50vh;
+  left: -3vw;
+}
+.CardsContainer {
+  margin-top: 20vh;
+  margin-right: 2vw;
+  width: 85vw;
+  margin-left: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3vw;
+  row-gap: 5vw;
+}
+.AboutUs-Des {
+  text-align: center;
+  color: aqua;
+}
+.OwnersCards {
+  border: 1px solid transparent;
+  border-top-color: gold;
+  border-top-width: 10px;
+  padding: 0.5rem;
+  width: auto;
+  display: inline-flex;
+  margin: 0;
+  border-radius: 0.6rem;
+  background: white;
+  filter: drop-shadow(10px 10px 10px grey);
+  transition: all ease-in-out 300ms;
+}
+.OwnersCards:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(40px 5px 10px grey);
+}
+.OwnerImage {
+  position: absolute;
+  top: -13vh;
+  left: 10vh;
+  width: 10vw;
+  border-radius: 30rem;
+  filter: drop-shadow(10px 10px 10px grey);
+}
+.OwnerInfo {
+  width: 20vw;
+  background-color: transparent;
+  display: block;
+  padding-top: 4rem;
+  text-align: center;
+  place-items: center;
+}
+.OwnerName {
+  font-size: 2vw;
+  color: rgb(4, 163, 163);
+}
+.Ownerole {
+  color: grey;
+  font-size: 1.6vw;
+}
+.OwnerDetails {
+  width: 50%;
+  height: auto;
+}
+.OwnerSocialMediaContainer {
+  width: 10vw;
+  height: auto;
+  /* display: flex; */
+  /* position: relative; */
+  /* top: 70vh; */
+  margin-top: 25%;
+  right: 50vw;
+}
+
+.OwnerSocialMedia {
+  margin-right: 1vh;
+  width: 2.4vw;
+}
+@media (max-width: 600px) {
+  .OurCoursesSection {
+    width: 100%;
+    height: auto;
+    background-color: red;
+  }
+  .SectionHeader {
+    margin: 0;
+    width: 100%;
+
+    font-size: 5vh;
+    height: auto;
+    margin: 0;
+  }
+  .CardsContainer {
+    width: 90%;
+    height: auto;
+    display: block;
+  }
+  .OurTeam {
+    display: none;
+  }
+  .OwnerBlob1 {
+    display: none;
+  }
+  .OwnerBlob2 {
+    display: none;
+  }
+  .AboutUs-Des {
+    display: none;
+  }
+  .OwnersCards {
+    width: auto;
+    height: auto;
+  }
+}
