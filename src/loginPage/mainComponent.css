@@ -1,0 +1,287 @@
+#bgdiv #bg {
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  bottom: 10px;
+}
+
+form {
+  height: 70vh;
+  width: 50vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+form h1 {
+  font-size: 5vh;
+  margin-bottom: 3vh;
+  color: #06a1a7;
+}
+
+form h3 {
+  margin: 5vh;
+}
+
+form hr {
+  width: 30%;
+  height: 3px;
+  margin-bottom: 3vh;
+  background-color: rgba(0, 255, 255, 0.486);
+  border: none;
+}
+
+form .formElem {
+  position: relative;
+  margin: 2vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+form .formElem input,
+form .formElem select {
+  padding: 30px;
+  padding-left: 80px;
+  font-weight: bold;
+  width: 25vw;
+  height: 5vh;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  background-color: #e5f4f8;
+  font-size: 120%;
+}
+
+form .formElem input::-webkit-input-placeholder,
+form .formElem select::-webkit-input-placeholder {
+  font-size: 80%;
+}
+
+form .formElem input:-ms-input-placeholder,
+form .formElem select:-ms-input-placeholder {
+  font-size: 80%;
+}
+
+form .formElem input::-ms-input-placeholder,
+form .formElem select::-ms-input-placeholder {
+  font-size: 80%;
+}
+
+form .formElem input::placeholder,
+form .formElem select::placeholder {
+  font-size: 80%;
+}
+
+form .formElem select {
+  font-size: 100%;
+  padding: 5px;
+  padding-left: 80px;
+  padding-right: 5px;
+}
+
+form .formElem select option {
+  background-color: white;
+}
+
+form .formElem img {
+  margin-right: 2vh;
+  height: 70%;
+  position: absolute;
+  left: 2vh;
+  border-radius: 20px;
+}
+
+form h4 {
+  width: 50%;
+  margin: 2vh;
+  font-size: 2vh;
+  text-align: right;
+  color: #2b383b;
+}
+
+form #submit {
+  width: 50%;
+  margin: 2vh;
+  height: 4vh;
+  font-size: 2vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  background: -webkit-gradient(linear, right bottom, left top, from(#54cccc), to(#00e2e2));
+  background: linear-gradient(to left top, #54cccc, #00e2e2);
+}
+
+#secure {
+  text-align: center;
+  width: 50vw;
+  height: 10vh;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  left: 0vw;
+  bottom: 5vh;
+}
+
+#secure img {
+  height: 8vh;
+}
+
+#secure b {
+  color: rgba(26, 126, 1, 0.925);
+  font-weight: bolder;
+}
+
+#sec {
+  width: 40%;
+  height: 2px;
+  margin: 5vh 10vh 0vh;
+  background-color: rgba(97, 110, 110, 0.486);
+  border: none;
+}
+
+.Setting {
+  width: 50vw;
+  margin: 2vh;
+}
+
+.active {
+  visibility: visible;
+}
+
+.hidden {
+  display: none;
+}
+
+#sign {
+  width: 50vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#sign button {
+  font-size: 2vh;
+  font-weight: bold;
+  color: #0dd1d1;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#signUp .formElem {
+  margin: 0.5vh;
+}
+
+#signUp .formElem input {
+  padding: 20px;
+  padding-left: 80px;
+}
+
+@media screen and (max-width: 1000px) {
+  #bgdiv #bg {
+    display: none;
+  }
+  #nav {
+    width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 1vh;
+  }
+  #nav img {
+    height: 8vh;
+  }
+  form {
+    width: 100vw;
+  }
+  form h1 {
+    font-size: 4vh;
+  }
+  form .formElem input, form .formElem select {
+    width: 80vw;
+  }
+  form #submit {
+    width: 80vw;
+  }
+  form h4 {
+    width: 80%;
+  }
+  #sign {
+    width: 100vw;
+    font-size: 2vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #sec {
+    width: 80vw;
+    margin-left: 10vw;
+    margin-top: 6vh;
+  }
+  #secure {
+    width: 100vw;
+    font-size: 1.5vh;
+    position: absolute;
+    bottom: 3vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+/*# sourceMappingURL=mainComponent.css.map */

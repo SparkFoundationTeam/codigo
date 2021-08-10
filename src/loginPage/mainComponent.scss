@@ -1,0 +1,230 @@
+#bgdiv {
+  #bg {
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    bottom: 10px;
+  }
+}
+
+
+
+@mixin flexAlign {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  height: 70vh;
+  width: 50vw;
+  @include flexAlign();
+  flex-direction: column;
+
+  h1 {
+    font-size: 5vh;
+    margin-bottom: 3vh;
+
+    color: rgb(6, 161, 167);
+  }
+  h3 {
+    margin: 5vh;
+  }
+
+  hr {
+    width: 30%;
+    height: 3px;
+    margin-bottom: 3vh;
+    background-color: rgba(0, 255, 255, 0.486);
+    border: none;
+  }
+
+  .formElem {
+    position: relative;
+    margin: 2vh;
+    @include flexAlign();
+    input,
+    select {
+      padding: 30px;
+      padding-left: 80px;
+      font-weight: bold;
+
+      width: 25vw;
+      height: 5vh;
+      border-radius: 10px;
+      outline: none;
+      border: none;
+      background-color: rgb(229, 244, 248);
+      font-size: 120%;
+
+      &::placeholder {
+        font-size: 80%;
+      }
+    }
+
+    select {
+      font-size: 100%;
+      padding: 5px;
+      padding-left: 80px;
+      padding-right: 5px;
+      option {
+        background-color: white;
+      }
+    }
+    img {
+      margin-right: 2vh;
+      height: 70%;
+      position: absolute;
+      left: 2vh;
+      border-radius: 20px;
+    }
+  }
+  h4 {
+    width: 50%;
+    margin: 2vh;
+    font-size: 2vh;
+    text-align: right;
+    color: rgb(43, 56, 59);
+  }
+  #submit {
+    width: 50%;
+    margin: 2vh;
+    height: 4vh;
+    font-size: 2vh;
+    @include flexAlign();
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(
+      to left top,
+      rgb(84, 204, 204),
+      rgb(0, 226, 226)
+    );
+  }
+}
+
+#secure {
+  text-align: center;
+  width: 50vw;
+
+  height: 10vh;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0);
+
+  @include flexAlign();
+
+  img {
+    height: 8vh;
+  }
+  b {
+    color: rgba(26, 126, 1, 0.925);
+    font-weight: bolder;
+  }
+
+  position: absolute;
+  left: 0vw;
+  bottom: 5vh;
+}
+#sec {
+  width: 40%;
+  height: 2px;
+  margin: 5vh 10vh 0vh;
+
+  background-color: rgba(97, 110, 110, 0.486);
+  border: none;
+}
+
+.Setting {
+  width: 50vw;
+  margin: 2vh;
+}
+
+.active {
+  visibility: visible;
+}
+
+.hidden {
+  display: none;
+}
+
+#sign {
+  width: 50vw;
+  @include flexAlign();
+
+  button {
+    font-size: 2vh;
+    font-weight: bold;
+    color: rgb(13, 209, 209);
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+
+#signUp {
+  .formElem {
+    margin: 0.5vh;
+    input {
+      padding: 20px;
+      padding-left: 80px;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+    
+  #bgdiv {
+    #bg {
+      display: none;
+    }
+  }
+  #nav {
+    width: 100vw;
+    @include flexAlign();
+    margin-top: 1vh;
+    img {
+      height: 8vh;
+    }
+  }
+  form {
+    h1{
+        font-size: 4vh;
+    }
+    width: 100vw;
+
+    .formElem {
+      input,select {
+        width: 80vw;
+      }
+    }
+    #submit{
+        width: 80vw;;
+    }
+    h4{
+        width: 80%;
+    }
+  }
+  #sign{
+      width: 100vw;
+      font-size: 2vh;
+      @include flexAlign();
+  }
+  #sec{
+      width: 80vw;
+      margin-left: 10vw;
+      margin-top:6vh;
+
+  }
+  #secure{
+      width: 100vw;
+      font-size: 1.5vh;
+      position: absolute;
+      bottom:3vh;
+
+      flex-direction: column;
+  }
+
+  
+}
