@@ -66,7 +66,7 @@ const LoginPage = () => {
 
     // npm install --save asios
     // Yet To be Done
-    // axios.post(BackendUrl + '/User-SignUp', User);
+    axios.post(BackendUrl + '/User', User);
   };
 
   const setter = () => {
