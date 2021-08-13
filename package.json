@@ -1,4 +1,5 @@
 {
+  "proxy" : "https://codigo-server.herokuapp.com/",
   "name": "codigo-main",
   "version": "0.1.0",
   "private": true,
