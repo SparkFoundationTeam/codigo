@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import NavBar from '../navBar.jsx';
+import BackendUrl from '../BackendUrl.js';
 
 import './mainComponent.css';
 
@@ -22,6 +23,7 @@ const LoginPage = () => {
     username: '',
     email: '',
     password: '',
+    confirmPassword: '',
     state: '',
     participantType: '',
   });
@@ -30,22 +32,41 @@ const LoginPage = () => {
     setUser(prevUser => ({ ...prevUser, [e.target.name]: e.target.value }));
   };
 
+  const hasFilledAllFields = () => {
+    if (!User.name) {
+      alert('Please Fill name');
+      return false;
+    } else if (!User.username) {
+      alert('Please Enter Username');
+      return false;
+    } else if (!User.email) {
+      alert('Please fill email');
+      return false;
+    } else if (!(User.password === User.confirmPassword)) {
+      alert('Password Doesnt Match ');
+      return false;
+    } else if (!User.state) {
+      alert('Please Enter Your State');
+      return false;
+    } else if (!User.participantType) {
+      alert('Please ENter participantType');
+      return false;
+    }
+    return true;
+  };
+
   const handleSubmit = e => {
     e.preventDefault();
 
-    if (
-      Object.keys(User).length < 7
-      /* Ithe apan bghtoy ki object chi lenght 6 aahe ki nai, 
-        6 peksha kami mhanje user ne sagle fields nai bharlet... 
-        tr mg apan error denar user la ki lavdya sagle fields bhar mc, 
-        atta sathi mi alert vapartoy but athya tu UI ne ji field nai bharli ticha border
-        red kr ki hi field bhar lvdya highlight keleli 
-        */
-    ) {
-      alert('Please Fill all the Fields!');
+    if (!hasFilledAllFields()) {
       return;
     }
+
     console.log('New User has Sign-Up with following Details : ', User);
+
+    // npm install --save asios
+    // Yet To be Done
+    // axios.post(BackendUrl + '/User-SignUp', User);
   };
 
   const setter = () => {
@@ -118,7 +139,11 @@ const LoginPage = () => {
             placeholder='Choose Password'></input>
         </div>
         <div className='formElem'>
-          <input type='password' placeholder='Confirm Password'></input>
+          <input
+            name='confirmPassword'
+            value={User.confirmPassword}
+            type='password'
+            placeholder='Confirm Password'></input>
         </div>
 
         <div className='formElem'>
