@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import NavBar from '../navBar.jsx';
 import BackendUrl from '../BackendUrl.js';
+import axios from "axios";
 
 import './mainComponent.css';
 
@@ -66,7 +67,8 @@ const LoginPage = () => {
 
     // npm install --save asios
     // Yet To be Done
-    axios.post(BackendUrl + '/User', User);
+    axios.post(BackendUrl + '/User', User); // <- he hotay ka bgh naitr hi line comment marun khalchi line uncomment kr
+    //axios.post(BackendUrl + 'User', User);
   };
 
   const setter = () => {
