@@ -114,7 +114,7 @@
           transition-duration: 0.5s;
 }
 
-.Section1 #Content #introVideo video {
+.Section1 #Content #introVideo {
   margin-top: 50vh;
   margin-right: 5vw;
   height: 30vh;
@@ -123,12 +123,18 @@
 }
 
 @media screen and (max-width: 1000px) {
+  .Section1 #nav {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
   .Section1 #nav img {
     height: 5vh;
     margin-top: 2vh;
   }
   .Section1 #nav button {
     width: 20vw;
+    font-size: small;
   }
   .Section1 #Content {
     -webkit-box-orient: vertical;
@@ -167,11 +173,13 @@
     margin-left: 0;
     font-size: 2.5vh;
   }
-  .Section1 #Content #introVideo video {
-    margin-top: -3vh;
+  .Section1 #Content #introVideo {
+    margin-top: 5vh;
     margin-right: 0vw;
     height: 20vh;
     width: 90vw;
+    border-radius: 25px;
+    margin-bottom: 2vh;
   }
 }
 /*# sourceMappingURL=section1.css.map */

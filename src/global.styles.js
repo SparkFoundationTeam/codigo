@@ -24,7 +24,7 @@ export const SectionHeader = styled.div`
   @media (max-width: 600px) {
     margin: 0;
     width: auto;
-    font-size: 5vh;
+    font-size: 4vh;
     height: auto;
     margin: 0;
   }
@@ -44,12 +44,19 @@ export const ButtonContainerDiv = styled.div`
 `;
 
 export const CourseSelectorButtonContainer = styled.div`
-  width: 90%;
-  display: inline-block;
-  place-items: center;
+  width: 90vw;
+  display: flex;
+  align-items: center;
+  justify-content:center;
   @media (max-width: 600px) {
-    width: 95%;
-    margin: 5vh auto;
+    width: 99vw;
+    display:block;
+    flex-direction:column;
+    align-items:center;
+    justify-content;center;
+    height:auto;
+    margin: 2vh auto;
+    margin-bottom:0vh;
   }
 `;
 
@@ -91,22 +98,23 @@ export const CoursesCardContainer = styled.div`
 `;
 
 export const CoursesCard = styled.div`
-  width: 23%;
+  width: 22%;
   height: auto;
+  
   border-radius: 0.5rem;
   background: white;
   text-align: center;
   filter: drop-shadow(10px 10px 10px grey);
   transition: all ease-in-out 300ms;
   margin: auto;
+  margin-top:5vh;
   &:hover {
     transform: scale(1.1);
     filter: drop-shadow(40px 5px 10px grey);
   }
   @media (max-width: 600px) {
-    width: 90%;
-    height: auto;
-    margin: 3vh;
+    width:80vw;
+    
   }
 `;
 
@@ -122,7 +130,8 @@ export const CourseCardHeader = styled.h1`
 `;
 export const CourseCardInfo = styled.p`
   color: darkgrey;
-  margin: 4% 0;
+  margin: 1vw 0;
+  width:100%;
   font-weight: 500;
   font-size: 1vw;
   @media (max-width: 600px) {
@@ -149,7 +158,7 @@ export const TutorImageContainer = styled.div`
 export const CourseIcon = styled.img`
   margin: 0;
   width: 100%;
-  height: 30vh;
+  height: 25vh;
   background: blue;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
@@ -159,10 +168,10 @@ export const CourseIcon = styled.img`
 `;
 export const TutorImage = styled.img`
   margin: 0;
-  width: 2vw;
+  height: 2.5vw;
   border-radius: 30rem;
   @media (max-width: 600px) {
-    width: 5vh;
+    height: 5vh;
   }
 `;
 export const TutorName = styled.div`
@@ -187,8 +196,39 @@ export const Timing = styled.div`
   place-items: center;
   display: flex;
   margin-left: 12%;
+  font-size:1.5vh;
   @media (max-width: 600px) {
-    font-size: 2vh;
+    
     font-weight: 200;
   }
 `;
+
+export const AllCourses = styled.button`{
+    font-size:5vh;
+    margin-top:10vh;
+    margin-left:40vw;
+    width:20vw;
+    text-align:center;
+  
+  padding: 0.3rem;
+  font-size: 1rem;
+  border: 2px solid darkgoldenrod;
+  color: black;
+  font-weight: 900;
+  background: transparent;
+  border-radius: 0.5rem;
+  transition: all ease-in-out 200ms;
+  padding: 0.6rem;
+  &:hover {
+    color: white;
+    background: darkgoldenrod;
+  }
+  @media (max-width: 600px) {
+    padding: 0.3rem;
+    font-size: 0.9rem;
+    width:40vw;
+    margin-left:30vw;
+    height: auto;
+    margin-bottom:10vh;
+  }
+}`;

@@ -1,22 +1,34 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
 .OurCoursesSection {
-  width: auto;
-  height: auto;
-  display: block;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
 }
 .OwnerBlob1 {
   position: absolute;
-  top: -50vh;
-  z-index: -1;
+  bottom: -25vh;
+  z-index: 0;
   width: 50vw;
-  left: -50vh;
+  left: -30vh;
+  height: 100vh;
+  transform: rotate(180deg);
 }
+
 .OwnerBlob2 {
   position: absolute;
-  top: 50vh;
+  top: 0vh;
   z-index: -1;
   width: 50vw;
   right: -30vh;
-  transform: rotate(180deg);
+  height: 100vh;
 }
 .SectionHeader {
   text-align: center;
@@ -35,26 +47,26 @@
   text-align: center;
   color: rgb(4, 163, 163);
   width: 10vw;
-  height: 50vh;
+  height: auto;
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 3.5vw;
+  font-size: 8vh;
   /* padding: 0.3rem; */
   writing-mode: vertical-lr;
   transform: rotate(180deg);
   position: absolute;
   /* margin-right: 10vh; */
-  top: 50vh;
+  top: 30vh;
   left: -3vw;
 }
 .CardsContainer {
-  margin-top: 20vh;
+  margin-top: 10vh;
   margin-right: 2vw;
-  width: 85vw;
-  margin-left: auto;
+  width: 80vw;
+  margin-left: 10vw;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 3vw;
+  column-gap: 2vw;
   row-gap: 5vw;
 }
 .AboutUs-Des {
@@ -63,68 +75,73 @@
 }
 .OwnersCards {
   border: 1px solid transparent;
-  border-top-color: gold;
-  border-top-width: 10px;
+  border-top-color: rgb(4, 163, 163);
+  border-top-width: 5px;
   padding: 0.5rem;
-  width: auto;
-  display: inline-flex;
+  width: 40vw;
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   margin: 0;
-  border-radius: 0.6rem;
+  border-radius: 20px;
   background: white;
   filter: drop-shadow(10px 10px 10px grey);
   transition: all ease-in-out 300ms;
+  position: relative;
 }
 .OwnersCards:hover {
   transform: scale(1.05);
+
   filter: drop-shadow(40px 5px 10px grey);
 }
 .OwnerImage {
   position: absolute;
-  top: -13vh;
-  left: 10vh;
-  width: 10vw;
+  top: -5vh;
+
+  left: 8vw;
+  height: 15vh;
+
   border-radius: 30rem;
   filter: drop-shadow(10px 10px 10px grey);
 }
 .OwnerInfo {
   width: 20vw;
   background-color: transparent;
-  display: block;
+
   padding-top: 4rem;
   text-align: center;
   place-items: center;
 }
 .OwnerName {
-  font-size: 2vw;
+  font-size: 3vh;
+
   color: rgb(4, 163, 163);
 }
 .Ownerole {
   color: grey;
-  font-size: 1.6vw;
+  font-size: 1.6vh;
 }
 .OwnerDetails {
-  width: 50%;
-  height: auto;
+  list-style: none;
 }
 .OwnerSocialMediaContainer {
-  width: 10vw;
-  height: auto;
-  /* display: flex; */
-  /* position: relative; */
-  /* top: 70vh; */
-  margin-top: 25%;
-  right: 50vw;
+  position: absolute;
+  bottom: 0vh;
+  right: 1vw;
 }
 
 .OwnerSocialMedia {
   margin-right: 1vh;
   width: 2.4vw;
 }
-@media (max-width: 600px) {
+
+
+@media (max-width: 1000px) {
   .OurCoursesSection {
     width: 100%;
     height: auto;
-    background-color: red;
   }
   .SectionHeader {
     margin: 0;
@@ -135,24 +152,62 @@
     margin: 0;
   }
   .CardsContainer {
-    width: 90%;
+    width: 80%;
     height: auto;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vh;
+    height: 90vh;
   }
   .OurTeam {
     display: none;
   }
-  .OwnerBlob1 {
-    display: none;
+
+  .OwnerBlob1 , .OwnerBlob2{
+      display: none;
   }
-  .OwnerBlob2 {
-    display: none;
-  }
+
   .AboutUs-Des {
-    display: none;
+    font-size: 1.5vh;
   }
   .OwnersCards {
     width: auto;
-    height: auto;
+    height: 15vh;
+  }
+
+  .OwnerImage {
+    height: 6vh;
+    top: -1vh;
+    left: 6vw;
+    margin-bottom: 1vh;
+  }
+  .Ownerole {
+    margin-left: 1vw;
+    font-size: 1vh;
+  }
+  .OwnerName {
+    text-align: center;
+    font-size: 2vh;
+    margin-top: -2vh;
+    margin-left: 1vw;
+    text-align: center;
+  }
+  .OwnerDetails {
+    font-size: 1.5vh;
+    margin-left: 1vw;
+  }
+  .OwnerSocialMediaContainer {
+    margin-right: 1vh;
+    
+    width: 5vw;
+    display: flex;
+    flex-direction: column;
+    top:1vh;
+    right: 0vw;
+  }
+  .OwnerSocialMedia {
+    margin-right: 1vh;
+    height: 2.5vh;
+    width: 5vw;
   }
 }

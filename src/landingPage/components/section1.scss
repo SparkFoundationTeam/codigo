@@ -22,6 +22,7 @@
 
   background-image: url(../../resources/team.jpg);
   background-size: cover;
+  
 
   #nav {
     height: 8vh;
@@ -60,7 +61,6 @@
   #Content {
     display: flex;
     #Text {
-      
       width: 75vw;
       height: 92vh;
       @include flexAlign();
@@ -102,13 +102,11 @@
       }
     }
     #introVideo {
-      video {
-        margin-top: 50vh;
-        margin-right: 5vw;
-        height: 30vh;
-        width: 30vw;
-        border-radius: 25px;
-      }
+      margin-top: 50vh;
+      margin-right: 5vw;
+      height: 30vh;
+      width: 30vw;
+      border-radius: 25px;
     }
   }
 }
@@ -116,12 +114,14 @@
 @media screen and (max-width: 1000px) {
   .Section1 {
     #nav {
+        justify-content: space-between;
       img {
         height: 5vh;
         margin-top: 2vh;
       }
       button {
         width: 20vw;
+        font-size: small;
       }
     }
 
@@ -130,13 +130,13 @@
       overflow: hidden;
       height: 90vh;
       width: 100vw;
-      
+
       align-items: center;
 
       #Text {
         justify-content: center;
         align-items: center;
-        margin-top:2vh;
+        margin-top: 2vh;
         width: 100vw;
         height: 75vh;
         text-align: center;
@@ -156,13 +156,15 @@
         }
       }
       #introVideo {
-        video {
-          margin-top: -3vh;
-            margin-right: 0vw;
+        
+          margin-top: 5vh;
+          margin-right: 0vw;
           height: 20vh;
           width: 90vw;
+          border-radius: 25px;
+          margin-bottom: 2vh;
         }
-      }
+      
     }
   }
 }

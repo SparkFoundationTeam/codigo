@@ -34,8 +34,8 @@ const Section1 = () => {
                     </h2>
 
                 </div>
-                <div id='introVideo'>
-                    <video src={video} autoplay controls ></video>
+                <div >
+                    <video src={video} autoplay controls id='introVideo'></video>
                 </div>
             </div>
 
