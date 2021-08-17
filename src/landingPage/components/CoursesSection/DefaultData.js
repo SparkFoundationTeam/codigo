@@ -17,7 +17,7 @@ export const OurCoursesCardInfo = [
   {
     ImageLogo: JSBhavesh,
     CourseName: 'JavaScript',
-    CourseInfo: 'Learn Javascript Concepts and start building Applications',
+    CourseInfo: 'Become Zero-To-Hero in Javascript and start building Web-Applications',
     AuthorPic: Bhavesh,
     AUthorName: 'Bhavesh Mhadse',
     CourseDuration: '2 Hours',
