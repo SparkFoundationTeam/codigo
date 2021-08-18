@@ -1,5 +1,5 @@
-import Icon from './Images/physics.png';
-import Bhavesh from './Images/bhavesh.jpg';
+import Icon from '../resources/JSBhavesh.png';
+import Bhavesh from '../resources/bhavesh.jpg';
 
 export const EnrolledCourses = [
   {

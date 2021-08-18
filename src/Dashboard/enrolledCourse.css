@@ -12,15 +12,17 @@
 }
 
 .dashboard-CoursesCard {
-  width: 90%;
-  height: 28vh;
-  border-radius: 0.5rem;
+  width: 95%;
+  height: 20vh;
+  border-radius: 1rem;
   background: white;
   text-align: left;
   filter: drop-shadow(10px 10px 10px grey);
   /* margin: auto; */
   margin-top: 5vh;
   display: flex;
+  align-items: center;
+
   /* &:hover {
     transform: scale(1.1);
     filter: drop-shadow(40px 5px 10px grey);
@@ -33,7 +35,7 @@
 
 .dashboard-CourseCardHeader {
   color: aqua;
-  margin: 4% 0;
+
   font-weight: 500;
   text-transform: uppercase;
   font-size: 2vw;
@@ -43,7 +45,7 @@
 }
 .dashboard-CourseCardInfo {
   color: darkgrey;
-  margin: 1vw 0;
+
   width: 100%;
   font-weight: 500;
   font-size: 1vw;
@@ -71,18 +73,19 @@
 .dashboard-CourseIcon {
   margin: 0;
   width: 30%;
-  height: 28vh;
+  height: 20vh;
+
   margin-right: 3%;
   background: blue;
-  border-top-left-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
+  border-radius: 1rem;
+
   /* @media (max-width: 600px) {
     height: 20vh;
   } */
 }
 .dashboard-TutorImage {
   margin: 0;
-  height: 2.5vw;
+  height: 2vw;
   border-radius: 30rem;
   @media (max-width: 600px) {
     height: 5vh;
@@ -130,9 +133,13 @@
   border: 2px solid transparent;
   border-radius: 0.3rem;
   padding: 0.3rem;
+  margin: 1vh;
+  margin-left: 5vw;
   transition: all ease-in-out 200ms;
 }
 
 .dashboard-buttons:hover {
-  transform: translateY(-5px);
+  transform: scale(1.1);
+  background-color: rgb(240, 240, 240);
+  transition-duration: 0.5s;
 }

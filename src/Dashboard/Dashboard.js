@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import './dashboard.css';
 
 //ikde import marr atharvca resourse nusar
-import codiGoIcon from './Images/codiGo.png';
-import Bhavesh from './Images/bhavesh.jpg';
+import codiGoIcon from '../resources/codiGo.png';
+import Bhavesh from '../resources/bhavesh.jpg';
 
 import MyCourses from './MyCourses';
 import MyDrive from './MyDrive';
