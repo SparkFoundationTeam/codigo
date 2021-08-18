@@ -1,0 +1,138 @@
+.dashboard-CoursesCardContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  place-items: center;
+
+  /* @media (max-width: 600px) {
+    font-size: 0.4rem;
+    width: 100%;
+    display: block;
+  } */
+}
+
+.dashboard-CoursesCard {
+  width: 90%;
+  height: 28vh;
+  border-radius: 0.5rem;
+  background: white;
+  text-align: left;
+  filter: drop-shadow(10px 10px 10px grey);
+  /* margin: auto; */
+  margin-top: 5vh;
+  display: flex;
+  /* &:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(40px 5px 10px grey);
+  }
+  @media (max-width: 600px) {
+    width:80vw;
+    
+  } */
+}
+
+.dashboard-CourseCardHeader {
+  color: aqua;
+  margin: 4% 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 2vw;
+  /* @media (max-width: 600px) {
+    font-size: 3.5vh;
+  } */
+}
+.dashboard-CourseCardInfo {
+  color: darkgrey;
+  margin: 1vw 0;
+  width: 100%;
+  font-weight: 500;
+  font-size: 1vw;
+  /* @media (max-width: 600px) {
+    font-size: 2vh;
+    padding: 0.2rem;
+  } */
+}
+
+.dashboard-TutorContainer {
+  display: inline-block;
+  display: flex;
+  width: 90%;
+  margin: 0;
+  padding: 0.5rem;
+}
+.dashboard-TutorImageContainer {
+  margin: 0;
+  width: 5vw;
+  @media (max-width: 600px) {
+    width: 5vh;
+    margin-right: 0.5rem;
+  }
+}
+.dashboard-CourseIcon {
+  margin: 0;
+  width: 30%;
+  height: 28vh;
+  margin-right: 3%;
+  background: blue;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  /* @media (max-width: 600px) {
+    height: 20vh;
+  } */
+}
+.dashboard-TutorImage {
+  margin: 0;
+  height: 2.5vw;
+  border-radius: 30rem;
+  @media (max-width: 600px) {
+    height: 5vh;
+  }
+}
+.dashboard-TutorName {
+  margin-left: -8%;
+  display: flex;
+  place-items: center;
+  width: 40%;
+  height: auto;
+  padding: 0;
+  margin-right: auto;
+  place-items: right;
+  font-weight: 700;
+  font-size: 0.8vw;
+  @media (max-width: 600px) {
+    font-size: 2vh;
+  }
+}
+
+.dashboard-Timing {
+  float: right;
+  color: black;
+  place-items: center;
+  display: flex;
+  margin-left: 12%;
+  font-size: 1.5vh;
+  @media (max-width: 600px) {
+    font-weight: 200;
+  }
+}
+
+.dashboard-buttons-container {
+  display: grid;
+  place-items: center;
+}
+
+.dashboard-buttons {
+  filter: drop-shadow(5px 5px 5px grey);
+  color: gold;
+  width: 100%;
+  background: white;
+  font-weight: 900;
+  border: 2px solid transparent;
+  border-radius: 0.3rem;
+  padding: 0.3rem;
+  transition: all ease-in-out 200ms;
+}
+
+.dashboard-buttons:hover {
+  transform: translateY(-5px);
+}

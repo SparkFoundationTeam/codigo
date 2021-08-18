@@ -1,0 +1,120 @@
+.dashboard {
+  width: 100%;
+  height: 100vh;
+}
+.dashboard .dashboard-navbar {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+}
+.dashboard .dashboard-navbar .dashboard-icon {
+  width: 20vw;
+  height: auto;
+}
+.dashboard .dashboard-navbar .dashboard-icon .dashboard-pic {
+  width: 50%;
+  margin-left: 3vw;
+  height: auto;
+}
+.dashboard .dashboard-navbar .dashboard-links {
+  margin-left: auto;
+  width: auto;
+  height: auto;
+  margin-right: 1.5rem;
+}
+.dashboard .dashboard-navbar .dashboard-links ul {
+  display: flex;
+  list-style: none;
+  width: auto;
+  height: auto;
+}
+.dashboard .dashboard-navbar .dashboard-links ul li {
+  list-style: none;
+  color: black;
+  margin: 0 1rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  display: inline-block;
+  cursor: pointer;
+}
+.dashboard .dashboard-sidebar {
+  width: 25vw;
+  background-color: rgb(165, 248, 248);
+  height: 100vh;
+  display: block;
+}
+.dashboard .dashboard-sidebar .personal-info {
+  /* background-color: coral; */
+  width: 80%;
+  margin: auto;
+  padding: 7vh 2vh 3vh 2vh;
+  height: auto;
+  display: flex;
+}
+.dashboard .dashboard-sidebar .personal-info img {
+  border-radius: 30rem;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+  margin-right: 1rem;
+  /* filter: drop-shadow(10px 10px 10px rgb(0, 213, 213)); */
+  transition: all ease-in-out 200ms;
+}
+.dashboard .dashboard-sidebar .personal-info img:hover {
+  transform: scale(1.2);
+}
+.dashboard .dashboard-sidebar .personal-info .user-info {
+  width: 50%;
+  height: 90%;
+  margin: 0;
+  color: black;
+}
+.dashboard .dashboard-sidebar .personal-info .user-info h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 0vh;
+  margin-top: 1vh;
+}
+.dashboard .dashboard-sidebar .personal-info .user-info h2 {
+  font-size: 1rem;
+  color: grey;
+  margin: 0;
+  font-weight: 100;
+}
+.dashboard .dashboard-sidebar hr {
+  width: 80%;
+  /* height: 2px; */
+  background-color: black;
+  border: 2px solid black;
+  border-radius: 10rem;
+}
+.dashboard .dashboard-sidebar .choices {
+  width: auto;
+  height: auto;
+  display: block;
+  text-align: left;
+}
+.dashboard .dashboard-sidebar .choices li {
+  list-style: none;
+  height: auto;
+  margin-left: -15%;
+  margin-top: 1rem;
+  padding: 0.6rem;
+  text-align: left;
+  font-size: 1.2rem;
+  transition: all ease-in-out 200ms;
+  border: 3px solid transparent;
+}
+.dashboard .dashboard-sidebar .choices li:hover {
+  border-left-width: 5px;
+  border-left-color: black;
+  background-color: rgb(199, 248, 248);
+}
+.dashboard .other-section {
+  width: 90%;
+  height: auto;
+}
+
+.dashboard .other-section .component {
+  margin: 1rem 3rem;
+}
