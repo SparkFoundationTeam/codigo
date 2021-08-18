@@ -4,8 +4,9 @@ import './enrolledCourse.css';
 
 const EnrolledCourse = ({ tutorName, tutorImage, courseName, courseInfo, courseImage, duration }) => {
   const handleCertificate = () => {
-    // api la course name, tutor ani user la gmail pathvaycha!
-    // axios.post("/certificate", {User.email, tutorName, courseName})
+    /* api la course name, tutor ani user la gmail pathvaycha!
+    axios.post("/certificate", {User.email, tutorName, courseName})
+    */
   };
   const handleCourse = () => {
     // specific course cha url vr redirect maraycha
