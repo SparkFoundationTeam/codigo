@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import {
   OurCoursesSection,
@@ -24,21 +24,47 @@ import randomizer from '../../../randomizer';
 import { CoursesArray, OurCoursesCardInfo } from './DefaultData';
 
 const OurCourses = () => {
-  const [coursesArray, setcoursesArray] = useState(CoursesArray);
-  const [CardInfoArray, setCardInfoArray] = useState(randomizer(OurCoursesCardInfo));
+  let [coursesArray, setcoursesArray] = useState(CoursesArray);
+  let [CardInfoArray, setCardInfoArray] = useState(OurCoursesCardInfo);
+
+  let [courseIndex, setCourseIndex] = useState(Math.floor(Math.random() * 5) /* Sets Index Randomly from 0 to 4 */);
+  let [clickedCourseButtonStyles, setclickedCourseButtonStyles] = useState({ color: 'white', background: 'aqua' });
+
+  const shuffleCards = () => {
+    let newArr = [];
+
+    console.log('Before randomizing : ', coursesArray);
+
+    for (let arrayCards of coursesArray) {
+      newArr.push(randomizer(arrayCards));
+    }
+
+    console.log('After randomizing : ', coursesArray);
+
+    setCardInfoArray(newArr);
+  };
+
+  useEffect(
+    () => {
+      shuffleCards();
+    },
+    [] /* He mhanje ki component mount zhala ki mgch render marnr */
+  );
 
   return (
     <OurCoursesSection>
       <SectionHeader>Featured Courses</SectionHeader>
       <ButtonContainerDiv>
         <CourseSelectorButtonContainer>
-          {coursesArray.map(eachCourse => (
-            <CourseSelectorButton>{eachCourse}</CourseSelectorButton>
+          {coursesArray.map((eachCourse, buttonIndex) => (
+            <CourseSelectorButton style={courseIndex === buttonIndex ? clickedCourseButtonStyles : {}} onClick={() => setCourseIndex(buttonIndex)}>
+              {eachCourse}
+            </CourseSelectorButton>
           ))}
         </CourseSelectorButtonContainer>
       </ButtonContainerDiv>
       <CoursesCardContainer>
-        {CardInfoArray.map(eachObj => {
+        {CardInfoArray[courseIndex].map(eachObj => {
           return (
             <CoursesCard>
               <CourseIcon src={eachObj.ImageLogo} />

@@ -100,21 +100,20 @@ export const CoursesCardContainer = styled.div`
 export const CoursesCard = styled.div`
   width: 22%;
   height: auto;
-  
+
   border-radius: 0.5rem;
   background: white;
   text-align: center;
   filter: drop-shadow(10px 10px 10px grey);
   transition: all ease-in-out 300ms;
   margin: auto;
-  margin-top:5vh;
+  margin-top: 5vh;
   &:hover {
     transform: scale(1.1);
     filter: drop-shadow(40px 5px 10px grey);
   }
   @media (max-width: 600px) {
-    width:80vw;
-    
+    width: 80vw;
   }
 `;
 
@@ -131,7 +130,7 @@ export const CourseCardHeader = styled.h1`
 export const CourseCardInfo = styled.p`
   color: darkgrey;
   margin: 1vw 0;
-  width:100%;
+  width: 100%;
   font-weight: 500;
   font-size: 1vw;
   @media (max-width: 600px) {
@@ -196,20 +195,18 @@ export const Timing = styled.div`
   place-items: center;
   display: flex;
   margin-left: 12%;
-  font-size:1.5vh;
+  font-size: 1.5vh;
   @media (max-width: 600px) {
-    
     font-weight: 200;
   }
 `;
 
-export const AllCourses = styled.button`{
-    font-size:5vh;
-    margin-top:10vh;
-    margin-left:40vw;
-    width:20vw;
-    text-align:center;
-  
+export const AllCourses = styled.button`
+  font-size: 5vh;
+  margin-top: 10vh;
+  margin-left: 40vw;
+  width: 20vw;
+  text-align: center;
   padding: 0.3rem;
   font-size: 1rem;
   border: 2px solid darkgoldenrod;
@@ -219,16 +216,18 @@ export const AllCourses = styled.button`{
   border-radius: 0.5rem;
   transition: all ease-in-out 200ms;
   padding: 0.6rem;
+
   &:hover {
     color: white;
     background: darkgoldenrod;
   }
+
   @media (max-width: 600px) {
     padding: 0.3rem;
     font-size: 0.9rem;
-    width:40vw;
-    margin-left:30vw;
+    width: 40vw;
+    margin-left: 30vw;
     height: auto;
-    margin-bottom:10vh;
+    margin-bottom: 10vh;
   }
-}`;
+`;
