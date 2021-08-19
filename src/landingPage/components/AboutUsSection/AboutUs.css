@@ -71,7 +71,8 @@
 }
 .AboutUs-Des {
   text-align: center;
-  color: aqua;
+  color: rgb(173, 173, 173);
+
 }
 .OwnersCards {
   border: 1px solid transparent;
@@ -125,16 +126,18 @@
 }
 .OwnerDetails {
   list-style: none;
+  margin-top: -5vh;
 }
 .OwnerSocialMediaContainer {
   position: absolute;
-  bottom: 0vh;
+  bottom: 2vh;
   right: 1vw;
 }
 
 .OwnerSocialMedia {
-  margin-right: 1vh;
-  width: 2.4vw;
+  margin-right: 1.5vh;
+  width: 1.7vw;
+  height: 3.5vh;
 }
 
 
@@ -169,6 +172,8 @@
 
   .AboutUs-Des {
     font-size: 1.5vh;
+    width: 90vw;
+    margin: 5vw;
   }
   .OwnersCards {
     width: auto;
@@ -193,21 +198,27 @@
     text-align: center;
   }
   .OwnerDetails {
-    font-size: 1.5vh;
+    font-size: 1.3vh;
     margin-left: 1vw;
+    margin-top: -2vh;
   }
   .OwnerSocialMediaContainer {
     margin-right: 1vh;
     
-    width: 5vw;
+    width: 40vw;
+    bottom: 0vh;
+    height: 5vh;
     display: flex;
-    flex-direction: column;
-    top:1vh;
-    right: 0vw;
+    align-items: center;
+    justify-content: center;
+    
+    
+    right:0vw;
+   
   }
   .OwnerSocialMedia {
-    margin-right: 1vh;
-    height: 2.5vh;
-    width: 5vw;
+    margin-bottom: 0vh;
+    height: 1.7vh;
+    width: 3.5vw;
   }
 }

@@ -1,0 +1,221 @@
+@import url("http://fonts.cdnfonts.com/css/richard-hamilton");
+.dashboard-navbar {
+  width: 100%;
+  height: 8vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dashboard-navbar .dashboard-icon .dashboard-pic {
+  margin-left: 2vw;
+  height: 6vh;
+}
+
+.dashboard-navbar .dashboard-links {
+  margin-left: auto;
+  width: auto;
+  height: auto;
+  margin-right: 1.5rem;
+  border-bottom: 1px solid #b6b3b3;
+  padding: 1.2vh;
+}
+
+.dashboard-navbar .dashboard-links ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  width: auto;
+  height: auto;
+}
+
+.dashboard-navbar .dashboard-links ul li {
+  list-style: none;
+  color: black;
+  margin: 0 1rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.dashboard-navbar .dashboard-links ul li:hover {
+  color: #f00080;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all ease-in-out;
+  transition: all ease-in-out;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+#courseSearch {
+  position: absolute;
+  left: 35vw;
+  background-color: #cbf1f8;
+  border-radius: 20px;
+  width: 25vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 4vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#courseSearch #courseSearchBar {
+  height: 3vh;
+  width: 20vw;
+  border: none;
+  background-color: rgba(250, 235, 215, 0);
+  outline: none;
+}
+
+#courseSearch button {
+  margin-left: 1vw;
+  background-color: rgba(250, 235, 215, 0);
+  border: none;
+}
+
+#courseSearch button img {
+  height: 2vh;
+}
+
+#courseSearch button:hover {
+  cursor: pointer;
+}
+
+.Content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.OneSection {
+  margin-top: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50vw;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.OneSection .SectHeader {
+  font-family: 'Richard Hamilton';
+  color: darkgoldenrod;
+}
+
+.OneSection .CoursesCard {
+  height: 18vh;
+  position: relative;
+  width: 40vw;
+  margin-top: 3vh;
+  background-color: rgba(255, 255, 255, 0.965);
+  border-radius: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-filter: drop-shadow(10px 10px 10px grey);
+          filter: drop-shadow(10px 10px 10px grey);
+}
+
+.OneSection .CoursesCard .infoBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.OneSection .CoursesCard img {
+  height: 18vh;
+  border-radius: 1rem;
+}
+
+.OneSection .CoursesCard .spanner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.OneSection .CoursesCard h4,
+.OneSection .CoursesCard h2,
+.OneSection .CoursesCard h5,
+.OneSection .CoursesCard h6 {
+  margin: 0.5vh 1vw;
+}
+
+.OneSection .CoursesCard .span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 20vw;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.OneSection .CoursesCard .span img {
+  height: 3vh;
+  margin: 0.5vh 1vw;
+}
+
+.OneSection .CoursesCard p {
+  margin: 0.5vh 1vw;
+}
+
+.OneSection .CoursesCard h6 {
+  font-size: large;
+  position: absolute;
+  right: 0;
+  color: white;
+}
+
+.OneSection .CoursesCard:hover {
+  background-color: #f5efef;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+.OneSection .CoursesCard:hover img,
+.OneSection .CoursesCard:hover p,
+.OneSection .CoursesCard:hover h2,
+.OneSection .CoursesCard:hover h5,
+.OneSection .CoursesCard:hover h4 {
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+.OneSection .CoursesCard:hover h6 {
+  color: #046666;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+.OneSection .CoursesCard:hover h6:hover {
+  color: #4b4300;
+}
+/*# sourceMappingURL=AllCourses.css.map */

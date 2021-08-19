@@ -24,12 +24,7 @@
   height: 7vh;
 }
 
-#imgShort {
-  height: 3.5vh;
-}
-#imgShort2 {
-  height: 4.5vh;
-}
+
 
 #logoFooter {
   height: 25vh;
@@ -54,6 +49,17 @@ a {
   margin-right: 2.5vw;
 }
 
+a:hover{
+    color: goldenrod;
+    transition-duration: .5s;
+}
+
+#imgShort {
+    height: 4vh;
+    width:2.2vw;
+  }
+  
+
 @media screen and (max-width: 1000px) {
   #footer {
     flex-direction: column-reverse;
@@ -72,4 +78,10 @@ a {
   #contactH {
     margin-left: -10vw;
   }
+  #imgShort {
+    height: 3.5vh;
+    width: 8.2vw;
+  }
+  
+
 }

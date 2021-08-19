@@ -1,0 +1,162 @@
+@import url('http://fonts.cdnfonts.com/css/richard-hamilton');
+
+.dashboard-navbar {
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-navbar .dashboard-icon .dashboard-pic {
+  margin-left: 2vw;
+
+  height: 6vh;
+}
+.dashboard-navbar .dashboard-links {
+  margin-left: auto;
+  width: auto;
+  height: auto;
+  margin-right: 1.5rem;
+  border-bottom: 1px solid rgb(182, 179, 179);
+  padding: 1.2vh;
+}
+.dashboard-navbar .dashboard-links ul {
+  display: flex;
+  list-style: none;
+  width: auto;
+  height: auto;
+}
+.dashboard-navbar .dashboard-links ul li {
+  list-style: none;
+  color: black;
+  margin: 0 1rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  display: inline-block;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.dashboard-navbar .dashboard-links ul li:hover {
+  color: rgb(240, 0, 128);
+  transform: scale(1.1);
+  transition: all ease-in-out;
+  transition-duration: 0.3s;
+}
+
+#courseSearch {
+  position: absolute;
+  left: 35vw;
+  background-color: rgb(203, 241, 248);
+  border-radius: 20px;
+  width: 25vw;
+  display: flex;
+  height: 4vh;
+  justify-content: center;
+  align-items: center;
+  #courseSearchBar {
+    height: 3vh;
+    width: 20vw;
+    border: none;
+    background-color: rgba(250, 235, 215, 0);
+
+    outline: none;
+  }
+  button {
+    margin-left: 1vw;
+    background-color: rgba(250, 235, 215, 0);
+    border: none;
+    img {
+      height: 2vh;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.Content {
+  display: flex;
+}
+
+.OneSection {
+  margin-top: 10vh;
+  display: flex;
+  width: 50vw;
+  flex-direction: column;
+  align-items: center;
+
+  .SectHeader {
+    font-family: 'Richard Hamilton';
+    color: darkgoldenrod;
+  }
+
+  .CoursesCard {
+    height: 18vh;
+    position: relative;
+    width: 40vw;
+    margin-top: 3vh;
+    background-color: rgba(255, 255, 255, 0.965);
+    border-radius: 1rem;
+    display: flex;
+    transition-duration: 0.2s;
+    filter: drop-shadow(10px 10px 10px grey);
+    .infoBox {
+      display: flex;
+
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    img {
+      height: 18vh;
+      border-radius: 1rem;
+    }
+    .spanner {
+      display: flex;
+    }
+    h4,
+    h2,
+    h5,
+    h6 {
+      margin: 0.5vh 1vw;
+    }
+    .span {
+      display: flex;
+      width: 20vw;
+      justify-content: space-between;
+      img {
+        height: 3vh;
+        margin: 0.5vh 1vw;
+      }
+    }
+    p {
+      margin: 0.5vh 1vw;
+    }
+    h6 {
+      font-size: large;
+      position: absolute;
+      right: 0;
+      color: white;
+    }
+
+    &:hover {
+      background-color: rgb(245, 239, 239);
+      transition-duration: 0.2s;
+      img,
+      p,
+      h2,
+      h5,
+      h4 {
+        transition-duration: 0.2s;
+      }
+      h6 {
+        color: rgb(4, 102, 102);
+        transition-duration: 0.2s;
+        &:hover {
+          color: rgb(75, 67, 0);
+        }
+      }
+    }
+  }
+}

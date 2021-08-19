@@ -42,7 +42,7 @@ const LoginPage = () => {
         } else if (!User.username) {
             alert('Please Enter Username');
             return false;
-        } else if (!User.email || pattern.test(User.email)===false) {
+        } else if (!User.email || pattern.test(User.email) === false) {
             alert('Please enter valid email-address');
             return false;
         } else if (!(User.password === User.confirmPassword)) {
@@ -69,7 +69,7 @@ const LoginPage = () => {
 
         // npm install --save asios
         // Yet To be Done
-       //axios.post(BackendUrl + '/User', User); // <- he hotay ka bgh naitr hi line comment marun khalchi line uncomment kr
+        //axios.post(BackendUrl + '/User', User); // <- he hotay ka bgh naitr hi line comment marun khalchi line uncomment kr
         axios.post(BackendUrl + 'User', User);
     };
 
@@ -80,6 +80,7 @@ const LoginPage = () => {
     };
 
     return (
+
         <div id='container'>
             <NavBar id='nav' />
             <div id='bgdiv'>
@@ -243,6 +244,7 @@ const LoginPage = () => {
                 </div>
             </div>
         </div>
+
     );
 };
 

@@ -100,7 +100,6 @@ export const CoursesCardContainer = styled.div`
 export const CoursesCard = styled.div`
   width: 22%;
   height: auto;
-
   border-radius: 0.5rem;
   background: white;
   text-align: center;
@@ -216,12 +215,10 @@ export const AllCourses = styled.button`
   border-radius: 0.5rem;
   transition: all ease-in-out 200ms;
   padding: 0.6rem;
-
   &:hover {
     color: white;
     background: darkgoldenrod;
   }
-
   @media (max-width: 600px) {
     padding: 0.3rem;
     font-size: 0.9rem;
