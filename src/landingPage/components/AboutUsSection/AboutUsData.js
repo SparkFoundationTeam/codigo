@@ -6,8 +6,8 @@ export const Owners = [
         OwnerImage: Bhavesh,
         OwnerSkills: ['Third Year Engineering Student', 'Full Stack Developer', 'Backend Manager'],
         githubUrl: 'url de ikde athya',
-        instaUrl: 'https://instagram.com/',
-        linkedurl: 'https://linkedin.com/in/',
+        instaUrl: 'https://www.instagram.com/bhaaaavesh__',
+        linkedurl: 'https://www.linkedin.com/in/bhavesh-mhadse-053442216/',
         mailUrl: 'mailto:bhaveshmhadse9@gmail.com?subject=I have a query for you&body=Hey Bhavesh !!'
     },
     {
@@ -34,7 +34,7 @@ export const Owners = [
         OwnerSkills: ['Third Year Engineering Student', 'Full Stack Developer', 'Marketing Head'],
         githubUrl: 'url de ikde athya',
         instaUrl: 'https://instagram.com/vaishnavi2512',
-        linkedurl: 'https://linkedin.com/in/',
+        linkedurl: 'https://www.linkedin.com/in/vaishnavi-korgaonkar-2a37b4216/',
         mailUrl: 'mailto:vaishnavi2512@gmail.com?subject=I have a query for you&body=Hey Vaishnavi !!'
     }
 ];
