@@ -10,8 +10,11 @@ import MyCourses from './MyCourses';
 import MyDrive from './MyDrive';
 import Settings from './Settings';
 
+import { UserContext } from '../MainContext'; // <- hi line prytek component madhe lagnr jithe user aahe tithe
+
 const DashBoard = () => {
   // /Dashboard vr ha component disnr :)
+  let { signedInUser, setsignedInUser } = useContext(UserContext); // <- ani hi pn
 
   let [componentArray, setComponentArray] = useState([<MyCourses />, <MyDrive />, <Settings />]);
   let [index, setIndex] = useState(0);
@@ -42,7 +45,7 @@ const DashBoard = () => {
           <div className='personal-info'>
             <img src={Bhavesh}></img>
             <div className='user-info'>
-              <h1>Kodeo</h1>
+              <h1>{signedInUser.username}</h1>
               <h2>College Name</h2>
               <h2>University Name</h2>
             </div>
@@ -64,7 +67,7 @@ const DashBoard = () => {
         <div className='other-section'>
           <div className='component'>
             {/* User.name Enrolled Courses */}
-            <h1>Kodeos Enrolled courses</h1>
+            <h1>{signedInUser.username} Enrolled courses</h1>
             {componentArray[index]}
           </div>
         </div>
