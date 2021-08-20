@@ -54,16 +54,16 @@ const LoginPage = () => {
     return true;
   };
 
-  const handleLogin = async () => {
+  const handleLogin = () => {
     let loggedInUser = axios.get(BackendUrl + `User?username=${User.username}&password=${User.password}`).then(user => user.data);
     console.log('User we got through mongo Db is : ', loggedInUser);
 
-    if (loggedInUser[0]?.message === 'No User Found') {
+    if (loggedInUse.message === 'No User Found') {
       alert('Changla vla User taak na lavdya');
       return;
     }
 
-    setsignedInUser(loggedInUser[0]?.user);
+    setsignedInUser(loggedInUser.user[0]);
   };
 
   const handleSubmit = e => {
