@@ -47,16 +47,16 @@ export const CourseSelectorButtonContainer = styled.div`
   width: 90vw;
   display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   @media (max-width: 600px) {
     width: 99vw;
-    display:block;
-    flex-direction:column;
-    align-items:center;
-    justify-content;center;
-    height:auto;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
     margin: 2vh auto;
-    margin-bottom:0vh;
+    margin-bottom: 0vh;
   }
 `;
 
@@ -74,7 +74,8 @@ export const CourseSelectorButton = styled.button`
   padding: 0.6rem;
   &:hover {
     color: white;
-    background: aqua;
+    border: 2px solid transparent;
+    background: rgb(4, 163, 163);
   }
   @media (max-width: 600px) {
     padding: 0.3rem;
