@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './AllCourses.css'
 import CourseCard from './CoursesCard';
 import Footer from '../footer'
+
+
 
 import codiGoIcon from '../resources/codiGo.png';
 import searchIcon from '../resources/search.png';
@@ -22,7 +24,8 @@ const AllCourses = () => {
             TutorName: 'Atharva Bhagat',
             CourseDuration: '1 Hour',
             CourseRatings: 4.7,
-            Linker : 'html01'
+            Linker: 'html01',
+
         },
         {
             ImageLogo: HtmlAtharva,
@@ -32,7 +35,7 @@ const AllCourses = () => {
             TutorName: 'Bhavesh Mhadse',
             CourseDuration: '1 Hour',
             CourseRatings: 4.7,
-            Linker : 'css01'
+            Linker: 'css01'
         },
         {
             ImageLogo: HtmlAtharva,
@@ -42,7 +45,7 @@ const AllCourses = () => {
             TutorName: 'Adika Karnataki',
             CourseDuration: '1 Hour',
             CourseRatings: 4.7,
-            Linker : 'scss02'
+            Linker: 'scss02'
         },
         {
             ImageLogo: HtmlAtharva,
@@ -52,7 +55,7 @@ const AllCourses = () => {
             TutorName: 'Vaishnavi Korgaonkar',
             CourseDuration: '1 Hour',
             CourseRatings: 4.7,
-            Linker : 'html'
+            Linker: 'html'
         },
     ]
 
@@ -65,7 +68,7 @@ const AllCourses = () => {
             TutorName: 'Bhavesh Mhadse',
             CourseDuration: '1 Hour',
             CourseRatings: 4.7,
-            Linker : 'js01-course-enroll'
+            Linker: 'js01-course-enroll'
         },
         {
             ImageLogo: HtmlAtharva,
@@ -75,7 +78,7 @@ const AllCourses = () => {
             TutorName: 'Adika Karnataki',
             CourseDuration: '1 Hour',
             CourseRatings: 4.7,
-            Linker : 'html-course-enroll'
+            Linker: 'html-course-enroll'
         },
         {
             ImageLogo: HtmlAtharva,
@@ -85,7 +88,7 @@ const AllCourses = () => {
             TutorName: 'Vaishnavi Korgaonkar',
             CourseDuration: '1 Hour',
             CourseRatings: 4.7,
-            Linker : 'html-course-enroll'
+            Linker: 'html-course-enroll'
         },
     ]
 
@@ -98,7 +101,7 @@ const AllCourses = () => {
             TutorName: 'Atharva Bhagat',
             CourseDuration: '1 Hour',
             CourseRatings: 4.7,
-            Linker : 'html-course-enroll'
+            Linker: 'html-course-enroll'
         },
         {
             ImageLogo: HtmlAtharva,
@@ -108,7 +111,7 @@ const AllCourses = () => {
             TutorName: 'Bhavesh Mhadse',
             CourseDuration: '1 Hour',
             CourseRatings: 4.7,
-            Linker : 'html-course-enroll'
+            Linker: 'html-course-enroll'
         },
         {
             ImageLogo: HtmlAtharva,
@@ -118,7 +121,7 @@ const AllCourses = () => {
             TutorName: 'Adika Karnataki',
             CourseDuration: '1 Hour',
             CourseRatings: 4.7,
-            Linker : 'html-course-enroll'
+            Linker: 'html-course-enroll'
         },
         {
             ImageLogo: HtmlAtharva,
@@ -128,7 +131,7 @@ const AllCourses = () => {
             TutorName: 'Vaishnavi Korgaonkar',
             CourseDuration: '1 Hour',
             CourseRatings: 4.7,
-            Linker : 'html-course-enroll'
+            Linker: 'html-course-enroll'
         },
     ]
 
@@ -142,7 +145,7 @@ const AllCourses = () => {
             TutorName: 'Adika Karnataki',
             CourseDuration: '1 Hour',
             CourseRatings: 4.7,
-            Linker : 'html-course-enroll'
+            Linker: 'html-course-enroll'
         },
         {
             ImageLogo: HtmlAtharva,
@@ -152,7 +155,7 @@ const AllCourses = () => {
             TutorName: 'Vaishnavi Korgaonkar',
             CourseDuration: '1 Hour',
             CourseRatings: 4.7,
-            Linker : 'html-course-enroll'
+            Linker: 'html-course-enroll'
         },
     ]
 
@@ -165,7 +168,7 @@ const AllCourses = () => {
             TutorName: 'Atharva Bhagat',
             CourseDuration: '1 Hour',
             CourseRatings: 4.7,
-            Linker : 'html-course-enroll'
+            Linker: 'html-course-enroll'
         },
         {
             ImageLogo: HtmlAtharva,
@@ -175,7 +178,7 @@ const AllCourses = () => {
             TutorName: 'Bhavesh Mhadse',
             CourseDuration: '1 Hour',
             CourseRatings: 4.7,
-            Linker : 'html-course-enroll'
+            Linker: 'html-course-enroll'
         },
         {
             ImageLogo: HtmlAtharva,
@@ -185,7 +188,7 @@ const AllCourses = () => {
             TutorName: 'Adika Karnataki',
             CourseDuration: '1 Hour',
             CourseRatings: 4.7,
-            Linker : 'html-course-enroll'
+            Linker: 'html-course-enroll'
         },
         {
             ImageLogo: HtmlAtharva,
@@ -195,7 +198,8 @@ const AllCourses = () => {
             TutorName: 'Vaishnavi Korgaonkar',
             CourseDuration: '1 Hour',
             CourseRatings: 4.7,
-            Linker : 'html-course-enroll'        },
+            Linker: 'html-course-enroll'
+        },
     ]
 
     const DBDev = [
@@ -207,7 +211,8 @@ const AllCourses = () => {
             TutorName: 'Atharva Bhagat',
             CourseDuration: '1 Hour',
             CourseRatings: 4.7,
-            Linker : 'html-course-enroll'        },
+            Linker: 'html-course-enroll'
+        },
         {
             ImageLogo: HtmlAtharva,
             CourseName: 'HTML',
@@ -216,7 +221,8 @@ const AllCourses = () => {
             TutorName: 'Bhavesh Mhadse',
             CourseDuration: '1 Hour',
             CourseRatings: 4.7,
-            Linker : 'html-course-enroll'        },
+            Linker: 'html-course-enroll'
+        },
         {
             ImageLogo: HtmlAtharva,
             CourseName: 'HTML',
@@ -225,7 +231,8 @@ const AllCourses = () => {
             TutorName: 'Adika Karnataki',
             CourseDuration: '1 Hour',
             CourseRatings: 4.7,
-            Linker : 'html-course-enroll'        },
+            Linker: 'html-course-enroll'
+        },
         {
             ImageLogo: HtmlAtharva,
             CourseName: 'HTML',
@@ -234,8 +241,13 @@ const AllCourses = () => {
             TutorName: 'Vaishnavi Korgaonkar',
             CourseDuration: '1 Hour',
             CourseRatings: 4.7,
-            Linker : 'html-course-enroll'        },
+            Linker: 'html-course-enroll'
+        },
     ]
+
+    const [searchTerm, setSearchTerm] = useState('');
+    const [seriesHeader, setHeader] = useState(true)
+
 
 
 
@@ -246,7 +258,14 @@ const AllCourses = () => {
                 <div className='dashboard-icon'>
                     <img className='dashboard-pic' src={codiGoIcon}></img>
                 </div>
-                <div id='courseSearch'><input type='search' name='coursdeSearch' id='courseSearchBar' placeholder='Search Courses' ></input><button><img src={searchIcon}></img></button> </div>
+                <div id='courseSearch'>
+                    <input type='search' name='courseSearch'
+                        onChange={(event) => {
+                            setSearchTerm(event.target.value)
+                        }} id='courseSearchBar'
+                        placeholder='Search Courses / Tutors ' ></input>
+                    <button><img src={searchIcon}></img></button>
+                </div>
                 <div className='dashboard-links'>
                     <ul>
                         <li>Community</li>
@@ -262,21 +281,44 @@ const AllCourses = () => {
 
                     <div className='OneSection'>
                         <h2 className='SectHeader' >   Web Development Series  </h2>
-                        {WebDev.map((name, index) => (
+                        {WebDev.filter((val) => {
+                            if (searchTerm === '') {
+                                return val;
+                            } else if (val.CourseName.toLowerCase().includes(searchTerm.toLowerCase())
+                                || val.TutorName.toLowerCase().includes(searchTerm.toLowerCase())
+                                || val.CourseInfo.toLowerCase().includes(searchTerm.toLowerCase())) {
+                                return val;
+                            }
+                        }).map((name, index) => (
                             <>
-                                
-                                <CourseCard  linker={name.Linker} duration={name.CourseDuration} logo={name.ImageLogo} tutor={name.TutorName} tutorImg={name.TutorPic} courseName={name.CourseName} courseDesc={name.CourseInfo} ratings={name.CourseRatings} /> </>)
+
+                                <CourseCard linker={name.Linker} duration={name.CourseDuration}
+                                    logo={name.ImageLogo} tutor={name.TutorName} tutorImg={name.TutorPic}
+                                    courseName={name.CourseName} courseDesc={name.CourseInfo}
+                                    ratings={name.CourseRatings} /> </>)
                         )}
                     </div>
                     <div className='OneSection'>
                         <h2 className='SectHeader'>Python Development Series</h2>
-                        {PyDev.map((name, index) => (
+                        {PyDev.filter((val) => {
+                            if (searchTerm === '') {
+                                return val;
+                            } else if (val.CourseName.toLowerCase().includes(searchTerm.toLowerCase()) || val.TutorName.toLowerCase().includes(searchTerm.toLowerCase()) || val.CourseInfo.toLowerCase().includes(searchTerm.toLowerCase())) {
+                                return val;
+                            }
+                        }).map((name, index) => (
                             <CourseCard linker={name.Linker} duration={name.CourseDuration} logo={name.ImageLogo} tutor={name.TutorName} tutorImg={name.TutorPic} courseName={name.CourseName} courseDesc={name.CourseInfo} ratings={name.CourseRatings} />)
                         )}
                     </div>
                     <div className='OneSection'>
                         <h2 className='SectHeader'>DataBase Management Systems</h2>
-                        {DBDev.map((name, index) => (
+                        {DBDev.filter((val) => {
+                            if (searchTerm === '') {
+                                return val;
+                            } else if (val.CourseName.toLowerCase().includes(searchTerm.toLowerCase()) || val.TutorName.toLowerCase().includes(searchTerm.toLowerCase()) || val.CourseInfo.toLowerCase().includes(searchTerm.toLowerCase())) {
+                                return val;
+                            }
+                        }).map((name, index) => (
                             <CourseCard linker={name.Linker} duration={name.CourseDuration} logo={name.ImageLogo} tutor={name.TutorName} tutorImg={name.TutorPic} courseName={name.CourseName} courseDesc={name.CourseInfo} ratings={name.CourseRatings} />)
                         )}
                     </div>
@@ -286,19 +328,37 @@ const AllCourses = () => {
 
                     <div className='OneSection'>
                         <h2 className='SectHeader'>JavaScript Development</h2>
-                        {JSDev.map((name, index) => (
-                            <CourseCard  linker={name.Linker} duration={name.CourseDuration} logo={name.ImageLogo} tutor={name.TutorName} tutorImg={name.TutorPic} courseName={name.CourseName} courseDesc={name.CourseInfo} ratings={name.CourseRatings} />)
+                        {JSDev.filter((val) => {
+                            if (searchTerm === '') {
+                                return val;
+                            } else if (val.CourseName.toLowerCase().includes(searchTerm.toLowerCase()) || val.TutorName.toLowerCase().includes(searchTerm.toLowerCase()) || val.CourseInfo.toLowerCase().includes(searchTerm.toLowerCase())) {
+                                return val;
+                            }
+                        }).map((name, index) => (
+                            <CourseCard linker={name.Linker} duration={name.CourseDuration} logo={name.ImageLogo} tutor={name.TutorName} tutorImg={name.TutorPic} courseName={name.CourseName} courseDesc={name.CourseInfo} ratings={name.CourseRatings} />)
                         )}
                     </div>
                     <div className='OneSection'>
                         <h2 className='SectHeader'>Java Programming</h2>
-                        {JavaDev.map((name, index) => (
+                        {JavaDev.filter((val) => {
+                            if (searchTerm === '') {
+                                return val;
+                            } else if (val.CourseName.toLowerCase().includes(searchTerm.toLowerCase()) || val.TutorName.toLowerCase().includes(searchTerm.toLowerCase()) || val.CourseInfo.toLowerCase().includes(searchTerm.toLowerCase())) {
+                                return val;
+                            }
+                        }).map((name, index) => (
                             <CourseCard linker={name.Linker} duration={name.CourseDuration} logo={name.ImageLogo} tutor={name.TutorName} tutorImg={name.TutorPic} courseName={name.CourseName} courseDesc={name.CourseInfo} ratings={name.CourseRatings} />)
                         )}
                     </div>
                     <div className='OneSection'>
                         <h2 className='SectHeader'>UI / UX Designing</h2>
-                        {UIDev.map((name, index) => (
+                        {UIDev.filter((val) => {
+                            if (searchTerm === '') {
+                                return val;
+                            } else if (val.CourseName.toLowerCase().includes(searchTerm.toLowerCase()) || val.TutorName.toLowerCase().includes(searchTerm.toLowerCase()) || val.CourseInfo.toLowerCase().includes(searchTerm.toLowerCase())) {
+                                return val;
+                            }
+                        }).map((name, index) => (
                             <CourseCard linker={name.Linker} duration={name.CourseDuration} logo={name.ImageLogo} tutor={name.TutorName} tutorImg={name.TutorPic} courseName={name.CourseName} courseDesc={name.CourseInfo} ratings={name.CourseRatings} />)
                         )}
                     </div>
