@@ -1,0 +1,65 @@
+.settings-column {
+  width: 40%;
+  height: auto;
+}
+.settings-column .account-settings h3 {
+  color: gold;
+  text-transform: uppercase;
+  margin: 0;
+  /* background: red; */
+}
+.settings-column .account-settings {
+  display: block;
+}
+.settings-column .account-settings h1 {
+  color: rgb(0, 106, 106);
+}
+.settings-column .account-settings p {
+  color: aqua;
+  background-color: white;
+  width: fit-content;
+  padding: 0 0.4rem;
+  font-size: 75%;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0;
+  transform: translate(1vh, 1.3vh);
+}
+.settings-column .account-settings .settings-input {
+  border-radius: 0.2rem;
+  outline: none;
+  width: 100%;
+  border: 0.1px solid lightgrey;
+  margin: 0;
+  color: grey;
+  padding: 0.5rem;
+  /* height: 90%; */
+}
+.settings-column .account-settings .settings-input:hover {
+  /* background-color: red; */
+  border: 2px solid mediumseagreen;
+}
+
+.settings-button {
+  border-radius: 0.4rem;
+  outline: none;
+  width: 100%;
+  border: 0.1px solid lightgrey;
+  margin: 0;
+  color: black;
+  padding: 0.4rem;
+  text-transform: uppercase;
+  background-color: rgb(243, 243, 243);
+  cursor: pointer;
+}
+
+.horizontal-line {
+  width: 105%;
+  margin-top: 5vh;
+  background: grey;
+}
+.vertical-line {
+  height: 105%;
+  width: 0.01px;
+  background: grey;
+}
