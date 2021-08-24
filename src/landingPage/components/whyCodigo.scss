@@ -5,8 +5,8 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 
-  ::selection{
-      color: darkgoldenrod;
+  ::selection {
+    color: darkgoldenrod;
   }
 }
 
@@ -27,7 +27,7 @@
   flex-direction: column;
   h1 {
     margin: 2vh;
-    z-index:2;
+    z-index: 2;
     font-size: 5vh;
     color: rgb(4, 163, 163);
     text-shadow: 1px 2px rgba(4, 163, 163, 0.37);
@@ -95,15 +95,13 @@
     transition-duration: 1s;
     z-index: 5;
   }
-  
 }
 
 @media screen and (max-width: 1000px) {
   #cards {
     justify-content: flex-start;
     height: auto;
-    
-    
+
     #blob {
       #blob2 {
         bottom: -40vh;
@@ -119,13 +117,12 @@
     filter: drop-shadow(10px 10px 10px grey);
     width: 80vw;
     height: 10vh;
-    margin: 0.75vh ;
+    margin: 0.75vh;
     h2 {
       font-size: 1.8vh;
     }
     h4 {
       font-size: 1.3vh;
-
     }
     img {
       height: 6vh;

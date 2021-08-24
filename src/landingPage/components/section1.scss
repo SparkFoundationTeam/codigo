@@ -22,7 +22,6 @@
 
   background-image: url(../../resources/team.jpg);
   background-size: cover;
-  
 
   #nav {
     height: 8vh;
@@ -87,7 +86,7 @@
         width: 20vw;
         height: 8vh;
         font-size: 3vh;
-        background-color: rgb(39, 230, 255);
+        background: linear-gradient(to right, rgb(23, 200, 200), aquamarine);
         border-radius: 10px;
         border: none;
         transition-duration: 0.5s;
@@ -96,7 +95,7 @@
       button:hover {
         border: 5px solid rgb(42, 211, 211);
         color: aqua;
-        background-color: rgba(255, 255, 255, 0);
+        background: linear-gradient(to right, transparent, transparent );
         cursor: pointer;
         transition-duration: 0.5s;
       }
@@ -105,7 +104,7 @@
       margin-top: 50vh;
       margin-right: 5vw;
       height: 30vh;
-      width: 30vw;
+      
       border-radius: 25px;
     }
   }
@@ -113,8 +112,9 @@
 
 @media screen and (max-width: 1000px) {
   .Section1 {
+      
     #nav {
-        justify-content: space-between;
+      justify-content: space-between;
       img {
         height: 5vh;
         margin-top: 2vh;
@@ -126,6 +126,7 @@
     }
 
     #Content {
+        
       flex-direction: column;
       overflow: hidden;
       height: 90vh;
@@ -156,15 +157,14 @@
         }
       }
       #introVideo {
+        margin-top: 3vh;
+        margin-right: 0vw;
+        height: 20vh;
         
-          margin-top: 5vh;
-          margin-right: 0vw;
-          height: 20vh;
-          width: 90vw;
-          border-radius: 25px;
-          margin-bottom: 2vh;
-        }
-      
+        border-radius: 10px;
+        margin-bottom: 10vh;
+        
+      }
     }
   }
 }

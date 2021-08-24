@@ -5,11 +5,17 @@ import HtmlAtharva from '../../../resources/HTMLAtharva.png';
 import JavaAdika from '../../../resources/JAVAAdika.png';
 import PythonVaishnavi from '../../../resources/PYTHONVaishnavi.png';
 
-export const CoursesArray = ['Web Development', 'Javascript Development', 'Java Development', 'Python Development'];
+export const CoursesArray = [
+  'Featured Courses',
+  'Web Development',
+  'Javascript Series',
+  'Java Programming',
+  'Python Development',
+];
 
 // Newver Modify Courses Array! can cause problems!!!
 export const OurCoursesCardInfo = [
-  /* HTML */ [
+  /* Featured*/ [
     /* Each array containing 4 Cards of Tutors */
     {
       ImageLogo: HtmlAtharva,
@@ -20,27 +26,38 @@ export const OurCoursesCardInfo = [
       CourseDuration: '1 Hour',
     },
     {
-      ImageLogo: HtmlAtharva,
-      CourseName: 'HTML',
-      CourseInfo: 'The complete HTML Course to kick-start Web Development',
+      ImageLogo: JSBhavesh,
+      CourseName: 'Javascript',
+      CourseInfo: 'Become Zero-To-Hero in Javascript and start building Web-Applications',
       AuthorPic: Bhavesh,
       AUthorName: 'Bhavesh Mhadse',
-      CourseDuration: '1 Hour',
+      CourseDuration: '2 Hours',
     },
     {
-      ImageLogo: HtmlAtharva,
-      CourseName: 'HTML',
-      CourseInfo: 'The complete HTML Course to kick-start Web Development',
+      ImageLogo: JavaAdika,
+      CourseName: 'Java',
+      CourseInfo: 'Java Programming explained thorougly to enter beautiful world of Java',
       AuthorPic: Bhavesh,
       AUthorName: 'Adika Karnataki',
-      CourseDuration: '1 Hour',
+      CourseDuration: '2 Hours',
     },
+    {
+      ImageLogo: PythonVaishnavi,
+      CourseName: 'Python',
+      CourseInfo: 'Complete Python Course loaded with various interesting Concepts',
+      AuthorPic: Bhavesh,
+      AUthorName: 'Vaishnavi Korgaonkar',
+      CourseDuration: '2 Hours',
+    },
+  ],
+  /* HTML */ [
+    /* Each array containing 4 Cards of Tutors */
     {
       ImageLogo: HtmlAtharva,
       CourseName: 'HTML',
       CourseInfo: 'The complete HTML Course to kick-start Web Development',
       AuthorPic: Bhavesh,
-      AUthorName: 'Vaishnavi Korgaonkar',
+      AUthorName: 'Atharva Bhagat',
       CourseDuration: '1 Hour',
     },
   ],
@@ -54,30 +71,6 @@ export const OurCoursesCardInfo = [
       AUthorName: 'Bhavesh Mhadse',
       CourseDuration: '2 Hours',
     },
-    {
-      ImageLogo: JSBhavesh,
-      CourseName: 'Javascript',
-      CourseInfo: 'Become Zero-To-Hero in Javascript and start building Web-Applications',
-      AuthorPic: Bhavesh,
-      AUthorName: 'Atharva Bhagat',
-      CourseDuration: '2 Hours',
-    },
-    {
-      ImageLogo: JSBhavesh,
-      CourseName: 'Javascript',
-      CourseInfo: 'Become Zero-To-Hero in Javascript and start building Web-Applications',
-      AuthorPic: Bhavesh,
-      AUthorName: 'Adika Karnataki',
-      CourseDuration: '2 Hours',
-    },
-    {
-      ImageLogo: JSBhavesh,
-      CourseName: 'Javascript',
-      CourseInfo: 'Become Zero-To-Hero in Javascript and start building Web-Applications',
-      AuthorPic: Bhavesh,
-      AUthorName: 'Vaishnavi Korgaonkar',
-      CourseDuration: '2 Hours',
-    },
   ],
   /* Java */ [
     /* Each array containing 4 Cards of Tutors */
@@ -89,30 +82,6 @@ export const OurCoursesCardInfo = [
       AUthorName: 'Adika Karnataki',
       CourseDuration: '2 Hours',
     },
-    {
-      ImageLogo: JavaAdika,
-      CourseName: 'Java',
-      CourseInfo: 'Java Programming explained thorougly to enter beautiful world of Java',
-      AuthorPic: Bhavesh,
-      AUthorName: 'Vaishnavi Korgaonkar',
-      CourseDuration: '2 Hours',
-    },
-    {
-      ImageLogo: JavaAdika,
-      CourseName: 'Java',
-      CourseInfo: 'Java Programming explained thorougly to enter beautiful world of Java',
-      AuthorPic: Bhavesh,
-      AUthorName: 'Bhavesh Mhadse',
-      CourseDuration: '2 Hours',
-    },
-    {
-      ImageLogo: JavaAdika,
-      CourseName: 'Java',
-      CourseInfo: 'Java Programming explained thorougly to enter beautiful world of Java',
-      AuthorPic: Bhavesh,
-      AUthorName: 'Atharva Bhagat',
-      CourseDuration: '2 Hours',
-    },
   ],
   /* Python */ [
     /* Each array containing 4 Cards of Tutors */
@@ -122,30 +91,6 @@ export const OurCoursesCardInfo = [
       CourseInfo: 'Complete Python Course loaded with various interesting Concepts',
       AuthorPic: Bhavesh,
       AUthorName: 'Vaishnavi Korgaonkar',
-      CourseDuration: '2 Hours',
-    },
-    {
-      ImageLogo: PythonVaishnavi,
-      CourseName: 'Python',
-      CourseInfo: 'Complete Python Course loaded with various interesting Concepts',
-      AuthorPic: Bhavesh,
-      AUthorName: 'Bhavesh Mhadse',
-      CourseDuration: '2 Hours',
-    },
-    {
-      ImageLogo: PythonVaishnavi,
-      CourseName: 'Python',
-      CourseInfo: 'Complete Python Course loaded with various interesting Concepts',
-      AuthorPic: Bhavesh,
-      AUthorName: 'Atharva Bhagat',
-      CourseDuration: '2 Hours',
-    },
-    {
-      ImageLogo: PythonVaishnavi,
-      CourseName: 'Python',
-      CourseInfo: 'Complete Python Course loaded with various interesting Concepts',
-      AuthorPic: Bhavesh,
-      AUthorName: 'Adika Karnataki',
       CourseDuration: '2 Hours',
     },
   ],

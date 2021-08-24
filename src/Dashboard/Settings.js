@@ -1,29 +1,54 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 
 import './settings.css';
 
-const Settings = () => {
-  let [user, setUser] = useState({
-    username: 'Default',
-    password: 'Default',
-    email: 'Default',
-    firstName: 'Default1',
-    lastName: 'Default1',
-    mobileNumber: 9136298868,
-    yearOfStudy: 2021,
-    nameOfUniversity: 'DMCE',
-  });
+import { UserContext } from '../MainContext'; // <- hi line prytek component madhe lagnr jithe user aahe tithe
 
+const Settings = () => {
+  let { signedInUser, setsignedInUser } = useContext(UserContext); // <- ani hi pn
+
+  let [showPasswordModal, setShowPasswordModal] = useState(false);
   const fetchUser = async () => {
-    // return JSON.parse(localStorage.getItem('User'));
-    let data = await axios.get('https://codigo-server.herokuapp.com/user?username=Bhavesh_123');
-    console.log(data);
-    return data.data.user[0];
+    let data = await axios.get('https://codigo-server.herokuapp.com/user?username=Bhavesh_123'); // first
+    console.log('The real data with email is : ', data.data.user[0]);
+
+    let userFromDatabase = data.data.user[0];
+
+    setUserFromLocalStorage({ ...signedInUser, ...userFromDatabase }); // he ajun kraychay sort out <_ db mai hm
+    console.log(typeof userFromDatabase);
+    console.log('from local : ', setsignedInUser(getUserFromLocalStorage()));
+    console.log('User is : ', signedInUser);
   };
 
+  const setUserFromLocalStorage = user => localStorage.setItem('User', JSON.stringify(user));
+  const getUserFromLocalStorage = () => JSON.parse(localStorage.getItem('User'));
+
+  const setNewPassword = async ({ old, newpass, confirmNewpass }) => {
+    alert(signedInUser.password, ' ', old, ' ', newpass, ' ', confirmNewpass);
+    if (old !== signedInUser.password) {
+      alert('Wrong password!');
+      return;
+    }
+    if (newpass !== confirmNewpass) {
+      alert('Password doesnt match!');
+      return;
+    }
+    await setsignedInUser(prevUser => ({ ...prevUser, password: newpass }));
+    let data = await axios.patch('https://codigo-server.herokuapp.com/user', {
+      email: signedInUser.email,
+      updates: { password: newpass },
+    });
+    console.log('Data after updation ', data);
+    //login bghto
+
+    setUserFromLocalStorage({ ...signedInUser, password: newpass });
+    alert('Password Updated');
+  };
   useEffect(() => {
-    setUser(fetchUser());
+    ///aaa ek sev ----- web master select zaloooo ahaaaaaaaa :)))))) yaya ka
+    fetchUser();
+    // kai avakshakta nai
   }, []);
   return (
     <div style={{ display: 'flex' }}>
@@ -32,21 +57,24 @@ const Settings = () => {
           <h1>Account Settings</h1>
           <h3>Personal Information</h3>
           <p>First Name</p>
-          <input value={user.firstName} className='settings-input' name='firstname' />
+          <input value={signedInUser.firstName} className='settings-input' name='firstname' />
           <p> Last Name</p>
-          <input value={user.lastName} className='settings-input' name='lastname' />
+          <input value={signedInUser.lastName} className='settings-input' name='lastname' />
           <p> Email address</p>
-          <input value={user.email} className='settings-input' name='email' />
+          <input value={signedInUser.email} className='settings-input' name='email' />
           <p>Username</p>
-          <input value={user.username} className='settings-input' name='username' />
+          <input value={signedInUser.username} className='settings-input' name='username' />
           <p>Mobile No</p>
-          <input value={user.mobileNumber} className='settings-input' name='mobilenumber' />
+          {/* <input value={signedInUser.mobileNumber} className='settings-input' name='mobilenumber' /> */}
           <hr className='horizontal-line'></hr>
         </div>
 
         <div className='account-settings'>
           <h1>Security Settings</h1>
-          <button className='settings-button'>Change Password</button>
+          <button className='settings-button' onClick={() => setShowPasswordModal(true)}>
+            Change Password
+          </button>
+          {showPasswordModal && <PasswordChangeModal changePassword={e => setNewPassword(e)} />}
         </div>
       </div>
       <div className='settings-column' style={{ marginLeft: '2vw', width: '1vw' }}>
@@ -71,6 +99,38 @@ const Settings = () => {
           <input className='settings-input' name='lastname' />
         </div>
       </div>
+    </div>
+  );
+};
+
+const PasswordChangeModal = ({ changePassword }) => {
+  let [changePass, setChangePass] = useState({
+    old: '',
+    newpass: '',
+    confirmNewpass: '',
+  });
+  const handlePasswordChange = e => setChangePass(prevUser => ({ ...prevUser, [e.target.name]: e.target.value }));
+
+  return (
+    <div className='passwordchange'>
+      <p>Your Password</p>
+      <input name='old' value={changePass.old} onChange={handlePasswordChange} className='settings-input' />
+      <p>New Password</p>
+      <input name='newpass' value={changePass.newpass} onChange={handlePasswordChange} className='settings-input' />
+      <p>Confirm new Password</p>
+      <input name='confirmNewpass' value={changePass.confirmNewpass} className='settings-input' onChange={handlePasswordChange} />
+      <button
+        style={{
+          width: '100%',
+          border: '2px solid transparent',
+          background: 'mediumseagreen',
+          margin: '2vh 0',
+          fontSize: '1.3rem',
+        }}
+        onClick={() => changePassword(changePass)}
+      >
+        Save
+      </button>
     </div>
   );
 };

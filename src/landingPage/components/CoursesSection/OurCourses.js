@@ -29,7 +29,11 @@ const OurCourses = () => {
   let [CardInfoArray, setCardInfoArray] = useState(OurCoursesCardInfo);
 
   let [courseIndex, setCourseIndex] = useState(0);
-  let [clickedCourseButtonStyles, setclickedCourseButtonStyles] = useState({ color: 'white', background: 'rgb(4, 163, 163)', border: '2px solid transparent' });
+  let [clickedCourseButtonStyles, setclickedCourseButtonStyles] = useState({
+    color: 'white',
+    background: 'rgb(4, 163, 163)',
+    border: '2px solid transparent',
+  });
 
   const shuffleCards = () => {
     let newArr = [];
@@ -55,7 +59,10 @@ const OurCourses = () => {
       <ButtonContainerDiv>
         <CourseSelectorButtonContainer>
           {coursesArray.map((eachCourse, buttonIndex) => (
-            <CourseSelectorButton style={courseIndex === buttonIndex ? clickedCourseButtonStyles : {}} onClick={() => setCourseIndex(buttonIndex)}>
+            <CourseSelectorButton
+              style={courseIndex === buttonIndex ? clickedCourseButtonStyles : {}}
+              onClick={() => setCourseIndex(buttonIndex)}
+            >
               {eachCourse}
             </CourseSelectorButton>
           ))}

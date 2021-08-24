@@ -97,7 +97,8 @@
   width: 20vw;
   height: 8vh;
   font-size: 3vh;
-  background-color: #27e6ff;
+  background: -webkit-gradient(linear, left top, right top, from(#17c8c8), to(aquamarine));
+  background: linear-gradient(to right, #17c8c8, aquamarine);
   border-radius: 10px;
   border: none;
   -webkit-transition-duration: 0.5s;
@@ -108,7 +109,8 @@
 .Section1 #Content #Text button:hover {
   border: 5px solid #2ad3d3;
   color: aqua;
-  background-color: rgba(255, 255, 255, 0);
+  background: -webkit-gradient(linear, left top, right top, from(transparent), to(transparent));
+  background: linear-gradient(to right, transparent, transparent);
   cursor: pointer;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
@@ -118,7 +120,6 @@
   margin-top: 50vh;
   margin-right: 5vw;
   height: 30vh;
-  width: 30vw;
   border-radius: 25px;
 }
 
@@ -174,12 +175,11 @@
     font-size: 2.5vh;
   }
   .Section1 #Content #introVideo {
-    margin-top: 5vh;
+    margin-top: 3vh;
     margin-right: 0vw;
     height: 20vh;
-    width: 90vw;
-    border-radius: 25px;
-    margin-bottom: 2vh;
+    border-radius: 10px;
+    margin-bottom: 10vh;
   }
 }
 /*# sourceMappingURL=section1.css.map */

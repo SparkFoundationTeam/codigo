@@ -7,7 +7,7 @@
   height: 8vh;
   display: flex;
   align-items: center;
-  
+  position: unset;
 }
 
 .dashboard .dashboard-navbar .dashboard-icon .dashboard-pic {
@@ -28,7 +28,6 @@
   list-style: none;
   width: auto;
   height: auto;
-  
 }
 .dashboard .dashboard-navbar .dashboard-links ul li {
   list-style: none;
@@ -41,7 +40,8 @@
 }
 .dashboard .dashboard-sidebar {
   width: 19vw;
-  background: linear-gradient(to bottom, aqua, rgb(33, 196, 196));
+  background: linear-gradient(to bottom, rgb(0, 255, 255),rgb(33, 196, 196));
+  backdrop-filter: blur(25rem);
   height: 100vh;
   z-index: 4;
   margin-top: -8vh;
@@ -83,15 +83,16 @@
 }
 .dashboard .dashboard-sidebar .personal-info .user-info h2 {
   font-size: 1rem;
-  color: grey;
+  color: black;
   margin: 0;
   font-weight: 100;
 }
 .dashboard .dashboard-sidebar hr {
-  width: 80%;
+  width: 90%;
+  margin-left: 5%;
   /* height: 2px; */
-  background-color: black;
-  border: 2px solid black;
+  background-color: teal;
+  border: 2px solid teal;
   border-radius: 10rem;
 }
 .dashboard .dashboard-sidebar .choices {
@@ -114,8 +115,8 @@
 }
 .dashboard .dashboard-sidebar .choices li:hover {
   border-left-width: 5px;
-  border-left-color: black;
-  background-color: rgb(199, 248, 248);
+  border-left-color: teal;
+  background-color: rgba(199, 248, 248, 0.507);
 }
 .dashboard .other-section {
   width: 90%;

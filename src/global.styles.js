@@ -69,7 +69,7 @@ export const CourseSelectorButton = styled.button`
   color: black;
   font-weight: 900;
   background: transparent;
-  border-radius: 0.5rem;
+  border-radius: 1vw;
   transition: all ease-in-out 200ms;
   padding: 0.6rem;
   &:hover {
@@ -213,7 +213,7 @@ export const AllCourses = styled.button`
   color: black;
   font-weight: 900;
   background: transparent;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   transition: all ease-in-out 200ms;
   padding: 0.6rem;
   &:hover {

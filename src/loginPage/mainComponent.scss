@@ -7,8 +7,6 @@
   }
 }
 
-
-
 @mixin flexAlign {
   display: flex;
   align-items: center;
@@ -98,11 +96,7 @@ form {
     border: none;
     color: white;
     font-weight: bold;
-    background: linear-gradient(
-      to left top,
-      rgb(84, 204, 204),
-      rgb(0, 226, 226)
-    );
+    background: linear-gradient(to left top, rgb(84, 204, 204), rgb(0, 226, 226));
   }
 }
 
@@ -163,10 +157,10 @@ form {
   }
 }
 
-h3{
-    button{
-        cursor: pointer;
-    }
+h3 {
+  button {
+    cursor: pointer;
+  }
 }
 
 #signUp {
@@ -180,7 +174,6 @@ h3{
 }
 
 @media screen and (max-width: 1000px) {
-    
   #bgdiv {
     #bg {
       display: none;
@@ -195,42 +188,40 @@ h3{
     }
   }
   form {
-    h1{
-        font-size: 4vh;
+    h1 {
+      font-size: 4vh;
     }
     width: 100vw;
 
     .formElem {
-      input,select {
+      input,
+      select {
         width: 80vw;
       }
     }
-    #submit{
-        width: 80vw;;
-    }
-    h4{
-        width: 80%;
-    }
-  }
-  #sign{
-      width: 100vw;
-      font-size: 2vh;
-      @include flexAlign();
-  }
-  #sec{
+    #submit {
       width: 80vw;
-      margin-left: 10vw;
-      margin-top:6vh;
-
+    }
+    h4 {
+      width: 80%;
+    }
   }
-  #secure{
-      width: 100vw;
-      font-size: 1.5vh;
-      position: absolute;
-      bottom:3vh;
-
-      flex-direction: column;
+  #sign {
+    width: 100vw;
+    font-size: 2vh;
+    @include flexAlign();
   }
+  #sec {
+    width: 80vw;
+    margin-left: 10vw;
+    margin-top: 6vh;
+  }
+  #secure {
+    width: 100vw;
+    font-size: 1.5vh;
+    position: absolute;
+    bottom: 3vh;
 
-  
+    flex-direction: column;
+  }
 }

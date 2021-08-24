@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 
 import './mainComponent.css';
+import { useHistory } from 'react-router-dom';
 import NavBar from '../navBar.jsx';
 import BackendUrl from '../BackendUrl.js';
 import axios from 'axios';
@@ -13,12 +14,12 @@ import email from '../resources/email.gif';
 import location from '../resources/location.gif';
 import type from '../resources/type.gif';
 
-import { Route, BrowserRouter, Switch } from 'react-router-dom/cjs/react-router-dom.min';
+import { Route, BrowserRouter, Switch, Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 import { defaultUser } from '../DefaultUser.js';
 import { UserContext } from '../MainContext'; // <- hi line prytek component madhe lagnr jithe user aahe tithe
 
-const LoginPage = () => {
+const LoginPage = ({ setlG }) => {
   let { signedInUser, setsignedInUser } = useContext(UserContext); // <- ani hi pn
 
   const [login, setLogin] = useState(true);
@@ -32,6 +33,7 @@ const LoginPage = () => {
   };
 
   const hasFilledAllFields = () => {
+    // kaam tr kartai re tham link ne try kru :)
     if (!User.name) {
       alert('Please Fill Name');
       return false;
@@ -54,17 +56,28 @@ const LoginPage = () => {
     return true;
   };
 
-  const handleLogin = () => {
-    let loggedInUser = axios.get(BackendUrl + `User?username=${User.username}&password=${User.password}`).then(user => user.data);
+  const handleLogin = async e => {
+    e.preventDefault(); // hya mc mule <-hmmm
+
+    let loggedInUser = await axios.get(BackendUrl + `User?username=${User.username}&password=${User.password}`);
+
     console.log('User we got through mongo Db is : ', loggedInUser);
 
-    if (loggedInUse.message === 'No User Found') {
-      alert('Changla vla User taak na lavdya');
+    loggedInUser = loggedInUser.data.user[0];
+
+    if (loggedInUser.message === 'No User Found') {
+      alert('No such User Found');
+      setUser(defaultUser);
       return;
     }
+    // formatting  zhala thamb
 
-    setsignedInUser(loggedInUser.user[0]);
+    setsignedInUser(loggedInUser); // thamb testing naitar are asa kahi redirect asel na on authorized redirect dashboard bghayala hava
+    setUserFromLocalStorage({ ...User, ...loggedInUser });
+    // setlG(true);
   };
+  const setUserFromLocalStorage = user => localStorage.setItem('User', JSON.stringify(user));
+  
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -75,9 +88,6 @@ const LoginPage = () => {
 
     console.log('New User has Sign-Up with following Details : ', User);
 
-    // npm install --save asios
-    // Yet To be Done
-    //axios.post(BackendUrl + '/User', User); // <- he hotay ka bgh naitr hi line comment marun khalchi line uncomment kr
     axios.post(BackendUrl + 'User', User);
   };
 
@@ -86,26 +96,33 @@ const LoginPage = () => {
     setLogin(prev => !prev);
   };
 
+  const showUser = e => {
+    e.preventDefault(); // <-<- hyacha aiichi gand lolll
+    console.log(signedInUser);
+  };
+
   return (
     <div id='container'>
       <NavBar id='nav' />
       <div id='bgdiv'>
         <img id='bg' src={bg}></img>
       </div>
-
       <form className={login ? 'active' : 'hidden'}>
         <h1>Login to códiGo</h1>
         <hr />
         <div className='formElem'>
           <img src={user}></img>
-          <input type='text' placeholder='Enter Username' autoFocus></input>
+          <input name='username' value={User.username} type='text' onChange={handleChange} placeholder='Enter Username' autoFocus></input>
         </div>
         <div className='formElem'>
           <img src={password}></img>
-          <input type='password' placeholder='Enter Password'></input>
+          <input name='password' value={User.password} type='password' onChange={handleChange} placeholder='Enter Password'></input>
         </div>
 
-        <input type='submit' onClick={handleLogin} value='LOGIN' id='submit'></input>
+        <button onClick={handleLogin} id='submit'>
+          <Link to='/dashboard'>LOGIN</Link>
+        </button>
+
         <h4>Forgot Details? Get Help logging in</h4>
       </form>
 
@@ -188,7 +205,6 @@ const LoginPage = () => {
         </div>
         <input onClick={handleSubmit} type='submit' value='SIGN UP' id='submit'></input>
       </form>
-
       <div className={login ? 'active' : 'hidden'}>
         <h3 id='sign'>
           {' '}
@@ -202,7 +218,6 @@ const LoginPage = () => {
         </h3>
       </div>
       <hr id='sec'></hr>
-
       <div id='secure'>
         <div>
           <img src={secured}></img>

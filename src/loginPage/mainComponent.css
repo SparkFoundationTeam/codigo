@@ -250,7 +250,8 @@ h3 button {
   form h1 {
     font-size: 4vh;
   }
-  form .formElem input, form .formElem select {
+  form .formElem input,
+  form .formElem select {
     width: 80vw;
   }
   form #submit {

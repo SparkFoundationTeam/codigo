@@ -72,9 +72,9 @@
 .AboutUs-Des {
   text-align: center;
   color: rgb(173, 173, 173);
-
 }
 .OwnersCards {
+  position: relative;
   border: 1px solid transparent;
   border-top-color: rgb(4, 163, 163);
   border-top-width: 5px;
@@ -90,7 +90,6 @@
   background: white;
   filter: drop-shadow(10px 10px 10px grey);
   transition: all ease-in-out 300ms;
-  position: relative;
 }
 .OwnersCards:hover {
   transform: scale(1.05);
@@ -98,12 +97,9 @@
   filter: drop-shadow(40px 5px 10px grey);
 }
 .OwnerImage {
-  position: absolute;
-  top: -5vh;
-
   left: 8vw;
   height: 15vh;
-
+  margin-top: -15vh;
   border-radius: 30rem;
   filter: drop-shadow(10px 10px 10px grey);
 }
@@ -138,8 +134,13 @@
   margin-right: 1.5vh;
   width: 1.7vw;
   height: 3.5vh;
+  transition-duration: 0.5s;
 }
 
+.OwnerSocialMedia:hover {
+  transform: scale(1.2);
+  transition-duration: 0.5s;
+}
 
 @media (max-width: 1000px) {
   .OurCoursesSection {
@@ -166,8 +167,9 @@
     display: none;
   }
 
-  .OwnerBlob1 , .OwnerBlob2{
-      display: none;
+  .OwnerBlob1,
+  .OwnerBlob2 {
+    display: none;
   }
 
   .AboutUs-Des {
@@ -182,43 +184,41 @@
 
   .OwnerImage {
     height: 6vh;
-    top: -1vh;
-    left: 6vw;
-    margin-bottom: 1vh;
+
+    margin-bottom: 0vh;
   }
   .Ownerole {
     margin-left: 1vw;
     font-size: 1vh;
   }
   .OwnerName {
-    text-align: center;
     font-size: 2vh;
-    margin-top: -2vh;
+
     margin-left: 1vw;
-    text-align: center;
   }
   .OwnerDetails {
     font-size: 1.3vh;
     margin-left: 1vw;
-    margin-top: -2vh;
   }
   .OwnerSocialMediaContainer {
     margin-right: 1vh;
-    
+
     width: 40vw;
     bottom: 0vh;
     height: 5vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    
-    right:0vw;
-   
+
+    right: 0vw;
   }
   .OwnerSocialMedia {
     margin-bottom: 0vh;
     height: 1.7vh;
     width: 3.5vw;
+  }
+
+  .OwnerInfo {
+    padding-top: 0rem;
   }
 }

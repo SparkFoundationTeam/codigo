@@ -43,9 +43,7 @@ const AboutUs = () => {
                                 <a href={OwnerObject.resumeUrl}>
                                     <img className='OwnerSocialMedia' src={Resume} title='Resume / CV'></img>
                                 </a>
-                                <a href={OwnerObject.portfolioUrl}>
-                                    <img className='OwnerSocialMedia' src={Portfolio} title='Portfolio Website'></img>
-                                </a>
+                            
                                 <a href={OwnerObject.githubUrl} title='Github Profile'>
                                     <img className='OwnerSocialMedia' src={Github}></img>
                                 </a>

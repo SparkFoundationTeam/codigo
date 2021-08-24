@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 
 import './dashboard.css';
 
-//ikde import marr atharvca resourse nusar
 import codiGoIcon from '../resources/codiGo.png';
 import Bhavesh from '../resources/bhavesh.jpg';
 
@@ -13,7 +12,6 @@ import Settings from './Settings';
 import { UserContext } from '../MainContext'; // <- hi line prytek component madhe lagnr jithe user aahe tithe
 
 const DashBoard = () => {
-  // /Dashboard vr ha component disnr :)
   let { signedInUser, setsignedInUser } = useContext(UserContext); // <- ani hi pn
 
   let [componentArray, setComponentArray] = useState([<MyCourses />, <MyDrive />, <Settings />]);
@@ -22,6 +20,12 @@ const DashBoard = () => {
     borderLeftWidth: '5px',
     borderLeftColor: 'black',
     backgroundColor: 'rgb(199, 248, 248)',
+  });
+  const getUserFromLocalStorage = () => JSON.parse(localStorage.getItem('User'));
+
+  useEffect(() => {
+    setsignedInUser(getUserFromLocalStorage());
+    //thamb
   });
 
   return (
@@ -67,7 +71,7 @@ const DashBoard = () => {
         <div className='other-section'>
           <div className='component'>
             {/* User.name Enrolled Courses */}
-            <h1>{signedInUser.username} Enrolled courses</h1>
+
             {componentArray[index]}
           </div>
         </div>
