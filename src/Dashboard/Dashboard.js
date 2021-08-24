@@ -4,7 +4,7 @@ import './dashboard.css';
 
 import codiGoIcon from '../resources/codiGo.png';
 import Bhavesh from '../resources/bhavesh.jpg';
-// ctrl c + ctrl v <--- ashe pipeline madhe changes maryche je je keketlet te
+// ctrl c + ctrl v
 
 import MyCourses from './MyCourses';
 import MyDrive from './MyDrive';

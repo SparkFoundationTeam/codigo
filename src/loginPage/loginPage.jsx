@@ -13,6 +13,8 @@ import secured from '../resources/secured.gif';
 import email from '../resources/email.gif';
 import location from '../resources/location.gif';
 import type from '../resources/type.gif';
+import mobile from '../resources/mobileIcon.gif';
+import book from '../resources/book.gif';
 
 import { Route, BrowserRouter, Switch, Link } from 'react-router-dom/cjs/react-router-dom.min';
 
@@ -25,7 +27,7 @@ const LoginPage = ({ setlG }) => {
   const [login, setLogin] = useState(true);
 
   let pattern = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-
+  let MobilePattern = new RegExp('[0-9]{10}');
   let [User, setUser] = useState(defaultUser);
 
   const handleChange = e => {
@@ -33,12 +35,17 @@ const LoginPage = ({ setlG }) => {
   };
 
   const hasFilledAllFields = () => {
-    // kaam tr kartai re tham link ne try kru :)
     if (!User.name) {
       alert('Please Fill Name');
       return false;
+    } else if (!User.university) {
+      alert('Please Select University');
+      return false;
     } else if (!User.username) {
       alert('Please Enter Username');
+      return false;
+    } else if (!User.mobile || MobilePattern.test(User.mobile) === false) {
+      alert('Please Enter Valid Mobile No.');
       return false;
     } else if (!User.email || pattern.test(User.email) === false) {
       alert('Please enter valid email-address');
@@ -57,7 +64,7 @@ const LoginPage = ({ setlG }) => {
   };
 
   const handleLogin = async e => {
-    e.preventDefault(); // hya mc mule <-hmmm
+    e.preventDefault();
 
     let loggedInUser = await axios.get(BackendUrl + `User?username=${User.username}&password=${User.password}`);
 
@@ -70,14 +77,11 @@ const LoginPage = ({ setlG }) => {
       setUser(defaultUser);
       return;
     }
-    // formatting  zhala thamb
 
     setsignedInUser(loggedInUser); // thamb testing naitar are asa kahi redirect asel na on authorized redirect dashboard bghayala hava
     setUserFromLocalStorage({ ...User, ...loggedInUser });
-    // setlG(true);
   };
   const setUserFromLocalStorage = user => localStorage.setItem('User', JSON.stringify(user));
-  
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -92,12 +96,11 @@ const LoginPage = ({ setlG }) => {
   };
 
   const setter = () => {
-    console.log('yay'); // Baray :)
     setLogin(prev => !prev);
   };
 
   const showUser = e => {
-    e.preventDefault(); // <-<- hyacha aiichi gand lolll
+    e.preventDefault();
     console.log(signedInUser);
   };
 
@@ -108,7 +111,7 @@ const LoginPage = ({ setlG }) => {
         <img id='bg' src={bg}></img>
       </div>
       <form className={login ? 'active' : 'hidden'}>
-        <h1>Login to códiGo</h1>
+        <h1>Welcome Back</h1>
         <hr />
         <div className='formElem'>
           <img src={user}></img>
@@ -128,7 +131,6 @@ const LoginPage = ({ setlG }) => {
 
       <form id='signUp' className={login ? 'hidden' : 'active'}>
         <h1>Signup to códiGo</h1>
-        <hr />
         <div className='formElem'>
           <img src={email}></img>
           <input name='email' value={User.email} onChange={handleChange} type='email' placeholder='Enter your email-address' autoFocus></input>
@@ -147,12 +149,21 @@ const LoginPage = ({ setlG }) => {
         <div className='formElem'>
           <input name='confirmPassword' value={User.confirmPassword} onChange={handleChange} type='password' placeholder='Confirm Password'></input>
         </div>
+        <div className='formElem'>
+          <img src={mobile}></img>
+          <input name='mobile' value={User.mobile} onChange={handleChange} type='tel' placeholder='Enter Mobile Number'></input>
+        </div>
+
+        <div className='formElem'>
+          <img src={book}></img>
+          <input name='university' value={User.university} type='text' onChange={handleChange} placeholder='University Name'></input>
+        </div>
 
         <div className='formElem'>
           <img src={location}></img>
           <select name='state' value={User.state} onChange={handleChange}>
             <option value='Default'>Select State</option>
-
+            <option value='Foreigner'>Out of India</option>
             <option value='Andhra Pradesh'>Andhra Pradesh</option>
             <option value='Andaman and Nicobar Islands'>Andaman and Nicobar Islands</option>
             <option value='Arunachal Pradesh'>Arunachal Pradesh</option>
@@ -195,12 +206,13 @@ const LoginPage = ({ setlG }) => {
         <div className='formElem'>
           <img src={type}></img>
           <select name='participantType' value={User.participantType} onChange={handleChange}>
-            <option value='Default'>Participant Type</option>
+            <option value='Default'>Year of Study</option>
 
             <option value='Professional'>Professional / Faculty</option>
-            <option value='Engineering Student'>Engineering Student</option>
-            <option value='Self-taught Programmer'>Self-taught Programmer</option>
-            <option value='College Student'>Junior College Student</option>
+            <option value='Under Graduate Student'>Under Graduate Student</option>
+            <option value='Post Graduate Student'>Post Graduate Student</option>
+            <option value='11-12th'>11-12th Grade</option>
+            <option value='Below 12th'>Below 10th Grade</option>
           </select>
         </div>
         <input onClick={handleSubmit} type='submit' value='SIGN UP' id='submit'></input>

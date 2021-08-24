@@ -56,16 +56,22 @@ const Settings = () => {
         <div className='account-settings'>
           <h1>Account Settings</h1>
           <h3>Personal Information</h3>
-          <p>First Name</p>
-          <input value={signedInUser.firstName} className='settings-input' name='firstname' />
-          <p> Last Name</p>
-          <input value={signedInUser.lastName} className='settings-input' name='lastname' />
-          <p> Email address</p>
-          <input value={signedInUser.email} className='settings-input' name='email' />
-          <p>Username</p>
-          <input value={signedInUser.username} className='settings-input' name='username' />
-          <p>Mobile No</p>
-          {/* <input value={signedInUser.mobileNumber} className='settings-input' name='mobilenumber' /> */}
+          <div className='BoxInput'>
+            <p>Full Name</p>
+            <input style={{ cursor: 'not-allowed' }} disabled value={signedInUser.firstName} className='settings-input' name='firstname' />
+          </div>{' '}
+          <div className='BoxInput'>
+            <p> Email address</p>
+            <input style={{ cursor: 'not-allowed' }} disabled value={signedInUser.email} className='settings-input' name='email' />
+          </div>
+          <div className='BoxInput'>
+            <p>Username</p>
+            <input value={signedInUser.username} className='settings-input' name='username' />
+          </div>{' '}
+          <div className='BoxInput'>
+            <p>Mobile No</p>
+            <input value={signedInUser.mobileNumber} className='settings-input' name='mobilenumber' />
+          </div>
           <hr className='horizontal-line'></hr>
         </div>
 
@@ -84,7 +90,16 @@ const Settings = () => {
         <div className='account-settings'>
           <h1>Educational settings</h1>
           <p>Year Of Study</p>
-          <input className='settings-input' name='firstname' />
+          <select className='settings-input' name='firstname'>
+            <option value='Professional'>user.Year</option>
+
+            <option value='Professional'>Professional / Faculty</option>
+            <option value='Under Graduate Student'>Under Graduate Student</option>
+            <option value='Post Graduate Student'>Post Graduate Student</option>
+            <option value='11-12th'>11-12th Grade</option>
+            <option value='Below 12th'>Below 10th Grade</option>
+          </select>
+
           <p> Name of University</p>
           <input className='settings-input' name='lastname' />
           <hr className='horizontal-line'></hr>
@@ -92,12 +107,13 @@ const Settings = () => {
         <div className='account-settings'>
           <h1>About You</h1>
           <p>Interests</p>
-          <input className='settings-input' name='firstname' />
-          <p> Strigths</p>
-          <input className='settings-input' name='lastname' />
+          <textarea className='settings-input AboutYouData' name='firstname' />
+          <p> Strengths</p>
+          <textarea className='settings-input AboutYouData' name='lastname' />
           <p> Weakness</p>
-          <input className='settings-input' name='lastname' />
+          <textarea className='settings-input AboutYouData' name='lastname' />
         </div>
+        <button className='SaveChangesButton'>Save Changes</button>
       </div>
     </div>
   );
@@ -109,10 +125,13 @@ const PasswordChangeModal = ({ changePassword }) => {
     newpass: '',
     confirmNewpass: '',
   });
+
+  document.querySelector('.settings-button').style.visibility = 'hidden';
+  document.querySelector('.settings-button').style.marginBottom = '-2vh';
   const handlePasswordChange = e => setChangePass(prevUser => ({ ...prevUser, [e.target.name]: e.target.value }));
 
   return (
-    <div className='passwordchange'>
+    <div className='passwordchange' style={{ marginTop: '-5vh' }}>
       <p>Your Password</p>
       <input name='old' value={changePass.old} onChange={handlePasswordChange} className='settings-input' />
       <p>New Password</p>
@@ -123,13 +142,14 @@ const PasswordChangeModal = ({ changePassword }) => {
         style={{
           width: '100%',
           border: '2px solid transparent',
-          background: 'mediumseagreen',
+          background: 'rgb(58, 206, 0)',
           margin: '2vh 0',
-          fontSize: '1.3rem',
+          fontSize: '1.2rem',
+          color: 'white',
         }}
         onClick={() => changePassword(changePass)}
       >
-        Save
+        Save New Password
       </button>
     </div>
   );

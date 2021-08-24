@@ -6,5 +6,6 @@ export let defaultUser = {
     confirmPassword: '',
     state: '',
     participantType: '',
+    mobile:'',
+    university:''
 };
-

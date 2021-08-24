@@ -24,8 +24,8 @@ form {
 }
 
 form h1 {
-  font-size: 5vh;
-  margin-bottom: 3vh;
+  font-size: 4vh;
+  margin-bottom: 0vh;
   color: #06a1a7;
 }
 
@@ -36,7 +36,7 @@ form h3 {
 form hr {
   width: 30%;
   height: 3px;
-  margin-bottom: 3vh;
+  margin-bottom: 0vh;
   background-color: rgba(0, 255, 255, 0.486);
   border: none;
 }
