@@ -19,20 +19,20 @@ const CourseEnrollTemplate = props => {
     <div>
       <div className='dashboard-navbar'>
         <div className='dashboard-icon'>
-          <img className='dashboard-pic' src={codiGoIcon}></img>
+        <Link to ='/'><img className='dashboard-pic' src={codiGoIcon}></img></Link>
         </div>
         <h2 id='NavHeader'>
           {props.CourseName} {'>'} Information
         </h2>
         <div className='dashboard-links'>
           <ul>
-            <li>All Courses</li>
+          <Link to ='/all-courses'><li>All Courses</li></Link>
             <li>Community</li>
             <li>Kōdo</li>
             <li>Pixzta</li>
-            <li id='DashBoard'>
+            <Link to ='/dashboard'><li id='DashBoard'>
               <strong>Dashboard</strong>
-            </li>
+            </li></Link>
           </ul>
         </div>
         <div className='res-NavButton'>
@@ -112,8 +112,7 @@ const CourseEnrollTemplate = props => {
               <h4>{props.Section3}</h4>
               <h4>{props.Section4}</h4>
               <h4>{props.Section5}</h4>
-              <h4>{props.Section6}</h4>
-              <h4>{props.Section7}</h4>
+              
             </div>
           </div>
           <Link to={props.CourseID}>

@@ -13,7 +13,6 @@
 }
 .settings-column .account-settings h1 {
   color: rgb(0, 106, 106);
-  
 }
 .settings-column .account-settings p {
   color: rgb(49, 179, 179);
@@ -23,18 +22,16 @@
   font-size: 75%;
   font-weight: 800;
   text-transform: uppercase;
- 
- 
+
   transform: translate(1vh, 1.3vh);
 }
-
 
 .settings-column .account-settings .settings-input {
   border-radius: 0.2rem;
   outline: none;
   width: 100%;
   border: 0.1px solid lightgrey;
- 
+
   color: grey;
   padding: 0.7rem;
   border-radius: 10px;
@@ -43,25 +40,18 @@
 }
 .settings-column .account-settings .settings-input.settings-input:focus {
   /* background-color: red; */
-  
+
   margin-top: 2vh;
   transition-duration: 0.5s;
 }
 
-
-
 .settings-column .account-settings .settings-input.settings-input:focus {
-    
-    border: 2px solid mediumseagreen;
-  }
-
-
-.BoxInput{
-    margin-top: 1.5vh;
+  border: 2px solid #238636;
 }
 
-
-
+.BoxInput {
+  margin-top: 1.5vh;
+}
 
 .settings-button {
   border-radius: 0.4rem;
@@ -88,25 +78,22 @@
   background: grey;
 }
 
-.AboutYouData{
-    resize: none;
-    
+.AboutYouData {
+  resize: none;
 }
-.AboutYouData:focus{
-    height: 15vh;
+.AboutYouData:focus {
+  height: 15vh;
 }
 
-.SaveChangesButton{
-    background-color: rgb(58, 206, 0);
-    color: white;
-    padding: 1vh;
-    width:20vw;
-    border-radius: 5px;
-    border: none;
-    float:right;
-    margin-top:5vh;
-    cursor:pointer;
-    font-size: 1.2rem;
-
-
+.SaveChangesButton {
+  background-color: #238636;
+  color: white;
+  padding: 1vh;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  float: right;
+  margin-top: 5vh;
+  cursor: pointer;
+  font-size: 1.2rem;
 }

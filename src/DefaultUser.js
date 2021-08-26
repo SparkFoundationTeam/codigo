@@ -1,11 +1,11 @@
 export let defaultUser = {
-    name: '',
-    username: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-    state: '',
-    participantType: '',
-    mobile:'',
-    university:''
+  username: '',
+  email: '',
+  password: '',
+  confirmPassword: '',
+  state: '',
+  participantType: '',
+  mobileNumber: '',
+  collegeName: '',
+  fullName: '',
 };

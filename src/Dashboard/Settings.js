@@ -9,23 +9,41 @@ const Settings = () => {
   let { signedInUser, setsignedInUser } = useContext(UserContext); // <- ani hi pn
 
   let [showPasswordModal, setShowPasswordModal] = useState(false);
-  const fetchUser = async () => {
-    let data = await axios.get('https://codigo-server.herokuapp.com/user?username=Bhavesh_123'); // first
-    console.log('The real data with email is : ', data.data.user[0]);
+  //   const fetchUser = async () => {
+  //     let data = await axios.get('https://codigo-server.herokuapp.com/user?username=Bhavesh_123'); // first
+  //     console.log('The real data with email is : ', data.data.user[0]);
 
-    let userFromDatabase = data.data.user[0];
+  //     let userFromDatabase = data.data.user[0];
 
-    setUserFromLocalStorage({ ...signedInUser, ...userFromDatabase }); // he ajun kraychay sort out <_ db mai hm
-    console.log(typeof userFromDatabase);
-    console.log('from local : ', setsignedInUser(getUserFromLocalStorage()));
-    console.log('User is : ', signedInUser);
+  //     setUserFromLocalStorage({ ...signedInUser, ...userFromDatabase }); // he ajun kraychay sort out <_ db mai hm
+  //     console.log(typeof userFromDatabase);
+  //     console.log('from local : ', setsignedInUser(getUserFromLocalStorage()));
+  //     console.log('User is : ', signedInUser);
+  //   };
+
+  const handleUserSettings = e => {
+    //
+    setsignedInUser(prevUser => ({ ...prevUser, [e.target.name]: e.target.value }));
+  };
+
+  const handleUserUpdate = async e => {
+    e.preventDefault();
+    setUserFromLocalStorage(signedInUser);
+
+    // await setsignedInUser(prevUser => ({ ...prevUser, password: newpass }));
+    let data = await axios.patch('https://codigo-server.herokuapp.com/user', {
+      email: signedInUser.email,
+      updates: { ...signedInUser }, //houdet re deva
+    });
+
+    console.log('after Changes user is : ', data.data);
   };
 
   const setUserFromLocalStorage = user => localStorage.setItem('User', JSON.stringify(user));
   const getUserFromLocalStorage = () => JSON.parse(localStorage.getItem('User'));
 
   const setNewPassword = async ({ old, newpass, confirmNewpass }) => {
-    alert(signedInUser.password, ' ', old, ' ', newpass, ' ', confirmNewpass);
+    // alert(signedInUser.password, ' ', old, ' ', newpass, ' ', confirmNewpass);
     if (old !== signedInUser.password) {
       alert('Wrong password!');
       return;
@@ -33,22 +51,21 @@ const Settings = () => {
     if (newpass !== confirmNewpass) {
       alert('Password doesnt match!');
       return;
-    }
-    await setsignedInUser(prevUser => ({ ...prevUser, password: newpass }));
-    let data = await axios.patch('https://codigo-server.herokuapp.com/user', {
-      email: signedInUser.email,
-      updates: { password: newpass },
-    });
-    console.log('Data after updation ', data);
-    //login bghto
+    } else {
+      await setsignedInUser(prevUser => ({ ...prevUser, password: newpass }));
+      let data = await axios.patch('https://codigo-server.herokuapp.com/user', {
+        email: signedInUser.email,
+        updates: { password: newpass },
+      });
 
-    setUserFromLocalStorage({ ...signedInUser, password: newpass });
-    alert('Password Updated');
+      setShowPasswordModal(false);
+      setUserFromLocalStorage({ ...signedInUser, password: newpass });
+      alert('Password Updated');
+      document.querySelector('.settings-button').style.visibility = 'visible';
+    }
   };
   useEffect(() => {
-    ///aaa ek sev ----- web master select zaloooo ahaaaaaaaa :)))))) yaya ka
-    fetchUser();
-    // kai avakshakta nai
+    setsignedInUser(getUserFromLocalStorage());
   }, []);
   return (
     <div style={{ display: 'flex' }}>
@@ -56,9 +73,10 @@ const Settings = () => {
         <div className='account-settings'>
           <h1>Account Settings</h1>
           <h3>Personal Information</h3>
+          {/* <h6>{JSON.stringify(signedInUser)}</h6> */}
           <div className='BoxInput'>
             <p>Full Name</p>
-            <input style={{ cursor: 'not-allowed' }} disabled value={signedInUser.firstName} className='settings-input' name='firstname' />
+            <input style={{ cursor: 'not-allowed' }} disabled value={signedInUser.fullName} className='settings-input' name='firstname' />
           </div>{' '}
           <div className='BoxInput'>
             <p> Email address</p>
@@ -66,11 +84,11 @@ const Settings = () => {
           </div>
           <div className='BoxInput'>
             <p>Username</p>
-            <input value={signedInUser.username} className='settings-input' name='username' />
+            <input value={signedInUser.username} onChange={handleUserSettings} className='settings-input' name='username' />
           </div>{' '}
           <div className='BoxInput'>
             <p>Mobile No</p>
-            <input value={signedInUser.mobileNumber} className='settings-input' name='mobilenumber' />
+            <input value={signedInUser.mobileNumber} onChange={handleUserSettings} className='settings-input' name='mobilenumber' />
           </div>
           <hr className='horizontal-line'></hr>
         </div>
@@ -91,17 +109,16 @@ const Settings = () => {
           <h1>Educational settings</h1>
           <p>Year Of Study</p>
           <select className='settings-input' name='firstname'>
-            <option value='Professional'>user.Year</option>
-
+            <option value='Professional'>{signedInUser.participantType}</option>
             <option value='Professional'>Professional / Faculty</option>
             <option value='Under Graduate Student'>Under Graduate Student</option>
             <option value='Post Graduate Student'>Post Graduate Student</option>
             <option value='11-12th'>11-12th Grade</option>
-            <option value='Below 12th'>Below 10th Grade</option>
+            <option value='Below 10th'>Below 10th Grade</option>
           </select>
 
-          <p> Name of University</p>
-          <input className='settings-input' name='lastname' />
+          <p>Name of University</p>
+          <input value={signedInUser.collegeName} onChange={handleUserSettings} className='settings-input' name='lastname' />
           <hr className='horizontal-line'></hr>
         </div>
         <div className='account-settings'>
@@ -113,7 +130,9 @@ const Settings = () => {
           <p> Weakness</p>
           <textarea className='settings-input AboutYouData' name='lastname' />
         </div>
-        <button className='SaveChangesButton'>Save Changes</button>
+        <button onClick={handleUserUpdate} className='SaveChangesButton' style={{ width: '100%' }}>
+          Save Changes
+        </button>
       </div>
     </div>
   );
@@ -133,20 +152,13 @@ const PasswordChangeModal = ({ changePassword }) => {
   return (
     <div className='passwordchange' style={{ marginTop: '-5vh' }}>
       <p>Your Password</p>
-      <input name='old' value={changePass.old} onChange={handlePasswordChange} className='settings-input' />
+      <input name='old' type='password' value={changePass.old} onChange={handlePasswordChange} className='settings-input' />
       <p>New Password</p>
-      <input name='newpass' value={changePass.newpass} onChange={handlePasswordChange} className='settings-input' />
+      <input name='newpass' type='password' value={changePass.newpass} onChange={handlePasswordChange} className='settings-input' />
       <p>Confirm new Password</p>
-      <input name='confirmNewpass' value={changePass.confirmNewpass} className='settings-input' onChange={handlePasswordChange} />
+      <input name='confirmNewpass' type='password' value={changePass.confirmNewpass} className='settings-input' onChange={handlePasswordChange} />
       <button
-        style={{
-          width: '100%',
-          border: '2px solid transparent',
-          background: 'rgb(58, 206, 0)',
-          margin: '2vh 0',
-          fontSize: '1.2rem',
-          color: 'white',
-        }}
+        className='SaveChangesButton' //ek problem aahe thamb login cha :)
         onClick={() => changePassword(changePass)}
       >
         Save New Password

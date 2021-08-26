@@ -9,11 +9,11 @@ const EnrollPage = () => {
     <div>
       <Template
         CourseName='HTML Complete Course'
-        CourseID='wds-html01'
+        CourseID='webdev-html01'
         SeriesName='códiGo : Web Development Series'
         CourseDesc='The complete HTML Course to kick-start Web Development'
         CourseDuration='1 Hour'
-        CourseStructure='4 Sections with Practise Quizes and a Certificate Exam'
+        CourseStructure='5 Sections with Practise Quizes and a Certificate Exam'
         TutorImg = {tutorImg}
         TutorName='Atharva Bhagat'
         TutorDesc='Full Stack Developer who loves UI / UX Designing | 10+ Personal Projects'

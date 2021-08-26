@@ -1,10 +1,15 @@
 import React, { useState, useContext, useEffect } from 'react';
+import {Link} from 'react-router-dom'
 
 import './dashboard.css';
 
 import codiGoIcon from '../resources/codiGo.png';
 import Bhavesh from '../resources/bhavesh.jpg';
-// ctrl c + ctrl v
+import settingsIcon from '../resources/settings.png';
+import cloudIcon from '../resources/storage.png';
+import coursesIcon from '../resources/certificateIcon.png';
+import logoutIcon from '../resources/logout.png';
+
 
 import MyCourses from './MyCourses';
 import MyDrive from './MyDrive';
@@ -27,20 +32,21 @@ const DashBoard = () => {
   useEffect(() => {
     setsignedInUser(getUserFromLocalStorage());
     //thamb
-  });
+  }, []);
 
   return (
     <div className='dashboard'>
       <div className='dashboard-navbar'>
         <div className='dashboard-icon'>
-          <img className='dashboard-pic' src={codiGoIcon}></img>
+        <Link to ='/'><img className='dashboard-pic' src={codiGoIcon}></img></Link>
         </div>
+        
         <div className='dashboard-links'>
           <ul>
-            <li>All Courses</li>
-            <li>Comunity Forum</li>
-            <li>Online Compiler</li>
-            <li>Pizta</li>
+          <Link to ='/all-courses'><li>All Courses</li></Link>
+            <li>Community</li>
+            <li>Kōdo</li>
+            <li>Pixzta</li>
           </ul>
         </div>
       </div>
@@ -50,7 +56,7 @@ const DashBoard = () => {
           <div className='personal-info'>
             <img src={Bhavesh}></img>
             <div className='user-info'>
-              <h1>{signedInUser.username}</h1>
+              <h2 id='personName'>{signedInUser.username}</h2>
               <h2>College Name</h2>
               <h2>University Name</h2>
             </div>
@@ -58,15 +64,16 @@ const DashBoard = () => {
           <hr></hr>
           <ul className='choices'>
             <li onClick={() => setIndex(0)} style={index === 0 ? clickedStyles : {}}>
-              My Courses
+             <img src={coursesIcon} ></img>My Courses
             </li>
             <li onClick={() => setIndex(1)} style={index === 1 ? clickedStyles : {}}>
-              My Drive
+            <img src={cloudIcon} ></img>Cloud
             </li>
             <li onClick={() => setIndex(2)} style={index === 2 ? clickedStyles : {}}>
-              Settings
+            <img src={settingsIcon} ></img>Settings
             </li>
           </ul>
+          <button id='logout'><img src={logoutIcon}></img>Log Out</button>
         </div>
 
         <div className='other-section'>

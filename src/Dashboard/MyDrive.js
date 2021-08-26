@@ -3,7 +3,7 @@ import React from 'react';
 const MyDrive = () => {
   return (
     <div>
-      <h1>MyDrive to be done by Atharva</h1>
+      <h1>Launching Soon</h1>
     </div>
   );
 };

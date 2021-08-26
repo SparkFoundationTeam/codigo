@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom'
 
 import './AllCourses.css';
 
@@ -122,7 +123,7 @@ const AllCourses = () => {
     <>
       <div className='dashboard-navbar'>
         <div className='dashboard-icon'>
-          <img className='dashboard-pic' src={codiGoIcon}></img>
+        <Link to ='/'><img className='dashboard-pic' src={codiGoIcon}></img></Link>
         </div>
         <div id='courseSearch'>
           <input
@@ -142,6 +143,9 @@ const AllCourses = () => {
             <li>Community</li>
             <li>Kōdo</li>
             <li>Pixzta</li>
+            <Link to ='/dashboard'><li id='DashBoard'>
+              <strong>Dashboard</strong>
+            </li></Link>
           </ul>
         </div>
         <div className='res-NavButton'>

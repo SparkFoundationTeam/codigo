@@ -84,7 +84,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
+  
   margin: 0;
   border-radius: 20px;
   background: white;
@@ -98,17 +98,19 @@
 }
 .OwnerImage {
   left: 8vw;
-  height: 15vh;
-  margin-top: -15vh;
+  width: 19vh;
+  height: 19vh;
+  margin-top: -25vh;
+  margin-bottom: 2vh;
   border-radius: 30rem;
   filter: drop-shadow(10px 10px 10px grey);
 }
 .OwnerInfo {
   width: 20vw;
-  background-color: transparent;
-
+  margin-left: -5vw;
   padding-top: 4rem;
   text-align: center;
+  
   place-items: center;
 }
 .OwnerName {
@@ -119,15 +121,18 @@
 .Ownerole {
   color: grey;
   font-size: 1.6vh;
+  
 }
 .OwnerDetails {
   list-style: none;
   margin-top: -5vh;
+  
 }
 .OwnerSocialMediaContainer {
   position: absolute;
+
   bottom: 2vh;
-  right: 1vw;
+  right: 6vw;
 }
 
 .OwnerSocialMedia {
@@ -180,11 +185,15 @@
   .OwnersCards {
     width: auto;
     height: 15vh;
+    margin-bottom: 2vh;
   }
-
+.OwnerInfo{
+    width: 25vw;
+    margin-left: 5vw;
+}
   .OwnerImage {
     height: 6vh;
-
+    width: 6vh;
     margin-bottom: 0vh;
   }
   .Ownerole {
@@ -192,12 +201,12 @@
     font-size: 1vh;
   }
   .OwnerName {
-    font-size: 2vh;
+    font-size: 4vw;
 
     margin-left: 1vw;
   }
   .OwnerDetails {
-    font-size: 1.3vh;
+    font-size: 2.5vw;
     margin-left: 1vw;
   }
   .OwnerSocialMediaContainer {
@@ -205,7 +214,7 @@
 
     width: 40vw;
     bottom: 0vh;
-    height: 5vh;
+    height: 4vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -214,8 +223,8 @@
   }
   .OwnerSocialMedia {
     margin-bottom: 0vh;
-    height: 1.7vh;
-    width: 3.5vw;
+    height: 1.5vh;
+    width: 3vw;
   }
 
   .OwnerInfo {

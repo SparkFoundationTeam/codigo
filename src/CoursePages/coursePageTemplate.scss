@@ -1,0 +1,286 @@
+@mixin FlexStyle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#CourseHeader {
+  font-family: 'Richard Hamilton';
+  color: goldenrod;
+}
+
+.dashboard-navbar {
+  position: fixed;
+  top: 0;
+}
+
+.CourseSidebar {
+  height: 100vh;
+  z-index: 2;
+  width: 5vw;
+  background-color: white;
+  @include FlexStyle();
+  position: fixed;
+  top: 0;
+  flex-direction: column;
+
+  .CourseBar {
+    @include FlexStyle();
+
+    width: 5vw;
+    cursor: pointer;
+    transition-duration: 0.5s;
+
+    margin-top: 2vh;
+
+    img {
+      height: 4vh;
+    }
+  }
+}
+
+.CourseBar {
+  position: relative;
+  display: inline-block;
+}
+
+.CourseBar .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background: linear-gradient(to right, rgb(23, 200, 200), teal);
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  margin-left: 10vw;
+  z-index: 1;
+}
+
+.CourseBar:hover .tooltiptext {
+  transition: all ease-in;
+  visibility: visible;
+}
+
+.VideoBox {
+  background-image: url('../resources/pattern1Blob.png');
+  background-size: contain;
+  background-repeat: repeat;
+  background-size: 60vh;
+  width: 100vw;
+
+  @include FlexStyle();
+
+  flex-direction: column;
+  margin-top: 10vh;
+
+  video {
+    border-radius: 5vh;
+
+    height: 80vh;
+  }
+
+  #List {
+    background-color: rgba(255, 255, 255, 0.438);
+    backdrop-filter: blur(0.2rem);
+    margin: 0vw 2vw;
+    width: 70vw;
+
+    @include FlexStyle();
+
+    h4,
+    h3 {
+      width: 15vw;
+      margin: 2vh;
+    }
+  }
+}
+
+.CodeAlong {
+  @include FlexStyle();
+  flex-direction: column;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  #bp1 {
+    height: 70vh;
+    top: 5vh;
+  }
+  .CodeContainer {
+    @include FlexStyle();
+    position: relative;
+    margin-left: 2vw;
+    flex-direction: column;
+    margin-top: 5vh;
+    width: 90vw;
+    height: 80vh;
+    padding: 2vw;
+    padding-top: 5vh;
+    background-color: rgba(253, 253, 253, 0.486);
+    backdrop-filter: blur(0.6rem);
+    background-image: linear-gradient(aqua, purple), linear-gradient(to right, purple, aqua), linear-gradient(to bottom, purple, aqua), linear-gradient(to left, purple, aqua);
+    background-repeat: no-repeat;
+    background-size: 5px 95%, 70% 5px, 5px 70%, 75% 5px;
+    background-position: left bottom, right bottom, right bottom, center top, 5px 5px;
+    #outputLabel {
+      position: absolute;
+      right: 2vw;
+      top: 1vh;
+    }
+    #codeLabel {
+      position: absolute;
+      left: -1.5vw;
+      top: 4vh;
+      transform: rotate(270deg);
+      background: -webkit-linear-gradient(right, rgb(255, 19, 125), rgb(4, 180, 180));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    }
+    #codeAlongLabel {
+        position: absolute;
+        left: 0vw;
+        top: -1vh;
+        background: -webkit-linear-gradient(right, rgb(255, 19, 125), rgb(4, 180, 180));
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      }
+    #Compiler {
+      width: 100%;
+      height: 80vh;
+      display: flex;
+      #CodeEditor {
+        width: 100%;
+        height: 65vh;
+        resize: none;
+        overflow: scroll;
+        outline: none;
+        border: none;
+
+        font-size: larger;
+        background-color: rgba(164, 213, 236, 0.1);
+        
+      }
+      #output-window {
+        width: 50%;
+        padding: 1rem;
+      }
+      .RunCode{
+          height: fit-content;
+          background-color: transparent;
+          border: none;
+          margin-right: 2vh;
+          cursor: pointer;
+          img{
+              height: 4vh;
+              
+          }
+          
+      }
+    }
+  }
+  .ButtonSelection {
+    @include FlexStyle();
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 2vh;
+    height: 10vh;
+    button {
+      @include FlexStyle();
+      width: 12vw;
+      padding: 1rem;
+      height: 5vh;
+      background-color: white;
+      border: 1px solid grey;
+      cursor: pointer;
+      &:focus{
+        background-color: rgb(13, 0, 85);
+        color: white
+      }
+    }
+  }
+}
+
+.BooksBox {
+  @include FlexStyle();
+  position: relative;
+  h2 {
+    background: -webkit-linear-gradient(right, rgb(255, 19, 125), rgb(4, 180, 180));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  width: 100vw;
+  height: 100vh;
+  .BooksContainer {
+    @include FlexStyle();
+    flex-direction: column;
+    padding: 5rem;
+    backdrop-filter: blur(0.6rem);
+    width: 72vw;
+    height: 80vh;
+    background-color: rgba(253, 253, 253, 0.486);
+    background-image: linear-gradient(aqua, purple), linear-gradient(to right, purple, aqua), linear-gradient(to bottom, purple, aqua), linear-gradient(to left, purple, aqua);
+    background-repeat: no-repeat;
+    background-size: 5px 50%, 50% 5px, 5px 50%, 50% 5px;
+    background-position: left top, right bottom, right bottom, left top, 5px 5px;
+  }
+
+  hr {
+    width: 60%;
+    height: 2px;
+    margin-top: 2vh;
+    background-color: rgba(156, 156, 156, 0.473);
+    border: none;
+  }
+  .insideHR {
+    width: 5%;
+  }
+  .BookInfo {
+    display: flex;
+    margin: 2vh 0vh 4vh 0vh;
+
+    .BookTitle,
+    .AuthorTitle,
+    .BookDesc,
+    .ViewBook,
+    .DownloadBook {
+      width: 15vw;
+      margin: 2vh 2vh 0vh 0vh;
+      padding: 1vh;
+      border-radius: 10px;
+    }
+
+    .BookDesc {
+      width: 30vw;
+    }
+    .ViewBook,
+    .DownloadBook {
+      cursor: pointer;
+
+      background: -webkit-linear-gradient(right, rgb(141, 1, 64), rgb(4, 180, 180));
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+      width: 8vw;
+      text-align: center;
+    }
+  }
+}
+
+#bp1 {
+  position: absolute;
+  height: 120vh;
+  top: -35vh;
+  left: -10vh;
+  z-index: -1;
+}
+#bp2 {
+  position: absolute;
+  height: 60vh;
+  bottom: -5vh;
+  right: 0vh;
+  z-index: -1;
+}

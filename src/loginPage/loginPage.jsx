@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 
 import './mainComponent.css';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import NavBar from '../navBar.jsx';
 import BackendUrl from '../BackendUrl.js';
 import axios from 'axios';
@@ -16,7 +16,7 @@ import type from '../resources/type.gif';
 import mobile from '../resources/mobileIcon.gif';
 import book from '../resources/book.gif';
 
-import { Route, BrowserRouter, Switch, Link } from 'react-router-dom/cjs/react-router-dom.min';
+// import { Route, BrowserRouter, Switch, Link, Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 
 import { defaultUser } from '../DefaultUser.js';
 import { UserContext } from '../MainContext'; // <- hi line prytek component madhe lagnr jithe user aahe tithe
@@ -25,6 +25,8 @@ const LoginPage = ({ setlG }) => {
   let { signedInUser, setsignedInUser } = useContext(UserContext); // <- ani hi pn
 
   const [login, setLogin] = useState(true);
+  let [usernamesArray, setusernameArray] = [];
+  let [emailsArray, setEmailsArray] = [];
 
   let pattern = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
   let MobilePattern = new RegExp('[0-9]{10}');
@@ -33,18 +35,18 @@ const LoginPage = ({ setlG }) => {
   const handleChange = e => {
     setUser(prevUser => ({ ...prevUser, [e.target.name]: e.target.value }));
   };
-
+  //mobile
   const hasFilledAllFields = () => {
-    if (!User.name) {
+    if (!User.fullName) {
       alert('Please Fill Name');
       return false;
-    } else if (!User.university) {
+    } else if (!User.collegeName) {
       alert('Please Select University');
       return false;
-    } else if (!User.username) {
-      alert('Please Enter Username');
+    } else if (!User.username || User.username.length > 12) {
+      alert('Please Enter Username with less than 12 characters:)');
       return false;
-    } else if (!User.mobile || MobilePattern.test(User.mobile) === false) {
+    } else if (!User.mobileNumber || MobilePattern.test(User.mobileNumber) === false) {
       alert('Please Enter Valid Mobile No.');
       return false;
     } else if (!User.email || pattern.test(User.email) === false) {
@@ -65,25 +67,28 @@ const LoginPage = ({ setlG }) => {
 
   const handleLogin = async e => {
     e.preventDefault();
+    //database madhe zhalay uodate pn error ka detay fuck password kai hota?
 
-    let loggedInUser = await axios.get(BackendUrl + `User?username=${User.username}&password=${User.password}`);
+    let loggedInUser = await axios.get(BackendUrl + `user?username=${User.username}&password=${User.password}`);
 
     console.log('User we got through mongo Db is : ', loggedInUser);
 
+    const loggedInUserMessage = loggedInUser.data.message;
+
+    if (loggedInUserMessage === 'No User Found') {
+      alert('Username and password doesnt match');
+      return;
+    } //nai hoanr vatta
     loggedInUser = loggedInUser.data.user[0];
 
-    if (loggedInUser.message === 'No User Found') {
-      alert('No such User Found');
-      setUser(defaultUser);
-      return;
-    }
-
+    setUser(defaultUser);
     setsignedInUser(loggedInUser); // thamb testing naitar are asa kahi redirect asel na on authorized redirect dashboard bghayala hava
-    setUserFromLocalStorage({ ...User, ...loggedInUser });
+    setUserFromLocalStorage(loggedInUser);
   };
   const setUserFromLocalStorage = user => localStorage.setItem('User', JSON.stringify(user));
+  const getUserFromLocalStorage = () => JSON.parse(localStorage.getItem('User'));
 
-  const handleSubmit = e => {
+  const handleSignUp = e => {
     e.preventDefault();
 
     if (!hasFilledAllFields()) {
@@ -99,11 +104,21 @@ const LoginPage = ({ setlG }) => {
     setLogin(prev => !prev);
   };
 
-  const showUser = e => {
-    e.preventDefault();
-    console.log(signedInUser);
+  const getUsernamesAndemails = async () => { //nkooooo brobr ahe
+    let data = await axios.get(BackendUrl + 'user/usernames');
+    data = data.data; // <- wierd parts of Js
+
+    let [usernames, emails] = data;
+
+    console.log('Usernames aree : ', usernames);
+    console.log('emails aree : ', emails);
   };
 
+  useEffect(() => {
+    getUsernamesAndemails();
+    setsignedInUser(getUserFromLocalStorage());
+  }, []);
+  // history
   return (
     <div id='container'>
       <NavBar id='nav' />
@@ -122,8 +137,14 @@ const LoginPage = ({ setlG }) => {
           <input name='password' value={User.password} type='password' onChange={handleChange} placeholder='Enter Password'></input>
         </div>
 
-        <button onClick={handleLogin} id='submit'>
-          <Link to='/dashboard'>LOGIN</Link>
+        <button
+          onClick={async e => {
+            await handleLogin(e);
+          }}
+          id='submit'
+        >
+          {/* <Link to={setroutingLink}>LOGIN</Link> */}
+          Login
         </button>
 
         <h4>Forgot Details? Get Help logging in</h4>
@@ -137,7 +158,7 @@ const LoginPage = ({ setlG }) => {
         </div>
         <div className='formElem'>
           <img src={user}></img>
-          <input name='name' value={User.name} onChange={handleChange} type='text' placeholder='Enter your Name' autoFocus></input>
+          <input name='fullName' value={User.fullName} onChange={handleChange} type='text' placeholder='Enter your FullName' autoFocus></input>
         </div>
         <div className='formElem'>
           <input name='username' value={User.username} onChange={handleChange} type='text' placeholder='Choose a username' autoFocus></input>
@@ -151,12 +172,12 @@ const LoginPage = ({ setlG }) => {
         </div>
         <div className='formElem'>
           <img src={mobile}></img>
-          <input name='mobile' value={User.mobile} onChange={handleChange} type='tel' placeholder='Enter Mobile Number'></input>
+          <input name='mobileNumber' value={User.mobileNumber} onChange={handleChange} type='tel' placeholder='Enter Mobile Number'></input>
         </div>
 
         <div className='formElem'>
           <img src={book}></img>
-          <input name='university' value={User.university} type='text' onChange={handleChange} placeholder='University Name'></input>
+          <input name='collegeName' value={User.collegeName} type='text' onChange={handleChange} placeholder='University Name'></input>
         </div>
 
         <div className='formElem'>
@@ -212,10 +233,10 @@ const LoginPage = ({ setlG }) => {
             <option value='Under Graduate Student'>Under Graduate Student</option>
             <option value='Post Graduate Student'>Post Graduate Student</option>
             <option value='11-12th'>11-12th Grade</option>
-            <option value='Below 12th'>Below 10th Grade</option>
+            <option value='Below 10th'>Below 10th Grade</option>
           </select>
         </div>
-        <input onClick={handleSubmit} type='submit' value='SIGN UP' id='submit'></input>
+        <input onClick={handleSignUp} type='submit' value='SIGN UP' id='submit'></input>
       </form>
       <div className={login ? 'active' : 'hidden'}>
         <h3 id='sign'>
