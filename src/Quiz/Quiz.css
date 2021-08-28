@@ -1,0 +1,153 @@
+.quiz-container {
+  flex-direction: column;
+  padding: 5rem;
+  backdrop-filter: blur(0.6rem);
+  width: 72vw;
+  height: 80vh;
+  background-color: rgba(253, 253, 253, 0.486);
+  background-image: linear-gradient(aqua, purple), linear-gradient(to right, purple, aqua), linear-gradient(to bottom, purple, aqua), linear-gradient(to left, purple, aqua);
+  background-repeat: no-repeat;
+  background-size: 5px 50%, 50% 5px, 5px 50%, 50% 5px;
+  background-position: left top, right bottom, right bottom, left top, 5px 5px;
+}
+.quiz-question {
+  background-color: rgba(88, 238, 238, 0.678);
+  border: 2px solid transparent;
+  font-size: 2rem;
+  text-align: left;
+  padding: 1rem;
+}
+.quiz-options {
+  background-color: rgb(255, 249, 220);
+  width: 99%;
+  border: 2px solid transparent;
+  font-size: 2rem;
+  text-align: left;
+  padding: 0.5rem 2rem;
+  margin: 0.8rem 0;
+  border-radius: 0.5rem;
+  transition: all linear 100ms;
+}
+.quiz-options:hover {
+  transform: scale(1.01);
+  border-color: transparent;
+  background-color: rgb(255, 239, 148);
+}
+.quiz-nextbutton {
+  border: 2px solid transparent;
+  font-size: 2rem;
+  text-align: left;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+  width: 50%;
+  margin-top: 2rem;
+  margin-left: 49%;
+  text-align: center;
+  font-weight: 800;
+  color: white;
+  background-color: mediumseagreen;
+  border: 2px solid transparent;
+  transition: all linear 150ms;
+}
+
+.quiz-nextbutton:hover {
+  transform: translateY(-0.6rem);
+}
+
+.timer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 7vw;
+  float: right;
+}
+
+@media (max-width: 600px) {
+  .quiz-question {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+  .timer {
+    float: none;
+    margin: auto;
+    padding: 1rem;
+  }
+  .quiz-options {
+    font-size: 1.3rem;
+    margin: 0.3rem auto;
+  }
+  .quiz-nextbutton {
+    font-size: 1.5rem;
+    width: 99%;
+    padding: 0.3rem 0;
+    margin: 0.3rem auto;
+  }
+}
+
+.QuizInstructions h1 {
+  width: fit-content;
+  background: -webkit-linear-gradient(left, rgb(253, 9, 119), rgb(4, 180, 180));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.QuizInstructions p {
+  font-size: 2.5vh;
+}
+
+.QuizStartButton {
+  background: linear-gradient(to left, rgb(253, 9, 119), rgb(4, 180, 180));
+  outline: none;
+  padding: 1vh 2vw;
+  margin-top: 5vh;
+  font-size: 2vh;
+  border-radius: 10px;
+  width: 15vw;
+  border: none;
+  color: white;
+}
+
+.QuizStartButton:hover {
+  background: linear-gradient(to left, rgb(206, 8, 97), rgb(3, 146, 146));
+}
+
+.QuizInstructions img {
+  position: absolute;
+  height: 50vh;
+  right: 2vw;
+  bottom: 0;
+}
+
+.QuizEnd h1 {
+  font-size: 5vh;
+  width: fit-content;
+  background: -webkit-linear-gradient(left, rgb(253, 9, 119), rgb(4, 180, 180));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.QuizEnd h2 {
+  font-size: 8vh;
+  font-weight: bolder;
+  margin: 5vh 0vh;
+}
+
+#Congratulations {
+  font-family: 'Richard Hamilton';
+  font-size: 5vh;
+    width: 30%;
+    padding: 0.5rem;
+  background: -webkit-linear-gradient(right, rgb(86, 253, 9), rgb(4, 180, 180));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.QuizEnd img {
+    position: absolute;
+    height: 50vh;
+    right: 0;
+    
+  }

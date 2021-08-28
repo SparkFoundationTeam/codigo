@@ -14,6 +14,8 @@ import mobile from '../../resources/mobile.gif';
 import blob2 from '../../resources/blob (4).svg';
 import blob from '../../resources/blob.svg';
 
+
+
 const whyCodigo = () => {
   const FirstRow = [
     {
@@ -86,14 +88,14 @@ const whyCodigo = () => {
     },
   ];
   return (
-    <div id='cards'>
+    <div id='cards' >
       <div id='blob'>
         <img src={blob} id='blob1'></img>
         <img src={blob2} id='blob2'></img>
       </div>
 
-      <h1>Why códiGo ? </h1>
-      <span className='Row'>
+      <h1 >Why códiGo ? </h1>
+      <span className='Row' >
         {FirstRow.map((name, index) => (
           <Card title={name.title} line1={name.line1} line2={name.line2} image={name.image}></Card>
         ))}

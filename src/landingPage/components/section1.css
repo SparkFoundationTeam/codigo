@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap");
 * {
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -27,8 +27,7 @@
 .Section1 #nav img {
   margin-top: 5vh;
   height: 10vh;
-  -webkit-filter: brightness(170%);
-          filter: brightness(170%);
+  z-index: 2;
 }
 
 .Section1 #nav button {
@@ -39,18 +38,34 @@
   font-size: 2vh;
   color: aqua;
   border: 2px solid #00c8c8;
-  background-color: rgba(255, 255, 255, 0);
+  background: -webkit-gradient(linear, right top, left top, from(transparent), to(transparent));
+  background: linear-gradient(to left, transparent, transparent);
   font-weight: bold;
   border-radius: 5px;
 }
 
+.Section1 #nav button img {
+  margin: 0;
+  margin-right: 1vw;
+  height: 2vh;
+  -webkit-transition-duration: 0.7s;
+          transition-duration: 0.7s;
+}
+
 .Section1 #nav button:hover {
+  -webkit-transition-duration: 0.7s;
+          transition-duration: 0.7s;
   border: none;
+  background: -webkit-gradient(linear, right top, left top, from(#17c8c8), to(rgba(42, 235, 171, 0.253)));
+  background: linear-gradient(to left, #17c8c8, rgba(42, 235, 171, 0.253));
   cursor: pointer;
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
-  color: black;
-  background-color: #20eaf1;
+}
+
+.Section1 #nav button:hover img {
+  margin: 0;
+  height: 2vh;
+  -webkit-transition-duration: 0.7s;
+          transition-duration: 0.7s;
 }
 
 .Section1 #Content {

@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Raleway', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
 }
 
 .OurCoursesSection {

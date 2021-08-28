@@ -25,8 +25,8 @@ const LoginPage = ({ setlG }) => {
   let { signedInUser, setsignedInUser } = useContext(UserContext); // <- ani hi pn
 
   const [login, setLogin] = useState(true);
-  let [usernamesArray, setusernameArray] = [];
-  let [emailsArray, setEmailsArray] = [];
+  let [usernamesArray, setUsernameArray] = useState([]);
+  let [emailsArray, setEmailsArray] = useState([]);
 
   let pattern = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
   let MobilePattern = new RegExp('[0-9]{10}');
@@ -91,6 +91,11 @@ const LoginPage = ({ setlG }) => {
   const handleSignUp = e => {
     e.preventDefault();
 
+    if (isAlreadyPresent(User.username, usernamesArray) || isAlreadyPresent(User.email, emailsArray)) {
+      alert('username or email is already present');
+      return; // :) chal :)
+    }
+
     if (!hasFilledAllFields()) {
       return;
     }
@@ -104,11 +109,23 @@ const LoginPage = ({ setlG }) => {
     setLogin(prev => !prev);
   };
 
-  const getUsernamesAndemails = async () => { //nkooooo brobr ahe
+  const isAlreadyPresent = (target, targetArray) => {
+    for (let values of targetArray) {
+      if (target === values) return true;
+    }
+    return false;
+  };
+
+  const getUsernamesAndemails = async () => {
+    //nkooooo brobr ahe
+    console.log('Getting usernames and emails');
     let data = await axios.get(BackendUrl + 'user/usernames');
     data = data.data; // <- wierd parts of Js
 
     let [usernames, emails] = data;
+
+    setUsernameArray(usernames);
+    setEmailsArray(email);
 
     console.log('Usernames aree : ', usernames);
     console.log('emails aree : ', emails);
@@ -143,7 +160,7 @@ const LoginPage = ({ setlG }) => {
           }}
           id='submit'
         >
-          {/* <Link to={setroutingLink}>LOGIN</Link> */}
+          {/* <Link to={}>LOGIN</Link> */}
           Login
         </button>
 

@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Raleway', sans-serif;
+}
 
-  ::selection {
-    color: darkgoldenrod;
-  }
+::-webkit-scrollbar {
+  width: 0px;
 }
 
 @mixin flexAlign {
@@ -21,7 +22,6 @@
   height: 100vh;
   position: relative;
   padding-bottom: 5vh;
-
   @include flexAlign();
 
   flex-direction: column;

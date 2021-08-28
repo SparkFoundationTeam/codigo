@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -33,7 +32,7 @@
     img {
       margin-top: 5vh;
       height: 10vh;
-      filter: brightness(170%);
+      z-index: 2;
     }
     button {
       height: 4vh;
@@ -43,17 +42,28 @@
       font-size: 2vh;
       color: aqua;
       border: 2px solid rgb(0, 200, 200);
-      background-color: rgba(255, 255, 255, 0);
+      background: linear-gradient(to left, transparent, transparent);
       font-weight: bold;
       border-radius: 5px;
+
+      img {
+        margin: 0;
+        margin-right: 1vw;
+        height: 2vh;
+        transition-duration: 0.7s;
+      }
     }
     button:hover {
+      transition-duration: 0.7s;
       border: none;
+      background: linear-gradient(to left, rgb(23, 200, 200), rgba(42, 235, 171, 0.253));
 
       cursor: pointer;
-      transition-duration: 0.5s;
-      color: black;
-      background-color: rgb(32, 234, 241);
+      img {
+        margin: 0;
+        height: 2vh;
+        transition-duration: 0.7s;
+      }
     }
   }
 
@@ -95,7 +105,7 @@
       button:hover {
         border: 5px solid rgb(42, 211, 211);
         color: aqua;
-        background: linear-gradient(to right, transparent, transparent );
+        background: linear-gradient(to right, transparent, transparent);
         cursor: pointer;
         transition-duration: 0.5s;
       }
@@ -104,7 +114,7 @@
       margin-top: 50vh;
       margin-right: 5vw;
       height: 30vh;
-      
+
       border-radius: 25px;
     }
   }
@@ -112,7 +122,6 @@
 
 @media screen and (max-width: 1000px) {
   .Section1 {
-      
     #nav {
       justify-content: space-between;
       img {
@@ -126,7 +135,6 @@
     }
 
     #Content {
-        
       flex-direction: column;
       overflow: hidden;
       height: 90vh;
@@ -160,10 +168,9 @@
         margin-top: 3vh;
         margin-right: 0vw;
         height: 20vh;
-        
+
         border-radius: 10px;
         margin-bottom: 10vh;
-        
       }
     }
   }

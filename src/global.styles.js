@@ -193,6 +193,7 @@ export const Timing = styled.div`
   float: right;
   color: black;
   place-items: center;
+  font-family: 'Poppins';
   display: flex;
   margin-left: 12%;
   font-size: 1.5vh;

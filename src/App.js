@@ -23,63 +23,68 @@ import JS01 from './CoursePages/JSBhavesh/javascript01';
 
 import Python01Enroll from './CoursePages/PythonVaishnavi/python01-course-enroll';
 import Python01 from './CoursePages/PythonVaishnavi/pydev-python01';
+import ScrollToTop from './ScrollToTop';
 
 const App = () => {
   let [signedInUser, setsignedInUser] = useState(defaultUser);
   return (
-    <Router>
-      <UserContext.Provider value={{ signedInUser, setsignedInUser }}>
-        <Switch>
-          <Route exact path='/'>
-            <LandingPage />
-          </Route>
-          <Route exact path='/login'>
-            <LoginPage />
-          </Route>
-          <Route exact path='/dashboard'>
-            <DashBoard />
-          </Route>
-          <Route exact path='/all-courses'>
-            <AllCourses />
-          </Route>
-          <Route exact path='/all-courses'>
-            <AllCourses />
-          </Route>
+    <>
+      
+      <Router>
+      <ScrollToTop />
+        <UserContext.Provider value={{ signedInUser, setsignedInUser }}>
+          <Switch>
+            <Route exact path='/'>
+              <LandingPage />
+            </Route>
+            <Route exact path='/login'>
+              <LoginPage />
+            </Route>
+            <Route exact path='/dashboard'>
+              <DashBoard />
+            </Route>
+            <Route exact path='/all-courses'>
+              <AllCourses />
+            </Route>
+            <Route exact path='/all-courses'>
+              <AllCourses />
+            </Route>
 
-          <Route exact path='/html01-course-enroll'>
-            <Html01Enroll />
-          </Route>
-          <Route exact path='/webdev-html01'>
-            <Html01 />
-          </Route>
+            <Route exact path='/html01-course-enroll'>
+              <Html01Enroll />
+            </Route>
+            <Route exact path='/webdev-html01'>
+              <Html01 />
+            </Route>
 
-          <Route exact path='/java01-course-enroll'>
-            <Java01Enroll />
-          </Route>
-          <Route exact path='/javadev-java01'>
-            <Java01/>
-          </Route>
+            <Route exact path='/java01-course-enroll'>
+              <Java01Enroll />
+            </Route>
+            <Route exact path='/javadev-java01'>
+              <Java01 />
+            </Route>
 
-          <Route exact path='/js01-course-enroll'>
-            <JS01Enroll />
-          </Route>
-          <Route exact path='/javascript01'>
-            <JS01/>
-          </Route>
+            <Route exact path='/js01-course-enroll'>
+              <JS01Enroll />
+            </Route>
+            <Route exact path='/javascript01'>
+              <JS01 />
+            </Route>
 
-          <Route exact path='/python01-course-enroll'>
-            <Python01Enroll />
-          </Route>
-          <Route exact path='/pydev-python01'>
-            <Python01/>
-          </Route>
+            <Route exact path='/python01-course-enroll'>
+              <Python01Enroll />
+            </Route>
+            <Route exact path='/pydev-python01'>
+              <Python01 />
+            </Route>
 
-          <Route>
-            <PageNotFound />
-          </Route>
-        </Switch>
-      </UserContext.Provider>
-    </Router>
+            <Route>
+              <PageNotFound />
+            </Route>
+          </Switch>
+        </UserContext.Provider>
+      </Router>
+    </>
   );
 };
 

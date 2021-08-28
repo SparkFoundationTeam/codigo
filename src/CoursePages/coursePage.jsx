@@ -21,42 +21,31 @@ const CoursePageTemplate = props => {
     borderLeft: '5px teal solid',
   });
 
-
-
-  let [editorText,setEditorText]=useState(`${props.Button1Text}`)
-
-  useEffect(()=>{
-    
-  },[]) 
-
-  const CodeRunnerHtml =() =>{
-    let frame = document.getElementById("output-window").contentWindow.document;
-
-    frame.open();
-    frame.write(editorText);
-    frame.close();
-  }
-
-
-
+  
 
   return (
     <div>
       {/* Nav Bar */}
       <div className='dashboard-navbar'>
         <div className='dashboard-icon'>
-        <Link to ='/'><img className='dashboard-pic' src={codiGoIcon}></img></Link>
+          <Link to='/'>
+            <img className='dashboard-pic' src={codiGoIcon}></img>
+          </Link>
         </div>
         <h2 id='CourseHeader'>{props.CourseName}</h2>
         <div className='dashboard-links'>
           <ul>
-          <Link to ='/all-courses'><li>All Courses</li></Link>
+            <Link to='/all-courses'>
+              <li>All Courses</li>
+            </Link>
             <li>Community</li>
             <li>Kōdo</li>
             <li>Pixzta</li>
-            <Link to ='/dashboard'><li id='DashBoard'>
-              <strong>Dashboard</strong>
-            </li></Link>
+            <Link to='/dashboard'>
+              <li id='DashBoard'>
+                <strong>Dashboard</strong>
+              </li>
+            </Link>
           </ul>
         </div>
         <div className='res-NavButton'>
@@ -69,19 +58,22 @@ const CoursePageTemplate = props => {
             <img src={videoIcon}></img> <span class='tooltiptext'>Course Video</span>
           </div>
         </a>
-        <a href='#CodeAlong'>
-          <div className='CourseBar' onClick={() => setIndex(2)} style={index === 2 ? clickedStyles : {}}>
-            <img src={codeIcon}></img> <span class='tooltiptext'>Code Along</span>
-          </div>
-        </a>
         <a href='#Resources'>
           <div className='CourseBar' onClick={() => setIndex(1)} style={index === 1 ? clickedStyles : {}}>
             <img src={bookIcon}></img> <span class='tooltiptext'>Resources</span>
           </div>
         </a>
-        <div className='CourseBar' onClick={() => setIndex(3)} style={index === 3 ? clickedStyles : {}}>
-          <img src={certificateIcon}></img> <span class='tooltiptext'>Quiz and Certificate</span>
-        </div>
+        <a href='#CodeAlong'>
+          <div className='CourseBar' onClick={() => setIndex(2)} style={index === 2 ? clickedStyles : {}}>
+            <img src={codeIcon}></img> <span class='tooltiptext'>Code Along</span>
+          </div>
+        </a>
+
+        <a href='#QuizSection'>
+          <div className='CourseBar' onClick={() => setIndex(3)} style={index === 3 ? clickedStyles : {}}>
+            <img src={certificateIcon}></img> <span class='tooltiptext'>Quiz and Certificate</span>
+          </div>
+        </a>
         <div className='CourseBar' onClick={() => setIndex(4)} style={index === 4 ? clickedStyles : {}}>
           <img src={feedbackIcon}></img> <span class='tooltiptext'>Feedback</span>
         </div>
@@ -101,36 +93,7 @@ const CoursePageTemplate = props => {
       </div>
 
       {/* Section 2 */}
-      <div className='CodeAlong' id='CodeAlong'>
-        <img src={BlobP1} id='bp1' />
-        <img src={BlobP2} id='bp2' />
-        <div className='CodeContainer'>
-          <div id='Compiler'>
-            <b id='codeAlongLabel'>códiGo CODE ALONG </b>
-            <p id='outputLabel'>OUTPUT </p>
-            <textarea onChange={()=>CodeRunnerHtml()}id='CodeEditor' placeholder='Write your Code Here'>
-              {editorText}
-            </textarea>
-
-            <button className='RunCode' onClick={()=>CodeRunnerHtml()}>
-              <img src={RunCode}></img>
-              <br />
-              <b>Run</b>
-            </button>
-
-            <iframe id="output-window"></iframe>
-          </div>
-          <div className='ButtonSelection'>
-            <button>{props.Button1}</button>
-            <button onClick={()=>setEditorText(`${props.Button2Text}`)}>{props.Button2}</button>
-            <button>props.Button3</button>
-            <button>props.Button4</button>
-            <button>props.Button5</button>
-            <button>props.Button6</button>
-            <button>props.Button7</button>
-          </div>
-        </div>
-      </div>
+      
 
       {/* 
       Section 3 
@@ -194,6 +157,9 @@ const CoursePageTemplate = props => {
           </div>
         </div>
       </div>
+      {/* 
+      Section 4
+      */}
     </div>
   );
 };

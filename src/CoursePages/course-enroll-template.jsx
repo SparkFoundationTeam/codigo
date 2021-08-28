@@ -1,11 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 
-import NavBar from '../navBar';
 import Footer from '../footer';
 import codiGoIcon from '../resources/codiGo.png';
 import './Template.css';
-import bhavesh from '../resources/bhavesh.jpg';
 import menuIcon from '../resources/menuRes.png';
 
 import Instagram from '../resources/insta-icon.png';

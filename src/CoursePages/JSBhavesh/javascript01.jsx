@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PageTemplate from '../coursePage';
 import video from '../../resources/video.mp4';
 import Book1 from './HTML CSS JavaScript by ARB.pdf';
+import Quiz from '../../Quiz/Quiz';
+import WebDevCompiler from '../../Compilers/WebDevCompiler';
 
-const Html01 = () => {
+const JS01 = () => {
   return (
     <div>
       <div>
@@ -22,19 +24,24 @@ const Html01 = () => {
           Book2Name='HTML CSS JS Notes'
           Author2=' Atharva Bhagat'
           Book2Desc='This book contains handwritten notes of HTML , CSS and JavaScript'
+        ></PageTemplate>
+      </div>
+      <div>
+        <WebDevCompiler
+          Language='js'
           Button1='Basic Style Tags'
-          Button1Text='
-          <h1>Hello Kodeo</h1>
-          <h2>Hello Kodeo</h2>
-          <p>Hello Kodeo -- Paragraph</p>'
+          Button1Text="
+          alert('Hello Kodeo')"
           Button2='Try'
           Button2Text='
-          <h1>Hello World</h1>
-          <h2>Hello World</h2>'
+          '
         />
+      </div>
+      <div>
+        <Quiz name='JAVASCRIPT COMPLETE COURSE' />
       </div>
     </div>
   );
 };
 
-export default Html01;
+export default JS01;
