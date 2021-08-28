@@ -1,0 +1,78 @@
+.quiz-container {
+  /* background-color: red; */
+  padding: 0.5rem;
+  width: 90%; /* Ikde bahutek 100% kinva 98% yeil :)*/
+  margin: auto;
+  height: auto;
+  display: block;
+  text-align: left;
+}
+.quiz-question {
+  background-color: rgb(207, 247, 247);
+  border: 2px solid transparent;
+  font-size: 2rem;
+  text-align: left;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.quiz-options {
+  background-color: rgb(255, 249, 220);
+  width: 99%;
+  border: 2px solid transparent;
+  font-size: 2rem;
+  text-align: left;
+  padding: 0.5rem 2rem;
+  margin: 0.8rem 0;
+  border-radius: 0.5rem;
+  transition: all linear 100ms;
+}
+.quiz-options:hover {
+  transform: scale(1.01);
+  border-color: transparent;
+  background-color: rgb(255, 239, 148);
+}
+.quiz-nextbutton {
+  border: 2px solid transparent;
+  font-size: 2rem;
+  text-align: left;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+  width: 50%;
+  margin-top: 0.3rem;
+  margin-left: 49%;
+  text-align: center;
+  font-weight: 800;
+  background-color: mediumseagreen;
+  border: 2px solid transparent;
+  transition: all linear 150ms;
+}
+
+.quiz-nextbutton:hover {
+  transform: translateY(-0.6rem);
+}
+
+.timer {
+  float: right;
+}
+
+@media (max-width: 600px) {
+  .quiz-question {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+  .timer {
+    float: none;
+    margin: auto;
+    padding: 1rem;
+  }
+  .quiz-options {
+    font-size: 1.3rem;
+    margin: 0.3rem auto;
+  }
+  .quiz-nextbutton {
+    font-size: 1.5rem;
+    width: 99%;
+    padding: 0.3rem 0;
+    margin: 0.3rem auto;
+  }
+}
