@@ -12,7 +12,7 @@ const MyCourses = () => {
     <div>
       <h1>{signedInUser.username} Enrolled courses</h1>
       {
-        // Need to be done, dont modify this :))
+        // Need to be done, dont modify this :)))
         /*signedInUser.enrolledCourses.map(eachObj => {
         <EnrolledCourseCard tutorName={eachObj.tutorName} tutorImage={eachObj.tutorImage} courseName={eachObj.courseName} courseInfo={eachObj.courseInfo} courseImage={eachObj.courseImage} duration={eachObj.duration} />;
       
