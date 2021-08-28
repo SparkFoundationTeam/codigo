@@ -55,10 +55,10 @@
 }
 
 .timer {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 7vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 7vw;
   float: right;
 }
 
@@ -137,8 +137,8 @@
 #Congratulations {
   font-family: 'Richard Hamilton';
   font-size: 5vh;
-    width: 30%;
-    padding: 0.5rem;
+  width: 30%;
+  padding: 0.5rem;
   background: -webkit-linear-gradient(right, rgb(86, 253, 9), rgb(4, 180, 180));
   background-clip: text;
   -webkit-background-clip: text;
@@ -146,8 +146,7 @@
 }
 
 .QuizEnd img {
-    position: absolute;
-    height: 50vh;
-    right: 0;
-    
-  }
+  position: absolute;
+  height: 50vh;
+  right: 0;
+}
