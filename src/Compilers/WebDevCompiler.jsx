@@ -61,15 +61,13 @@ const WebDevCompiler = props => {
           <button
             onClick={e => {
               setEditorText(`${props.Button1Text}`);
-            }}
-          >
+            }}>
             {props.Button1}
           </button>
           <button
             onClick={() => {
               setEditorText(`${props.Button2Text}`);
-            }}
-          >
+            }}>
             {props.Button2}
           </button>
           <button>props.Button3</button>
