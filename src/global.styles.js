@@ -63,15 +63,14 @@ export const CourseSelectorButtonContainer = styled.div`
 export const CourseSelectorButton = styled.button`
   width: auto;
   margin: 0 1rem;
-  padding: 0.3rem;
   font-size: 1rem;
   border: 2px solid aqua;
   color: black;
   font-weight: 900;
   background: transparent;
-  border-radius: 1vw;
+  border-radius: 2vh;
   transition: all ease-in-out 200ms;
-  padding: 0.6rem;
+  padding: 0.6rem 1rem ;
   &:hover {
     color: white;
     border: 2px solid transparent;
@@ -118,9 +117,9 @@ export const CoursesCard = styled.div`
 `;
 
 export const CourseCardHeader = styled.h1`
-  color: aqua;
+  color: teal;
   margin: 4% 0;
-  font-weight: 500;
+  font-weight: bold;
   text-transform: uppercase;
   font-size: 2vw;
   @media (max-width: 600px) {
@@ -128,9 +127,9 @@ export const CourseCardHeader = styled.h1`
   }
 `;
 export const CourseCardInfo = styled.p`
-  color: darkgrey;
-  margin: 1vw 0;
-  width: 100%;
+  color: gray;
+  margin: 1vw 5%;
+  width: 90%;
   font-weight: 500;
   font-size: 1vw;
   @media (max-width: 600px) {

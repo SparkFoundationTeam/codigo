@@ -98,6 +98,18 @@
   cursor: pointer;
 }
 
+input[list] {
+  color: #008cff;
+  font-weight: bolder;
+}
+
+datalist option {
+  font-size: 0.8em;
+  padding: 0.3em 1em;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
 .Content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -105,6 +117,17 @@
   width: 100vw;
   overflow-x: hidden;
   padding-bottom: 5vh;
+  background-color: rgba(253, 253, 253, 0.486);
+  -webkit-backdrop-filter: blur(0.1rem);
+          backdrop-filter: blur(0.1rem);
+}
+
+#AllCoursesPageBody {
+  background-image: url("../resources/pattern1Blob.png");
+  background-size: contain;
+  background-repeat: repeat;
+  background-size: 40vh;
+  background-attachment: fixed;
 }
 
 .SectHeader {
@@ -200,29 +223,98 @@
   color: rgba(240, 248, 255, 0);
 }
 
-.OneSection .CoursesCard:hover {
+.CourseHover {
+  height: 18vh;
+  position: relative;
+  width: 40vw;
+  margin-top: 3vh;
+  background-color: rgba(255, 255, 255, 0.965);
+  border-radius: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-filter: drop-shadow(10px 10px 10px grey);
+          filter: drop-shadow(10px 10px 10px grey);
   background-color: #f5efef;
+  transition-duration: 0.2s;
+}
+
+.CourseHover .infoBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.CourseHover img {
+  height: 18vh;
+  border-radius: 1rem;
+}
+
+.CourseHover .spanner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.CourseHover h4,
+.CourseHover h2,
+.CourseHover h5,
+.CourseHover h6 {
+  margin: 0.5vh 1vw;
+}
+
+.CourseHover .span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 20vw;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.CourseHover .span img {
+  height: 3vh;
+  margin: 0.5vh 1vw;
+}
+
+.CourseHover p {
+  margin: 0.5vh 1vw;
+}
+
+.CourseHover h6 {
+  font-size: large;
+  position: absolute;
+  right: 0;
+  color: rgba(240, 248, 255, 0);
+}
+
+.CourseHover img,
+.CourseHover p,
+.CourseHover h2,
+.CourseHover h5,
+.CourseHover h4 {
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
 }
 
-.OneSection .CoursesCard:hover img,
-.OneSection .CoursesCard:hover p,
-.OneSection .CoursesCard:hover h2,
-.OneSection .CoursesCard:hover h5,
-.OneSection .CoursesCard:hover h4 {
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
-}
-
-.OneSection .CoursesCard:hover h6 {
+.CourseHover h6 {
   display: visible;
   color: #046666;
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
 }
 
-.OneSection .CoursesCard:hover h6:hover {
+.CourseHover h6:hover {
   color: #4b4300;
 }
 
@@ -246,6 +338,9 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background-color: rgba(253, 253, 253, 0.486);
+  -webkit-backdrop-filter: blur(0.1rem);
+          backdrop-filter: blur(0.1rem);
 }
 
 .CardHolder {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 import './AllCourses.css';
 
@@ -22,10 +22,11 @@ const AllCourses = () => {
   let [filteredCourses, setfilteredCourses] = useState([]);
 
   const handleRendering = () => {
-    console.log(searchTerm);
     if (searchTerm === '') {
       setShowfiltered(false);
       return;
+    } else {
+      setShowfiltered(true);
     }
     let newarr = [...demo, ...demoTwo];
     let filtered = newarr.filter(eachobj => {
@@ -40,7 +41,7 @@ const AllCourses = () => {
   let [demo, setDemo] = useState([
     {
       header: ' Web Development Series',
-      keywords: ['html', 'css', 'atharva', 'web', 'bhagat', 'react'],
+      keywords: ['Web Development Series', 'series >>', 'courses >>', 'tutors >> ', 'HTML Complete Course', 'html', 'css', 'web', 'atharva', 'bhagat', 'react'],
       coursesCard: [
         {
           ImageLogo: HtmlAtharva,
@@ -52,13 +53,13 @@ const AllCourses = () => {
           CourseRatings: 'New Course',
           Linker: 'html01',
           SeriesName: 'Web Development Series',
-          keywords: ['html', 'css', 'atharva', 'web', 'bhagat', 'react'],
+          keywords: ['html', 'series >>', 'courses >>', 'tutors >> ', 'css', 'atharva', 'web', 'bhagat', 'react'],
         },
       ],
     },
     {
       header: 'Java Programming Series',
-      keywords: ['Java', 'Programming', 'adika', 'karnataki', 'gui'],
+      keywords: ['Java Programming Series', 'series >>', 'courses >>', 'tutors >> ', 'Java Complete Course', 'Java', 'Programming', 'adika', 'karnataki', 'gui'],
 
       coursesCard: [
         {
@@ -71,7 +72,7 @@ const AllCourses = () => {
           CourseRatings: 'New Course',
           Linker: 'java01',
           SeriesName: 'Java Programming Series',
-          keywords: ['Java', 'Programming', 'adika', 'karnataki', 'gui'],
+          keywords: ['Java', 'series >>', 'courses >>', 'tutors >> ', 'Programming', 'adika', 'karnataki', 'gui'],
         },
       ],
     },
@@ -80,7 +81,7 @@ const AllCourses = () => {
   let [demoTwo, setDemoTwo] = useState([
     {
       header: 'Javascript Development Series',
-      keywords: ['js', 'javascript', 'clean coding', 'bhavesh', 'mhadse'],
+      keywords: ['Javascript Development Series', 'series >>', 'courses >>', 'tutors >> ', 'Javascript Complete Course', 'js', 'javascript', 'clean coding', 'bhavesh', 'mhadse'],
 
       coursesCard: [
         {
@@ -93,14 +94,14 @@ const AllCourses = () => {
           CourseRatings: 'New Course',
           Linker: 'js01',
           SeriesName: 'JavaScript Development Series',
-          keywords: ['js', 'javascript', 'clean coding', 'bhavesh', 'mhadse', 'web'],
+          keywords: ['js', 'javascript', 'clean coding', 'series >>', 'courses >>', 'tutors >> ', 'bhavesh', 'mhadse', 'web'],
         },
       ],
     },
 
     {
       header: 'Python Development Series',
-      keywords: ['python', 'vaishnavi', 'koragonkar', 'automation'],
+      keywords: ['Python Development Series', 'series >>', 'courses >>', 'tutors >> ', 'Python Complete Course', 'python', 'vaishnavi', 'koragonkar', 'automation'],
 
       coursesCard: [
         {
@@ -113,27 +114,55 @@ const AllCourses = () => {
           CourseRatings: 'New Course',
           Linker: 'python01',
           SeriesName: 'Python Development Series',
-          keywords: ['python', 'vaishnavi', 'koragonkar', 'automation'],
+          keywords: ['python', 'series >>', 'courses >>', 'tutors >> ', 'vaishnavi', 'korgaonkar', 'automation'],
         },
       ],
     },
   ]);
 
   return (
-    <>
+    <div id='AllCoursesPageBody'>
       <div className='dashboard-navbar'>
         <div className='dashboard-icon'>
-        <Link to ='/'><img className='dashboard-pic' src={codiGoIcon}></img></Link>
+          <Link to='/'>
+            <img className='dashboard-pic' src={codiGoIcon}></img>
+          </Link>
         </div>
         <div id='courseSearch'>
           <input
+            list='AllCoursesList'
             type='search'
             name='courseSearch'
             value={searchTerm}
-            onChange={event => setSearchTerm(event.target.value)} //thamb x kuthey ? :(
+            onChange={event => {
+              setSearchTerm(event.target.value);
+              handleRendering();
+            }}
             id='courseSearchBar'
             placeholder='Search Courses / Tutors '
+            onSelect={event => {
+              setSearchTerm(event.target.value);
+              handleRendering();
+            }}
           ></input>
+
+          <datalist id='AllCoursesList'>
+            <option value='Courses >>'> </option>
+            <option value='Html Complete Course'>Web Development Series</option>
+            <option value='Java Complete Course'>Java Programming Series</option>
+            <option value='Javascript Complete Course'>JavaScript Development Series</option>
+            <option value='Python Complete Course'>Python Development Series</option>
+            <option value='Tutors >> '></option>
+            <option value='Atharva Bhagat'>Atharva's Courses</option>
+            <option value='Bhavesh Mhadse'>Bhavesh's Courses</option>
+            <option value='Adika Karnataki'>Adika's Courses</option>
+            <option value='Vaishnavi Korgaonkar'>Vaishnavi's Courses</option>
+            <option value='Series >>'> </option>
+            <option value='Web Development Series'>Web Development</option>
+            <option value='Java Programming Series'>Java Programming</option>
+            <option value='JavaScript Development Series'>JavaScript Series</option>
+            <option value='Python Development Series'>Python Development</option>
+          </datalist>
           <button onClick={handleRendering}>
             <img src={searchIcon}></img>
           </button>
@@ -143,9 +172,11 @@ const AllCourses = () => {
             <li>Community</li>
             <li>Kōdo</li>
             <li>Pixzta</li>
-            <Link to ='/dashboard'><li id='DashBoard'>
-              <strong>Dashboard</strong>
-            </li></Link>
+            <Link to='/dashboard'>
+              <li id='DashBoard'>
+                <strong>Dashboard</strong>
+              </li>
+            </Link>
           </ul>
         </div>
         <div className='res-NavButton'>
@@ -161,16 +192,7 @@ const AllCourses = () => {
                 <div className='OneSection'>
                   <h2 className='SectHeader'>{eachObject.header}</h2>{' '}
                   {eachObject.coursesCard.map(eachCard => (
-                    <CourseCard
-                      linker={eachCard.Linker}
-                      duration={eachCard.CourseDuration}
-                      logo={eachCard.ImageLogo}
-                      tutor={eachCard.TutorName}
-                      tutorImg={eachCard.TutorPic}
-                      courseName={eachCard.CourseName}
-                      courseDesc={eachCard.CourseInfo}
-                      ratings={eachCard.CourseRatings}
-                    />
+                    <CourseCard linker={eachCard.Linker} duration={eachCard.CourseDuration} logo={eachCard.ImageLogo} tutor={eachCard.TutorName} tutorImg={eachCard.TutorPic} courseName={eachCard.CourseName} courseDesc={eachCard.CourseInfo} ratings={eachCard.CourseRatings} />
                   ))}
                 </div>
               );
@@ -185,16 +207,7 @@ const AllCourses = () => {
                 <div className='OneSection'>
                   <h2 className='SectHeader'>{eachObject.header}</h2>{' '}
                   {eachObject.coursesCard.map(eachCard => (
-                    <CourseCard
-                      linker={eachCard.Linker}
-                      duration={eachCard.CourseDuration}
-                      logo={eachCard.ImageLogo}
-                      tutor={eachCard.TutorName}
-                      tutorImg={eachCard.TutorPic}
-                      courseName={eachCard.CourseName}
-                      courseDesc={eachCard.CourseInfo}
-                      ratings={eachCard.CourseRatings}
-                    />
+                    <CourseCard linker={eachCard.Linker} duration={eachCard.CourseDuration} logo={eachCard.ImageLogo} tutor={eachCard.TutorName} tutorImg={eachCard.TutorPic} courseName={eachCard.CourseName} courseDesc={eachCard.CourseInfo} ratings={eachCard.CourseRatings} />
                   ))}
                 </div>
               );
@@ -212,27 +225,12 @@ const AllCourses = () => {
                     .filter(val => {
                       if (searchTerm === '') {
                         return val;
-                      } else if (
-                        val.CourseName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                        val.TutorName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                        val.CourseInfo.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                        val.SeriesName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                        val.keywords.join(' ').toLowerCase().includes(searchTerm.toLowerCase())
-                      ) {
+                      } else if (val.CourseName.toLowerCase().includes(searchTerm.toLowerCase()) || val.TutorName.toLowerCase().includes(searchTerm.toLowerCase()) || val.CourseInfo.toLowerCase().includes(searchTerm.toLowerCase()) || val.SeriesName.toLowerCase().includes(searchTerm.toLowerCase()) || val.keywords.join(' ').toLowerCase().includes(searchTerm.toLowerCase())) {
                         return val;
                       }
                     })
                     .map(eachCard => (
-                      <CourseCard
-                        linker={eachCard.Linker}
-                        duration={eachCard.CourseDuration}
-                        logo={eachCard.ImageLogo}
-                        tutor={eachCard.TutorName}
-                        tutorImg={eachCard.TutorPic}
-                        courseName={eachCard.CourseName}
-                        courseDesc={eachCard.CourseInfo}
-                        ratings={eachCard.CourseRatings}
-                      />
+                      <CourseCard linker={eachCard.Linker} duration={eachCard.CourseDuration} logo={eachCard.ImageLogo} tutor={eachCard.TutorName} tutorImg={eachCard.TutorPic} courseName={eachCard.CourseName} courseDesc={eachCard.CourseInfo} ratings={eachCard.CourseRatings} />
                     ))}
                 </div>
               );
@@ -244,7 +242,7 @@ const AllCourses = () => {
       <UpcomingCourses />
 
       <Footer />
-    </>
+    </div>
   );
 };
 

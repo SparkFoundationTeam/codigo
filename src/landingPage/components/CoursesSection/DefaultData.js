@@ -5,13 +5,7 @@ import HtmlAtharva from '../../../resources/HTMLAtharva.png';
 import JavaAdika from '../../../resources/JAVAAdika.png';
 import PythonVaishnavi from '../../../resources/PYTHONVaishnavi.png';
 
-export const CoursesArray = [
-  'Featured Courses',
-  'Web Development',
-  'Javascript Series',
-  'Java Programming',
-  'Python Development',
-];
+export const CoursesArray = ['Featured Courses', 'Web Development', 'Javascript Series', 'Java Programming', 'Python Development'];
 
 // Newver Modify Courses Array! can cause problems!!!
 export const OurCoursesCardInfo = [
@@ -24,6 +18,7 @@ export const OurCoursesCardInfo = [
       AuthorPic: Bhavesh,
       AUthorName: 'Atharva Bhagat',
       CourseDuration: '1 Hour',
+      Linker: 'html01',
     },
     {
       ImageLogo: JSBhavesh,
@@ -32,6 +27,7 @@ export const OurCoursesCardInfo = [
       AuthorPic: Bhavesh,
       AUthorName: 'Bhavesh Mhadse',
       CourseDuration: '2 Hours',
+      Linker: 'js01',
     },
     {
       ImageLogo: JavaAdika,
@@ -40,6 +36,7 @@ export const OurCoursesCardInfo = [
       AuthorPic: Bhavesh,
       AUthorName: 'Adika Karnataki',
       CourseDuration: '2 Hours',
+      Linker: 'java01',
     },
     {
       ImageLogo: PythonVaishnavi,
@@ -48,6 +45,7 @@ export const OurCoursesCardInfo = [
       AuthorPic: Bhavesh,
       AUthorName: 'Vaishnavi Korgaonkar',
       CourseDuration: '2 Hours',
+      Linker: 'python01',
     },
   ],
   /* HTML */ [

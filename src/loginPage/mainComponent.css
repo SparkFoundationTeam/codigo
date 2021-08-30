@@ -56,7 +56,7 @@ form .formElem {
 }
 
 form .formElem input,
-form .formElem select {
+form .formElem datalist {
   padding: 30px;
   padding-left: 80px;
   font-weight: bold;
@@ -70,33 +70,33 @@ form .formElem select {
 }
 
 form .formElem input::-webkit-input-placeholder,
-form .formElem select::-webkit-input-placeholder {
+form .formElem datalist::-webkit-input-placeholder {
   font-size: 80%;
 }
 
 form .formElem input:-ms-input-placeholder,
-form .formElem select:-ms-input-placeholder {
+form .formElem datalist:-ms-input-placeholder {
   font-size: 80%;
 }
 
 form .formElem input::-ms-input-placeholder,
-form .formElem select::-ms-input-placeholder {
+form .formElem datalist::-ms-input-placeholder {
   font-size: 80%;
 }
 
 form .formElem input::placeholder,
-form .formElem select::placeholder {
+form .formElem datalist::placeholder {
   font-size: 80%;
 }
 
-form .formElem select {
+form .formElem datalist {
   font-size: 100%;
   padding: 5px;
   padding-left: 80px;
   padding-right: 5px;
 }
 
-form .formElem select option {
+form .formElem datalist option {
   background-color: white;
 }
 
@@ -138,6 +138,10 @@ form #submit {
   font-weight: bold;
   background: -webkit-gradient(linear, right bottom, left top, from(#54cccc), to(#00e2e2));
   background: linear-gradient(to left top, #54cccc, #00e2e2);
+}
+
+form input:focus {
+  border: 2px solid teal;
 }
 
 #secure {

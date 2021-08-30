@@ -18,7 +18,11 @@
   height: 100vh;
   z-index: 2;
   width: 5vw;
-  background-color: white;
+  background: linear-gradient(to top, rgb(89, 0, 92), aqua, rgba(255, 255, 255, 0.466));
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 5px;
+  backdrop-filter: blur(0.1rem);
   @include FlexStyle();
   position: fixed;
   top: 0;
@@ -76,10 +80,11 @@
   flex-direction: column;
   margin-top: 10vh;
 
-  video {
+  iframe {
     border-radius: 5vh;
 
     height: 80vh;
+    width: 80vw;
   }
 
   #List {
@@ -93,7 +98,7 @@
     h4,
     h3 {
       width: 15vw;
-      margin: 2vh;
+      margin: 2vw;
     }
   }
 }
@@ -136,17 +141,17 @@
       top: 4vh;
       transform: rotate(270deg);
       background: -webkit-linear-gradient(right, rgb(255, 19, 125), rgb(4, 180, 180));
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    }
-    #codeAlongLabel {
-        position: absolute;
-        left: 0vw;
-        top: -1vh;
-        background: -webkit-linear-gradient(right, rgb(255, 19, 125), rgb(4, 180, 180));
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      }
+    }
+    #codeAlongLabel {
+      position: absolute;
+      left: 0vw;
+      top: -1vh;
+      background: -webkit-linear-gradient(right, rgb(255, 19, 125), rgb(4, 180, 180));
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
     #Compiler {
       width: 100%;
       height: 80vh;
@@ -161,23 +166,20 @@
 
         font-size: larger;
         background-color: rgba(164, 213, 236, 0.1);
-        
       }
       #output-window {
         width: 50%;
         padding: 1rem;
       }
-      .RunCode{
-          height: fit-content;
-          background-color: transparent;
-          border: none;
-          margin-right: 2vh;
-          cursor: pointer;
-          img{
-              height: 4vh;
-              
-          }
-          
+      .RunCode {
+        height: fit-content;
+        background-color: transparent;
+        border: none;
+        margin-right: 2vh;
+        cursor: pointer;
+        img {
+          height: 4vh;
+        }
       }
     }
   }
@@ -195,9 +197,9 @@
       background-color: white;
       border: 1px solid grey;
       cursor: pointer;
-      &:focus{
+      &:focus {
         background-color: rgb(13, 0, 85);
-        color: white
+        color: white;
       }
     }
   }
@@ -283,4 +285,277 @@
   bottom: -5vh;
   right: 0vh;
   z-index: -1;
+}
+
+.MetricsItem {
+  @include FlexStyle();
+  flex-direction: column;
+  h3 {
+    margin: 1vh;
+  }
+}
+
+.Performance {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+  div {
+    display: flex;
+  }
+  .MetricsItem {
+    margin: 1vh;
+  }
+}
+
+#FeedBack {
+  .BooksContainer {
+    justify-content: space-evenly;
+    position: relative;
+    .RatingsBar {
+      height: 20vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      .RatingsSpanner {
+        display: flex;
+        width: 20vw;
+        overflow: hidden;
+        align-items: center;
+        hr {
+          margin-left: 1vw;
+          height: 0.8vh;
+          margin-top: 0vh;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
+
+.FeedBackModal {
+  margin-left: 0vw;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  flex-direction: column;
+  padding: 5rem;
+  backdrop-filter: blur(6rem);
+  width: 90%;
+  height: 60vh;
+  top: 10%;
+  #feedbackicon {
+    height: 10vh;
+    margin-bottom: 5vh;
+  }
+
+  h4 {
+    margin-top: 2vh;
+    color: red;
+  }
+
+  background-color: rgb(255, 255, 255);
+  background-image: linear-gradient(aqua, purple), linear-gradient(to right, purple, aqua), linear-gradient(to bottom, purple, aqua), linear-gradient(to left, purple, aqua);
+  background-repeat: no-repeat;
+  background-size: 5px 50%, 50% 5px, 5px 50%, 50% 5px;
+  background-position: right top, right top, left bottom, left bottom, 5px 5px;
+}
+
+.OverallRatingsFeedBack {
+  display: flex;
+  width: 70%;
+  align-items: center;
+  justify-content: space-between;
+  img {
+    height: 4vh;
+  }
+  h2 {
+    width: 50%;
+    text-align: left;
+  }
+}
+
+.RatingsChart {
+  display: flex;
+  width: 50%;
+  justify-content: space-evenly;
+}
+
+@media screen and (max-width: 1000px) {
+  #bp1,
+  #bp2,
+  .CourseSidebar,
+  #List {
+    display: none;
+  }
+
+  #FeedBack {
+    margin-top: 10vh;
+
+    height: fit-content;
+    .BooksContainer {
+      height: 100vh;
+      width: 90vw;
+
+      h2 {
+        font-size: 3vh;
+      }
+
+      .RatingsBar {
+        margin-top: 5vh;
+        flex-direction: column;
+        height: 80%;
+      }
+    }
+  }
+
+  .Performance {
+    margin-top: 5vh;
+    div {
+      flex-direction: column;
+    }
+  }
+
+  .RatingsChart {
+    width: 80vw;
+  }
+
+  .FeedBackModal {
+    height: 100vh;
+    top: 0;
+    width: 90vw;
+    .OverallRatingsFeedBack {
+      width: 95vw;
+      margin-bottom: 3vh;
+      flex-direction: column;
+      justify-content: center;
+      h2 {
+        margin-bottom: 1vh;
+        font-size: 1.2vh;
+        text-align: center;
+      }
+      h1 {
+        display: none;
+      }
+    }
+  }
+
+  .VideoBox {
+    background-size: 10vh;
+  }
+
+  #List {
+    visibility: hidden;
+    width: 0vw;
+    overflow: hidden;
+  }
+
+  .res-NavButton {
+    visibility: visible;
+    position: absolute;
+    right: 4vw;
+    z-index: 15;
+    img {
+      height: 3vh;
+    }
+  }
+
+  #CourseHeader {
+    font-size: x-small;
+  }
+
+  .BooksBox {
+    #bp1 {
+      visibility: hidden;
+    }
+    height: auto;
+    flex-direction: column;
+
+    .BooksContainer {
+      margin-left: 0vw;
+
+      text-align: center;
+      width: 95vw;
+      height: auto;
+    }
+    .BookInfo {
+      flex-direction: column;
+      .BookTitle,
+      .AuthorTitle,
+      .BookDesc,
+      .ViewBook,
+      .DownloadBook {
+        width: 80vw;
+        margin: 2vh 2vh 0vh 0vh;
+        padding: 1vh;
+        border-radius: 10px;
+        text-align: center;
+        background-color: rgba(207, 235, 247, 0.726);
+      }
+
+      .BookDesc {
+        width: 80vw;
+      }
+
+      #BookLinks {
+        display: flex;
+        width: 80vw;
+        align-items: center;
+        justify-content: center;
+      }
+      .ViewBook,
+      .DownloadBook {
+        width: 30vw;
+      }
+    }
+  }
+  .VideoBox iframe {
+    height: 25vh;
+    border-radius: 2vh;
+  }
+
+  .CodeAlong {
+    padding-bottom: 5vh;
+    .CodeContainer {
+      background-image: none;
+      width: 95vw;
+      margin-left: 0;
+      #Compiler {
+        flex-direction: column;
+
+        #CodeEditor {
+          height: 80vh;
+          font-size: small;
+        }
+        #output-window {
+          width: 100%;
+          height:70vh
+        }
+        #codeAlongLabel {
+          top: -5vh;
+        }
+        #outputLabel {
+          position: static;
+        }
+        .RunCode {
+          @include FlexStyle();
+          width: 100%;
+        }
+      }
+    }
+  }
+  .ButtonSelection {
+    width: 100%;
+    justify-content: space-evenly;
+    button {
+      font-size: 2vw;
+      width: 15vw;
+    }
+    padding-bottom: 5vh;
+  }
 }

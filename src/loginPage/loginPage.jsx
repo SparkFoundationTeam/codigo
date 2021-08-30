@@ -22,7 +22,9 @@ import { defaultUser } from '../DefaultUser.js';
 import { UserContext } from '../MainContext'; // <- hi line prytek component madhe lagnr jithe user aahe tithe
 
 const LoginPage = ({ setlG }) => {
-  let { signedInUser, setsignedInUser } = useContext(UserContext); // <- ani hi pn
+  let { signedInUser, setsignedInUser } = useContext(UserContext);
+
+  const [WrongPassword, setWrongPassword] = useState(false);
 
   const [login, setLogin] = useState(true);
   let [usernamesArray, setUsernameArray] = useState([]);
@@ -67,22 +69,26 @@ const LoginPage = ({ setlG }) => {
 
   const handleLogin = async e => {
     e.preventDefault();
-    //database madhe zhalay uodate pn error ka detay fuck password kai hota?
 
     let loggedInUser = await axios.get(BackendUrl + `user?username=${User.username}&password=${User.password}`);
+    await axios.get(BackendUrl + `user?email=${User.username}&password=${User.password}`);
+
+
+
 
     console.log('User we got through mongo Db is : ', loggedInUser);
 
     const loggedInUserMessage = loggedInUser.data.message;
 
     if (loggedInUserMessage === 'No User Found') {
-      alert('Username and password doesnt match');
+      setWrongPassword(true);
       return;
-    } //nai hoanr vatta
+    }
+    setWrongPassword(false);
     loggedInUser = loggedInUser.data.user[0];
-
+    localStorage.setItem('LoggedIn', true);
     setUser(defaultUser);
-    setsignedInUser(loggedInUser); // thamb testing naitar are asa kahi redirect asel na on authorized redirect dashboard bghayala hava
+    setsignedInUser(loggedInUser);
     setUserFromLocalStorage(loggedInUser);
   };
   const setUserFromLocalStorage = user => localStorage.setItem('User', JSON.stringify(user));
@@ -117,10 +123,9 @@ const LoginPage = ({ setlG }) => {
   };
 
   const getUsernamesAndemails = async () => {
-    //nkooooo brobr ahe
     console.log('Getting usernames and emails');
     let data = await axios.get(BackendUrl + 'user/usernames');
-    data = data.data; // <- wierd parts of Js
+    data = data.data;
 
     let [usernames, emails] = data;
 
@@ -165,6 +170,7 @@ const LoginPage = ({ setlG }) => {
         </button>
 
         <h4>Forgot Details? Get Help logging in</h4>
+        <h3 style={WrongPassword ? { color: 'red', visibility: 'visible' } : { visibility: 'hidden' }}> Username and Password do not match</h3>
       </form>
 
       <form id='signUp' className={login ? 'hidden' : 'active'}>
@@ -199,9 +205,9 @@ const LoginPage = ({ setlG }) => {
 
         <div className='formElem'>
           <img src={location}></img>
-          <select name='state' value={User.state} onChange={handleChange}>
-            <option value='Default'>Select State</option>
-            <option value='Foreigner'>Out of India</option>
+          <input list='state' placeholder='Your State' name='state' value={User.state} onChange={handleChange} />
+          <datalist id='state'>
+            <option value='I am a foreign student'>Out of India</option>
             <option value='Andhra Pradesh'>Andhra Pradesh</option>
             <option value='Andaman and Nicobar Islands'>Andaman and Nicobar Islands</option>
             <option value='Arunachal Pradesh'>Arunachal Pradesh</option>
@@ -238,20 +244,20 @@ const LoginPage = ({ setlG }) => {
             <option value='Uttar Pradesh'>Uttar Pradesh</option>
             <option value='Uttarakhand'>Uttarakhand</option>
             <option value='West Bengal'>West Bengal</option>
-          </select>
+          </datalist>
         </div>
 
         <div className='formElem'>
           <img src={type}></img>
-          <select name='participantType' value={User.participantType} onChange={handleChange}>
-            <option value='Default'>Year of Study</option>
 
+          <input list='participantType' placeholder='Year of Study' name='participantType' value={User.participantType} onChange={handleChange} />
+          <datalist id='participantType'>
             <option value='Professional'>Professional / Faculty</option>
-            <option value='Under Graduate Student'>Under Graduate Student</option>
-            <option value='Post Graduate Student'>Post Graduate Student</option>
+            <option value='Under Graduate '>Under Graduate Student</option>
+            <option value='Post Graduate '>Post Graduate Student</option>
             <option value='11-12th'>11-12th Grade</option>
             <option value='Below 10th'>Below 10th Grade</option>
-          </select>
+          </datalist>
         </div>
         <input onClick={handleSignUp} type='submit' value='SIGN UP' id='submit'></input>
       </form>

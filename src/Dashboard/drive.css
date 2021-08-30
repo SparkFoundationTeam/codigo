@@ -1,0 +1,91 @@
+.driveContainer {
+  width: 90%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+}
+
+.driveContainer h1 {
+  background: -webkit-linear-gradient(left, #fd0977, #04b4b4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 5vh;
+}
+
+.driveContainer #cloudImage {
+  height: 50vh;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.DriveModal {
+  width: 50vw;
+  margin-left: 0vw;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 5rem;
+  -webkit-backdrop-filter: blur(0.7rem);
+          backdrop-filter: blur(0.7rem);
+  height: 60vh;
+  top: 10%;
+  z-index: 100;
+  margin-top: 10vh;
+  background-color: rgba(255, 255, 255, 0.596);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(aqua), to(purple)), -webkit-gradient(linear, left top, right top, from(purple), to(aqua)), -webkit-gradient(linear, left top, left bottom, from(purple), to(aqua)), -webkit-gradient(linear, right top, left top, from(purple), to(aqua));
+  background-image: linear-gradient(aqua, purple), linear-gradient(to right, purple, aqua), linear-gradient(to bottom, purple, aqua), linear-gradient(to left, purple, aqua);
+  background-repeat: no-repeat;
+  background-size: 5px 50%, 50% 5px, 5px 50%, 50% 5px;
+  background-position: right top, right top, left bottom, left bottom, 5px 5px;
+}
+
+.DriveModal img {
+  height: 10vh;
+}
+
+.QuizStartButton {
+  background: -webkit-gradient(linear, right top, left top, from(#fd0977), to(#04b4b4));
+  background: linear-gradient(to left, #fd0977, #04b4b4);
+  outline: none;
+  padding: 1vh 2vw;
+  margin-top: 5vh;
+  font-size: 2vh;
+  border-radius: 10px;
+  width: 15vw;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.QuizStartButton:hover {
+  background: -webkit-gradient(linear, right top, left top, from(#ce0861), to(#039292));
+  background: linear-gradient(to left, #ce0861, #039292);
+}
+/*# sourceMappingURL=drive.css.map */
