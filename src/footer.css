@@ -8,6 +8,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  z-index: 100;
 }
 
 #contactsUl {
@@ -23,8 +24,6 @@
   justify-content: left;
   height: 7vh;
 }
-
-
 
 #logoFooter {
   height: 25vh;
@@ -49,16 +48,15 @@ a {
   margin-right: 2.5vw;
 }
 
-a:hover{
-    color: goldenrod;
-    transition-duration: .5s;
+a:hover {
+  color: goldenrod;
+  transition-duration: 0.5s;
 }
 
 #imgShort {
-    height: 4vh;
-    width:2.2vw;
-  }
-  
+  height: 4vh;
+  width: 2.2vw;
+}
 
 @media screen and (max-width: 1000px) {
   #footer {
@@ -82,6 +80,4 @@ a:hover{
     height: 3.5vh;
     width: 3.5vh;
   }
-  
-
 }

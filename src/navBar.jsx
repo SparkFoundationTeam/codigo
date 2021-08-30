@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './codiGo.png'
+import logo from './resources/codiGo.png'
 import './navBar.css'
 import {Link} from 'react-router-dom'
 
