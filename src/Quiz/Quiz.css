@@ -1,17 +1,21 @@
 .quiz-container {
-  flex-direction: column;
   padding: 5rem;
   backdrop-filter: blur(0.6rem);
   width: 72vw;
   height: 80vh;
   background-color: rgba(253, 253, 253, 0.486);
-  background-image: linear-gradient(aqua, purple), linear-gradient(to right, purple, aqua), linear-gradient(to bottom, purple, aqua), linear-gradient(to left, purple, aqua);
+  background-image: linear-gradient(aqua, purple), linear-gradient(to right, purple, aqua), linear-gradient(to bottom, purple, aqua), linear-gradient(to left, purple, aqua), linear-gradient(to bottom, purple, aqua), linear-gradient(to left, purple, aqua);
   background-repeat: no-repeat;
-  background-size: 5px 50%, 50% 5px, 5px 50%, 50% 5px;
-  background-position: left top, right bottom, right bottom, left top, 5px 5px;
+  background-size: 5px 50%, 50% 5px, 5px 50%, 50% 5px, 5px 15%, 10% 5px;
+  background-position: left top, right bottom, right bottom, left top, left bottom, bottom left, 5px 5px;
+}
+
+#QuizCodigo {
+  position: absolute;
+  bottom: 5vh;
 }
 .quiz-question {
-  background-color: rgba(88, 238, 238, 0.678);
+  background-color: rgb(88, 238, 238);
   border: 2px solid transparent;
   font-size: 2rem;
   text-align: left;
@@ -62,28 +66,6 @@
   float: right;
 }
 
-@media (max-width: 600px) {
-  .quiz-question {
-    font-size: 1.5rem;
-    margin-bottom: 0.3rem;
-  }
-  .timer {
-    float: none;
-    margin: auto;
-    padding: 1rem;
-  }
-  .quiz-options {
-    font-size: 1.3rem;
-    margin: 0.3rem auto;
-  }
-  .quiz-nextbutton {
-    font-size: 1.5rem;
-    width: 99%;
-    padding: 0.3rem 0;
-    margin: 0.3rem auto;
-  }
-}
-
 .QuizInstructions h1 {
   width: fit-content;
   background: -webkit-linear-gradient(left, rgb(253, 9, 119), rgb(4, 180, 180));
@@ -106,10 +88,19 @@
   width: 15vw;
   border: none;
   color: white;
+  cursor: pointer;
 }
 
 .QuizStartButton:hover {
   background: linear-gradient(to left, rgb(206, 8, 97), rgb(3, 146, 146));
+}
+
+.QuizBackButton {
+    background-color: transparent;
+    outline: none;
+    border :none;
+    color: white;
+    cursor: pointer;
 }
 
 .QuizInstructions img {
@@ -149,4 +140,118 @@
   position: absolute;
   height: 50vh;
   right: 0;
+  bottom: 20%;
+}
+.CertificateModal {
+  width: 20vw;
+  margin-left: 0vw;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  flex-direction: column;
+  padding: 5rem;
+  backdrop-filter: blur(6rem);
+  width: 90%;
+  height: 60vh;
+  top: 10%;
+
+  background-color: rgb(14, 15, 15);
+  background-image: linear-gradient(aqua, purple), linear-gradient(to right, purple, aqua), linear-gradient(to bottom, purple, aqua), linear-gradient(to left, purple, aqua);
+  background-repeat: no-repeat;
+  background-size: 5px 50%, 50% 5px, 5px 50%, 50% 5px;
+  background-position: right top, right top, left bottom, left bottom, 5px 5px;
+}
+
+.CertificateModal img {
+  height: 10vh;
+}
+
+@media (max-width: 1000px) {
+  .quiz-question {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+  #QuizCodigo {
+    position: absolute;
+    bottom: 2vh;
+    height: 5vh;
+  }
+  .timer {
+    float: none;
+    margin: auto;
+    padding: 1rem;
+  }
+  .quiz-options {
+    font-size: 1.3rem;
+    margin: 0.3rem auto;
+  }
+  .quiz-nextbutton {
+    font-size: 1.5rem;
+    width: 99%;
+    padding: 0.3rem 0;
+    margin: 2rem auto;
+  }
+  .quiz-container {
+    width: 95vw;
+    padding: 2rem;
+    height: fit-content;
+    padding-bottom: 5rem;
+    background-image: linear-gradient(aqua, purple), linear-gradient(to right, purple, aqua), linear-gradient(to bottom, purple, aqua), linear-gradient(to left, purple, aqua);
+    background-repeat: no-repeat;
+    background-size: 5px 50%, 50% 5px, 5px 50%, 50% 5px, 5px 15%, 10% 5px;
+    background-position: left top, right bottom, right bottom, left top, left bottom, bottom left, 5px 5px;
+  }
+  .QuizInstructions img {
+    height: 20vh;
+  }
+  .QuizInstructions p,
+  .QuizInstructions b {
+    font-size: 2vh;
+  }
+  .QuizStartButton {
+    width: auto;
+  }
+
+  .QuizEnd h1,
+  .QuizEnd h2 {
+    font-size: 3vh;
+  }
+
+  #Congratulations {
+    font-size: 2vh;
+    width: fit-content;
+  }
+
+  .QuizEnd img {
+    position: absolute;
+    height: 10vh;
+    right: 0;
+  }
+
+  .CertificateModal {
+    width: 80vw;
+    font-size: 1vh;
+    height: 80vh;
+    top: -5vh;
+    justify-content: center;
+  }
+  .CertificateModal h2 {
+    font-size: 1.7vh;
+  }
+
+  .CertificateModal img {
+    height: 5vh;
+    margin: 3vh;
+  }
+}
+
+#Quizz {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
 }
