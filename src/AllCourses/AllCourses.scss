@@ -78,11 +78,33 @@
   }
 }
 
+input[list] {
+  color: rgb(0, 140, 255);
+  font-weight: bolder;
+}
+
+datalist option {
+    font-size: 0.8em;
+    padding: 0.3em 1em;
+    background-color: #ccc;
+    cursor: pointer;
+  }
+
 .Content {
   display: flex;
   width: 100vw;
   overflow-x: hidden;
   padding-bottom: 5vh;
+  background-color: rgba(253, 253, 253, 0.486);
+  backdrop-filter: blur(0.1rem);
+}
+
+#AllCoursesPageBody {
+  background-image: url('../resources/pattern1Blob.png');
+  background-size: contain;
+  background-repeat: repeat;
+  background-size: 40vh;
+  background-attachment: fixed;
 }
 
 .SectHeader {
@@ -145,25 +167,72 @@
       right: 0;
       color: rgba(240, 248, 255, 0);
     }
+  }
+}
+.CourseHover {
+  height: 18vh;
+  position: relative;
+  width: 40vw;
+  margin-top: 3vh;
+  background-color: rgba(255, 255, 255, 0.965);
+  border-radius: 1rem;
+  display: flex;
+  transition-duration: 0.2s;
+  filter: drop-shadow(10px 10px 10px grey);
+  .infoBox {
+    display: flex;
 
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  img {
+    height: 18vh;
+    border-radius: 1rem;
+  }
+  .spanner {
+    display: flex;
+  }
+  h4,
+  h2,
+  h5,
+  h6 {
+    margin: 0.5vh 1vw;
+  }
+  .span {
+    display: flex;
+    width: 20vw;
+    justify-content: space-between;
+    img {
+      height: 3vh;
+      margin: 0.5vh 1vw;
+    }
+  }
+  p {
+    margin: 0.5vh 1vw;
+  }
+  h6 {
+    font-size: large;
+    position: absolute;
+    right: 0;
+    color: rgba(240, 248, 255, 0);
+  }
+
+  background-color: rgb(245, 239, 239);
+  transition-duration: 0.2s;
+  img,
+  p,
+  h2,
+  h5,
+  h4 {
+    transition-duration: 0.2s;
+  }
+  h6 {
+    display: visible;
+    color: rgb(4, 102, 102);
+    transition-duration: 0.2s;
     &:hover {
-      background-color: rgb(245, 239, 239);
-      transition-duration: 0.2s;
-      img,
-      p,
-      h2,
-      h5,
-      h4 {
-        transition-duration: 0.2s;
-      }
-      h6 {
-        display: visible;
-        color: rgb(4, 102, 102);
-        transition-duration: 0.2s;
-        &:hover {
-          color: rgb(75, 67, 0);
-        }
-      }
+      color: rgb(75, 67, 0);
     }
   }
 }
@@ -173,12 +242,14 @@
 }
 
 .Upcoming {
-    margin-top: 5vh;
+  margin-top: 5vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: rgba(253, 253, 253, 0.486);
+  backdrop-filter: blur(0.1rem);
 }
 
 .CardHolder {

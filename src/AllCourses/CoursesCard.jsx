@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './AllCourses.css';
 import { Link } from 'react-router-dom';
 
- const CourseCard = props => {
+const CourseCard = props => {
+
+    let [style,HoverStyle] = useState(false);
+
   return (
-    <div className='CoursesCard'>
+    <div className={style ? 'CourseHover':'CoursesCard'} onMouseOver={()=>HoverStyle(true)} onMouseLeave={()=>HoverStyle(false)}>
       <img src={props.logo}></img>
       <div className='infoBox'>
         <h2>{props.courseName}</h2>

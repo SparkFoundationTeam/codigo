@@ -4,7 +4,7 @@ import gmail from './resources/mail-icon.png'
 import youtube from './resources/yt-icon.png'
 import insta from './resources/insta-icon.png'
 import logo from './resources/codiGo.png'
-import sponsor from './resources/ownership.png'
+import sponsor from './resources/thumbsUP2.png'
 
 const Footer = () => {
     return (
@@ -20,7 +20,7 @@ const Footer = () => {
 
 
             </ul>
-            <p id='rightsReserved'> All Rights Reserved | &copy; Project códiGo</p>
+            <p id='rightsReserved'> <b>All Rights Reserved | &copy; Project códiGo </b></p>
         </div>
     );
 }

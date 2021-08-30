@@ -7,6 +7,12 @@ import RunCode from '../resources/RunCode.png';
 
 const WebDevCompiler = props => {
   let [editorText, setEditorText] = useState(`${props.Button1Text}`);
+  let [index, setIndex] = useState(1);
+
+  let [clickedStyles, setClickStyle] = useState({
+    backgroundColor: 'rgb(13, 0, 85)',
+    color: 'white',
+  });
 
   useEffect(() => {}, []);
 
@@ -42,9 +48,14 @@ const WebDevCompiler = props => {
       <img src={BlobP1} id='bp1' />
       <img src={BlobP2} id='bp2' />
       <div className='CodeContainer'>
-        <div id='Compiler'>
+        <div
+          id='Compiler'
+          onLoad={() => {
+            CodeRunner();
+          }}
+        >
           <b id='codeAlongLabel'>códiGo CODE ALONG </b>
-          <p id='outputLabel'>OUTPUT </p>
+
           <textarea onChange={e => CodeRunnerHtml(e)} value={editorText} id='CodeEditor' placeholder='Write your Code Here'>
             {editorText}
           </textarea>
@@ -54,6 +65,7 @@ const WebDevCompiler = props => {
             <br />
             <b>Run</b>
           </button>
+          <p id='outputLabel'>OUTPUT </p>
 
           <iframe id='output-window'></iframe>
         </div>
@@ -61,20 +73,75 @@ const WebDevCompiler = props => {
           <button
             onClick={e => {
               setEditorText(`${props.Button1Text}`);
-            }}>
-            {props.Button1}
+              setIndex(1);
+            }}
+            onMouseOver={() => {
+              CodeRunner();
+            }}
+            style={index === 1 ? clickedStyles : {}}
+          >
+            <b> {props.Button1} </b>
           </button>
           <button
             onClick={() => {
               setEditorText(`${props.Button2Text}`);
-            }}>
-            {props.Button2}
+              setIndex(2);
+            }}
+            onMouseOver={() => {
+              CodeRunner();
+            }}
+            style={index === 2 ? clickedStyles : {}}
+          >
+            <b> {props.Button2} </b>
           </button>
-          <button>props.Button3</button>
-          <button>props.Button4</button>
-          <button>props.Button5</button>
-          <button>props.Button6</button>
-          <button>props.Button7</button>
+          <button
+            onClick={() => {
+              setEditorText(`${props.Button3Text}`);
+              setIndex(3);
+            }}
+            onMouseOver={() => {
+              CodeRunner();
+            }}
+            style={index === 3 ? clickedStyles : {}}
+          >
+            <b> {props.Button3} </b>
+          </button>
+          <button
+            onClick={() => {
+              setEditorText(`${props.Button4Text}`);
+              setIndex(4);
+            }}
+            onMouseOver={() => {
+              CodeRunner();
+            }}
+            style={index === 4 ? clickedStyles : {}}
+          >
+            <b> {props.Button4} </b>
+          </button>
+          <button
+            onClick={() => {
+              setEditorText(`${props.Button5Text}`);
+              setIndex(5);
+            }}
+            onMouseOver={() => {
+              CodeRunner();
+            }}
+            style={index === 5 ? clickedStyles : {}}
+          >
+            <b> {props.Button5} </b>
+          </button>
+          <button
+            onClick={() => {
+              setEditorText(`${props.Button6Text}`);
+              setIndex(6);
+            }}
+            onMouseOver={() => {
+              CodeRunner();
+            }}
+            style={index === 6 ? clickedStyles : {}}
+          >
+            <b> {props.Button6} </b>
+          </button>
         </div>
       </div>
     </div>

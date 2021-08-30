@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
 
 import LandingPage from './landingPage/landingPage';
 // import LoginPage from './loginPage/loginPage';
@@ -27,11 +27,14 @@ import ScrollToTop from './ScrollToTop';
 
 const App = () => {
   let [signedInUser, setsignedInUser] = useState(defaultUser);
+  
+
+  const authenticated = localStorage.getItem('LoggedIn');
   return (
     <>
-      
       <Router>
-      <ScrollToTop />
+        <ScrollToTop />
+
         <UserContext.Provider value={{ signedInUser, setsignedInUser }}>
           <Switch>
             <Route exact path='/'>
@@ -40,48 +43,64 @@ const App = () => {
             <Route exact path='/login'>
               <LoginPage />
             </Route>
-            <Route exact path='/dashboard'>
-              <DashBoard />
-            </Route>
-            <Route exact path='/all-courses'>
-              <AllCourses />
-            </Route>
-            <Route exact path='/all-courses'>
-              <AllCourses />
-            </Route>
-
-            <Route exact path='/html01-course-enroll'>
-              <Html01Enroll />
-            </Route>
-            <Route exact path='/webdev-html01'>
-              <Html01 />
-            </Route>
-
-            <Route exact path='/java01-course-enroll'>
-              <Java01Enroll />
-            </Route>
-            <Route exact path='/javadev-java01'>
-              <Java01 />
-            </Route>
-
-            <Route exact path='/js01-course-enroll'>
-              <JS01Enroll />
-            </Route>
-            <Route exact path='/javascript01'>
-              <JS01 />
-            </Route>
-
-            <Route exact path='/python01-course-enroll'>
-              <Python01Enroll />
-            </Route>
-            <Route exact path='/pydev-python01'>
-              <Python01 />
-            </Route>
-
-            <Route>
-              <PageNotFound />
-            </Route>
           </Switch>
+
+          {!authenticated && (
+            <Switch>
+              
+              <Redirect to='/'></Redirect>
+            </Switch>
+          )}
+
+          {authenticated && (
+            <Switch>
+              <Redirect from='/login' to='/dashboard'></Redirect>
+            </Switch>
+          )}
+
+          {authenticated && (
+            <Switch>
+              <Route exact path='/dashboard'>
+                <DashBoard />
+              </Route>
+              <Route exact path='/all-courses'>
+                <AllCourses />
+              </Route>
+              <Route exact path='/all-courses'>
+                <AllCourses />
+              </Route>
+
+              <Route exact path='/html01-course-enroll'>
+                <Html01Enroll />
+              </Route>
+              <Route exact path='/webdev-html01'>
+                <Html01 />
+              </Route>
+
+              <Route exact path='/java01-course-enroll'>
+                <Java01Enroll />
+              </Route>
+              <Route exact path='/javadev-java01'>
+                <Java01 />
+              </Route>
+
+              <Route exact path='/js01-course-enroll'>
+                <JS01Enroll />
+              </Route>
+              <Route exact path='/javascript01'>
+                <JS01 />
+              </Route>
+
+              <Route exact path='/python01-course-enroll'>
+                <Python01Enroll />
+              </Route>
+              <Route exact path='/pydev-python01'>
+                <Python01 />
+              </Route>
+            </Switch>
+          )}
+
+          
         </UserContext.Provider>
       </Router>
     </>

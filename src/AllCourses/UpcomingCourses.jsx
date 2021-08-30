@@ -1,30 +1,49 @@
 import React from 'react';
 import './AllCourses.css';
 import UpcomingCourseCard from './UpcomingCard';
-import HtmlAtharva from '../resources/HTMLAtharva.png';
+import CSSAtharva from '../resources/HTMLAtharva.png';
+import CAdika from '../resources/HTMLAtharva.png';
+import PythonBhavesh from '../resources/PYTHONVaishnavi.png';
+import CPVaish from '../resources/HTMLAtharva.png';
 import Bhavesh from '../resources/bhavesh.jpg';
 
 const UpcomingCourses = () => {
   const UpcomingCoursesCol1 = [
     {
-      ImageLogo: HtmlAtharva,
+      ImageLogo: CSSAtharva,
       CourseName: 'CSS Complete Course',
       CourseInfo: 'The complete CSS Course to continue Web Development',
       TutorPic: Bhavesh,
       TutorName: 'Atharva Bhagat',
       SeriesName: 'Web Development Series',
     },
+    {
+        ImageLogo: PythonBhavesh,
+        CourseName: 'Python Complete Course',
+        CourseInfo: 'The complete Python Course to master the universe of python',
+        TutorPic: Bhavesh,
+        TutorName: 'Bhavesh Mhadse',
+        SeriesName: 'Python Development Series',
+      },
     
   ];
   const UpcomingCoursesCol2 = [
     {
-      ImageLogo: HtmlAtharva,
-      CourseName: 'CSS Complete Course',
-      CourseInfo: 'The complete CSS Course to continue Web Development',
+      ImageLogo: CAdika,
+      CourseName: 'C Complete Course',
+      CourseInfo: 'The complete C Language Course for better understanding of programming',
       TutorPic: Bhavesh,
-      TutorName: 'Atharva Bhagat',
-      SeriesName: 'Web Development Series',
+      TutorName: 'Adika Karnataki',
+      SeriesName: 'C / C++ Programming Series',
     },
+    {
+        ImageLogo: CPVaish,
+        CourseName: 'C++ Complete Course',
+        CourseInfo: 'The complete C++ course to get started with development',
+        TutorPic: Bhavesh,
+        TutorName: 'Vaisnavi Korgaonkar',
+        SeriesName: 'C / C++ Programming Series',
+      },
     
   ];
   return (

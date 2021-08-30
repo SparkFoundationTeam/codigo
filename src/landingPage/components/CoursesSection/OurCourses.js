@@ -1,24 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import {
-  CourseSelectorButtonContainer,
-  CourseSelectorButton,
-  CoursesCardContainer,
-  ButtonContainerDiv,
-  TutorImageContainer,
-  OurCoursesSection,
-  CourseCardHeader,
-  CourseCardInfo,
-  TutorContainer,
-  SectionHeader,
-  CoursesCard,
-  TutorImage,
-  CourseIcon,
-  AllCourses,
-  TutorName,
-  Timing,
-} from '../../../global.styles';
+import { CourseSelectorButtonContainer, CourseSelectorButton, CoursesCardContainer, ButtonContainerDiv, TutorImageContainer, OurCoursesSection, CourseCardHeader, CourseCardInfo, TutorContainer, SectionHeader, CoursesCard, TutorImage, CourseIcon, AllCourses, TutorName, Timing } from '../../../global.styles';
 
 import randomizer from '../../../randomizer';
 
@@ -59,10 +42,7 @@ const OurCourses = () => {
       <ButtonContainerDiv>
         <CourseSelectorButtonContainer>
           {coursesArray.map((eachCourse, buttonIndex) => (
-            <CourseSelectorButton
-              style={courseIndex === buttonIndex ? clickedCourseButtonStyles : {}}
-              onClick={() => setCourseIndex(buttonIndex)}
-            >
+            <CourseSelectorButton style={courseIndex === buttonIndex ? clickedCourseButtonStyles : {}} onClick={() => setCourseIndex(buttonIndex)}>
               {eachCourse}
             </CourseSelectorButton>
           ))}
@@ -87,7 +67,7 @@ const OurCourses = () => {
         })}
       </CoursesCardContainer>
       <Link to='/all-courses'>
-        <AllCourses>View All Courses</AllCourses>
+        <AllCourses> View & Enroll Courses</AllCourses>
       </Link>
     </OurCoursesSection>
   );
