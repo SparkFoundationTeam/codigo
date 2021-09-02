@@ -1,0 +1,548 @@
+@import url('http://fonts.cdnfonts.com/css/richard-hamilton');
+
+.dashboard-navbar {
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 10;
+  background-color: white;
+}
+
+.dashboard-navbar .dashboard-icon .dashboard-pic {
+  margin: 0vh 2vw;
+
+  height: 6vh;
+}
+.dashboard-navbar .dashboard-links {
+  margin-left: auto;
+  width: auto;
+  height: auto;
+  margin-right: 1.5rem;
+  border-bottom: 1px solid rgb(182, 179, 179);
+  padding: 1.2vh;
+}
+.dashboard-navbar .dashboard-links ul {
+  display: flex;
+  list-style: none;
+  width: auto;
+  height: auto;
+}
+.dashboard-navbar .dashboard-links ul li {
+  list-style: none;
+  color: black;
+  margin: 0 1rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  display: inline-block;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.dashboard-navbar .dashboard-links ul li:hover {
+  color: rgb(240, 0, 128);
+  transform: scale(1.1);
+  transition: all ease-in-out;
+  transition-duration: 0.3s;
+}
+
+#courseSearch {
+  position: absolute;
+  left: 38vw;
+  background-color: rgb(203, 241, 248);
+  border-radius: 20px;
+  width: 25vw;
+  display: flex;
+  height: 4vh;
+  justify-content: center;
+  align-items: center;
+  #courseSearchBar {
+    height: 3vh;
+    width: 20vw;
+    border: none;
+    background-color: rgba(250, 235, 215, 0);
+
+    outline: none;
+  }
+  button {
+    margin-left: 1vw;
+    background-color: rgba(250, 235, 215, 0);
+    border: none;
+    img {
+      height: 2vh;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+input[list] {
+  color: rgb(0, 140, 255);
+  font-weight: bolder;
+}
+
+datalist option {
+  font-size: 0.8em;
+  padding: 0.3em 1em;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.Content {
+  display: flex;
+  width: 100vw;
+  overflow-x: hidden;
+  padding-bottom: 5vh;
+  background-color: rgba(253, 253, 253, 0.486);
+  backdrop-filter: blur(0.1rem);
+}
+
+#AllCoursesPageBody {
+  background-image: url('../resources/pattern1Blob.png');
+  background-size: contain;
+  background-repeat: repeat;
+  background-size: 40vh;
+  background-attachment: fixed;
+}
+
+.SectHeader {
+  font-family: 'Richard Hamilton';
+  color: darkgoldenrod;
+}
+
+.OneSection {
+  margin-top: 10vh;
+  display: flex;
+  width: 50vw;
+  flex-direction: column;
+  align-items: center;
+  a {
+    text-decoration: none;
+    color: black;
+
+    .CoursesCard {
+      height: 18vh;
+      position: relative;
+      width: 40vw;
+      margin-top: 3vh;
+      background-color: rgba(255, 255, 255, 0.965);
+      border-radius: 1rem;
+      display: flex;
+      transition-duration: 0.2s;
+      filter: drop-shadow(10px 10px 10px grey);
+      .infoBox {
+        display: flex;
+
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      img {
+        height: 18vh;
+        width: 15vw;
+        border-radius: 1rem;
+      }
+      .spanner {
+        display: flex;
+      }
+      h4,
+      h2,
+      h5,
+      h6 {
+        margin: 0.5vh 1vw;
+      }
+      .span {
+        display: flex;
+        width: 20vw;
+        justify-content: space-between;
+        img {
+          height: 3vh;
+          width: auto;
+
+          margin: 0.5vh 1vw;
+        }
+      }
+      p {
+        margin: 0.5vh 1vw;
+      }
+
+      &:hover {
+        background-color: rgb(245, 239, 239);
+        transition-duration: 0.2s;
+        img,
+        p,
+        h2,
+        h5,
+        h4 {
+          transition-duration: 0.2s;
+        }
+        h6 {
+          display: visible;
+          color: rgb(4, 102, 102);
+          transition-duration: 0.2s;
+          &:hover {
+            color: rgb(75, 67, 0);
+          }
+        }
+      }
+    }
+  }
+}
+
+h6 {
+  font-size: large;
+  position: absolute;
+  right: 0;
+  color: rgba(240, 248, 255, 0);
+}
+
+.res-NavButton {
+  visibility: hidden;
+}
+
+.Upcoming {
+  margin-top: 5vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(253, 253, 253, 0.486);
+  backdrop-filter: blur(0.1rem);
+}
+
+.CardHolder {
+  display: flex;
+}
+
+
+.CardsContainer1,
+.CardsContainer2 {
+  width: 40vw;
+  margin: 0;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.CardsContainer1{
+    margin-top: 5vh;
+}
+.UpcomingCoursesCard {
+  height: 18vh;
+
+  width: 40vw;
+  margin: 9vh;
+  background-color: rgba(255, 255, 255, 0.965);
+  border-radius: 1rem;
+  display: flex;
+  transition-duration: 0.2s;
+  filter: drop-shadow(10px 10px 10px grey);
+  .infoBox {
+    display: flex;
+
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  img {
+    height: 18vh;
+    border-radius: 1rem;
+  }
+  .spanner {
+    display: flex;
+  }
+  h4,
+  h2,
+  h5,
+  h6 {
+    margin: 0.5vh 1vw;
+  }
+  .span {
+    display: flex;
+    width: 20vw;
+    justify-content: space-between;
+    img {
+      height: 3vh;
+      margin: 0.5vh 1vw;
+    }
+  }
+  p {
+    margin: 0.5vh 1vw;
+  }
+  h6 {
+    font-size: large;
+    position: absolute;
+    right: 0;
+    color: rgba(240, 248, 255, 0);
+  }
+
+  &:hover {
+    background-color: rgb(245, 239, 239);
+    transition-duration: 0.2s;
+    img,
+    p,
+    h2,
+    h5,
+    h4 {
+      transition-duration: 0.2s;
+    }
+    h6 {
+      display: visible;
+      color: rgb(4, 102, 102);
+      transition-duration: 0.2s;
+      &:hover {
+        color: rgb(75, 67, 0);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .Content {
+  }
+  .SectHeader {
+    font-family: 'Richard Hamilton';
+    color: darkgoldenrod;
+    font-size: small;
+  }
+  
+  .res-NavButton {
+    visibility: visible;
+    position: absolute;
+    right: 4vw;
+    z-index: 15;
+    img {
+      height: 3vh;
+    }
+  }
+
+  .dashboard-navbar .dashboard-links {
+    visibility: hidden;
+  }
+  .dashboard-navbar .dashboard-links ul {
+    visibility: hidden;
+  }
+  .dashboard-navbar .dashboard-links ul li {
+    visibility: hidden;
+  }
+
+  #courseSearch {
+    width: 65vw;
+    margin-left: -15vw;
+    justify-content: center;
+    #courseSearchBar {
+      height: 3vh;
+      width: 55vw;
+    }
+  }
+
+  .dashboard-navbar .dashboard-icon .dashboard-pic {
+      position: absolute;
+      top: 0;
+    left: -7vw;
+
+    transform: scale(0.6);
+  }
+
+  .OneSection {
+    margin-top: 10vh;
+    display: flex;
+    width: 50vw;
+    flex-direction: column;
+    align-items: center;
+
+    .SectHeader {
+      font-family: 'Richard Hamilton';
+      color: darkgoldenrod;
+    }
+a{
+    .CoursesCard {
+      height: 25vh;
+     
+      position: relative;
+      width: 40vw;
+      margin-top: 3vh;
+      background-color: rgba(255, 255, 255, 0.965);
+      border-radius: 0.7rem;
+      display: flex;
+      flex-direction: column;
+      transition-duration: 0.2s;
+      filter: drop-shadow(10px 10px 10px grey);
+      .infoBox {
+        display: flex;
+
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      img {
+        height: 10vh;
+        width: 100%;
+        border-radius: 0.7rem;
+      }
+      .spanner {
+        display: flex;
+      }
+
+      .span {
+        display: flex;
+        width: 35vw;
+        justify-content: space-between;
+        img {
+          height: 2vh;
+        }
+      }
+      h5 {
+        font-size: 1vh;
+      }
+      p {
+        font-size: 1vh;
+      }
+      h2 {
+        font-size: 1.5vh;
+      }
+      h6 {
+        font-size: 1.2vh;
+        position: absolute;
+        right: 10px;
+        bottom: 5px;
+        color: rgba(240, 248, 255, 0);
+      }
+
+      h4 {
+        font-size: 1vh;
+      }
+
+      h4,
+      h5,
+      h6,
+      p {
+        margin: 0.7vh 1vw;
+      }
+      h2 {
+        margin: 1vh 1vw;
+      }
+
+      &:hover {
+        background-color: rgb(245, 239, 239);
+        transition-duration: 0.2s;
+        img,
+        p,
+        h2,
+        h5,
+        h4 {
+          transition-duration: 0.2s;
+        }
+        h6 {
+          display: visible;
+          color: rgb(4, 102, 102);
+          transition-duration: 0.2s;
+          &:hover {
+            color: rgb(75, 67, 0);
+          }
+        }
+      }
+    }
+  }}
+
+  .Upcoming .CardHolder{
+      flex-direction: column;
+  }
+
+  .UpcomingCoursesCard {
+    height: 10vh;
+    position: relative;
+    width: 90vw;
+    margin-top: -5vh;
+    background-color: rgba(255, 255, 255, 0.965);
+    border-radius: 1rem;
+    display: flex;
+    transition-duration: 0.2s;
+    filter: drop-shadow(10px 10px 10px grey);
+    .infoBox {
+      display: flex;
+
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    img {
+      height: 10vh;
+
+      border-radius: 1rem;
+    }
+    .spanner {
+      display: flex;
+    }
+
+    .span {
+      display: flex;
+      width: 50vw;
+      justify-content: space-between;
+      img {
+        height: 2vh;
+      }
+    }
+    h5 {
+      font-size: 1vh;
+    }
+    p {
+      font-size: 1vh;
+    }
+    h2 {
+      font-size: 1.5vh;
+    }
+    h6 {
+      font-size: 1.2vh;
+      position: absolute;
+      right: 10px;
+      bottom: 5px;
+      color: rgba(240, 248, 255, 0);
+    }
+
+    h4 {
+      font-size: 1vh;
+    }
+
+    h2,
+    h4,
+    h5,
+    h6,
+    p {
+      margin: 0vh 1vw;
+    }
+    h4 {
+      margin: 0.5vh 1vw;
+    }
+
+    &:hover {
+      background-color: rgb(245, 239, 239);
+      transition-duration: 0.2s;
+      img,
+      p,
+      h2,
+      h5,
+      h4 {
+        transition-duration: 0.2s;
+      }
+      h6 {
+        display: visible;
+        color: rgb(4, 102, 102);
+        transition-duration: 0.2s;
+        &:hover {
+          color: rgb(75, 67, 0);
+        }
+      }
+    }
+  }
+
+  .CardHolder {
+    margin-top: 3vh;
+    flex-direction: column;
+  }
+}

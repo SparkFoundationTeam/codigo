@@ -1,0 +1,90 @@
+###
+PATCH https://codigo-server.herokuapp.com/Courses/attempts  HTTP/1.1
+content-type: application/json
+
+{
+  "email":"bhaveshmhadse9@gmail.com",
+  "tutorName": "Bhavesh Mhadse",
+  "courseName": "Javascript Complete Course"
+}
+
+###
+GET https://codigo-server.herokuapp.com/User  HTTP/1.1 
+###
+GET https://codigo-server.herokuapp.com/Courses  HTTP/1.1
+content-type: application/json
+
+{
+  "email":"bhaveshmhadse9@gmail.com",
+  "tutorName": "Bhavesh Mhadse",
+  "courseName": "Javascript Complete Course"
+}
+
+
+
+###
+GET  https://codigo-server.herokuapp.com/AllCourses/  HTTP/1.1
+content-type: application/json
+
+{
+  "CourseName": "Javascript Complete Course",
+  "TutorName": "Bhavesh Mhadse"
+}
+###
+GET https://codigo-server.herokuapp.com/AllCourses/html  HTTP/1.1
+
+#   "CourseName": "Javascript Complete Course",
+#   "TutorName":  "Bhavesh Mhadse",
+#   "shortCourseName": "javascript" ,
+#   "CourseInfo": "Become Zero-To-Hero in Javascript and start building Web-Applications",
+#   "TutorPic":   "Bhavesh",
+#   "CourseDuration": "2 Hrs",
+#   "rating": 5,
+#   "totalRating":  0 ,
+#   "ratingsArr":  [0, 0, 0, 0, 0],hmm kalla 
+#   "Linker": "javascript02",
+#   "SeriesName": "javascript Development Series",
+#   "keywords": ["javascript", "series >>", "courses >>", "tutors >> ", "Bhavesh", "Mhadse", "automation"]
+
+#   "CourseName": "Html Complete Course",
+#   "TutorName": "Atharva Bhagat",
+#   "shortCourseName": "javascript",
+#   "CourseInfo": "Become Zero-To-Hero in Javascript and start building Web-Applications",
+#   "TutorPic": "Athya", 
+#   "CourseDuration": "2 Hours",
+#   "rating": 5,
+#   "totalRating": 0,
+#   "ratingsArr":[0,0,0,0,0],
+#   "Linker": "js02", 
+#   "SeriesName": "JavaScript Development Series",
+#   "keywords": ["js", "javascript", "clean coding", "series >>", "courses >>", "tutors >> ", "athya", "baray", "web"]
+###
+POST https://codigo-server.herokuapp.com/AllCourses/  HTTP/1.1
+content-type: application/json
+
+{ 
+   "shortCourseName": "java",
+   "ImageLogo": "PythonVaishnavi", 
+   "CourseName": "Java Complete Course",
+   "CourseInfo": "Java Programming explained thorougly to enter beautiful world of Java",
+   "TutorPic": "Bhavesh",
+   "TutorName": "Adika Karnataki",
+   "CourseDuration": "2 Hour",
+   "rating": 5, 
+   "totalRating": 0,
+   "ratingsArr":[0,0,0,0,0],
+   "Linker": "java01",
+   "SeriesName": "Java Development Series",
+   "keywords": ["Java", "series >>", "courses >>", "tutors >> ", "Programming", "adika", "karnataki", "gui"]
+}
+###
+PATCH  https://codigo-server.herokuapp.com/AllCourses/update-rating  HTTP/1.1
+content-type: application/json
+
+{
+    "TutorName": "Bhavesh Mhadse",
+    "CourseName": "Javascript Complete Course",
+    "newRating":1
+}
+###
+GET https://codigo-server.herokuapp.com/Courses  HTTP/1.1

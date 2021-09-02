@@ -1,0 +1,757 @@
+#CourseHeader {
+  font-family: 'Richard Hamilton';
+  color: goldenrod;
+}
+
+.dashboard-navbar {
+  position: fixed;
+  top: 0;
+}
+
+.CourseSidebar {
+  height: 100vh;
+  z-index: 2;
+  width: 5vw;
+  background: -webkit-gradient(linear, left bottom, left top, from(#59005c), color-stop(aqua), to(rgba(255, 255, 255, 0.466)));
+  background: linear-gradient(to top, #59005c, aqua, rgba(255, 255, 255, 0.466));
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 5px;
+  -webkit-backdrop-filter: blur(0.1rem);
+          backdrop-filter: blur(0.1rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  top: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.CourseSidebar .CourseBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 5vw;
+  cursor: pointer;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  margin-top: 2vh;
+}
+
+.CourseSidebar .CourseBar img {
+  height: 4vh;
+}
+
+.CourseBar {
+  position: relative;
+  display: inline-block;
+}
+
+.CourseBar .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background: -webkit-gradient(linear, left top, right top, from(#17c8c8), to(teal));
+  background: linear-gradient(to right, #17c8c8, teal);
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  padding: 5px 0;
+  /* Position the tooltip */
+  position: absolute;
+  margin-left: 10vw;
+  z-index: 1;
+}
+
+.CourseBar:hover .tooltiptext {
+  -webkit-transition: all ease-in;
+  transition: all ease-in;
+  visibility: visible;
+}
+
+.VideoBox {
+  background-image: url("../resources/pattern1Blob.png");
+  background-size: contain;
+  background-repeat: repeat;
+  background-size: 60vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 10vh;
+}
+
+.VideoBox iframe {
+  border-radius: 5vh;
+  height: 80vh;
+  width: 80vw;
+}
+
+.VideoBox #List {
+  background-color: rgba(255, 255, 255, 0.438);
+  -webkit-backdrop-filter: blur(0.2rem);
+          backdrop-filter: blur(0.2rem);
+  margin: 0vw 2vw;
+  width: 70vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.VideoBox #List h4,
+.VideoBox #List h3 {
+  width: 15vw;
+  margin: 2vw;
+}
+
+.CodeAlong {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.CodeAlong #bp1 {
+  height: 70vh;
+  top: 5vh;
+}
+
+.CodeAlong .CodeContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  margin-left: 2vw;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 5vh;
+  width: 90vw;
+  height: 80vh;
+  padding: 2vw;
+  padding-top: 5vh;
+  background-color: rgba(253, 253, 253, 0.486);
+  -webkit-backdrop-filter: blur(0.6rem);
+          backdrop-filter: blur(0.6rem);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(aqua), to(purple)), -webkit-gradient(linear, left top, right top, from(purple), to(aqua)), -webkit-gradient(linear, left top, left bottom, from(purple), to(aqua)), -webkit-gradient(linear, right top, left top, from(purple), to(aqua));
+  background-image: linear-gradient(aqua, purple), linear-gradient(to right, purple, aqua), linear-gradient(to bottom, purple, aqua), linear-gradient(to left, purple, aqua);
+  background-repeat: no-repeat;
+  background-size: 5px 95%, 70% 5px, 5px 70%, 75% 5px;
+  background-position: left bottom, right bottom, right bottom, center top, 5px 5px;
+}
+
+.CodeAlong .CodeContainer #outputLabel {
+  position: absolute;
+  right: 2vw;
+  top: 1vh;
+}
+
+.CodeAlong .CodeContainer #codeLabel {
+  position: absolute;
+  left: -1.5vw;
+  top: 4vh;
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+  background: -webkit-linear-gradient(right, #ff137d, #04b4b4);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.CodeAlong .CodeContainer #codeAlongLabel {
+  position: absolute;
+  left: 0vw;
+  top: -1vh;
+  background: -webkit-linear-gradient(right, #ff137d, #04b4b4);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.CodeAlong .CodeContainer #Compiler {
+  width: 100%;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.CodeAlong .CodeContainer #Compiler #CodeEditor {
+  width: 100%;
+  height: 65vh;
+  resize: none;
+  overflow: scroll;
+  outline: none;
+  border: none;
+  font-size: larger;
+  background-color: rgba(164, 213, 236, 0.1);
+}
+
+.CodeAlong .CodeContainer #Compiler #output-window {
+  width: 50%;
+  padding: 1rem;
+}
+
+.CodeAlong .CodeContainer #Compiler .RunCode {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: transparent;
+  border: none;
+  margin-right: 2vh;
+  cursor: pointer;
+}
+
+.CodeAlong .CodeContainer #Compiler .RunCode img {
+  height: 4vh;
+}
+
+.CodeAlong .ButtonSelection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin-top: 2vh;
+  height: 10vh;
+}
+
+.CodeAlong .ButtonSelection button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 12vw;
+  padding: 1rem;
+  height: 5vh;
+  background-color: white;
+  border: 1px solid grey;
+  cursor: pointer;
+}
+
+.CodeAlong .ButtonSelection button:focus {
+  background-color: #0d0055;
+  color: white;
+}
+
+.BooksBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.BooksBox h2 {
+  background: -webkit-linear-gradient(right, #ff137d, #04b4b4);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.BooksBox .BooksContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 5rem;
+  -webkit-backdrop-filter: blur(0.6rem);
+          backdrop-filter: blur(0.6rem);
+  width: 72vw;
+  height: 80vh;
+  background-color: rgba(253, 253, 253, 0.486);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(aqua), to(purple)), -webkit-gradient(linear, left top, right top, from(purple), to(aqua)), -webkit-gradient(linear, left top, left bottom, from(purple), to(aqua)), -webkit-gradient(linear, right top, left top, from(purple), to(aqua));
+  background-image: linear-gradient(aqua, purple), linear-gradient(to right, purple, aqua), linear-gradient(to bottom, purple, aqua), linear-gradient(to left, purple, aqua);
+  background-repeat: no-repeat;
+  background-size: 5px 50%, 50% 5px, 5px 50%, 50% 5px;
+  background-position: left top, right bottom, right bottom, left top, 5px 5px;
+}
+
+.BooksBox hr {
+  width: 60%;
+  height: 2px;
+  margin-top: 2vh;
+  background-color: rgba(156, 156, 156, 0.473);
+  border: none;
+}
+
+.BooksBox .insideHR {
+  width: 5%;
+}
+
+.BooksBox .BookInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 2vh 0vh 4vh 0vh;
+}
+
+.BooksBox .BookInfo .BookTitle,
+.BooksBox .BookInfo .AuthorTitle,
+.BooksBox .BookInfo .BookDesc,
+.BooksBox .BookInfo .ViewBook,
+.BooksBox .BookInfo .DownloadBook {
+  width: 15vw;
+  margin: 2vh 2vh 0vh 0vh;
+  padding: 1vh;
+  border-radius: 10px;
+}
+
+.BooksBox .BookInfo .BookDesc {
+  width: 30vw;
+}
+
+.BooksBox .BookInfo .ViewBook,
+.BooksBox .BookInfo .DownloadBook {
+  cursor: pointer;
+  background: -webkit-linear-gradient(right, #8d0140, #04b4b4);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  width: 8vw;
+  text-align: center;
+}
+
+#bp1 {
+  position: absolute;
+  height: 120vh;
+  top: -35vh;
+  left: -10vh;
+  z-index: -1;
+}
+
+#bp2 {
+  position: absolute;
+  height: 60vh;
+  bottom: -5vh;
+  right: 0vh;
+  z-index: -1;
+}
+
+.MetricsItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.MetricsItem h3 {
+  margin: 1vh;
+}
+
+.Performance {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 100%;
+}
+
+.Performance div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Performance .MetricsItem {
+  margin: 1vh;
+}
+
+#FeedBack .BooksContainer {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  position: relative;
+}
+
+#FeedBack .BooksContainer .RatingsBar {
+  height: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+}
+
+#FeedBack .BooksContainer .RatingsBar .RatingsSpanner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 20vw;
+  overflow: hidden;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#FeedBack .BooksContainer .RatingsBar .RatingsSpanner hr {
+  margin-left: 1vw;
+  height: 0.8vh;
+  margin-top: 0vh;
+  border-radius: 5px;
+}
+
+.FeedBackModal {
+  margin-left: 0vw;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 5rem;
+  -webkit-backdrop-filter: blur(6rem);
+          backdrop-filter: blur(6rem);
+  width: 90%;
+  height: 60vh;
+  top: 10%;
+  background-color: white;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(aqua), to(purple)), -webkit-gradient(linear, left top, right top, from(purple), to(aqua)), -webkit-gradient(linear, left top, left bottom, from(purple), to(aqua)), -webkit-gradient(linear, right top, left top, from(purple), to(aqua));
+  background-image: linear-gradient(aqua, purple), linear-gradient(to right, purple, aqua), linear-gradient(to bottom, purple, aqua), linear-gradient(to left, purple, aqua);
+  background-repeat: no-repeat;
+  background-size: 5px 50%, 50% 5px, 5px 50%, 50% 5px;
+  background-position: right top, right top, left bottom, left bottom, 5px 5px;
+}
+
+.FeedBackModal #feedbackicon {
+  height: 10vh;
+  margin-bottom: 5vh;
+}
+
+.FeedBackModal h4 {
+  margin-top: 2vh;
+  color: red;
+}
+
+.OverallRatingsFeedBack {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.OverallRatingsFeedBack img {
+  height: 4vh;
+}
+
+.OverallRatingsFeedBack h2 {
+  width: 50%;
+  text-align: left;
+}
+
+.RatingsChart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+@media screen and (max-width: 1000px) {
+  #bp1,
+  #bp2,
+  .CourseSidebar,
+  #List {
+    display: none;
+  }
+  #FeedBack {
+    margin-top: 10vh;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  #FeedBack .BooksContainer {
+    height: 100vh;
+    width: 90vw;
+  }
+  #FeedBack .BooksContainer h2 {
+    font-size: 3vh;
+  }
+  #FeedBack .BooksContainer .RatingsBar {
+    margin-top: 5vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 80%;
+  }
+  .Performance {
+    margin-top: 5vh;
+  }
+  .Performance div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .RatingsChart {
+    width: 80vw;
+  }
+  .FeedBackModal {
+    height: 100vh;
+    top: 0;
+    width: 90vw;
+  }
+  .FeedBackModal .OverallRatingsFeedBack {
+    width: 95vw;
+    margin-bottom: 3vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .FeedBackModal .OverallRatingsFeedBack h2 {
+    margin-bottom: 1vh;
+    font-size: 1.2vh;
+    text-align: center;
+  }
+  .FeedBackModal .OverallRatingsFeedBack h1 {
+    display: none;
+  }
+  .VideoBox {
+    background-size: 10vh;
+  }
+  #List {
+    visibility: hidden;
+    width: 0vw;
+    overflow: hidden;
+  }
+  .res-NavButton {
+    visibility: visible;
+    position: absolute;
+    right: 4vw;
+    z-index: 15;
+  }
+  .res-NavButton img {
+    height: 3vh;
+  }
+  #CourseHeader {
+    font-size: x-small;
+  }
+  .BooksBox {
+    height: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .BooksBox #bp1 {
+    visibility: hidden;
+  }
+  .BooksBox .BooksContainer {
+    margin-left: 0vw;
+    text-align: center;
+    width: 95vw;
+    height: auto;
+  }
+  .BooksBox .BookInfo {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .BooksBox .BookInfo .BookTitle,
+  .BooksBox .BookInfo .AuthorTitle,
+  .BooksBox .BookInfo .BookDesc,
+  .BooksBox .BookInfo .ViewBook,
+  .BooksBox .BookInfo .DownloadBook {
+    width: 80vw;
+    margin: 2vh 2vh 0vh 0vh;
+    padding: 1vh;
+    border-radius: 10px;
+    text-align: center;
+    background-color: rgba(207, 235, 247, 0.726);
+  }
+  .BooksBox .BookInfo .BookDesc {
+    width: 80vw;
+  }
+  .BooksBox .BookInfo #BookLinks {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 80vw;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .BooksBox .BookInfo .ViewBook,
+  .BooksBox .BookInfo .DownloadBook {
+    width: 30vw;
+  }
+  .VideoBox iframe {
+    height: 25vh;
+    border-radius: 2vh;
+  }
+  .CodeAlong {
+    padding-bottom: 5vh;
+  }
+  .CodeAlong .CodeContainer {
+    background-image: none;
+    width: 95vw;
+    margin-left: 0;
+  }
+  .CodeAlong .CodeContainer #Compiler {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .CodeAlong .CodeContainer #Compiler #CodeEditor {
+    height: 80vh;
+    font-size: small;
+  }
+  .CodeAlong .CodeContainer #Compiler #output-window {
+    width: 100%;
+    height: 70vh;
+  }
+  .CodeAlong .CodeContainer #Compiler #codeAlongLabel {
+    top: -5vh;
+  }
+  .CodeAlong .CodeContainer #Compiler #outputLabel {
+    position: static;
+  }
+  .CodeAlong .CodeContainer #Compiler .RunCode {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+  }
+  .ButtonSelection {
+    width: 100%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    padding-bottom: 5vh;
+  }
+  .ButtonSelection button {
+    font-size: 2vw;
+    width: 15vw;
+  }
+}
+/*# sourceMappingURL=coursePageTemplate.css.map */

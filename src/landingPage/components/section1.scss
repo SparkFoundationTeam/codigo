@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+@mixin flexAlign {
+  display: flex;
+
+  justify-content: center;
+}
+
+.Section1 {
+  height: 100vh;
+  width: 100vw;
+
+  background-image: url(../../resources/team.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+
+  #nav {
+    height: 8vh;
+    width: 90vw;
+    margin: 0 5vw 0 5vw;
+
+    background-color: rgba(255, 255, 255, 0);
+
+    img {
+      margin-top: 5vh;
+      height: 10vh;
+      z-index: 2;
+    }
+    button {
+      height: 4vh;
+      width: 10vw;
+      float: right;
+      margin: 2vh;
+      font-size: 2vh;
+      color: aqua;
+      border: 2px solid rgb(0, 200, 200);
+      background: linear-gradient(to left, transparent, transparent);
+      font-weight: bold;
+      border-radius: 5px;
+
+      img {
+        margin: 0;
+        margin-right: 1vw;
+        height: 2vh;
+        transition-duration: 0.7s;
+      }
+    }
+    button:hover {
+      transition-duration: 0.7s;
+      border: none;
+      background: linear-gradient(to left, rgb(23, 200, 200), rgba(42, 235, 171, 0.253));
+
+      cursor: pointer;
+      img {
+        margin: 0;
+        height: 2vh;
+        transition-duration: 0.7s;
+      }
+    }
+  }
+
+  #Content {
+    display: flex;
+    #Text {
+      width: 75vw;
+      height: 92vh;
+      @include flexAlign();
+      flex-direction: column;
+      h1,
+      h2,
+      button {
+        margin-left: 5vw;
+      }
+      h1 {
+        font-size: 8vh;
+        color: rgba(255, 255, 255, 0.842);
+        text-shadow: 2px 2px rgba(255, 255, 255, 0.212);
+      }
+
+      h2 {
+        font-size: 5vh;
+        color: rgba(255, 255, 255, 0.596);
+      }
+
+      button {
+        margin-bottom: 5vh;
+        margin-top: 5vh;
+        width: 20vw;
+        height: 8vh;
+        font-size: 3vh;
+        background: linear-gradient(to right, rgb(23, 200, 200), aquamarine);
+        border-radius: 10px;
+        border: none;
+        transition-duration: 0.5s;
+        font-weight: bold;
+      }
+      button:hover {
+        border: 5px solid rgb(42, 211, 211);
+        color: aqua;
+        background: linear-gradient(to right, transparent, transparent);
+        cursor: pointer;
+        transition-duration: 0.5s;
+      }
+    }
+    #introVideo {
+      margin-top: 50vh;
+      margin-right: 5vw;
+      height: 30vh;
+
+      border-radius: 25px;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .Section1 {
+    #nav {
+      justify-content: space-between;
+      img {
+        height: 5vh;
+        margin-top: 2vh;
+      }
+      button {
+        width: 20vw;
+        font-size: small;
+      }
+    }
+
+    #Content {
+      flex-direction: column;
+      overflow: hidden;
+      height: 90vh;
+      width: 100vw;
+
+      align-items: center;
+
+      #Text {
+        justify-content: center;
+        align-items: center;
+        margin-top: 2vh;
+        width: 100vw;
+        height: 75vh;
+        text-align: center;
+        h1 {
+          width: 90vw;
+          font-size: 5vh;
+        }
+        h2 {
+          font-size: 3vh;
+        }
+
+        button {
+          width: 80vw;
+          height: 6vh;
+          margin-left: 0;
+          font-size: 2.5vh;
+        }
+      }
+      #introVideo {
+        margin-top: 3vh;
+        margin-right: 0vw;
+        height: 20vh;
+
+        border-radius: 10px;
+        margin-bottom: 10vh;
+      }
+    }
+  }
+}

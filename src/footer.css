@@ -1,0 +1,84 @@
+#footer {
+  height: 50vh;
+  width: 100vw;
+  margin-top: 10vh;
+  background: rgb(0, 12, 63);
+  border-radius: 500px 0px 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+}
+
+#contactsUl {
+  list-style: none;
+  font-size: 3vh;
+  color: azure;
+  text-align: center;
+}
+
+.elem {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  height: 7vh;
+}
+
+#logoFooter {
+  height: 25vh;
+}
+
+#footer a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+#rightsReserved {
+  position: absolute;
+  bottom: 2vh;
+  color: aliceblue;
+}
+
+#contactH {
+  margin-bottom: 3vh;
+}
+
+.elem img {
+  margin-right: 2.5vw;
+}
+
+
+#footer a:hover {
+  color: goldenrod;
+  transition-duration: 0.5s;
+}
+
+#imgShort {
+  height: 4vh;
+  width: 2.2vw;
+}
+
+@media screen and (max-width: 1000px) {
+  #footer {
+    flex-direction: column-reverse;
+    border-radius: 50px 50px 0px 0px;
+    padding-bottom: 5vh;
+    height: 60vh;
+  }
+  #logoFooter {
+    height: 8vh;
+  }
+  .elem {
+    font-size: 2vh;
+    width: 90vw;
+    margin-left: -5vw;
+  }
+  #contactH {
+    margin-left: -10vw;
+  }
+  #imgShort {
+    height: 3.5vh;
+    width: 3.5vh;
+  }
+}

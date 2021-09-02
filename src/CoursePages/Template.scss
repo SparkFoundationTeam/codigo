@@ -1,0 +1,330 @@
+.dashboard-navbar {
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 10;
+  background-color: white;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+#DashBoard {
+  width: fit-content;
+  background: -webkit-linear-gradient(left, rgb(253, 9, 119), rgb(4, 180, 180));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dashboard-navbar .dashboard-icon .dashboard-pic {
+  margin-left: 2vw;
+  height: 6vh;
+}
+.dashboard-navbar .dashboard-links {
+  margin-left: auto;
+  width: auto;
+  height: auto;
+  margin-right: 1.5rem;
+  padding: 1.2vh;
+}
+.dashboard-navbar .dashboard-links ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+}
+.dashboard-navbar .dashboard-links ul li::before {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 800;
+  display: inline-block;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  content: '';
+  position: absolute;
+  background: linear-gradient(to right, rgb(255, 19, 125), rgb(4, 180, 180));
+  width: 140%;
+  height: 2px;
+  border-radius: 100px;
+  bottom: -10px;
+  right: -20%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s;
+}
+
+.dashboard-navbar .dashboard-links ul li:hover::before {
+  color: rgb(240, 0, 128);
+
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.res-NavButton {
+  visibility: hidden;
+}
+
+.ContentHolder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.MainContent {
+  margin: 12vh 0vh;
+  backdrop-filter: blur(0.2rem);
+  width: 95vw;
+  background-color: rgba(235, 248, 246, 0.486);
+  background-image: linear-gradient(aqua, purple), linear-gradient(to right, purple, aqua), linear-gradient(to bottom, purple, aqua), linear-gradient(to left, purple, aqua);
+  background-repeat: no-repeat;
+  background-size: 5px 50%, 50% 5px, 5px 50%, 50% 5px;
+  background-position: left top, right bottom, right bottom, left top, 5px 5px;
+  padding: 3vw;
+}
+
+.SectionInfo {
+  display: flex;
+}
+
+.TitleDesc {
+  display: flex;
+  .Title,
+  .Desc {
+    width: 15vw;
+    margin: 2vh 2vh 0vh 0vh;
+    background-color: rgb(255, 255, 255);
+    padding: 1vh;
+    border-radius: 10px;
+  }
+  .Title {
+    font-weight: bold;
+  }
+  .Desc {
+    width: 45vw;
+  }
+}
+
+.TutorInfo {
+  width: 40vw;
+  text-align: center;
+}
+
+.Syllabus {
+  display: flex;
+  align-items: center;
+  width: 80vw;
+
+  justify-content: space-evenly;
+  margin-top: 5vh;
+  h3 {
+    margin-bottom: 2vh;
+  }
+  h4 {
+    font-size: large;
+  }
+}
+
+#introVideo {
+  height: 30vh;
+  border-radius: 25px;
+}
+
+h3 {
+  color: rgb(3, 110, 110);
+}
+
+.TutorCard {
+  background-color: white;
+  backdrop-filter: blur(0.5rem);
+  padding: 2vh;
+  margin: 2vh 3vw;
+  position: relative;
+  background-image: linear-gradient(aqua, purple), linear-gradient(to right, purple, aqua), linear-gradient(to bottom, purple, aqua), linear-gradient(to left, purple, aqua);
+  background-repeat: no-repeat;
+  background-size: 3px 20%, 20% 3px, 3px 20%, 20% 3px;
+  background-position: left bottom, right top, right top, bottom left,  5px 5px;
+  #TutorIcon {
+    margin: 1vh;
+    height: 16vh;
+
+    border-radius: 10vh;
+  }
+  p,
+  h2 {
+    margin-top: 1vh;
+  }
+  h2 {
+    color: Teal;
+  }
+}
+#EnrollNow {
+  background: linear-gradient(to right, rgb(23, 200, 200), aquamarine);
+  outline: none;
+  padding: 1vh 2vw;
+  margin-left: 30vw;
+  margin-top: 5vh;
+  font-size: 3vh;
+  border-radius: 20px;
+  width: 30vw;
+  border: none;
+
+  &:hover {
+    background: linear-gradient(to right, rgba(23, 200, 200, 0.767), rgba(127, 255, 212, 0.678));
+  }
+}
+.SocialMedia {
+  height: 5vh;
+  width: auto;
+  margin-top: 2vh;
+}
+
+.OwnerSocial {
+  margin-right: 1.5vh;
+  width: 1.7vw;
+  height: 3.5vh;
+  transition-duration: 0.5s;
+}
+
+.OwnerSocial:hover {
+  transform: scale(1.2);
+  transition-duration: 0.5s;
+}
+
+#bp1 {
+  position: absolute;
+  height: 20vh;
+  top: -25vh;
+  left: -10vh;
+  z-index: -1;
+}
+#bp2 {
+  position: absolute;
+  height: 60vh;
+  bottom: -5vh;
+  right: 0vh;
+  z-index: -1;
+}
+
+@media screen and (max-width: 1000px) {
+  .res-NavButton {
+    position: absolute;
+    right: 4vw;
+    z-index: 15;
+    img {
+      height: 3vh;
+    }
+  }
+  .dashboard-navbar {
+    width: 100vw;
+    overflow: hidden;
+  }
+  #NavHeader {
+    visibility: hidden;
+  }
+  .ContentHolder {
+    flex-direction: column;
+    border-radius: 10px;
+  }
+  .MainContent {
+    padding: 3vw;
+  }
+  .SectionInfo,
+  .Syllabus {
+    margin-top: 3vh;
+    margin-left: 2vw;
+    flex-direction: column;
+  }
+
+  .TitleDesc {
+    display: flex;
+
+    .Title,
+    .Desc {
+      width: 35vw;
+      margin: 2vh 2vh 0vh 0vh;
+
+      padding: 1vh;
+      border-radius: 10px;
+    }
+
+    .Desc {
+      width: 50vw;
+    }
+  }
+
+  .TutorInfo {
+    margin-top: 5vh;
+    width: 80vw;
+    margin-left: 2vw;
+  }
+
+  .Syllabus {
+    width: 85vw;
+
+    margin-top: 5vh;
+    h3 {
+      margin-bottom: 2vh;
+    }
+    h4 {
+      font-size: small;
+    }
+  }
+
+  #introVideo {
+    height: 20vh;
+    border-radius: 25px;
+  }
+
+  h3 {
+    color: rgb(3, 110, 110);
+  }
+
+  .TutorCard {
+    background: linear-gradient(to right bottom, white, rgba(255, 255, 255, 0.856));
+    backdrop-filter: blur(0.5rem);
+    padding: 2vh;
+    margin: 2vh 3vw;
+    position: relative;
+    border-radius: 20px;
+    #TutorIcon {
+      margin: 1vh;
+      height: 16vh;
+
+      border-radius: 10vh;
+    }
+    p,
+    h2 {
+      margin-top: 1vh;
+    }
+    h2 {
+      color: Teal;
+    }
+  }
+
+  #EnrollNow {
+    width: 80vw;
+    margin: 5vh 5vw;
+  }
+
+  .OwnerSocialMedia,
+  .SocialMedia {
+    transform: scale(1.3);
+  }
+
+  #List {
+    margin-top: 3vh;
+  }
+}

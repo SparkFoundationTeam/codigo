@@ -1,0 +1,166 @@
+.dashboard {
+  width: 100%;
+  height: 100vh;
+}
+.dashboard .dashboard-navbar {
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  position: unset;
+}
+
+.dashboard .dashboard-navbar .dashboard-icon .dashboard-pic {
+  margin-left: 20vw;
+
+  height: 6vh;
+}
+.dashboard .dashboard-navbar .dashboard-links {
+  margin-left: auto;
+  width: auto;
+  height: auto;
+  margin-right: 1.5rem;
+  border-bottom: 1px solid rgb(182, 179, 179);
+  padding: 1.2vh;
+}
+.dashboard .dashboard-navbar .dashboard-links ul {
+  display: flex;
+  list-style: none;
+  width: auto;
+  height: auto;
+}
+.dashboard .dashboard-navbar .dashboard-links ul li {
+  list-style: none;
+  color: black;
+  margin: 0 1rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  display: inline-block;
+  cursor: pointer;
+}
+.dashboard .dashboard-sidebar {
+  width: 19vw;
+  background: linear-gradient(to bottom, rgb(0, 255, 255), rgb(33, 196, 196));
+  backdrop-filter: blur(25rem);
+  height: 100vh;
+  z-index: 4;
+  margin-top: -8vh;
+  display: block;
+  border-radius: 0px 0px 150px;
+}
+.dashboard .dashboard-sidebar .personal-info {
+  /* background-color: coral; */
+  width: 80%;
+  margin: auto;
+  padding: 7vh 2vh 3vh 2vh;
+  height: auto;
+  display: flex;
+}
+
+#personName {
+  font-size: 3vh;
+}
+.dashboard .dashboard-sidebar .personal-info img {
+  border-radius: 30rem;
+  width: 40%;
+  height: 40%;
+  margin: auto;
+  margin-right: 1rem;
+  margin-left: -2vw;
+  /* filter: drop-shadow(10px 10px 10px rgb(0, 213, 213)); */
+  transition: all linear 200ms;
+}
+.dashboard .dashboard-sidebar .personal-info img:hover {
+  transform: scale(1.1);
+}
+.dashboard .dashboard-sidebar .personal-info .user-info {
+  width: 70%;
+  height: 90%;
+  margin: 0;
+  color: black;
+}
+.dashboard .dashboard-sidebar .personal-info .user-info h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 0vh;
+  margin-top: 1vh;
+}
+.dashboard .dashboard-sidebar .personal-info .user-info h2 {
+  font-size: 1rem;
+  color: black;
+  margin: 0;
+  font-weight: 100;
+}
+.dashboard .dashboard-sidebar hr {
+  width: 90%;
+  margin-left: 5%;
+  /* height: 2px; */
+  background-color: teal;
+  border: 2px solid teal;
+  border-radius: 10rem;
+}
+.dashboard .dashboard-sidebar .choices {
+  width: auto;
+  height: auto;
+  display: block;
+  text-align: left;
+  overflow: hidden;
+}
+
+
+.dashboard .dashboard-sidebar .choices li {
+    cursor: pointer;
+  list-style: none;
+  height: auto;
+  margin-left: -15%;
+  margin-top: 1rem;
+  padding: 0.6rem;
+  text-align: left;
+  font-size: 1.2rem;
+  transition: all ease-in-out 200ms;
+  border: 3px solid transparent;
+  display: flex;
+  align-items: center;
+  
+}
+
+.dashboard .dashboard-sidebar .choices li img {
+  height: 3vh;
+  margin-right: 1vw;
+  }
+.dashboard .dashboard-sidebar .choices li:hover {
+  border-left-width: 5px;
+  border-left-color: teal;
+  background-color: rgba(199, 248, 248, 0.507);
+}
+.dashboard .other-section {
+  width: 90%;
+  height: auto;
+}
+
+.dashboard .other-section .component {
+  margin: 3vh 3rem;
+  height: 86vh;
+  overflow: scroll;
+}
+
+
+#logout{
+background-color: transparent;
+outline:none;
+border: none;
+padding: 1rem;
+position: absolute;
+bottom: 2vh;
+left: 2vw;
+font-size: 1.2rem;
+display: flex;
+  align-items: center;
+  cursor: pointer;
+
+}
+
+#logout img{
+    height: 3vh;
+  margin-right: 1vw;
+}
