@@ -43,6 +43,21 @@ const AllCourses = () => {
       header: ' Web Development Series',
       keywords: ['Web Development Series', 'series >>', 'courses >>', 'tutors >> ', 'HTML Complete Course', 'html', 'css', 'web', 'atharva', 'bhagat', 'react'],
       coursesCard: [
+        
+        /*
+        CourseName: String, // "Python Complete Course"
+        shortCourseName: String, // "python" ,- for indexing,
+        CourseInfo: String, // 'Complete Python Course loaded with various interesting Concepts'
+        TutorPic: String, // bhavesh
+        TutorName: String, // Bhavesh Mhadse
+        CourseDuration: String,
+        rating: Number,
+        totalRating: { type: Number, default: 0 },
+        ratingsArr: [{ type: Number, default: [0, 0, 0, 0, 0] }],
+        Linker: String, // javascript01
+        SeriesName: String, // Javascript development series
+        keywords: [{ type: String, default: [] }],
+        */
         {
           ImageLogo: HtmlAtharva,
           CourseName: 'HTML Complete Course',
