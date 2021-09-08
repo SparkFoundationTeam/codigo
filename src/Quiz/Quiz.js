@@ -240,8 +240,7 @@ const Instructions = ({ Attempt, CourseName, TutorName, CourseId, setQ, setI }) 
           className='QuizStartButton'
           id='StartQuiz'
           //   disabled={!(Attempt < 4)}
-          style={Attempt < 4 ? { display: 'block' } : { display: 'none' }}
-        >
+          style={Attempt < 4 ? { display: 'block' } : { display: 'none' }}>
           TAKE QUIZ {'/>'}
         </button>
         <img src={string} />
@@ -260,8 +259,7 @@ const Instructions = ({ Attempt, CourseName, TutorName, CourseId, setQ, setI }) 
               screenfull.request();
             }
           }}
-          className='QuizStartButton'
-        >
+          className='QuizStartButton'>
           Start Quiz
         </button>
         <button
@@ -270,8 +268,7 @@ const Instructions = ({ Attempt, CourseName, TutorName, CourseId, setQ, setI }) 
             setI(true);
             setQ(false);
           }}
-          className='QuizBackButton'
-        >
+          className='QuizBackButton'>
           Go Back
         </button>
       </div>
