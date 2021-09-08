@@ -4,9 +4,10 @@
     position: fixed;
     right: 0;
     bottom: 10px;
+    z-index: -1;
   }
 }
-
+ 
 @mixin flexAlign {
   display: flex;
   align-items: center;
@@ -16,6 +17,7 @@
 form {
   height: 70vh;
   width: 50vw;
+  z-index:10;
   @include flexAlign();
   flex-direction: column;
 
@@ -40,7 +42,7 @@ form {
   .formElem {
     position: relative;
     margin: 2vh;
-
+    z-index:10;
     
     @include flexAlign();
     input,

@@ -22,8 +22,8 @@ const Section1 = () => {
         </Link>
       </div>
       <div id='Content'>
-        <div id='Text'>
-          <h1>Learn in the simplest way with códiGo tutors and add value to your career.</h1>
+        <div id='Text' data-aos='fade-right'>
+          <h1 >Learn in the simplest way with códiGo tutors and add value to your career.</h1>
 
           <Link to={authenticated ? '/dashboard' : '/login'}><button>Start Your Journey &gt;</button></Link>
 
@@ -31,7 +31,7 @@ const Section1 = () => {
         </div>
 
         <div>
-          <video src={video} autoplay controls id='introVideo'></video>
+          <video src={video} autoplay controls id='introVideo' data-aos='fade-up' data-aos-offset='100'></video>
         </div>
       </div>
     </div>

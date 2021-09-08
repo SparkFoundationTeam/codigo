@@ -9,23 +9,7 @@ import FeedbackTemplate from '../../Feedback/feedback';
 const Html01 = () => {
   return (
     <div>
-      <PageTemplate
-        CourseName='Html Complete Course'
-        Section1=' Introduction to Web Development '
-        Section2=' Basic Html Tags '
-        Section3=' Html Forms, Tables, Multimedia, Lists '
-        Section4=' HTML Semantics and Embeddings '
-        Section5='Intoduction to basic CSS '
-        video='https://youtube.com/embed/9xIKMpzcbcc'
-        Book1={Book1}
-        Book1Name='HTML Cheat Sheet'
-        Author1=' Atharva Bhagat'
-        Book1Desc='This cheat sheet contains all necessary tags and material to start practising HTML'
-        Book1={Book1}
-        Book2Name='HTML CSS JS Notes'
-        Author2=' Atharva Bhagat'
-        Book2Desc='This book contains handwritten notes of HTML , CSS and JavaScript'
-      />
+      <PageTemplate CourseName='Html Complete Course' Section1=' Introduction to Web Development ' Section2=' Basic Html Tags ' Section3=' Html Forms, Tables, Multimedia, Lists ' Section4=' HTML Semantics and Embeddings ' Section5='Intoduction to basic CSS ' video='https://youtube.com/embed/9xIKMpzcbcc' Book1={Book1} Book1Name='HTML Cheat Sheet' Author1=' Atharva Bhagat' Book1Desc='This cheat sheet contains all necessary tags and material to start practising HTML' Book1={Book1} Book2Name='HTML CSS JS Notes' Author2=' Atharva Bhagat' Book2Desc='This book contains handwritten notes of HTML , CSS and JavaScript' />
 
       <WebDevCompiler
         Language='html'
@@ -33,7 +17,7 @@ const Html01 = () => {
         Button1Text='
         <h1>Heading 1</h1>
         <h2>Heading 2</h2>
-        <h3>Heading 3</h3>
+        <h3>Heading 3</h3> 
         <h4>Heading 4</h4>
         <h5>Heading 5</h5>
         <h6>Heading 6</h6>'
@@ -132,9 +116,10 @@ const Html01 = () => {
     '
       />
 
-      <Quiz name='HTML COMPLETE COURSE' />
+      <Quiz name='Html Complete Course' TutorName='Atharva Bhagat' courseId='webdev-html01' />
+      {/* <Quiz name='Javascript Complete Course' tutorName='Bhavesh Mhadse' courseID='javascript01' /> */}
 
-      <FeedbackTemplate CourseName='HTML COMPLETE COURSE' ratings='4.7' five='20' four='14' three='3' two='2' one='1' understandable='4.8' friendly='4.8' technical='4.7' />
+      <FeedbackTemplate CourseName='Html Complete Course' TutorName='Atharva Bhagat' ratings='4.7' five='20' four='14' three='3' two='2' one='1' understandable='4.8' friendly='4.8' technical='4.7' />
 
       <Footer />
     </div>

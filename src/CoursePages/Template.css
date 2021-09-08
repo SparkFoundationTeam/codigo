@@ -121,9 +121,15 @@
 
 .MainContent {
   margin: 12vh 0vh;
+  -webkit-backdrop-filter: blur(0.2rem);
+          backdrop-filter: blur(0.2rem);
   width: 95vw;
-  border-radius: 5vh;
-  background-color: rgba(207, 240, 240, 0.911);
+  background-color: rgba(235, 248, 246, 0.486);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(aqua), to(purple)), -webkit-gradient(linear, left top, right top, from(purple), to(aqua)), -webkit-gradient(linear, left top, left bottom, from(purple), to(aqua)), -webkit-gradient(linear, right top, left top, from(purple), to(aqua));
+  background-image: linear-gradient(aqua, purple), linear-gradient(to right, purple, aqua), linear-gradient(to bottom, purple, aqua), linear-gradient(to left, purple, aqua);
+  background-repeat: no-repeat;
+  background-size: 5px 50%, 50% 5px, 5px 50%, 50% 5px;
+  background-position: left top, right bottom, right bottom, left top, 5px 5px;
   padding: 3vw;
 }
 
@@ -193,14 +199,17 @@ h3 {
 }
 
 .TutorCard {
-  background: -webkit-gradient(linear, left top, right bottom, from(white), to(rgba(255, 255, 255, 0.856)));
-  background: linear-gradient(to right bottom, white, rgba(255, 255, 255, 0.856));
+  background-color: white;
   -webkit-backdrop-filter: blur(0.5rem);
           backdrop-filter: blur(0.5rem);
   padding: 2vh;
   margin: 2vh 3vw;
   position: relative;
-  border-radius: 20px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(aqua), to(purple)), -webkit-gradient(linear, left top, right top, from(purple), to(aqua)), -webkit-gradient(linear, left top, left bottom, from(purple), to(aqua)), -webkit-gradient(linear, right top, left top, from(purple), to(aqua));
+  background-image: linear-gradient(aqua, purple), linear-gradient(to right, purple, aqua), linear-gradient(to bottom, purple, aqua), linear-gradient(to left, purple, aqua);
+  background-repeat: no-repeat;
+  background-size: 3px 20%, 20% 3px, 3px 20%, 20% 3px;
+  background-position: left bottom, right top, right top, bottom left,  5px 5px;
 }
 
 .TutorCard #TutorIcon {
@@ -255,6 +264,22 @@ h3 {
           transform: scale(1.2);
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
+}
+
+#bp1 {
+  position: absolute;
+  height: 20vh;
+  top: -25vh;
+  left: -10vh;
+  z-index: -1;
+}
+
+#bp2 {
+  position: absolute;
+  height: 60vh;
+  bottom: -5vh;
+  right: 0vh;
+  z-index: -1;
 }
 
 @media screen and (max-width: 1000px) {

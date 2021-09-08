@@ -8,6 +8,9 @@ import starFilled from '../resources/starfilled.png';
 import BlobP1 from '../resources/pattern1Blob.png';
 import BlobP2 from '../resources/pattern2Blob.png';
 import codigoIcon from '../resources/codiGo.png';
+import axios from 'axios';
+import BackendUrl from '../BackendUrl';
+
 const FeedbackTemplate = props => {
   let [certificateModal, setCertificateModal] = useState(false);
   let [overallFive, setOverallFive] = useState(false);
@@ -52,6 +55,26 @@ const FeedbackTemplate = props => {
       return true;
     }
   };
+
+  const handleRating = async () => {
+    const Obj = { CourseName: props.CourseName, TutorName: props.TutorName, newRating: overallNumber };
+
+    console.log('Object send is : ', Obj);
+
+    let { data } = await axios.patch(BackendUrl + 'AllCourses/update-rating', Obj);
+    console.log(data);
+  };
+
+  const getalldata = async () => {
+    let { d } = axios.get('https://codigo-server.herokuapp.com/AllCourses/html');
+    console.log('All data is ', d);
+  };
+
+  useEffect(() => {
+    getalldata();
+
+    console.log(props.CourseName, props.TutorName);
+  });
 
   return (
     <div className='BooksBox' id='FeedBack'>
@@ -129,7 +152,7 @@ const FeedbackTemplate = props => {
                   setOverallThree(false);
                   setOverallFour(false);
                   setOverallFive(false);
-                  setOverallNumber(1);
+                  setOverallNumber(1); // ha number is mha no. onsubmit store
                 }}
               />
               <img
@@ -330,7 +353,9 @@ const FeedbackTemplate = props => {
                 setCertificateModal(false);
                 setDisableText('Feedback Submitted');
                 setMakeDisable(true);
-              }
+                console.log(overallNumber, fNumber, uNumber, tfNumber);
+                handleRating();
+              } //testing ughad
             }}
             className='QuizStartButton'
           >

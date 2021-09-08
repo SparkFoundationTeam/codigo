@@ -10,6 +10,7 @@ import cloudIcon from '../resources/storage.png';
 import coursesIcon from '../resources/certificateIcon.png';
 import logoutIcon from '../resources/logout.png';
 
+import WelcomeDashboard from './Welcome';
 import MyCourses from './MyCourses';
 import MyDrive from './MyDrive';
 import Settings from './Settings';
@@ -18,18 +19,32 @@ import { UserContext } from '../MainContext'; // <- hi line prytek component mad
 
 const DashBoard = () => {
   let { signedInUser, setsignedInUser } = useContext(UserContext); // <- ani hi pn
+  let [index, setIndex] = useState(3);
 
-  let [componentArray, setComponentArray] = useState([<MyCourses />,<MyDrive />,  <Settings />]);
-  let [index, setIndex] = useState(0);
+  let [componentArray, setComponentArray] = useState([<MyCourses />, <MyDrive />, <Settings />, <div />, <WelcomeDashboard />]);
   let [clickedStyles, setClickStyle] = useState({
     borderLeftWidth: '5px',
     borderLeftColor: 'black',
     backgroundColor: 'rgb(199, 248, 248)',
+    color:'black'
   });
-  const getUserFromLocalStorage = () => JSON.parse(localStorage.getItem('User'));
+  const getUserFromLocalStorage = () => {
+    console.log(localStorage.getItem('User'));
+    return JSON.parse(localStorage.getItem('User'));
+  };
+  let dothisaftersometime = () => {
+    console.log('after 3 seconds');
+    console.log('Dashboard');
+    console.log(signedInUser);
+    setIndex(4);
+    for (let something of signedInUser.enrolledCourses) {
+      console.log(something);
+    }
+  };
 
   useEffect(() => {
-    setsignedInUser(getUserFromLocalStorage());
+    setsignedInUser(getUserFromLocalStorage()); // antoy he apan ,
+    dothisaftersometime();
     //thamb
   }, []);
 
@@ -80,13 +95,15 @@ const DashBoard = () => {
           <button
             id='logout'
             onClick={() => {
-              localStorage.removeItem('LoggedIn');
-              localStorage.removeItem('User');
+              localStorage.clear();
               window.location.reload();
             }}
           >
+            {' '}
             <img src={logoutIcon}></img>
-            <b>Log Out</b>
+            <Link to='/login' style={{ textDecoration: 'none' }}>
+              Logout
+            </Link>
           </button>
         </div>
 

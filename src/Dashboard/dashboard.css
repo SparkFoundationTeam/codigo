@@ -1,6 +1,7 @@
 .dashboard {
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 }
 .dashboard .dashboard-navbar {
   width: 100%;
@@ -40,13 +41,15 @@
 }
 .dashboard .dashboard-sidebar {
   width: 19vw;
-  background: linear-gradient(to bottom, rgb(0, 255, 255), rgb(33, 196, 196));
-  backdrop-filter: blur(25rem);
+  background-image: url('../resources/dash2.jpg');
+  background-size: cover;
+  backdrop-filter: blur(0.2rem);
+  border-radius: 0vh 5vh 5vh 0vh;
   height: 100vh;
   z-index: 4;
   margin-top: -8vh;
   display: block;
-  border-radius: 0px 0px 150px;
+  color: white;
 }
 .dashboard .dashboard-sidebar .personal-info {
   /* background-color: coral; */
@@ -55,10 +58,12 @@
   padding: 7vh 2vh 3vh 2vh;
   height: auto;
   display: flex;
+  color: white;
 }
 
 #personName {
   font-size: 3vh;
+  color: white;
 }
 .dashboard .dashboard-sidebar .personal-info img {
   border-radius: 30rem;
@@ -77,7 +82,7 @@
   width: 70%;
   height: 90%;
   margin: 0;
-  color: black;
+  color: white;
 }
 .dashboard .dashboard-sidebar .personal-info .user-info h1 {
   font-size: 2rem;
@@ -87,7 +92,7 @@
 }
 .dashboard .dashboard-sidebar .personal-info .user-info h2 {
   font-size: 1rem;
-  color: black;
+  color: white;
   margin: 0;
   font-weight: 100;
 }
@@ -107,9 +112,8 @@
   overflow: hidden;
 }
 
-
 .dashboard .dashboard-sidebar .choices li {
-    cursor: pointer;
+  cursor: pointer;
   list-style: none;
   height: auto;
   margin-left: -15%;
@@ -121,13 +125,12 @@
   border: 3px solid transparent;
   display: flex;
   align-items: center;
-  
 }
 
 .dashboard .dashboard-sidebar .choices li img {
   height: 3vh;
   margin-right: 1vw;
-  }
+}
 .dashboard .dashboard-sidebar .choices li:hover {
   border-left-width: 5px;
   border-left-color: teal;
@@ -140,27 +143,33 @@
 
 .dashboard .other-section .component {
   margin: 3vh 3rem;
-  height: 86vh;
+  height: 95vh;
+  padding-bottom: 15vh;
+
+  margin-bottom: 0vh;
   overflow: scroll;
 }
 
+#logout {
+  background-color: transparent;
 
-#logout{
-background-color: transparent;
-outline:none;
-border: none;
-padding: 1rem;
-position: absolute;
-bottom: 2vh;
-left: 2vw;
-font-size: 1.2rem;
-display: flex;
+  outline: none;
+  border: none;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0vh;
+
+  font-size: 1.2rem;
+  display: flex;
   align-items: center;
   cursor: pointer;
-
 }
 
-#logout img{
-    height: 3vh;
+#logout img {
+  height: 3vh;
   margin-right: 1vw;
+}
+
+#logout a {
+  color: white;
 }

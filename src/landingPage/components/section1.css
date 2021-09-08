@@ -43,6 +43,15 @@
   background: linear-gradient(to left, transparent, transparent);
   font-weight: bold;
   border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .Section1 #nav button img {
@@ -150,8 +159,11 @@
     margin-top: 2vh;
   }
   .Section1 #nav button {
-    width: 20vw;
+    width: 40vw;
     font-size: small;
+  }
+  .Section1 #nav button img {
+    height: 2vh;
   }
   .Section1 #Content {
     -webkit-box-orient: vertical;

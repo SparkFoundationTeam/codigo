@@ -46,6 +46,9 @@
       background: linear-gradient(to left, transparent, transparent);
       font-weight: bold;
       border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       img {
         margin: 0;
@@ -130,7 +133,10 @@
         margin-top: 2vh;
       }
       button {
-        width: 20vw;
+        img {
+          height: 2vh;
+        }
+        width: 40vw;
         font-size: small;
       }
     }

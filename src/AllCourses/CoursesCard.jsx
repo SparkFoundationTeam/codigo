@@ -1,33 +1,53 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './AllCourses.css';
 import { Link } from 'react-router-dom';
 
-const CourseCard = props => {
+import axios from 'axios';
 
-    let [style,HoverStyle] = useState(false);
+const CourseCard = props => {
+  let [style, HoverStyle] = useState(false);
+
+  let [rating, setRating] = useState(2);
+
+  const getCourses = async () => {
+    let { data } = await axios.get(`https://codigo-server.herokuapp.com/AllCourses/${props.shrtcourse}`);
+
+    console.log('data is ', data);
+
+    try {
+      let prefferedRating = data.filter(eachobj => eachobj.TutorName == props.tutor && eachobj.CourseName == props.courseName);
+      console.log('done ', prefferedRating[0].rating);
+      setRating(prefferedRating[0].rating);
+    } catch {
+      console.log('baray');
+    }
+  };
+  useEffect(() => {
+    getCourses();
+  }, []);
 
   return (
-    <div className={style ? 'CourseHover':'CoursesCard'} onMouseOver={()=>HoverStyle(true)} onMouseLeave={()=>HoverStyle(false)}>
-      <img src={props.logo}></img>
-      <div className='infoBox'>
-        <h2>{props.courseName}</h2>
+    <Link to={`/${props.linker.toLowerCase()}-course-enroll`}>
+      <div className='CoursesCard'>
+        <img src={props.logo}></img>
+        <div className='infoBox'>
+          <h2>{props.courseName}</h2>
 
-        <h5>{props.courseDesc}</h5>
-        <div className='span'>
-          <div className='spanner'>
-            <img src={props.tutorImg}></img>
-            <h4>{props.tutor}</h4>
+          <h5>{props.courseDesc}</h5>
+          <div className='span'>
+            <div className='spanner'>
+              <img src={props.tutorImg}></img>
+              <h4>{props.tutor}</h4>
+            </div>
+            <h4>{props.duration}</h4>
           </div>
-          <h4>{props.duration}</h4>
-        </div>
-        <div className='span'>
-          <p>Ratings : {props.ratings} </p>
-          <Link to={`/${props.linker.toLowerCase()}-course-enroll`}>
+          <div className='span'>
+            <p>Ratings : {rating} </p>
             <h6>Enroll Now</h6>
-          </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

@@ -1,4 +1,7 @@
-import Bhavesh from '../../../resources/bhavesh.jpg';
+import Bhavesh from '../../../resources/bhaveshIcon.jpg';
+import Atharva from '../../../resources/atharvaIcon.jpg';
+import Adika from '../../../resources/adikaIcon.jpg';
+import Vaishnavi from '../../../resources/vaishIcon.jpg';
 
 export const Owners = [
     {
@@ -12,7 +15,7 @@ export const Owners = [
     },
     {
         OwnerName: 'Atharva Bhagat',
-        OwnerImage: Bhavesh,
+        OwnerImage: Atharva,
         OwnerSkills: ['Third Year Engineering Student', 'Full Stack Developer', 'Product Manager'],
         githubUrl: 'url de ikde athya',
         instaUrl: 'https://instagram.com/ath.ar.va',
@@ -21,7 +24,7 @@ export const Owners = [
     },
     {
         OwnerName: 'Adika Karnataki',
-        OwnerImage: Bhavesh,
+        OwnerImage: Adika,
         OwnerSkills: ['Third Year Engineering Student', 'Full Stack Developer', 'Product Manager'],
         githubUrl: 'url de ikde athya',
         instaUrl: 'https://instagram.com/adikakarnataki',
@@ -30,7 +33,7 @@ export const Owners = [
     },
     {
         OwnerName: 'Vaishnavi Korgaonkar',
-        OwnerImage: Bhavesh,
+        OwnerImage: Vaishnavi,
         OwnerSkills: ['Third Year Engineering Student', 'Full Stack Developer', 'Marketing Head'],
         githubUrl: 'url de ikde athya',
         instaUrl: 'https://instagram.com/vaishnavi2512',

@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import screenfull from 'screenfull';
 
 import './Quiz.css';
 
 import { QuizArr } from './DefaultQuizQuestions';
+
+import { UserContext } from '../MainContext';
 
 import BlobP1 from '../resources/pattern1Blob.png';
 import BlobP2 from '../resources/pattern2Blob.png';
@@ -12,8 +14,11 @@ import badge from '../resources/certificateBadge.gif';
 import failbadge from '../resources/failBadge.gif';
 import timer from '../resources/timer.gif';
 import codigoIcon from '../resources/codiGo.png';
+import axios from 'axios';
+import BackendUrl from '../BackendUrl';
+import { isLazy } from 'react-is/cjs/react-is.development';
 
-const Quiz = ({ name }) => {
+const Quiz = ({ name, tutorName, courseId }) => {
   // Quiz
   let [quizArray, setQuizArray] = useState(QuizArr);
   let [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -24,6 +29,7 @@ const Quiz = ({ name }) => {
   let [totalScore, setotalScore] = useState(50);
 
   // Quiz Handlers :)
+
   let [disableAll, setdisableAll] = useState(true);
   let [QuizOver, setQuizOver] = useState(false);
   let [buttonVal, setButtonVal] = useState('Next');
@@ -46,6 +52,9 @@ const Quiz = ({ name }) => {
   let [showInstructions, setShowInstructions] = useState(true);
   let [showQuiz, setShowQuiz] = useState(false);
   let [showEnd, setShowEnd] = useState(false);
+
+  let { signedInUser, setsignedInUser } = useContext(UserContext); // <- ani hi pn
+  let [attempts, setAttempts] = useState(1);
 
   const choiceIsCorrect = () => playerChoice == quizArray[currentQuestionIndex].answer;
   const isLastQuestion = () => currentQuestionIndex == quizArray.length - 1;
@@ -86,7 +95,8 @@ const Quiz = ({ name }) => {
   };
 
   useEffect(() => {
-    console.log(Finisher, seconds);
+    // console.log('Name ', name);
+    // console.log(Finisher, seconds);
 
     if (showQuiz) {
       let myInterval = setInterval(() => {
@@ -112,6 +122,24 @@ const Quiz = ({ name }) => {
     }
   });
 
+  const getUserAttempts = async () => {
+    let obj = {
+      email: signedInUser.email,
+      tutorName: tutorName,
+      courseName: name,
+    };
+
+    let data = await axios.get(BackendUrl + 'Courses');
+
+    return data.data[0].enrolledCourses[0].numberOfAttempts;
+  };
+
+  // direct attempts gheu nai shakat ka l  api la sangayla lagel ki konuser ani kuthla course email is
+
+  useEffect(() => {
+    setAttempts(getUserAttempts());
+  }, []);
+
   return (
     <div className='BooksBox' id={showQuiz ? 'Quizz' : 'QuizSection'}>
       <img src={BlobP1} id='bp1' />
@@ -119,7 +147,7 @@ const Quiz = ({ name }) => {
       <div className='quiz-container'>
         <img src={codigoIcon} id='QuizCodigo' />
 
-        {showInstructions && <Instructions CourseName={name} setQ={e => setShowQuiz(e)} setI={e => setShowInstructions(e)} />}
+        {showInstructions && <Instructions Attempt={attempts} CourseName={name} TutorName={tutorName} CourseId={courseId} setQ={e => setShowQuiz(e)} setI={e => setShowInstructions(e)} />}
 
         {showQuiz && (
           <div>
@@ -160,9 +188,28 @@ const Quiz = ({ name }) => {
       </div>
     </div>
   );
-};
-const Instructions = ({ CourseName, setQ, setI }) => {
+}; //yay
+const Instructions = ({ Attempt, CourseName, TutorName, CourseId, setQ, setI }) => {
   let [certificateModal, setCertificateModal] = useState(false);
+  let { signedInUser, setsignedInUser } = useContext(UserContext); // <- ani hi pn
+
+  const handleAttempts = async () => {
+    let obj = {
+      email: signedInUser.email,
+      tutorName: TutorName,
+      courseName: CourseName,
+    };
+    console.log('By use effect ');
+
+    let data = await axios.get(BackendUrl + 'Courses');
+    // console.log(data.data);
+
+    console.log(data.data[0].enrolledCourses[0].numberOfAttempts);
+    // console.log(obj);
+    // console.log('Handling attempts', CourseName, TutorName);
+    // let d = await axios.patch(BackendUrl + 'Courses/attempts', obj);
+    // console.log(d);
+  };
 
   return (
     <>
@@ -183,7 +230,7 @@ const Instructions = ({ CourseName, setQ, setI }) => {
         <br />
         <p>
           {' '}
-          <b> You can attempt the quiz only 3 times</b>{' '}
+          <b> You can attempt the quiz only 3 times</b> <b> Your Attempts are Exhausted </b>{' '}
         </p>
         <br />
         <button
@@ -192,6 +239,8 @@ const Instructions = ({ CourseName, setQ, setI }) => {
           }}
           className='QuizStartButton'
           id='StartQuiz'
+          //   disabled={!(Attempt < 4)}
+          style={Attempt < 4 ? { display: 'block' } : { display: 'none' }}
         >
           TAKE QUIZ {'/>'}
         </button>
@@ -203,6 +252,7 @@ const Instructions = ({ CourseName, setQ, setI }) => {
         <h2>Make sure you have stable internet connection </h2>
         <button
           onClick={() => {
+            // handleAttempts();
             setCertificateModal(false);
             setI(false);
             setQ(true);
@@ -231,6 +281,12 @@ const Instructions = ({ CourseName, setQ, setI }) => {
 
 const EndGame = ({ CourseName, PlayerScore, TotalScore }) => {
   let [certificateModal, setCertificateModal] = useState(false);
+
+  useEffect(() => {
+    // if (PlayerScore < 10) {//
+    console.log(PlayerScore);
+    // }
+  }, []);
   return (
     <>
       <div className='QuizEnd'>

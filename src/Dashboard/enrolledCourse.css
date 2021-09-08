@@ -2,8 +2,8 @@
   width: 100%;
   height: auto;
   display: flex;
-  place-items: center;
-
+  align-items: center;
+  justify-content: center;
   /* @media (max-width: 600px) {
     font-size: 0.4rem;
     width: 100%;
@@ -12,7 +12,7 @@
 }
 
 .dashboard-CoursesCard {
-  width: 95%;
+  width: 90%;
   height: 20vh;
   border-radius: 1rem;
   background: white;
@@ -36,7 +36,7 @@
 .dashboard-CourseCardHeader {
   color: rgb(3, 177, 177);
 
-  font-weight:bold;
+  font-weight: bold;
   text-transform: uppercase;
   font-size: 2vw;
   /* @media (max-width: 600px) {
@@ -86,7 +86,6 @@
   margin: 0;
   height: 2vw;
   border-radius: 30rem;
-  
 }
 .dashboard-TutorName {
   margin-left: -8%;
@@ -126,6 +125,7 @@
   color: darkgoldenrod;
   width: 100%;
   background: white;
+  text-align: center;
   font-weight: 900;
   border: 2px solid transparent;
   border-radius: 0.3rem;

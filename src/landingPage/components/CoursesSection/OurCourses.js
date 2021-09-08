@@ -51,7 +51,7 @@ const OurCourses = () => {
       <CoursesCardContainer>
         {CardInfoArray[courseIndex].map(eachObj => {
           return (
-            <CoursesCard>
+            <CoursesCard data-aos='fade-up' >
               <CourseIcon src={eachObj.ImageLogo} />
               <CourseCardHeader>{eachObj.CourseName}</CourseCardHeader>
               <CourseCardInfo>{eachObj.CourseInfo}</CourseCardInfo>

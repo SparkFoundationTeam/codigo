@@ -7,9 +7,19 @@
   flex-direction: column;
   overflow: hidden;
 
+  .InitialShow {
+    padding: 10vh 5vw;
+    border-radius: 1vw;
+    background: rgba(255, 255, 255, 0.603);
+    // filter: drop-shadow(10px 10px 10px grey);
+    display: flex;
+backdrop-filter: blur(0.2rem);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 
-
-  h1{
+  h1 {
     background: -webkit-linear-gradient(left, rgb(253, 9, 119), rgb(4, 180, 180));
     background-clip: text;
     -webkit-background-clip: text;
@@ -22,7 +32,7 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    z-index: -1
+    z-index: -1;
   }
 }
 
@@ -52,23 +62,21 @@
 
 .DriveModal img {
   height: 10vh;
- 
 }
 
 .QuizStartButton {
-    background: linear-gradient(to left, rgb(253, 9, 119), rgb(4, 180, 180));
-    outline: none;
-    padding: 1vh 2vw;
-    margin-top: 5vh;
-    font-size: 2vh;
-    border-radius: 10px;
-    width: 15vw;
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .QuizStartButton:hover {
-    background: linear-gradient(to left, rgb(206, 8, 97), rgb(3, 146, 146));
-  }
-  
+  background: linear-gradient(to left, rgb(253, 9, 119), rgb(4, 180, 180));
+  outline: none;
+  padding: 1vh 2vw;
+  margin-top: 5vh;
+  font-size: 2vh;
+  border-radius: 10px;
+  width: 15vw;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.QuizStartButton:hover {
+  background: linear-gradient(to left, rgb(206, 8, 97), rgb(3, 146, 146));
+}

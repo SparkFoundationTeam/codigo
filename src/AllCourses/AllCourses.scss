@@ -84,11 +84,11 @@ input[list] {
 }
 
 datalist option {
-    font-size: 0.8em;
-    padding: 0.3em 1em;
-    background-color: #ccc;
-    cursor: pointer;
-  }
+  font-size: 0.8em;
+  padding: 0.3em 1em;
+  background-color: #ccc;
+  cursor: pointer;
+}
 
 .Content {
   display: flex;
@@ -118,123 +118,84 @@ datalist option {
   width: 50vw;
   flex-direction: column;
   align-items: center;
+  a {
+    text-decoration: none;
+    color: black;
 
-  .CoursesCard {
-    height: 18vh;
-    position: relative;
-    width: 40vw;
-    margin-top: 3vh;
-    background-color: rgba(255, 255, 255, 0.965);
-    border-radius: 1rem;
-    display: flex;
-    transition-duration: 0.2s;
-    filter: drop-shadow(10px 10px 10px grey);
-    .infoBox {
-      display: flex;
-
-      justify-content: center;
-      flex-direction: column;
-    }
-
-    img {
+    .CoursesCard {
       height: 18vh;
+      position: relative;
+      width: 40vw;
+      margin-top: 3vh;
+      background-color: rgba(255, 255, 255, 0.965);
       border-radius: 1rem;
-    }
-    .spanner {
       display: flex;
-    }
-    h4,
-    h2,
-    h5,
-    h6 {
-      margin: 0.5vh 1vw;
-    }
-    .span {
-      display: flex;
-      width: 20vw;
-      justify-content: space-between;
+      transition-duration: 0.2s;
+      filter: drop-shadow(10px 10px 10px grey);
+      .infoBox {
+        display: flex;
+
+        justify-content: center;
+        flex-direction: column;
+      }
+
       img {
-        height: 3vh;
+        height: 18vh;
+        width: 15vw;
+        border-radius: 1rem;
+      }
+      .spanner {
+        display: flex;
+      }
+      h4,
+      h2,
+      h5,
+      h6 {
         margin: 0.5vh 1vw;
       }
-    }
-    p {
-      margin: 0.5vh 1vw;
-    }
-    h6 {
-      font-size: large;
-      position: absolute;
-      right: 0;
-      color: rgba(240, 248, 255, 0);
+      .span {
+        display: flex;
+        width: 20vw;
+        justify-content: space-between;
+        img {
+          height: 3vh;
+          width: auto;
+
+          margin: 0.5vh 1vw;
+        }
+      }
+      p {
+        margin: 0.5vh 1vw;
+      }
+
+      &:hover {
+        background-color: rgb(245, 239, 239);
+        transition-duration: 0.2s;
+        img,
+        p,
+        h2,
+        h5,
+        h4 {
+          transition-duration: 0.2s;
+        }
+        h6 {
+          display: visible;
+          color: rgb(4, 102, 102);
+          transition-duration: 0.2s;
+          &:hover {
+            color: rgb(75, 67, 0);
+          }
+        }
+      }
     }
   }
 }
-.CourseHover {
-  height: 18vh;
-  position: relative;
-  width: 40vw;
-  margin-top: 3vh;
-  background-color: rgba(255, 255, 255, 0.965);
-  border-radius: 1rem;
-  display: flex;
-  transition-duration: 0.2s;
-  filter: drop-shadow(10px 10px 10px grey);
-  .infoBox {
-    display: flex;
 
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  img {
-    height: 18vh;
-    border-radius: 1rem;
-  }
-  .spanner {
-    display: flex;
-  }
-  h4,
-  h2,
-  h5,
-  h6 {
-    margin: 0.5vh 1vw;
-  }
-  .span {
-    display: flex;
-    width: 20vw;
-    justify-content: space-between;
-    img {
-      height: 3vh;
-      margin: 0.5vh 1vw;
-    }
-  }
-  p {
-    margin: 0.5vh 1vw;
-  }
-  h6 {
-    font-size: large;
-    position: absolute;
-    right: 0;
-    color: rgba(240, 248, 255, 0);
-  }
-
-  background-color: rgb(245, 239, 239);
-  transition-duration: 0.2s;
-  img,
-  p,
-  h2,
-  h5,
-  h4 {
-    transition-duration: 0.2s;
-  }
-  h6 {
-    display: visible;
-    color: rgb(4, 102, 102);
-    transition-duration: 0.2s;
-    &:hover {
-      color: rgb(75, 67, 0);
-    }
-  }
+h6 {
+  font-size: large;
+  position: absolute;
+  right: 0;
+  color: rgba(240, 248, 255, 0);
 }
 
 .res-NavButton {
@@ -255,21 +216,23 @@ datalist option {
 .CardHolder {
   display: flex;
 }
+
 .CardsContainer1,
 .CardsContainer2 {
   width: 40vw;
-  margin: 0;
-  margin: 5vh;
+  margin-right: 2vw;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
 .UpcomingCoursesCard {
   height: 18vh;
 
   width: 40vw;
-  margin-top: 3vh;
+  margin: 4vh;
   background-color: rgba(255, 255, 255, 0.965);
   border-radius: 1rem;
   display: flex;
@@ -336,8 +299,10 @@ datalist option {
 }
 
 @media screen and (max-width: 1000px) {
-  .Content {
-    flex-direction: column;
+  .SectHeader {
+    font-family: 'Richard Hamilton';
+    color: darkgoldenrod;
+    font-size: small;
   }
 
   .res-NavButton {
@@ -361,25 +326,27 @@ datalist option {
   }
 
   #courseSearch {
-    width: 50vw;
-    margin-left: -10vw;
+    width: 65vw;
+    margin-left: -15vw;
     justify-content: center;
     #courseSearchBar {
       height: 3vh;
-      width: 35vw;
+      width: 55vw;
     }
   }
 
   .dashboard-navbar .dashboard-icon .dashboard-pic {
-    margin-left: 2vw;
+    position: absolute;
+    top: 0;
+    left: -7vw;
 
-    height: 4vh;
+    transform: scale(0.6);
   }
 
   .OneSection {
     margin-top: 10vh;
     display: flex;
-    width: 100vw;
+    width: 50vw;
     flex-direction: column;
     align-items: center;
 
@@ -387,99 +354,112 @@ datalist option {
       font-family: 'Richard Hamilton';
       color: darkgoldenrod;
     }
+    a {
+      .CoursesCard {
+        height: 25vh;
 
-    .CoursesCard {
-      height: 10vh;
-      position: relative;
-      width: 90vw;
-      margin-top: 3vh;
-      background-color: rgba(255, 255, 255, 0.965);
-      border-radius: 1rem;
-      display: flex;
-      transition-duration: 0.2s;
-      filter: drop-shadow(10px 10px 10px grey);
-      .infoBox {
+        position: relative;
+        width: 40vw;
+        margin-top: 3vh;
+        background-color: rgba(255, 255, 255, 0.965);
+        border-radius: 0.7rem;
         display: flex;
-
-        justify-content: center;
         flex-direction: column;
-      }
-
-      img {
-        height: 10vh;
-
-        border-radius: 1rem;
-      }
-      .spanner {
-        display: flex;
-      }
-
-      .span {
-        display: flex;
-        width: 50vw;
-        justify-content: space-between;
-        img {
-          height: 2vh;
-        }
-      }
-      h5 {
-        font-size: 1vh;
-      }
-      p {
-        font-size: 1vh;
-      }
-      h2 {
-        font-size: 1.5vh;
-      }
-      h6 {
-        font-size: 1.2vh;
-        position: absolute;
-        right: 10px;
-        bottom: 5px;
-        color: rgba(240, 248, 255, 0);
-      }
-
-      h4 {
-        font-size: 1vh;
-      }
-
-      h2,
-      h4,
-      h5,
-      h6,
-      p {
-        margin: 0vh 1vw;
-      }
-      h4 {
-        margin: 0.5vh 1vw;
-      }
-
-      &:hover {
-        background-color: rgb(245, 239, 239);
         transition-duration: 0.2s;
-        img,
-        p,
-        h2,
-        h5,
-        h4 {
-          transition-duration: 0.2s;
+        filter: drop-shadow(10px 10px 10px grey);
+        .infoBox {
+          display: flex;
+
+          justify-content: center;
+          flex-direction: column;
+        }
+
+        img {
+          height: 10vh;
+          width: 100%;
+          border-radius: 0.7rem;
+        }
+        .spanner {
+          display: flex;
+        }
+
+        .span {
+          display: flex;
+          width: 35vw;
+          justify-content: space-between;
+          img {
+            height: 2vh;
+          }
+        }
+        h5 {
+          font-size: 1vh;
+        }
+        p {
+          font-size: 1vh;
+        }
+        h2 {
+          font-size: 1.5vh;
         }
         h6 {
-          display: visible;
-          color: rgb(4, 102, 102);
+          font-size: 1.2vh;
+          position: absolute;
+          right: 10px;
+          bottom: 5px;
+          color: rgba(240, 248, 255, 0);
+        }
+
+        h4 {
+          font-size: 1vh;
+        }
+
+        h4,
+        h5,
+        h6,
+        p {
+          margin: 0.7vh 1vw;
+        }
+        h2 {
+          margin: 1vh 1vw;
+        }
+
+        &:hover {
+          background-color: rgb(245, 239, 239);
           transition-duration: 0.2s;
-          &:hover {
-            color: rgb(75, 67, 0);
+          img,
+          p,
+          h2,
+          h5,
+          h4 {
+            transition-duration: 0.2s;
+          }
+          h6 {
+            display: visible;
+            color: rgb(4, 102, 102);
+            transition-duration: 0.2s;
+            &:hover {
+              color: rgb(75, 67, 0);
+            }
           }
         }
       }
     }
   }
 
+  .Upcoming .CardHolder {
+    flex-direction: column;
+    margin-top: 5vh;
+  }
+
+  .CardsContainer1 {
+    margin-top: 5vh;
+  }
+
   .UpcomingCoursesCard {
     height: 10vh;
     position: relative;
     width: 90vw;
+    margin: 9vh;
+
     margin-top: -5vh;
     background-color: rgba(255, 255, 255, 0.965);
     border-radius: 1rem;
@@ -564,7 +544,7 @@ datalist option {
   }
 
   .CardHolder {
-    margin-top: 3vh;
+    margin-top: 8vh;
     flex-direction: column;
   }
 }

@@ -71,10 +71,7 @@ const LoginPage = ({ setlG }) => {
     e.preventDefault();
 
     let loggedInUser = await axios.get(BackendUrl + `user?username=${User.username}&password=${User.password}`);
-    await axios.get(BackendUrl + `user?email=${User.username}&password=${User.password}`);
-
-
-
+    // await axios.get(BackendUrl + `user?email=${User.username}&password=${User.password}`);
 
     console.log('User we got through mongo Db is : ', loggedInUser);
 
@@ -103,7 +100,7 @@ const LoginPage = ({ setlG }) => {
     }
 
     if (!hasFilledAllFields()) {
-      return;
+      return; // ek min thamb atta
     }
 
     console.log('New User has Sign-Up with following Details : ', User);
@@ -136,6 +133,13 @@ const LoginPage = ({ setlG }) => {
     console.log('emails aree : ', emails);
   };
 
+  const checkBackendProblem = async e => {
+    e.preventDefault();
+    let obj = {};
+    let d = await axios.patch(BackendUrl + 'Courses/attempts', obj);
+    console.log('succesful attempt ', d);
+  };
+
   useEffect(() => {
     getUsernamesAndemails();
     setsignedInUser(getUserFromLocalStorage());
@@ -143,6 +147,7 @@ const LoginPage = ({ setlG }) => {
   // history
   return (
     <div id='container'>
+        
       <NavBar id='nav' />
       <div id='bgdiv'>
         <img id='bg' src={bg}></img>
@@ -165,9 +170,10 @@ const LoginPage = ({ setlG }) => {
           }}
           id='submit'
         >
-          {/* <Link to={}>LOGIN</Link> */}
+          {}
           Login
         </button>
+        {/* <button onClick={checkBackendProblem}>Check Backend</button> */}
 
         <h4>Forgot Details? Get Help logging in</h4>
         <h3 style={WrongPassword ? { color: 'red', visibility: 'visible' } : { visibility: 'hidden' }}> Username and Password do not match</h3>

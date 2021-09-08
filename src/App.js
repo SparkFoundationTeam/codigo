@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
 
 import LandingPage from './landingPage/landingPage';
@@ -27,13 +27,16 @@ import ScrollToTop from './ScrollToTop';
 
 const App = () => {
   let [signedInUser, setsignedInUser] = useState(defaultUser);
-  
+  let [loaded, setLoaded] = useState(false);
+
+
 
   const authenticated = localStorage.getItem('LoggedIn');
   return (
     <>
-      <Router>
+      <Router onLoad={() => window.location.reload()}>
         <ScrollToTop />
+        
 
         <UserContext.Provider value={{ signedInUser, setsignedInUser }}>
           <Switch>
@@ -44,10 +47,51 @@ const App = () => {
               <LoginPage />
             </Route>
           </Switch>
+          {/* <Route exact path='/dashboard'>
+              <DashBoard />
+            </Route>
+            <Route exact path='/all-courses'>
+              <AllCourses />
+            </Route>
+            <Route exact path='/all-courses'>
+              <AllCourses />
+            </Route>
+            <Route exact path='/html01-course-enroll'>
+              <Html01Enroll />
+            </Route>
+            <Route exact path='/webdev-html01'>
+              <Html01 />
+            </Route>
+
+            <Route exact path='/java01-course-enroll'>
+              <Java01Enroll />
+            </Route>
+            <Route exact path='/javadev-java01'>
+              <Java01 />
+            </Route>
+
+            <Route exact path='/js01-course-enroll'>
+              <JS01Enroll />
+            </Route>
+            <Route exact path='/javascript01'>
+              <JS01 />
+            </Route>
+
+            <Route exact path='/python01-course-enroll'>
+              <Python01Enroll />
+            </Route>
+            <Route exact path='/pydev-python01'>
+              <Python01 />
+            </Route>
+          </Switch> */}
 
           {!authenticated && (
+            
             <Switch>
-              
+              <Redirect from='/login' to='/login'></Redirect>
+              <Redirect from='/dashboard' to='/login'></Redirect>
+              <Redirect from='/all-courses' to='/login'></Redirect>
+
               <Redirect to='/'></Redirect>
             </Switch>
           )}
@@ -66,9 +110,7 @@ const App = () => {
               <Route exact path='/all-courses'>
                 <AllCourses />
               </Route>
-              <Route exact path='/all-courses'>
-                <AllCourses />
-              </Route>
+              
 
               <Route exact path='/html01-course-enroll'>
                 <Html01Enroll />
@@ -99,12 +141,11 @@ const App = () => {
               </Route>
             </Switch>
           )}
-
-          
         </UserContext.Provider>
       </Router>
+      
     </>
   );
 };
-
+// aik enroll kartana mag id pan send maru  ha bc saglech kru lvdya uthe quiza nyae thgamb tyu-
 export default App;

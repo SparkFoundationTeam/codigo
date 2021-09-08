@@ -77,7 +77,7 @@ const CoursePageTemplate = props => {
             <img src={feedbackIcon}></img> <span className='tooltiptext'>Feedback</span>
           </div>
         </a>
-      </div>
+      </div> 
 
       {/* Section 1  */}
       <div className='BooksBox' id='VideoBox'>

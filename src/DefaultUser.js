@@ -8,4 +8,6 @@ export let defaultUser = {
   mobileNumber: '',
   collegeName: '',
   fullName: '',
+  enrolledCourses: [],
+//   isLoggedIn: false,
 };

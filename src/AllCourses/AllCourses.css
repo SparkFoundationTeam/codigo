@@ -150,7 +150,12 @@ datalist option {
           align-items: center;
 }
 
-.OneSection .CoursesCard {
+.OneSection a {
+  text-decoration: none;
+  color: black;
+}
+
+.OneSection a .CoursesCard {
   height: 18vh;
   position: relative;
   width: 40vw;
@@ -166,7 +171,7 @@ datalist option {
           filter: drop-shadow(10px 10px 10px grey);
 }
 
-.OneSection .CoursesCard .infoBox {
+.OneSection a .CoursesCard .infoBox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -179,25 +184,26 @@ datalist option {
           flex-direction: column;
 }
 
-.OneSection .CoursesCard img {
+.OneSection a .CoursesCard img {
   height: 18vh;
+  width: 15vw;
   border-radius: 1rem;
 }
 
-.OneSection .CoursesCard .spanner {
+.OneSection a .CoursesCard .spanner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.OneSection .CoursesCard h4,
-.OneSection .CoursesCard h2,
-.OneSection .CoursesCard h5,
-.OneSection .CoursesCard h6 {
+.OneSection a .CoursesCard h4,
+.OneSection a .CoursesCard h2,
+.OneSection a .CoursesCard h5,
+.OneSection a .CoursesCard h6 {
   margin: 0.5vh 1vw;
 }
 
-.OneSection .CoursesCard .span {
+.OneSection a .CoursesCard .span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -207,115 +213,47 @@ datalist option {
           justify-content: space-between;
 }
 
-.OneSection .CoursesCard .span img {
+.OneSection a .CoursesCard .span img {
   height: 3vh;
+  width: auto;
   margin: 0.5vh 1vw;
 }
 
-.OneSection .CoursesCard p {
+.OneSection a .CoursesCard p {
   margin: 0.5vh 1vw;
 }
 
-.OneSection .CoursesCard h6 {
-  font-size: large;
-  position: absolute;
-  right: 0;
-  color: rgba(240, 248, 255, 0);
-}
-
-.CourseHover {
-  height: 18vh;
-  position: relative;
-  width: 40vw;
-  margin-top: 3vh;
-  background-color: rgba(255, 255, 255, 0.965);
-  border-radius: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
-  -webkit-filter: drop-shadow(10px 10px 10px grey);
-          filter: drop-shadow(10px 10px 10px grey);
+.OneSection a .CoursesCard:hover {
   background-color: #f5efef;
-  transition-duration: 0.2s;
-}
-
-.CourseHover .infoBox {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.CourseHover img {
-  height: 18vh;
-  border-radius: 1rem;
-}
-
-.CourseHover .spanner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.CourseHover h4,
-.CourseHover h2,
-.CourseHover h5,
-.CourseHover h6 {
-  margin: 0.5vh 1vw;
-}
-
-.CourseHover .span {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 20vw;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.CourseHover .span img {
-  height: 3vh;
-  margin: 0.5vh 1vw;
-}
-
-.CourseHover p {
-  margin: 0.5vh 1vw;
-}
-
-.CourseHover h6 {
-  font-size: large;
-  position: absolute;
-  right: 0;
-  color: rgba(240, 248, 255, 0);
-}
-
-.CourseHover img,
-.CourseHover p,
-.CourseHover h2,
-.CourseHover h5,
-.CourseHover h4 {
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
 }
 
-.CourseHover h6 {
+.OneSection a .CoursesCard:hover img,
+.OneSection a .CoursesCard:hover p,
+.OneSection a .CoursesCard:hover h2,
+.OneSection a .CoursesCard:hover h5,
+.OneSection a .CoursesCard:hover h4 {
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+.OneSection a .CoursesCard:hover h6 {
   display: visible;
   color: #046666;
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
 }
 
-.CourseHover h6:hover {
+.OneSection a .CoursesCard:hover h6:hover {
   color: #4b4300;
+}
+
+h6 {
+  font-size: large;
+  position: absolute;
+  right: 0;
+  color: rgba(240, 248, 255, 0);
 }
 
 .res-NavButton {
@@ -352,8 +290,7 @@ datalist option {
 .CardsContainer1,
 .CardsContainer2 {
   width: 40vw;
-  margin: 0;
-  margin: 5vh;
+  margin-right: 2vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -372,7 +309,7 @@ datalist option {
 .UpcomingCoursesCard {
   height: 18vh;
   width: 40vw;
-  margin-top: 3vh;
+  margin: 4vh;
   background-color: rgba(255, 255, 255, 0.965);
   border-radius: 1rem;
   display: -webkit-box;
@@ -468,11 +405,10 @@ datalist option {
 }
 
 @media screen and (max-width: 1000px) {
-  .Content {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+  .SectHeader {
+    font-family: 'Richard Hamilton';
+    color: darkgoldenrod;
+    font-size: small;
   }
   .res-NavButton {
     visibility: visible;
@@ -493,26 +429,29 @@ datalist option {
     visibility: hidden;
   }
   #courseSearch {
-    width: 50vw;
-    margin-left: -10vw;
+    width: 65vw;
+    margin-left: -15vw;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
   #courseSearch #courseSearchBar {
     height: 3vh;
-    width: 35vw;
+    width: 55vw;
   }
   .dashboard-navbar .dashboard-icon .dashboard-pic {
-    margin-left: 2vw;
-    height: 4vh;
+    position: absolute;
+    top: 0;
+    left: -7vw;
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
   }
   .OneSection {
     margin-top: 10vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 100vw;
+    width: 50vw;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -525,22 +464,26 @@ datalist option {
     font-family: 'Richard Hamilton';
     color: darkgoldenrod;
   }
-  .OneSection .CoursesCard {
-    height: 10vh;
+  .OneSection a .CoursesCard {
+    height: 25vh;
     position: relative;
-    width: 90vw;
+    width: 40vw;
     margin-top: 3vh;
     background-color: rgba(255, 255, 255, 0.965);
-    border-radius: 1rem;
+    border-radius: 0.7rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-transition-duration: 0.2s;
             transition-duration: 0.2s;
     -webkit-filter: drop-shadow(10px 10px 10px grey);
             filter: drop-shadow(10px 10px 10px grey);
   }
-  .OneSection .CoursesCard .infoBox {
+  .OneSection a .CoursesCard .infoBox {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -552,82 +495,93 @@ datalist option {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .OneSection .CoursesCard img {
+  .OneSection a .CoursesCard img {
     height: 10vh;
-    border-radius: 1rem;
+    width: 100%;
+    border-radius: 0.7rem;
   }
-  .OneSection .CoursesCard .spanner {
+  .OneSection a .CoursesCard .spanner {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  .OneSection .CoursesCard .span {
+  .OneSection a .CoursesCard .span {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 50vw;
+    width: 35vw;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .OneSection .CoursesCard .span img {
+  .OneSection a .CoursesCard .span img {
     height: 2vh;
   }
-  .OneSection .CoursesCard h5 {
+  .OneSection a .CoursesCard h5 {
     font-size: 1vh;
   }
-  .OneSection .CoursesCard p {
+  .OneSection a .CoursesCard p {
     font-size: 1vh;
   }
-  .OneSection .CoursesCard h2 {
+  .OneSection a .CoursesCard h2 {
     font-size: 1.5vh;
   }
-  .OneSection .CoursesCard h6 {
+  .OneSection a .CoursesCard h6 {
     font-size: 1.2vh;
     position: absolute;
     right: 10px;
     bottom: 5px;
     color: rgba(240, 248, 255, 0);
   }
-  .OneSection .CoursesCard h4 {
+  .OneSection a .CoursesCard h4 {
     font-size: 1vh;
   }
-  .OneSection .CoursesCard h2,
-  .OneSection .CoursesCard h4,
-  .OneSection .CoursesCard h5,
-  .OneSection .CoursesCard h6,
-  .OneSection .CoursesCard p {
-    margin: 0vh 1vw;
+  .OneSection a .CoursesCard h4,
+  .OneSection a .CoursesCard h5,
+  .OneSection a .CoursesCard h6,
+  .OneSection a .CoursesCard p {
+    margin: 0.7vh 1vw;
   }
-  .OneSection .CoursesCard h4 {
-    margin: 0.5vh 1vw;
+  .OneSection a .CoursesCard h2 {
+    margin: 1vh 1vw;
   }
-  .OneSection .CoursesCard:hover {
+  .OneSection a .CoursesCard:hover {
     background-color: #f5efef;
     -webkit-transition-duration: 0.2s;
             transition-duration: 0.2s;
   }
-  .OneSection .CoursesCard:hover img,
-  .OneSection .CoursesCard:hover p,
-  .OneSection .CoursesCard:hover h2,
-  .OneSection .CoursesCard:hover h5,
-  .OneSection .CoursesCard:hover h4 {
+  .OneSection a .CoursesCard:hover img,
+  .OneSection a .CoursesCard:hover p,
+  .OneSection a .CoursesCard:hover h2,
+  .OneSection a .CoursesCard:hover h5,
+  .OneSection a .CoursesCard:hover h4 {
     -webkit-transition-duration: 0.2s;
             transition-duration: 0.2s;
   }
-  .OneSection .CoursesCard:hover h6 {
+  .OneSection a .CoursesCard:hover h6 {
     display: visible;
     color: #046666;
     -webkit-transition-duration: 0.2s;
             transition-duration: 0.2s;
   }
-  .OneSection .CoursesCard:hover h6:hover {
+  .OneSection a .CoursesCard:hover h6:hover {
     color: #4b4300;
+  }
+  .Upcoming .CardHolder {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 5vh;
+  }
+  .CardsContainer1 {
+    margin-top: 5vh;
   }
   .UpcomingCoursesCard {
     height: 10vh;
     position: relative;
     width: 90vw;
+    margin: 9vh;
     margin-top: -5vh;
     background-color: rgba(255, 255, 255, 0.965);
     border-radius: 1rem;
@@ -724,7 +678,7 @@ datalist option {
     color: #4b4300;
   }
   .CardHolder {
-    margin-top: 3vh;
+    margin-top: 8vh;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
