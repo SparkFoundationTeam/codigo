@@ -1,0 +1,90 @@
+.button-container {
+  position: absolute;
+  display: flex;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.button-leftmost {
+  margin: 0;
+  padding: 1vh 4vh;
+  outline: none;
+  background: rgb(210, 243, 243);
+  border: 2px solid transparent;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  filter: drop-shadow(5px 2px 5px grey);
+  transition: all ease-in-out linear 200ms;
+}
+
+.button-leftmost:hover {
+  background: white;
+  filter: drop-shadow(5px 2px 5px transparent);
+  border-left-color: grey;
+  border-top-color: grey;
+  z-index: -100;
+}
+
+.button-leftmost:hover + .button-middle {
+  filter: drop-shadow(-2px 2px 5px grey);
+}
+
+.button-middle {
+  margin: 0;
+  padding: 1vh 4vh;
+  outline: none;
+  border: 2px solid transparent;
+  background: rgb(210, 243, 243);
+  filter: drop-shadow(5px 2px 5px grey);
+}
+
+.button-middle:hover {
+  background: white;
+  filter: drop-shadow(5px 5px 5px transparent);
+  border-right-color: transparent;
+  z-index: -100;
+}
+
+.button-middle:hover + .button-middle {
+  filter: drop-shadow(-5px 2px 5px grey);
+}
+
+.button-rightmost {
+  margin: 0;
+  padding: 1vh 4vh;
+  outline: none;
+  border: 2px solid transparent;
+  background: cyan;
+  background: rgb(210, 243, 243);
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  filter: drop-shadow(5px 2px 5px grey);
+  transition: all ease-in-out linear 200ms;
+}
+
+.button-rightmost:hover {
+  background: white;
+  filter: drop-shadow(5px 2px 5px transparent);
+  border-right-color: grey;
+  border-top-color: grey;
+  z-index: -100;
+}
+
+.button-rightmost:hover + .button-middle {
+  filter: drop-shadow(-2px 2px 5px grey);
+}
+
+/* toh compiler che buttons component  
+        <div class="button-container">
+          <button class="button-leftmost">First</button>
+          <button class="button-middle">Second</button>
+          <button class="button-middle">Third</button>
+          <button class="button-middle">Fourth</button>
+          <button class="button-rightmost">Last</button>
+        </div>
+*/
