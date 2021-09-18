@@ -109,4 +109,86 @@
   background: -webkit-gradient(linear, right top, left top, from(#ce0861), to(#039292));
   background: linear-gradient(to left, #ce0861, #039292);
 }
+
+@media screen and (max-width: 1024px) {
+  .driveContainer {
+    width: 100%;
+    height: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    overflow: hidden;
+  }
+  .driveContainer .InitialShow {
+    padding: 10vh 5vw;
+    border-radius: 1vw;
+    background: rgba(255, 255, 255, 0.603);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-backdrop-filter: blur(0.2rem);
+            backdrop-filter: blur(0.2rem);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .driveContainer h1 {
+    background: -webkit-linear-gradient(left, #fd0977, #04b4b4);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 5vh;
+    text-align: center;
+  }
+  .driveContainer #cloudImage {
+    height: 30vh;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
+  .DriveModal {
+    width: 90vw;
+    margin-left: 5vw;
+    height: 80vh;
+    top: 10%;
+    z-index: 100;
+    margin-top: 0vh;
+    background-color: rgba(255, 255, 255, 0.596);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(aqua), to(purple)), -webkit-gradient(linear, left top, right top, from(purple), to(aqua)), -webkit-gradient(linear, left top, left bottom, from(purple), to(aqua)), -webkit-gradient(linear, right top, left top, from(purple), to(aqua));
+    background-image: linear-gradient(aqua, purple), linear-gradient(to right, purple, aqua), linear-gradient(to bottom, purple, aqua), linear-gradient(to left, purple, aqua);
+    background-repeat: no-repeat;
+    background-size: 5px 50%, 50% 5px, 5px 50%, 50% 5px;
+    background-position: right top, right top, left bottom, left bottom, 5px 5px;
+  }
+  .DriveModal h2 {
+    font-size: medium;
+  }
+  .DriveModal br {
+    display: none;
+  }
+  .DriveModal img {
+    height: 10vh;
+  }
+  .QuizStartButton {
+    width: 35vw;
+  }
+}
 /*# sourceMappingURL=drive.css.map */

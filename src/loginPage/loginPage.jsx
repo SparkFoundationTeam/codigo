@@ -15,6 +15,7 @@ import location from '../resources/location.gif';
 import type from '../resources/type.gif';
 import mobile from '../resources/mobileIcon.gif';
 import book from '../resources/book.gif';
+import signupIcon from '../resources/true.gif';
 
 // import { Route, BrowserRouter, Switch, Link, Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 
@@ -34,7 +35,10 @@ const LoginPage = ({ setlG }) => {
   let MobilePattern = new RegExp('[0-9]{10}');
   let [User, setUser] = useState(defaultUser);
 
+  let [signupSuccess, setsignupSuccess] = useState(false);
+
   const handleChange = e => {
+    setWrongPassword(false);
     setUser(prevUser => ({ ...prevUser, [e.target.name]: e.target.value }));
   };
   //mobile
@@ -95,7 +99,7 @@ const LoginPage = ({ setlG }) => {
     e.preventDefault();
 
     if (isAlreadyPresent(User.username, usernamesArray) || isAlreadyPresent(User.email, emailsArray)) {
-      alert('username or email is already present');
+      alert('Username or email is already present');
       return; // :) chal :)
     }
 
@@ -106,6 +110,8 @@ const LoginPage = ({ setlG }) => {
     console.log('New User has Sign-Up with following Details : ', User);
 
     axios.post(BackendUrl + 'User', User);
+    setsignupSuccess(true)
+    setTimeout(() => {  setsignupSuccess(false) ;setLogin(true) }, 2000);
   };
 
   const setter = () => {
@@ -147,7 +153,6 @@ const LoginPage = ({ setlG }) => {
   // history
   return (
     <div id='container'>
-        
       <NavBar id='nav' />
       <div id='bgdiv'>
         <img id='bg' src={bg}></img>
@@ -267,6 +272,11 @@ const LoginPage = ({ setlG }) => {
         </div>
         <input onClick={handleSignUp} type='submit' value='SIGN UP' id='submit'></input>
       </form>
+
+      <div className='successNotifier' style={{ visibility: signupSuccess ? 'visible' : 'hidden' }}>
+        <img src={signupIcon} />
+        <h2>Signup Successful</h2>
+      </div>
       <div className={login ? 'active' : 'hidden'}>
         <h3 id='sign'>
           {' '}

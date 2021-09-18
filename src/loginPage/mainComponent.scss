@@ -7,17 +7,37 @@
     z-index: -1;
   }
 }
- 
+
 @mixin flexAlign {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.successNotifier {
+  position: absolute;
+  width: 30vw;
+  height: 30vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 25;
+  top: 5vh;
+  left: 35vw;
+  border-radius: 2vh;
+  filter: drop-shadow(10px 10px 10px grey);
+  img {
+    height: 20vh;
+  }
+}
+
 form {
   height: 70vh;
   width: 50vw;
-  z-index:10;
+  background-color: white;
+  z-index: 10;
   @include flexAlign();
   flex-direction: column;
 
@@ -42,8 +62,8 @@ form {
   .formElem {
     position: relative;
     margin: 2vh;
-    z-index:10;
-    
+    z-index: 10;
+
     @include flexAlign();
     input,
     datalist {
@@ -87,6 +107,7 @@ form {
     font-size: 2vh;
     text-align: right;
     color: rgb(43, 56, 59);
+    
   }
   #submit {
     width: 50%;
@@ -113,8 +134,8 @@ form {
   width: 50vw;
 
   height: 10vh;
-  border-radius: 30px;
   background-color: rgba(255, 255, 255, 0);
+  background-color: white;
 
   @include flexAlign();
 
@@ -146,10 +167,14 @@ form {
 
 .active {
   visibility: visible;
+  background-color: white;
+
 }
 
 .hidden {
   display: none;
+  background-color: white;
+
 }
 
 #sign {
@@ -186,6 +211,13 @@ h3 {
     #bg {
       display: none;
     }
+  }
+
+  .successNotifier {
+    width: 70vw;
+    left: 15vw;
+    text-align: center;
+    
   }
   #nav {
     width: 100vw;

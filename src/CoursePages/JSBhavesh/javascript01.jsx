@@ -13,12 +13,12 @@ const JS01 = () => {
 
       <WebDevCompiler
         Language='js'
-        Button1='Basic Style Tags'
+        Button1='Alert Me'
         Button1Text="
           alert('Hello Kodeo')"
-        Button2='Try'
+        Button2='JS Mathematics'
         Button2Text='
-          '
+          document.write(2+2)'
       />
 
       <Quiz name='Javascript Complete Course' tutorName='Bhavesh Mhadse' courseID='javascript01' />

@@ -80,3 +80,80 @@ backdrop-filter: blur(0.2rem);
 .QuizStartButton:hover {
   background: linear-gradient(to left, rgb(206, 8, 97), rgb(3, 146, 146));
 }
+
+
+@media screen and (max-width:1024px){
+    .driveContainer {
+        width: 100%;
+        height: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        overflow: hidden;
+      
+        .InitialShow {
+          padding: 10vh 5vw;
+          border-radius: 1vw;
+          background: rgba(255, 255, 255, 0.603);
+          // filter: drop-shadow(10px 10px 10px grey);
+          display: flex;
+      backdrop-filter: blur(0.2rem);
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+        }
+      
+        h1 {
+          background: -webkit-linear-gradient(left, rgb(253, 9, 119), rgb(4, 180, 180));
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-size: 5vh;
+          text-align: center;
+        }
+      
+        #cloudImage {
+          height: 30vh;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          z-index: -1;
+        }
+      }
+      
+      .DriveModal {
+          h2{
+              font-size: medium;
+          }
+          br{
+              display: none;
+          }
+        width: 90vw;
+        margin-left: 5vw;
+        
+        height: 80vh;
+        top: 10%;
+        z-index: 100;
+        margin-top: 0vh;
+      
+        background-color: rgba(255, 255, 255, 0.596);
+      
+        background-image: linear-gradient(aqua, purple), linear-gradient(to right, purple, aqua), linear-gradient(to bottom, purple, aqua), linear-gradient(to left, purple, aqua);
+        background-repeat: no-repeat;
+        background-size: 5px 50%, 50% 5px, 5px 50%, 50% 5px;
+        background-position: right top, right top, left bottom, left bottom, 5px 5px;
+      }
+
+
+      
+      .DriveModal img {
+        height: 10vh;
+      }
+      
+      .QuizStartButton {
+        
+        width: 35vw;
+        
+      }
+}

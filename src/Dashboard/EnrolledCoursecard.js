@@ -19,9 +19,11 @@ const EnrolledCourse = ({ tutorName, tutorImage, courseName, courseInfo, courseI
 
   let [showQuiz, setShowQuiz] = useState(false);
   const handleCertificate = () => {
+      console.log(signedInUser)
     // if (hasCompletedQuiz) {
     let Obj = { tutorName: tutorName.split(' ')[0].toLowerCase(), userName: signedInUser.fullName, course: courseCertificateName, email: signedInUser.email, id: id };
     axios.post(BackendUrl + 'Certificates', Obj);
+    console.log(Obj)
  };
   const handleCourse = () => {
   }; 
@@ -33,7 +35,7 @@ const EnrolledCourse = ({ tutorName, tutorImage, courseName, courseInfo, courseI
     
     <div className='dashboard-CoursesCard'>
       <img className='dashboard-CourseIcon' src={imageMap[courseName.split(' ')[0]]} />
-      <div style={{ width: '40%' }}>
+      <div className='DespT'>
         <h1 className='dashboard-CourseCardHeader'>{courseName}</h1>
         <p className='dashboard-CourseCardInfo'>{courseInfo}</p>
         <div className='dashboard-TutorContainer'>
@@ -45,13 +47,11 @@ const EnrolledCourse = ({ tutorName, tutorImage, courseName, courseInfo, courseI
         </div>
       </div>
       <div className='dashboard-buttons-container'>
-        {/* <button onClick={() => setShowQuiz(true)} className='dashboard-buttons'> */}
         <Link style={{ textTransform: 'none' }} to={CourseId} className='dashboard-buttons'>
           Show Course
         </Link>
 
-        {/* </button> */}
-        <button onClick={handleCertificate} className='dashboard-buttons' /*style={hasCompletedQuiz ? {visibility:'visible'} : {visibility:'hidden'}}*/>
+        <button onClick={handleCertificate} className='dashboard-buttons' >
           Download Certificate
         </button>
       </div>

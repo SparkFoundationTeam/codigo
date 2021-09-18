@@ -138,7 +138,7 @@ const FeedbackTemplate = props => {
         <button disabled={makeDisable} className='QuizStartButton' onClick={() => setCertificateModal(true)}>
           {disableText}
         </button>
-        <div className='FeedBackModal' onClick={() => checkFeedbackAllClicked()} style={certificateModal ? {} : { visibility: 'hidden' }}>
+        <div className='FeedBackModal'  style={certificateModal ? {} : { visibility: 'hidden' }}>
           <img src={codigoIcon} id='feedbackicon' />
 
           <div className='OverallRatingsFeedBack'>

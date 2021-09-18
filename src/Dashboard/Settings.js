@@ -68,7 +68,7 @@ const Settings = () => {
     setsignedInUser(getUserFromLocalStorage());
   }, []);
   return (
-    <div style={{ display: 'flex' }}>
+    <div className='SettingsContainer'>
       <div className='settings-column'>
         <div className='account-settings'>
           <h1>Account Settings</h1>
@@ -106,7 +106,8 @@ const Settings = () => {
       </div>
       <div className='settings-column' style={{ marginLeft: '1vw' }}>
         <div className='account-settings'>
-          <h1>Educational settings</h1>
+          <h1>Educational Settings</h1>
+          <h3>University Information</h3>
           <p>Year Of Study</p>
           <select className='settings-input' name='firstname'>
             <option value='Professional'>{signedInUser.participantType}</option>
@@ -123,6 +124,8 @@ const Settings = () => {
         </div>
         <div className='account-settings'>
           <h1>About You</h1>
+          <h3>Cognitive Statistics</h3>
+
           <p>Interests</p>
           <textarea className='settings-input AboutYouData' name='firstname' />
           <p> Strengths</p>

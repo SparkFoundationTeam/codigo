@@ -6,9 +6,40 @@
   z-index: -1;
 }
 
+.successNotifier {
+  position: absolute;
+  width: 30vw;
+  height: 30vh;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 25;
+  top: 5vh;
+  left: 35vw;
+  border-radius: 2vh;
+  -webkit-filter: drop-shadow(10px 10px 10px grey);
+          filter: drop-shadow(10px 10px 10px grey);
+}
+
+.successNotifier img {
+  height: 20vh;
+}
+
 form {
   height: 70vh;
   width: 50vw;
+  background-color: white;
   z-index: 10;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -151,8 +182,8 @@ form input:focus {
   text-align: center;
   width: 50vw;
   height: 10vh;
-  border-radius: 30px;
   background-color: rgba(255, 255, 255, 0);
+  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -191,10 +222,12 @@ form input:focus {
 
 .active {
   visibility: visible;
+  background-color: white;
 }
 
 .hidden {
   display: none;
+  background-color: white;
 }
 
 #sign {
@@ -234,6 +267,11 @@ h3 button {
 @media screen and (max-width: 1000px) {
   #bgdiv #bg {
     display: none;
+  }
+  .successNotifier {
+    width: 70vw;
+    left: 15vw;
+    text-align: center;
   }
   #nav {
     width: 100vw;

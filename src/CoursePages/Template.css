@@ -11,6 +11,7 @@
   position: fixed;
   z-index: 10;
   background-color: white;
+  overflow: visible;
 }
 
 * {
@@ -209,7 +210,7 @@ h3 {
   background-image: linear-gradient(aqua, purple), linear-gradient(to right, purple, aqua), linear-gradient(to bottom, purple, aqua), linear-gradient(to left, purple, aqua);
   background-repeat: no-repeat;
   background-size: 3px 20%, 20% 3px, 3px 20%, 20% 3px;
-  background-position: left bottom, right top, right top, bottom left,  5px 5px;
+  background-position: left bottom, right top, right top, bottom left, 5px 5px;
 }
 
 .TutorCard #TutorIcon {

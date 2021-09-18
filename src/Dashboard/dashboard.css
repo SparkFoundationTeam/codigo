@@ -150,7 +150,7 @@
   overflow: scroll;
 }
 
-#logout {
+#logout button {
   background-color: transparent;
 
   outline: none;
@@ -164,7 +164,11 @@
   align-items: center;
   cursor: pointer;
 }
-
+#logout:hover {
+  border-left-width: 0px;
+  border-left-color: teal;
+  background-color: transparent;
+}
 #logout img {
   height: 3vh;
   margin-right: 1vw;
@@ -172,4 +176,116 @@
 
 #logout a {
   color: white;
+}
+
+@media screen and (max-width: 1000px) {
+  .dashboard .dashboard-navbar {
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    position: unset;
+  }
+
+  .dashboard .dashboard-navbar .dashboard-icon .dashboard-pic {
+    margin-left: 0vw;
+  }
+
+  .dashboard .dashboard-sidebar {
+    position: absolute;
+    bottom: 1.5vh;
+    height: 7vh;
+    width: 94vw;
+    margin-left: 3vw;
+    overflow: hidden;
+    border-radius: 2vh 2vh 2vh 2vh;
+    background-size:45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:0;
+  }
+
+  .dashboard .dashboard-sidebar .personal-info {
+    display: none;
+  }
+
+  .dashboard .dashboard-sidebar hr {
+    display: none;
+  }
+  .dashboard .dashboard-sidebar .choices {
+    width: 100vw;
+    height: 7vh;
+    display: flex;    padding:0;
+
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    overflow: hidden;
+    z-index: 100;
+    margin: 0;
+  }
+  .dashboard .dashboard-sidebar .choices li {
+    flex-direction: column;
+    width: 25vw;
+    margin-top: 0;
+    margin-left: 0%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .dashboard .dashboard-sidebar .choices li p {
+    font-size: xx-small;
+  }
+
+  .dashboard .dashboard-sidebar .choices li img {
+    height: 3vh;
+    margin-right: 0vw;
+  }
+  .dashboard .dashboard-sidebar .choices li:hover {
+    border-left-width: 0px;
+    border-left-color: teal;
+    background-color: rgba(199, 248, 248, 0.507);
+  }
+  .dashboard .other-section {
+    width: 100%;
+    height: auto;
+    
+  }
+
+  .dashboard .other-section .component {
+    margin: 0;
+    height: 93vh;
+    width: 100%;
+
+    padding: 0vh 0vw;
+
+    
+
+    margin-bottom: 0vh;
+    overflow: scroll;
+  }
+
+  #logout {
+    background-color: transparent;
+
+    outline: none;
+    border: none;
+    padding: 0rem;
+    position: absolute;
+    bottom: 0vh;
+
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    position: static;
+
+    cursor: pointer;
+  }
+
+  #logout button {
+    position: static;
+    flex-direction: column;
+  }
 }

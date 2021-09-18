@@ -6,6 +6,7 @@
   position: fixed;
   z-index: 10;
   background-color: white;
+  overflow: visible;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
@@ -155,7 +156,7 @@ h3 {
   background-image: linear-gradient(aqua, purple), linear-gradient(to right, purple, aqua), linear-gradient(to bottom, purple, aqua), linear-gradient(to left, purple, aqua);
   background-repeat: no-repeat;
   background-size: 3px 20%, 20% 3px, 3px 20%, 20% 3px;
-  background-position: left bottom, right top, right top, bottom left,  5px 5px;
+  background-position: left bottom, right top, right top, bottom left, 5px 5px;
   #TutorIcon {
     margin: 1vh;
     height: 16vh;

@@ -1,8 +1,12 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { UserContext } from '../MainContext'; // <- hi line prytek component madhe lagnr jithe user aahe tithe
+import { Link } from 'react-router-dom';
 
+import './enrolledCourse.css'
 import EnrolledCourseCard from './EnrolledCoursecard';
 import { EnrolledCourses } from './defaultEnrolledCourses';
+
+import noCoursesIcon from '../resources/noCourse.gif'
 
 const MyCourses = () => {
   let [enrolledCourseArray, setenrolledCourseArray] = useState(EnrolledCourses);
@@ -35,9 +39,9 @@ const MyCourses = () => {
   }, []); // pn mg asa kela tr sarkha execute hot rahnr load vadhnr :) aaheka ha mc thamb settimeo ut
 
   return (
-    <div>
-      <h1>{signedInUser.username} Enrolled courses</h1>
-      {enrolledCourseArray.length === 0 && <h2>No Courses Enrolled</h2>}
+    <div className='dashboard-CoursesCardContainer'>
+      <h1>{signedInUser.username.toUpperCase()}'s Enrolled courses</h1>
+       {enrolledCourseArray.length === 0 &&  <div className='noCourse'> <img src={noCoursesIcon} /> <h1>No Courses Enrolled</h1> <Link to='/all-courses'><button className='QuizStartButton'>Start Learning</button></Link></div>} 
       {enrolledCourseArray.map(eachObj => (
         <EnrolledCourseCard tutorName={eachObj.tutorName} tutorImage={eachObj.tutorImage} courseName={eachObj.courseName} courseInfo={eachObj.courseInfo} courseImage={eachObj.courseImage} duration={eachObj.duration} CourseId={eachObj.courseId} hasCompletedQuiz={eachObj.hasCompletedQuiz} id={eachObj._id} courseCertificateName={eachObj.courseNameCertificate} />
       ))}

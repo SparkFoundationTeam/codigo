@@ -20,6 +20,8 @@ import BackendUrl from '../BackendUrl';
 import { UserContext } from '../MainContext';
 
 const CourseEnrollTemplate = props => {
+    let [menu, setMenu] = useState(false);
+
   let { signedInUser, setsignedInUser } = useContext(UserContext); // <- ani hi pn
 
   const handleEnrollment = async () => {
@@ -91,9 +93,9 @@ const CourseEnrollTemplate = props => {
             <Link to='/all-courses'>
               <li>All Courses</li>
             </Link>
-            <li>Community</li>
-            <li>Kōdo</li>
-            <li>Pixzta</li>
+            <a href='https://community-codigo.netlify.app' target='_blank' > <li>Community</li> </a>
+              <a href='https://ide-codigo.netlify.app' target='_blank' ><li>Kōdo</li></a>
+              <a href='https://pixta-codigo.netlify.app' target='_blank' ><li>Pixta</li></a>
             <Link to='/dashboard'>
               <li id='DashBoard'>
                 <strong>Dashboard</strong>
@@ -101,8 +103,23 @@ const CourseEnrollTemplate = props => {
             </Link>
           </ul>
         </div>
-        <div className='res-NavButton'>
-          <img src={menuIcon}></img>
+        <div className='res-NavButton' >
+          <img src={menuIcon} onClick={() => setMenu(!menu)}></img>
+          <div style={{ display: menu ? 'flex' : 'none' }} data-aos='fade-up' data-aos-duration='5000'>
+            <ul >
+            <Link to='/all-courses'>
+              <li>All Courses</li>
+            </Link>
+              <a href='https://community-codigo.netlify.app' target='_blank' > <li>Community</li> </a>
+              <a href='https://ide-codigo.netlify.app' target='_blank' ><li>Kōdo</li></a>
+              <a href='https://pixta-codigo.netlify.app' target='_blank' ><li>Pixta</li></a>
+              <Link to='/dashboard'>
+                <li id='DashBoard'>
+                  <strong>Dashboard</strong>
+                </li>
+              </Link>
+            </ul>
+          </div>
         </div>
       </div>
       <div className='ContentHolder'>

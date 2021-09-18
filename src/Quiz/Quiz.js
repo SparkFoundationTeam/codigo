@@ -189,7 +189,7 @@ const Quiz = ({ name, tutorName, courseId }) => {
     </div>
   );
 }; //yay
-const Instructions = ({ Attempt, CourseName, TutorName, CourseId, setQ, setI }) => {
+const Instructions = ({ attempt, CourseName, TutorName, CourseId, setQ, setI }) => {
   let [certificateModal, setCertificateModal] = useState(false);
   let { signedInUser, setsignedInUser } = useContext(UserContext); // <- ani hi pn
 
@@ -240,7 +240,8 @@ const Instructions = ({ Attempt, CourseName, TutorName, CourseId, setQ, setI }) 
           className='QuizStartButton'
           id='StartQuiz'
           //   disabled={!(Attempt < 4)}
-          style={Attempt < 4 ? { display: 'block' } : { display: 'none' }}>
+          style={attempt < 4 ? { display: 'block' } : { display: 'none' }}
+        >
           TAKE QUIZ {'/>'}
         </button>
         <img src={string} />
@@ -259,7 +260,8 @@ const Instructions = ({ Attempt, CourseName, TutorName, CourseId, setQ, setI }) 
               screenfull.request();
             }
           }}
-          className='QuizStartButton'>
+          className='QuizStartButton'
+        >
           Start Quiz
         </button>
         <button
@@ -268,7 +270,8 @@ const Instructions = ({ Attempt, CourseName, TutorName, CourseId, setQ, setI }) 
             setI(true);
             setQ(false);
           }}
-          className='QuizBackButton'>
+          className='QuizBackButton'
+        >
           Go Back
         </button>
       </div>

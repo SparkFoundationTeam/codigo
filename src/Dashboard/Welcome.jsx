@@ -57,7 +57,9 @@ const WelcomeDashboard = () => {
     }
   }
 
-  
+  if (certificatesNames.length === 0) {
+    certificatesNames.push('No Certificates yet');
+  }
 
   console.log(certificatesNames);
   const listItems = certificatesNames.map(numbers => <p>{numbers}</p>);
@@ -83,9 +85,11 @@ const WelcomeDashboard = () => {
           </div>
 
           <div className='AccountCard'>
-            <div style={{textAlign:'left'}}><h3>{user.fullName.toUpperCase()}</h3>
-            <p>{user._id}</p></div>
-            
+            <div style={{ textAlign: 'left' }}>
+              <h3>{user.fullName.toUpperCase()}</h3>
+              <p>{user._id}</p>
+            </div>
+
             <h4>códiGo MEMBERSHIP CARD</h4>
             <img src={codiGoIcon}></img>
             <h2 className='MembershipType'>FREEMIUM</h2>
@@ -97,6 +101,8 @@ const WelcomeDashboard = () => {
             <div>
               <h2>Earned Certificates</h2>
               <h3>{listItems}</h3>
+              
+
             </div>
           </div>
 

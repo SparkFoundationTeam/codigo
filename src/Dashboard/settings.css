@@ -2,6 +2,10 @@
   width: 40%;
   height: auto;
 }
+
+.SettingsContainer {
+  display: flex;
+}
 .settings-column .account-settings h3 {
   color: gold;
   text-transform: uppercase;
@@ -96,4 +100,55 @@
   margin-top: 5vh;
   cursor: pointer;
   font-size: 1.2rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .SettingsContainer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10vh;
+  }
+  .settings-column {
+    width: 90vw;
+    height: auto;
+  }
+
+  .horizontal-line {
+    width: 95%;
+    margin-top: 5vh;
+    background: grey;
+    margin-bottom: 2vh;
+  }
+  .vertical-line {
+    height: 100%;
+    width: 0.01px;
+    background: grey;
+  }
+
+  .AboutYouData {
+    resize: none;
+  }
+  .AboutYouData:focus {
+    height: 15vh;
+  }
+
+  .settings-button{
+    margin-bottom: 5vh;
+
+  }
+
+  .SaveChangesButton {
+    background-color: #238636;
+    color: white;
+    padding: 1vh;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    float: right;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
 }
