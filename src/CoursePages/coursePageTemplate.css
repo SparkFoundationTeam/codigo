@@ -6,6 +6,7 @@
 .dashboard-navbar {
   position: fixed;
   top: 0;
+  overflow: visible;
 }
 
 .CourseSidebar {
@@ -253,45 +254,95 @@
   height: 4vh;
 }
 
-.CodeAlong .ButtonSelection {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 100%;
-  margin-top: 2vh;
-  height: 10vh;
+.CodeAlong .button-container {
+  margin-top: 3vh;
+  margin-bottom: 3vh;
 }
 
-.CodeAlong .ButtonSelection button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 12vw;
-  padding: 1rem;
-  height: 5vh;
-  background-color: white;
-  border: 1px solid grey;
-  cursor: pointer;
+.CodeAlong .button-leftmost {
+  margin: 0;
+  padding: 1vh 4vh;
+  outline: none;
+  background: #d2f3f3;
+  border: 2px solid transparent;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  -webkit-filter: drop-shadow(5px 2px 5px grey);
+          filter: drop-shadow(5px 2px 5px grey);
+  -webkit-transition: all ease-in-out linear 200ms;
+  transition: all ease-in-out linear 200ms;
 }
 
-.CodeAlong .ButtonSelection button:focus {
-  background-color: #0d0055;
-  color: white;
+.CodeAlong .button-leftmost:focus {
+  background: white;
+  -webkit-filter: drop-shadow(5px 2px 5px transparent);
+          filter: drop-shadow(5px 2px 5px transparent);
+  border-left-color: grey;
+  border-top-color: grey;
+  z-index: -100;
+}
+
+.CodeAlong .button-leftmost:hover + .button-middle {
+  -webkit-filter: drop-shadow(-2px 2px 5px grey);
+          filter: drop-shadow(-2px 2px 5px grey);
+}
+
+.CodeAlong .button-middle {
+  margin: 0;
+  padding: 1vh 4vh;
+  outline: none;
+  border: 2px solid transparent;
+  background: #d2f3f3;
+  -webkit-filter: drop-shadow(5px 2px 5px grey);
+          filter: drop-shadow(5px 2px 5px grey);
+}
+
+.CodeAlong .button-middle:focus {
+  background: white;
+  -webkit-filter: drop-shadow(5px 5px 5px transparent);
+          filter: drop-shadow(5px 5px 5px transparent);
+  border-right-color: transparent;
+  border-top-color: grey;
+  border-bottom-color: grey;
+  z-index: -100;
+}
+
+.CodeAlong .button-middle:hover + .button-middle {
+  -webkit-filter: drop-shadow(-5px 2px 5px grey);
+          filter: drop-shadow(-5px 2px 5px grey);
+}
+
+.CodeAlong .button-rightmost {
+  margin: 0;
+  padding: 1vh 4vh;
+  outline: none;
+  border: 2px solid transparent;
+  background: cyan;
+  background: #d2f3f3;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  -webkit-filter: drop-shadow(5px 2px 5px grey);
+          filter: drop-shadow(5px 2px 5px grey);
+  -webkit-transition: all ease-in-out linear 200ms;
+  transition: all ease-in-out linear 200ms;
+}
+
+.CodeAlong .button-rightmost:focus {
+  background: white;
+  -webkit-filter: drop-shadow(5px 2px 5px transparent);
+          filter: drop-shadow(5px 2px 5px transparent);
+  border-right-color: grey;
+  border-top-color: grey;
+  z-index: -100;
+}
+
+.CodeAlong .button-rightmost:hover + .button-middle {
+  -webkit-filter: drop-shadow(-2px 2px 5px grey);
+          filter: drop-shadow(-2px 2px 5px grey);
 }
 
 .BooksBox {
@@ -643,7 +694,9 @@
     height: 3vh;
   }
   #CourseHeader {
-    font-size: x-small;
+    min-width: 40vw;
+    font-size: small;
+    margin-left: 30vw;
   }
   .BooksBox {
     height: auto;
@@ -705,6 +758,25 @@
   .CodeAlong {
     padding-bottom: 5vh;
   }
+  .CodeAlong .button-container {
+    width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .CodeAlong .button-container button {
+    font-size: 2vw;
+    width: 15vw;
+    text-align: center;
+  }
+  .CodeAlong .button-middle,
+  .CodeAlong .button-leftmost,
+  .CodeAlong .button-rightmost {
+    padding: 1vh 1vw;
+  }
   .CodeAlong .CodeContainer {
     background-image: none;
     width: 95vw;
@@ -741,17 +813,6 @@
         -ms-flex-pack: center;
             justify-content: center;
     width: 100%;
-  }
-  .ButtonSelection {
-    width: 100%;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    padding-bottom: 5vh;
-  }
-  .ButtonSelection button {
-    font-size: 2vw;
-    width: 15vw;
   }
 }
 /*# sourceMappingURL=coursePageTemplate.css.map */

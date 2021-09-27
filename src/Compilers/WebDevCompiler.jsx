@@ -9,10 +9,10 @@ const WebDevCompiler = props => {
   let [editorText, setEditorText] = useState(`${props.Button1Text}`);
   let [index, setIndex] = useState(1);
 
-  let [clickedStyles, setClickStyle] = useState({
-    backgroundColor: 'rgb(13, 0, 85)',
-    color: 'white',
-  });
+//   let [clickedStyles, setClickStyle] = useState({
+//     backgroundColor: 'rgb(13, 0, 85)',
+//     color: 'white',
+//   });
 
   useEffect(() => {}, []);
 
@@ -69,76 +69,82 @@ const WebDevCompiler = props => {
 
           <iframe id='output-window'></iframe>
         </div>
-        <div className='ButtonSelection'>
+        <div className='button-container'>
           <button
+            className='button-leftmost'
             onClick={e => {
               setEditorText(`${props.Button1Text}`);
               setIndex(1);
             }}
             onMouseOver={() => {
-              CodeRunner();
+              if (props.Language != 'js') CodeRunner();
             }}
-            style={index === 1 ? clickedStyles : {}}
+            // style={index === 1 ? clickedStyles : {}}
           >
             <b> {props.Button1} </b>
           </button>
           <button
+            className='button-middle'
             onClick={() => {
               setEditorText(`${props.Button2Text}`);
               setIndex(2);
             }}
             onMouseOver={() => {
-              CodeRunner();
+              if (props.Language != 'js') CodeRunner();
             }}
-            style={index === 2 ? clickedStyles : {}}
+            // style={index === 2 ? clickedStyles : {}}
           >
             <b> {props.Button2} </b>
           </button>
           <button
+            className='button-middle'
             onClick={() => {
               setEditorText(`${props.Button3Text}`);
               setIndex(3);
             }}
             onMouseOver={() => {
-              CodeRunner();
+              if (props.Language != 'js') CodeRunner();
             }}
-            style={index === 3 ? clickedStyles : {}}
+            // style={index === 3 ? clickedStyles : {}}
           >
             <b> {props.Button3} </b>
           </button>
           <button
+            className='button-middle'
             onClick={() => {
               setEditorText(`${props.Button4Text}`);
               setIndex(4);
             }}
             onMouseOver={() => {
-              CodeRunner();
+              if (props.Language != 'js') CodeRunner();
             }}
-            style={index === 4 ? clickedStyles : {}}
+            // style={index === 4 ? clickedStyles : {}}
           >
             <b> {props.Button4} </b>
           </button>
           <button
+            className='button-middle'
             onClick={() => {
               setEditorText(`${props.Button5Text}`);
               setIndex(5);
             }}
             onMouseOver={() => {
-              CodeRunner();
+              if (props.Language != 'js') CodeRunner();
             }}
-            style={index === 5 ? clickedStyles : {}}
+            // style={index === 5 ? clickedStyles : {}}
           >
             <b> {props.Button5} </b>
           </button>
           <button
+            
             onClick={() => {
               setEditorText(`${props.Button6Text}`);
               setIndex(6);
             }}
             onMouseOver={() => {
-              CodeRunner();
-            }}
-            style={index === 6 ? clickedStyles : {}}
+              if (props.Language != 'js') CodeRunner();
+            }}className='button-rightmost'
+            // style={index === 6 ? clickedStyles : {}}
           >
             <b> {props.Button6} </b>
           </button>

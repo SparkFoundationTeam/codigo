@@ -1,0 +1,297 @@
+.WelcomeDashboard {
+  width: 100%;
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: scroll;
+  padding-bottom: 10vh;
+
+  h1 {
+    background: -webkit-linear-gradient(left, rgb(253, 9, 119), rgb(4, 180, 180));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 5vh;
+  }
+
+  h3 {
+    background: -webkit-linear-gradient(left, rgb(253, 9, 119), rgb(4, 180, 180));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 4vh;
+  }
+
+  img {
+    height: 20vh;
+    position: absolute;
+    bottom: 1vh;
+    right: 2vw;
+    z-index: -1;
+  }
+
+  .HeaderMessage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      position: static;
+      height: 5vh;
+      width: 5vh;
+      margin-left: 2vh;
+      border-radius: 50%;
+    }
+  }
+
+  .StatisticsShower {
+    text-align: center;
+    height: 30vh;
+    width: 21vw;
+    padding: 2vh 1vw;
+    border-radius: 1vw;
+    background: white;
+    filter: drop-shadow(10px 10px 10px grey);
+    img {
+      height: 15vh;
+      position: static;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    h2 {
+      margin: 2vh;
+    }
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+  .AccountCard {
+    text-align: center;
+    height: 30vh;
+    width: 43vw;
+    border-radius: 1vw;
+    background-image: url('../resources/cardBG2.png');
+    color: white;
+    background-size: cover;
+    display: flex;
+    padding: 2vw;
+    flex-direction: column;
+    justify-content: space-between;
+
+    p {
+      font-family: 'Orbitron';
+    }
+    align-items: flex-start;
+    position: relative;
+
+    .MembershipType {
+      transform: rotate(-90deg);
+      position: absolute;
+      right: -2vw;
+      bottom: 45%;
+    }
+    img {
+      position: unset;
+      z-index: 2;
+      height: 5vh;
+    }
+  }
+
+  .NamesShower {
+    width: 43vw;
+    padding: 2vh 2vw;
+    border-radius: 1vw;
+    background: white;
+    filter: drop-shadow(10px 10px 10px grey);
+    img {
+      height: 5vh;
+      position: static;
+    }
+    h3 {
+      font-size: 2.5vh;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .StatsHolder {
+    margin: 5vh;
+    margin-bottom: 2vh;
+
+    width: 65vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .ROw2 {
+    width: 65vw;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .WelcomeDashboard {
+    width: 100vw;
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: scroll;
+    padding-bottom: 10vh;
+    margin-left: 0%;
+    padding-left: 0;
+
+    h1 {
+      background: -webkit-linear-gradient(left, rgb(253, 9, 119), rgb(4, 180, 180));
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 3vh;
+    }
+
+    h3 {
+      background: -webkit-linear-gradient(left, rgb(253, 9, 119), rgb(4, 180, 180));
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 3vh;
+    }
+
+    img {
+      height: 20vh;
+      position: absolute;
+      bottom: 5vh;
+      right: 10vw;
+      z-index: -1;
+    }
+
+    .HeaderMessage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        position: static;
+        height: 3vh;
+        width: 3vh;
+        margin-left: 2vh;
+        border-radius: 50%;
+      }
+    }
+
+    .StatisticsShower {
+      text-align: center;
+      height: 30vh;
+      width: 75vw;
+      margin-bottom: 5vh;
+      padding: 2vh 1vw;
+      border-radius: 5vw;
+      background: white;
+      filter: drop-shadow(10px 10px 10px grey);
+      img {
+        height: 15vh;
+        position: static;
+      }
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-direction: column;
+      h2 {
+        margin: 2vh;
+      }
+    }
+
+    .AccountCard {
+      text-align: center;
+      height: 25vh;
+      width: 90vw;
+      border-radius: 5vw;
+      color: white;
+      margin: 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: flex;
+      padding: 5vw;
+      flex-direction: column;
+      justify-content: space-between;
+
+      
+
+      
+      
+
+      align-items: flex-start;
+      position: relative;
+
+      .MembershipType {
+        transform: rotate(-0deg);
+        position: absolute;
+        right: 5vw;
+        bottom: 2vh;
+        font-size: medium;
+        
+      }
+      img {
+        position: static;
+        z-index: 2;
+        height: 5vh;
+      }
+
+      margin-bottom: 5vh;
+    }
+
+    .NamesShower {
+      width: 75vw;
+      padding: 2vh 2vw;
+      border-radius: 5vw;
+      background: white;
+      text-align: center;
+
+      margin-bottom: 5vh;
+      filter: drop-shadow(10px 10px 10px grey);
+      img {
+        height: 5vh;
+        position: static;
+      }
+      h3 {
+        font-size: 2vh;
+      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .StatsHolder {
+      margin: 0vh;
+      margin-top: 5vh;
+      width: 100vw;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column-reverse;
+    }
+
+    .stats {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .ROw2 {
+      width: 100vw;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column-reverse;
+    }
+  }
+}

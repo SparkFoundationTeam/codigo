@@ -12,6 +12,7 @@
 .dashboard-navbar {
   position: fixed;
   top: 0;
+  overflow: visible;
 }
 
 .CourseSidebar {
@@ -183,25 +184,87 @@
       }
     }
   }
-  .ButtonSelection {
-    @include FlexStyle();
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 2vh;
-    height: 10vh;
-    button {
-      @include FlexStyle();
-      width: 12vw;
-      padding: 1rem;
-      height: 5vh;
-      background-color: white;
-      border: 1px solid grey;
-      cursor: pointer;
-      &:focus {
-        background-color: rgb(13, 0, 85);
-        color: white;
-      }
-    }
+
+  .button-container {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+  }
+
+  .button-leftmost {
+    margin: 0;
+    padding: 1vh 4vh;
+    outline: none;
+    background: rgb(210, 243, 243);
+    border: 2px solid transparent;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    filter: drop-shadow(5px 2px 5px grey);
+    transition: all ease-in-out linear 200ms;
+  }
+
+  .button-leftmost:focus {
+    background: white;
+    filter: drop-shadow(5px 2px 5px transparent);
+    border-left-color: grey;
+    border-top-color: grey;
+
+    z-index: -100;
+  }
+
+  .button-leftmost:hover + .button-middle {
+    filter: drop-shadow(-2px 2px 5px grey);
+  }
+
+  .button-middle {
+    margin: 0;
+    padding: 1vh 4vh;
+    outline: none;
+    border: 2px solid transparent;
+    background: rgb(210, 243, 243);
+    filter: drop-shadow(5px 2px 5px grey);
+  }
+
+  .button-middle:focus {
+    background: white;
+    filter: drop-shadow(5px 5px 5px transparent);
+    border-right-color: transparent;
+    border-top-color: grey;
+    border-bottom-color: grey;
+
+    z-index: -100;
+  }
+
+  .button-middle:hover + .button-middle {
+    filter: drop-shadow(-5px 2px 5px grey);
+  }
+
+  .button-rightmost {
+    margin: 0;
+    padding: 1vh 4vh;
+    outline: none;
+    border: 2px solid transparent;
+    background: cyan;
+    background: rgb(210, 243, 243);
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    filter: drop-shadow(5px 2px 5px grey);
+    transition: all ease-in-out linear 200ms;
+  }
+
+  .button-rightmost:focus {
+    background: white;
+    filter: drop-shadow(5px 2px 5px transparent);
+    border-right-color: grey;
+    border-top-color: grey;
+    z-index: -100;
+  }
+
+  .button-rightmost:hover + .button-middle {
+    filter: drop-shadow(-2px 2px 5px grey);
   }
 }
 
@@ -466,7 +529,9 @@
   }
 
   #CourseHeader {
-    font-size: x-small;
+      min-width: 40vw;
+    font-size: small;
+    margin-left: 30vw;
   }
 
   .BooksBox {
@@ -520,6 +585,22 @@
   }
 
   .CodeAlong {
+    .button-container {
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      button {
+        font-size: 2vw;
+        width: 15vw;
+        text-align: center;
+      }
+    }
+
+    .button-middle,
+    .button-leftmost,
+    .button-rightmost {
+      padding: 1vh 1vw;
+    }
     padding-bottom: 5vh;
     .CodeContainer {
       background-image: none;
@@ -534,7 +615,7 @@
         }
         #output-window {
           width: 100%;
-          height:70vh
+          height: 70vh;
         }
         #codeAlongLabel {
           top: -5vh;
@@ -548,14 +629,5 @@
         }
       }
     }
-  }
-  .ButtonSelection {
-    width: 100%;
-    justify-content: space-evenly;
-    button {
-      font-size: 2vw;
-      width: 15vw;
-    }
-    padding-bottom: 5vh;
   }
 }

@@ -129,12 +129,16 @@
 .OwnerDetails {
   list-style: none;
   margin-top: -5vh;
+  text-align: center;
+}
+.OwnerDetails li {
+  margin-bottom: 0.5vh;
 }
 .OwnerSocialMediaContainer {
   position: absolute;
 
   bottom: 2vh;
-  right: 6vw;
+  right: 5vw;
 }
 
 .OwnerSocialMedia {
@@ -153,6 +157,25 @@
   .OurCoursesSection {
     width: 100%;
     height: auto;
+  }
+
+  .OwnerBlob1 {
+    position: absolute;
+    bottom: 20vh;
+    z-index: 0;
+    width: 150vw;
+    left: -40vh;
+    height: 100vh;
+    transform: rotate(180deg);
+  }
+  
+  .OwnerBlob2 {
+    position: absolute;
+    top: -50vh;
+    z-index: -1;
+    width: 150vw;
+    right: -50vw;
+    height: 300vh;
   }
   .SectionHeader {
     margin: 0;
@@ -174,13 +197,10 @@
     display: none;
   }
 
-  .OwnerBlob1,
-  .OwnerBlob2 {
-    display: none;
-  }
+  
 
   .AboutUs-Des {
-    font-size: 1.5vh;
+    font-size: 1.2vh;
     width: 90vw;
     margin: 5vw;
   }
@@ -194,22 +214,21 @@
     margin-left: 5vw;
   }
   .OwnerImage {
-    height: 6vh;
-    width: 6vh;
-    margin-bottom: 0vh;
+    height: 8vh;
+    width: 8vh;
+    margin-bottom: 1vh;
   }
   .Ownerole {
-    margin-left: 1vw;
     font-size: 1vh;
   }
   .OwnerName {
     font-size: 4vw;
-
-    margin-left: 1vw;
   }
   .OwnerDetails {
     font-size: 2.5vw;
-    margin-left: 1vw;
+    width: 45vw;
+    padding-left: 0;
+    align-items: flex-start;
   }
   .OwnerSocialMediaContainer {
     margin-right: 1vh;
@@ -218,10 +237,10 @@
     bottom: 0vh;
     height: 4vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: left;
+    justify-content: flex-end;
 
-    right: 0vw;
+    right: 5vw;
   }
   .OwnerSocialMedia {
     margin-bottom: 0vh;

@@ -14,8 +14,6 @@ import mobile from '../../resources/mobile.gif';
 import blob2 from '../../resources/blob (4).svg';
 import blob from '../../resources/blob.svg';
 
-
-
 const whyCodigo = () => {
   const FirstRow = [
     {
@@ -26,14 +24,14 @@ const whyCodigo = () => {
     },
     {
       title: 'Valuable Certification',
-      line1: 'On Completion of Course you get a certificate',
-      line2: 'from our founders which can be used in CV',
+      line1: 'On completion of Course get certificate',
+      line2: 'from the panel which can be used in CV',
       image: certificate,
     },
 
     {
       title: 'Integrated Development',
-      line1: 'Learn and Execute your code simultaneously',
+      line1: 'Learn & Execute your code simultaneously',
       line2: 'Use códiGo online compilers ',
       image: integrated,
     },
@@ -88,30 +86,30 @@ const whyCodigo = () => {
     },
   ];
   return (
-    <div id='cards' >
+    <div id='cards'>
       <div id='blob'>
-        <img src={blob} id='blob1'></img>
-        <img src={blob2} id='blob2'></img>
+        <img src={blob} id='blob1' data-aos='zoom-in-down' data-aos-duration='15000' data-aos-offset='420'></img>
+        <img src={blob2} id='blob2' data-aos='zoom-out-down'></img>
       </div>
 
-      <h1 >Why códiGo ? </h1>
-      <span className='Row' >
+      <h1>Why códiGo ? </h1>
+      <span className='Row' data-aos='fade-right' data-aos-offset='120'>
         {FirstRow.map((name, index) => (
           <Card title={name.title} line1={name.line1} line2={name.line2} image={name.image}></Card>
         ))}
       </span>
-      <span className='Row'>
+      <span className='Row' data-aos='fade-right' data-aos-offset='120'>
         {SecondRow.map((name, index) => (
           <Card title={name.title} line1={name.line1} line2={name.line2} image={name.image}></Card>
         ))}
       </span>
-      <span className='Row'>
+      <span className='Row' data-aos='fade-right' data-aos-offset='120'>
         {ThirdRow.map((name, index) => (
           <Card title={name.title} line1={name.line1} line2={name.line2} image={name.image}></Card>
         ))}
       </span>
       <h2 id='section'>Upcoming Announced Features </h2>
-      <span className='Row'>
+      <span className='Row' data-aos='fade-right' data-aos-offset='120'>
         {FourthRow.map((name, index) => (
           <Card title={name.title} line1={name.line1} line2={name.line2} image={name.image}></Card>
         ))}

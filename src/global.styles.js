@@ -64,8 +64,9 @@ export const CourseSelectorButton = styled.button`
   width: auto;
   margin: 0 1rem;
   font-size: 1rem;
-  border: 2px solid aqua;
+  border: 2px solid teal;
   color: black;
+  cursor:pointer;
   font-weight: 900;
   background: transparent;
   border-radius: 2vh;
@@ -82,6 +83,7 @@ export const CourseSelectorButton = styled.button`
     width: 45%;
     margin: 0.5rem;
     height: auto;
+    border-radius:1vh;
   }
 `;
 

@@ -19,26 +19,20 @@ const EnrolledCourse = ({ tutorName, tutorImage, courseName, courseInfo, courseI
 
   let [showQuiz, setShowQuiz] = useState(false);
   const handleCertificate = () => {
+    console.log(signedInUser);
     // if (hasCompletedQuiz) {
     let Obj = { tutorName: tutorName.split(' ')[0].toLowerCase(), userName: signedInUser.fullName, course: courseCertificateName, email: signedInUser.email, id: id };
     axios.post(BackendUrl + 'Certificates', Obj);
-
-    // }
-    /* api la course name, tutor ani user la gmail pathvaycha!aala :) pan aisa nhi chalega h a 
-        axios.post("/certificate", {User.email, tutorName, courseName})
-        */
-    // chal jevto 3 la bhetu hani ardha vel bug olakhnyat ch  getlau  chutyagiri krto ha tu me kay kelach nai t uzachga  dashboard ch redirect pn navta hot mel ogkoelut elvar nit logout  vrtu bolla redirect kadh
+    console.log(Obj);
   };
-  const handleCourse = () => {
-    // specific course cha url vr redirect maraycha
-  }; // mala teenhi pan certificates ale eksath bghu // ek
+  const handleCourse = () => {};
 
   console.log(courseName);
 
   return (
     <div className='dashboard-CoursesCard'>
       <img className='dashboard-CourseIcon' src={imageMap[courseName.split(' ')[0]]} />
-      <div style={{ width: '40%' }}>
+      <div className='DespT'>
         <h1 className='dashboard-CourseCardHeader'>{courseName}</h1>
         <p className='dashboard-CourseCardInfo'>{courseInfo}</p>
         <div className='dashboard-TutorContainer'>
@@ -50,13 +44,11 @@ const EnrolledCourse = ({ tutorName, tutorImage, courseName, courseInfo, courseI
         </div>
       </div>
       <div className='dashboard-buttons-container'>
-        {/* <button onClick={() => setShowQuiz(true)} className='dashboard-buttons'> */}
         <Link style={{ textTransform: 'none' }} to={CourseId} className='dashboard-buttons'>
           Show Course
         </Link>
 
-        {/* </button> */}
-        <button onClick={handleCertificate} className='dashboard-buttons' /*style={hasCompletedQuiz ? {visibility:'visible'} : {visibility:'hidden'}}*/>
+        <button onClick={handleCertificate} className='dashboard-buttons'>
           Download Certificate
         </button>
       </div>

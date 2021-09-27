@@ -2,35 +2,24 @@
   width: 100%;
   height: auto;
   display: flex;
-  place-items: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 10vh;
 
-  /* @media (max-width: 600px) {
-    font-size: 0.4rem;
-    width: 100%;
-    display: block;
-  } */
 }
 
 .dashboard-CoursesCard {
-  width: 95%;
+  width: 90%;
   height: 20vh;
   border-radius: 1rem;
   background: white;
   text-align: left;
   filter: drop-shadow(10px 10px 10px grey);
-  /* margin: auto; */
   margin-top: 5vh;
   display: flex;
   align-items: center;
 
-  /* &:hover {
-    transform: scale(1.1);
-    filter: drop-shadow(40px 5px 10px grey);
-  }
-  @media (max-width: 600px) {
-    width:80vw;
-    
-  } */
 }
 
 .dashboard-CourseCardHeader {
@@ -39,9 +28,7 @@
   font-weight: bold;
   text-transform: uppercase;
   font-size: 2vw;
-  /* @media (max-width: 600px) {
-    font-size: 3.5vh;
-  } */
+  
 }
 .dashboard-CourseCardInfo {
   color: darkgrey;
@@ -49,10 +36,7 @@
   width: 100%;
   font-weight: 500;
   font-size: 1vw;
-  /* @media (max-width: 600px) {
-    font-size: 2vh;
-    padding: 0.2rem;
-  } */
+ 
 }
 
 .dashboard-TutorContainer {
@@ -65,10 +49,7 @@
 .dashboard-TutorImageContainer {
   margin: 0;
   width: 5vw;
-  @media (max-width: 600px) {
-    width: 5vh;
-    margin-right: 0.5rem;
-  }
+  
 }
 .dashboard-CourseIcon {
   margin: 0;
@@ -78,13 +59,17 @@
   margin-right: 3%;
   border-radius: 1rem;
 
-  /* @media (max-width: 600px) {
-    height: 20vh;
-  } */
+ 
+}
+
+.DespT{
+    width: 40%;
 }
 .dashboard-TutorImage {
   margin: 0;
   height: 2vw;
+  width: 3vh;
+  height: 3vh;
   border-radius: 30rem;
 }
 .dashboard-TutorName {
@@ -98,9 +83,7 @@
   place-items: right;
   font-weight: 700;
   font-size: 0.8vw;
-  @media (max-width: 600px) {
-    font-size: 2vh;
-  }
+  
 }
 
 .dashboard-Timing {
@@ -110,9 +93,7 @@
   display: flex;
   margin-left: 12%;
   font-size: 1.5vh;
-  @media (max-width: 600px) {
-    font-weight: 200;
-  }
+  
 }
 
 .dashboard-buttons-container {
@@ -135,8 +116,170 @@
   transition: all ease-in-out 200ms;
 }
 
+.dashboard-buttons-container a {
+  text-decoration: none;
+}
+
 .dashboard-buttons:hover {
   transform: scale(1.1);
   background-color: rgb(240, 240, 240);
   transition-duration: 0.5s;
+}
+
+.noCourse{
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.noCourse img{
+    height: 40vh;
+}
+
+@media screen and (max-width:1024px){
+    .dashboard-CoursesCardContainer {
+        width: 100vw;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-bottom: 10vh;
+       
+      }
+      .DespT{
+        width: 80%;
+    }
+      .noCourse button{
+          width: 40vw;
+      }
+      
+      .dashboard-CoursesCard {
+        width: 90vw;
+        height: 40vh;
+        border-radius: 1rem;
+        background: white;
+        text-align: left;
+        filter: drop-shadow(10px 10px 10px grey);
+        margin-top: 5vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        
+      
+      
+      }
+      
+      .dashboard-CourseCardHeader {
+        color: rgb(3, 177, 177);
+      
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 2.5vh;
+       
+      }
+      .dashboard-CourseCardInfo {
+        color: darkgrey;
+      
+        width: 100%;
+        font-weight: 500;
+        font-size: 2vh;
+        
+      }
+      
+      .dashboard-TutorContainer {
+        display: inline-block;
+        display: flex;
+        width: 90%;
+        margin: 0;
+        padding: 0.5rem;
+      }
+      .dashboard-TutorImageContainer {
+        margin: 0;
+        width: auto;
+        
+      }
+      .dashboard-CourseIcon {
+        margin: 0;
+        width: 100%;
+        height: 20vh;
+      margin-bottom: 2vh;
+        border-radius: 1rem;
+      
+        
+      }
+      .dashboard-TutorImage {
+        margin: 0;
+        height: 4vh;
+        width: 4vh;
+        border-radius: 30rem;
+      }
+      .dashboard-TutorName {
+        margin-left: 2vw;
+        display: flex;
+        place-items: center;
+        width: 40%;
+        height: auto;
+        padding: 0;
+        margin-right: auto;
+        place-items: right;
+        font-weight: 700;
+        font-size: 2vh;
+        
+      }
+      
+      .dashboard-Timing {
+        float: right;
+        color: black;
+        place-items: center;
+        display: flex;
+        margin-left: 12%;
+        font-size: 2vh;
+        
+      }
+      
+      .dashboard-buttons-container {
+        display: flex;
+      }
+      
+      .dashboard-buttons {
+        filter: drop-shadow(5px 5px 5px grey);
+        color: darkgoldenrod;
+        width: 100%;
+        background: white;
+        text-align: center;
+        font-weight: 900;
+        border: 2px solid transparent;
+        border-radius: 0.3rem;
+        padding: 0.3rem;
+        margin: 1vh;
+        margin-left: 5vw;
+        transition: all ease-in-out 200ms;
+      }
+      
+      .dashboard-buttons-container a {
+        text-decoration: none;
+      }
+      
+      .dashboard-buttons:hover {
+        transform: scale(1.1);
+        background-color: rgb(240, 240, 240);
+        transition-duration: 0.5s;
+      }
+      
+      .noCourse{
+          height: 70vh;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+      }
+      
+      .noCourse img{
+          height: 40vh;
+      }
 }

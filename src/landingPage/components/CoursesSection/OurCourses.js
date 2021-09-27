@@ -48,10 +48,10 @@ const OurCourses = () => {
           ))}
         </CourseSelectorButtonContainer>
       </ButtonContainerDiv>
-      <CoursesCardContainer>
+      <CoursesCardContainer data-aos='fade-down' data-aos-offset='150'>
         {CardInfoArray[courseIndex].map(eachObj => {
           return (
-            <CoursesCard>
+            <CoursesCard  >
               <CourseIcon src={eachObj.ImageLogo} />
               <CourseCardHeader>{eachObj.CourseName}</CourseCardHeader>
               <CourseCardInfo>{eachObj.CourseInfo}</CourseCardInfo>

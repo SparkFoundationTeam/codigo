@@ -68,9 +68,9 @@ const Settings = () => {
     setsignedInUser(getUserFromLocalStorage());
   }, []);
   return (
-    <div style={{ display: 'flex' }}>
+    <div className='SettingsContainer'>
       <div className='settings-column'>
-        <div className='account-settings'>
+        <div className='account-settings' data-aos='fade-in' data-aos-delay='100' data-aos-offset='0'>
           <h1>Account Settings</h1>
           <h3>Personal Information</h3>
           {/* <h6>{JSON.stringify(signedInUser)}</h6> */}
@@ -93,7 +93,7 @@ const Settings = () => {
           <hr className='horizontal-line'></hr>
         </div>
 
-        <div className='account-settings'>
+        <div className='account-settings' data-aos='fade-in' data-aos-delay='300' data-aos-offset='0'>
           <h1>Security Settings</h1>
           <button className='settings-button' onClick={() => setShowPasswordModal(true)}>
             Change Password
@@ -104,9 +104,10 @@ const Settings = () => {
       <div className='settings-column' style={{ marginLeft: '2vw', width: '1vw' }}>
         <hr className='vertical-line'></hr>
       </div>
-      <div className='settings-column' style={{ marginLeft: '1vw' }}>
+      <div className='settings-column' style={{ marginLeft: '1vw' }} data-aos='fade-in' data-aos-delay='500' data-aos-offset='0'>
         <div className='account-settings'>
-          <h1>Educational settings</h1>
+          <h1>Educational Settings</h1>
+          <h3>University Information</h3>
           <p>Year Of Study</p>
           <select className='settings-input' name='firstname'>
             <option value='Professional'>{signedInUser.participantType}</option>
@@ -123,6 +124,8 @@ const Settings = () => {
         </div>
         <div className='account-settings'>
           <h1>About You</h1>
+          <h3>Cognitive Statistics</h3>
+
           <p>Interests</p>
           <textarea className='settings-input AboutYouData' name='firstname' />
           <p> Strengths</p>

@@ -15,6 +15,7 @@ import location from '../resources/location.gif';
 import type from '../resources/type.gif';
 import mobile from '../resources/mobileIcon.gif';
 import book from '../resources/book.gif';
+import signupIcon from '../resources/true.gif';
 
 // import { Route, BrowserRouter, Switch, Link, Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 
@@ -30,11 +31,61 @@ const LoginPage = ({ setlG }) => {
   let [usernamesArray, setUsernameArray] = useState([]);
   let [emailsArray, setEmailsArray] = useState([]);
 
+  let [resetModal, setResetModal] = useState(false);
+  let [resetModalEmail, setResetModalEmail] = useState(true);
+  let [resetModalOTP, setResetModalOTP] = useState(false);
+  let [resetModalChange, setResetModalChange] = useState(false);
+
   let pattern = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
   let MobilePattern = new RegExp('[0-9]{10}');
   let [User, setUser] = useState(defaultUser);
 
+  let [signupSuccess, setsignupSuccess] = useState(false);
+
+  let [passResEmail, setPassResEmail] = useState('');
+  let [passResOtp, setPassResOtp] = useState('');
+  let [passResPassword, setPassResPassword] = useState('');
+  let [passResConfirmPassword, setPassResConfirmPassword] = useState(''); //je main ahe
+  let [genratedOtp, setGenratedOtp] = useState(-1);
+
+  const getOTP = () => Math.floor(Math.random() * 1000000);
+
+  const sendOtp = async () => {
+    const OTP = getOTP();
+    setGenratedOtp(prev => OTP);
+    console.log(OTP);
+    let obj = { email: passResEmail, otp: OTP };
+
+    let d = await axios.post(BackendUrl + 'User/passwords', obj);
+    //baray
+  };
+
+  const verifyOTP = async => {
+    // e.preventDefault();
+    if (genratedOtp != passResOtp) {
+      alert('Otp doesnt Match!!!');
+      return false;
+    }
+    return true;
+  };
+
+  const resetPass = async () => {
+    if (passResConfirmPassword !== passResPassword) {
+      alert('Paswords doesnt match!');
+      return;
+    }
+
+    let data = await axios.patch('https://codigo-server.herokuapp.com/user', {
+      email: passResEmail,
+      updates: { password: passResPassword },
+    });
+    alert('Successfully Reset Password');
+
+    if (true) window.location.reload();
+  };
+
   const handleChange = e => {
+    setWrongPassword(false);
     setUser(prevUser => ({ ...prevUser, [e.target.name]: e.target.value }));
   };
   //mobile
@@ -95,7 +146,7 @@ const LoginPage = ({ setlG }) => {
     e.preventDefault();
 
     if (isAlreadyPresent(User.username, usernamesArray) || isAlreadyPresent(User.email, emailsArray)) {
-      alert('username or email is already present');
+      alert('Username or email is already present');
       return; // :) chal :)
     }
 
@@ -106,6 +157,11 @@ const LoginPage = ({ setlG }) => {
     console.log('New User has Sign-Up with following Details : ', User);
 
     axios.post(BackendUrl + 'User', User);
+    setsignupSuccess(true);
+    setTimeout(() => {
+      setsignupSuccess(false);
+      setLogin(true);
+    }, 2000);
   };
 
   const setter = () => {
@@ -151,6 +207,76 @@ const LoginPage = ({ setlG }) => {
       <div id='bgdiv'>
         <img id='bg' src={bg}></img>
       </div>
+
+      <div className='resetModal' style={{ display: resetModal ? '' : 'none' }}>
+        <h1 style={{ cursor: 'pointer' }} onClick={() => setResetModal(false)}>
+          X
+        </h1>
+        <div className='form' style={{ display: resetModalEmail ? '' : 'none' }}>
+          <div className='resetLogo'>
+            <img src={secured} />
+            <h1>
+              <b>
+                códiGo<em>Hash</em>
+              </b>
+            </h1>
+          </div>
+          <input name='email' type='email' value={passResEmail} onChange={e => setPassResEmail(e.target.value)} placeholder='Enter Registered Email'></input>
+          <button
+            onClick={() => {
+              alert('OTP Sent to email');
+              setResetModalEmail(false);
+              setResetModalOTP(true);
+              sendOtp(passResEmail);
+            }}
+          >
+            Send OTP
+          </button>
+        </div>
+        <div className='form' style={{ display: resetModalOTP ? '' : 'none' }}>
+          <div className='resetLogo'>
+            <img src={secured} />
+            <h1>
+              <b>
+                códiGo<em>Hash</em>
+              </b>
+            </h1>
+          </div>
+          <input id='OTPStyle' name='OTP' value={passResOtp} onChange={e => setPassResOtp(e.target.value)} type='password' placeholder='Enter Recieved OTP' autoFocus='true'></input>
+
+          <button
+            onClick={() => {
+              setResetModalOTP(!verifyOTP());
+              setResetModalChange(verifyOTP());
+            }}
+          >
+            Verify
+          </button>
+        </div>
+
+        <div className='form' style={{ display: resetModalChange ? '' : 'none' }}>
+          <div className='resetLogo'>
+            <img src={secured} />
+            <h1>
+              <b>
+                códiGo<em>Hash</em>
+              </b>
+            </h1>
+          </div>
+          <input name='newPassword' type='password' value={passResPassword} onChange={e => setPassResPassword(e.target.value)} placeholder='Enter New Password' autoFocus='true'></input>
+          <input name='newPassword' type='password' value={passResConfirmPassword} onChange={e => setPassResConfirmPassword(e.target.value)} placeholder='Confirm New Password' autoFocus='true'></input>
+
+          <button
+            onClick={() => {
+              resetPass();
+              //   setResetModal(false);
+              //   window.location.reload();
+            }}
+          >
+            Submit
+          </button>
+        </div>
+      </div>
       <form className={login ? 'active' : 'hidden'}>
         <h1>Welcome Back</h1>
         <hr />
@@ -174,7 +300,9 @@ const LoginPage = ({ setlG }) => {
         </button>
         {/* <button onClick={checkBackendProblem}>Check Backend</button> */}
 
-        <h4>Forgot Details? Get Help logging in</h4>
+        <h4 onClick={() => setResetModal(true)} style={{ cursor: 'pointer' }}>
+          Forgot Details? Get Help logging in
+        </h4>
         <h3 style={WrongPassword ? { color: 'red', visibility: 'visible' } : { visibility: 'hidden' }}> Username and Password do not match</h3>
       </form>
 
@@ -266,14 +394,19 @@ const LoginPage = ({ setlG }) => {
         </div>
         <input onClick={handleSignUp} type='submit' value='SIGN UP' id='submit'></input>
       </form>
-      <div className={login ? 'active' : 'hidden'}>
-        <h3 id='sign'>
+
+      <div className='successNotifier' style={{ visibility: signupSuccess ? 'visible' : 'hidden' }}>
+        <img src={signupIcon} />
+        <h2>Signup Successful</h2>
+      </div>
+      <div id='sign' style={{ display: login ? '' : 'none' }}>
+        <h3>
           {' '}
           Don't have an Account ? <button onClick={setter}> Sign Up for free </button>
         </h3>
       </div>
-      <div className={login ? 'hidden' : 'active'}>
-        <h3 id='sign'>
+      <div id='sign' style={{ display: login ? 'none' : ' ' }}>
+        <h3>
           {' '}
           Already have an Account ? <button onClick={setter}> Log In</button>
         </h3>

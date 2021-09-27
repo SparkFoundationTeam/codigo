@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
 
 import LandingPage from './landingPage/landingPage';
@@ -27,12 +27,16 @@ import ScrollToTop from './ScrollToTop';
 
 const App = () => {
   let [signedInUser, setsignedInUser] = useState(defaultUser);
+  let [loaded, setLoaded] = useState(false);
 
-    const authenticated = localStorage.getItem('LoggedIn');
+
+
+  const authenticated = localStorage.getItem('LoggedIn');
   return (
     <>
-      <Router>
+      <Router onLoad={() => window.location.reload()}>
         <ScrollToTop />
+        
 
         <UserContext.Provider value={{ signedInUser, setsignedInUser }}>
           <Switch>
@@ -42,8 +46,8 @@ const App = () => {
             <Route exact path='/login'>
               <LoginPage />
             </Route>
-            </Switch>
-            {/* <Route exact path='/dashboard'>
+          </Switch>
+          {/* <Route exact path='/dashboard'>
               <DashBoard />
             </Route>
             <Route exact path='/all-courses'>
@@ -82,8 +86,12 @@ const App = () => {
           </Switch> */}
 
           {!authenticated && (
+            
             <Switch>
               <Redirect from='/login' to='/login'></Redirect>
+              <Redirect from='/dashboard' to='/login'></Redirect>
+              <Redirect from='/all-courses' to='/login'></Redirect>
+
               <Redirect to='/'></Redirect>
             </Switch>
           )}
@@ -102,9 +110,7 @@ const App = () => {
               <Route exact path='/all-courses'>
                 <AllCourses />
               </Route>
-              <Route exact path='/all-courses'>
-                <AllCourses />
-              </Route>
+              
 
               <Route exact path='/html01-course-enroll'>
                 <Html01Enroll />
@@ -137,6 +143,7 @@ const App = () => {
           )}
         </UserContext.Provider>
       </Router>
+      
     </>
   );
 };

@@ -6,9 +6,40 @@
   z-index: -1;
 }
 
+.successNotifier {
+  position: absolute;
+  width: 30vw;
+  height: 30vh;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 25;
+  top: 5vh;
+  left: 35vw;
+  border-radius: 2vh;
+  -webkit-filter: drop-shadow(10px 10px 10px grey);
+          filter: drop-shadow(10px 10px 10px grey);
+}
+
+.successNotifier img {
+  height: 20vh;
+}
+
 form {
   height: 70vh;
   width: 50vw;
+  background-color: white;
   z-index: 10;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -151,8 +182,8 @@ form input:focus {
   text-align: center;
   width: 50vw;
   height: 10vh;
-  border-radius: 30px;
   background-color: rgba(255, 255, 255, 0);
+  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -191,10 +222,12 @@ form input:focus {
 
 .active {
   visibility: visible;
+  background-color: white;
 }
 
 .hidden {
   display: none;
+  background-color: white;
 }
 
 #sign {
@@ -231,9 +264,102 @@ h3 button {
   padding-left: 80px;
 }
 
+.resetModal {
+  position: absolute;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: white;
+  z-index: 250;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.resetModal h1 {
+  position: absolute;
+  right: 20vw;
+  top: 5vh;
+}
+
+.resetModal .resetLogo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 5vh;
+}
+
+.resetModal .resetLogo img {
+  height: 10vh;
+}
+
+.resetModal .form {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-content: center;
+}
+
+.resetModal .form h1 {
+  position: unset;
+}
+
+.resetModal .form input {
+  width: 30vw;
+  padding: 2vh 2vw;
+  font-size: medium;
+  margin-bottom: 5vh;
+}
+
+.resetModal button {
+  padding: 1vh 2vw;
+  font-size: large;
+}
+
+.resetModal #OTPStyle {
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: 5vh;
+  font-family: Poppins;
+}
+
 @media screen and (max-width: 1000px) {
   #bgdiv #bg {
     display: none;
+  }
+  .successNotifier {
+    width: 70vw;
+    left: 15vw;
+    text-align: center;
   }
   #nav {
     width: 100vw;

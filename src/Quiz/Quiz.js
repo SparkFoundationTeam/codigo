@@ -16,7 +16,6 @@ import timer from '../resources/timer.gif';
 import codigoIcon from '../resources/codiGo.png';
 import axios from 'axios';
 import BackendUrl from '../BackendUrl';
-import { isLazy } from 'react-is/cjs/react-is.development';
 
 const Quiz = ({ name, tutorName, courseId }) => {
   // Quiz
@@ -129,15 +128,27 @@ const Quiz = ({ name, tutorName, courseId }) => {
       courseName: name,
     };
 
-    let data = await axios.get(BackendUrl + 'Courses');
+    // let data = await axios.get(BackendUrl + 'Courses');
+    let data = await axios.post('https://codigo-server.herokuapp.com/Courses/attempts', obj);
+    console.log('data from getuser attempts is ', data.data);
 
-    return data.data[0].enrolledCourses[0].numberOfAttempts;
+    // return data.data[0].enrolledCourses[0].numberOfAttempts;
+    return 4;
   };
 
   // direct attempts gheu nai shakat ka l  api la sangayla lagel ki konuser ani kuthla course email is
+  const getQuizQuestions = async () => {
+    let language = name.split(' ');
+    language = language[0];
+    // if (true) alert('language is ', language.toString());
+    let data = await axios.get(BackendUrl + `Quiz/${language}`);
+    console.log('Quiz', data.data);
+    setQuizArray(data.data);
+  };
 
   useEffect(() => {
     setAttempts(getUserAttempts());
+    getQuizQuestions();
   }, []);
 
   return (
@@ -159,6 +170,7 @@ const Quiz = ({ name, tutorName, courseId }) => {
                   {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
                 </span>
               )}
+              Total questions are {quizArray.length}
             </div>
             <h2>
               <b>{quizArray[currentQuestionIndex].points}</b> Points
@@ -204,17 +216,22 @@ const Instructions = ({ Attempt, CourseName, TutorName, CourseId, setQ, setI }) 
     let data = await axios.get(BackendUrl + 'Courses');
     // console.log(data.data);
 
-    console.log(data.data[0].enrolledCourses[0].numberOfAttempts);
+    console.log('in instructions', data.data[0].enrolledCourses[0].numberOfAttempts);
     // console.log(obj);
     // console.log('Handling attempts', CourseName, TutorName);
     // let d = await axios.patch(BackendUrl + 'Courses/attempts', obj);
     // console.log(d);
   };
 
+  useEffect(() => {
+    // alert(Attempt);
+  }, []);
+
   return (
     <>
       <div className='QuizInstructions'>
         <h1>{CourseName} </h1>
+        {/* <h1 style={{ color: 'black' }}>attempts are {Attempt}</h1> */}
         <h1>Certificate Quiz</h1>
         <br />
         <hr />
@@ -240,7 +257,7 @@ const Instructions = ({ Attempt, CourseName, TutorName, CourseId, setQ, setI }) 
           className='QuizStartButton'
           id='StartQuiz'
           //   disabled={!(Attempt < 4)}
-          style={Attempt < 4 ? { display: 'block' } : { display: 'none' }}
+          //   style={attempt < 4 ? { display: 'block' } : { display: 'none' }}
         >
           TAKE QUIZ {'/>'}
         </button>

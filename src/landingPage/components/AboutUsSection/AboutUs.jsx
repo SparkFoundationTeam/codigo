@@ -17,13 +17,13 @@ const AboutUs = () => {
   return (
     <div className='OurCoursesSection'>
       <img className='OwnerBlob1' src={Blob1} />
-      <img className='OwnerBlob2' src={Blob2} />
+      <img className='OwnerBlob2' src={Blob2} data-aos='zoom-in-down' data-aos-duration='15000' data-aos-offset='420' />
       <div className='SectionHeader'>About Us</div>
       <h3 className='AboutUs-Des'>
         códiGo is run by a team of engineers who handle the whole technical process alongwith the educational content delivery. <br /> We thrive to provide you best experience and courses{' '}
       </h3>
       <div className='OurTeam'>Our Team</div>
-      <div className='CardsContainer'>
+      <div className='CardsContainer' data-aos='fade-right' data-aos-offset='70'>
         {ownersArray.map(OwnerObject => {
           return (
             <div className='OwnersCards'>
@@ -40,11 +40,11 @@ const AboutUs = () => {
               </ul>
               <div className='OwnerSocialMediaContainer'>
                 <a href={OwnerObject.resumeUrl}>
-                  <img className='OwnerSocialMedia' src={Resume} title='Resume / CV'></img>
+                  <img className='OwnerSocialMedia' src={Resume} title='Resume'></img>
                 </a>
 
                 <a href={OwnerObject.githubUrl} title='Github Profile'>
-                  <img className='OwnerSocialMedia' src={Github}></img>
+                  <img className='OwnerSocialMedia' src={Github} title='Github Profile'></img>
                 </a>
                 <a href={OwnerObject.linkedUrl}>
                   <img className='OwnerSocialMedia' src={LinkedIn} title='LinkedIN Profile'></img>

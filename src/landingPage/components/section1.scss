@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap');
 * {
   margin: 0;
   box-sizing: border-box;
@@ -46,6 +46,9 @@
       background: linear-gradient(to left, transparent, transparent);
       font-weight: bold;
       border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       img {
         margin: 0;
@@ -88,10 +91,12 @@
 
       h2 {
         font-size: 5vh;
-        color: rgba(255, 255, 255, 0.596);
+        color: rgb(255, 255, 255);
       }
 
-      button {
+      
+
+      button  {
         margin-bottom: 5vh;
         margin-top: 5vh;
         width: 20vw;
@@ -123,6 +128,8 @@
 
 @media screen and (max-width: 1000px) {
   .Section1 {
+    margin-left: 0;
+
     #nav {
       justify-content: space-between;
       img {
@@ -130,7 +137,10 @@
         margin-top: 2vh;
       }
       button {
-        width: 20vw;
+        img {
+          height: 2vh;
+        }
+        width: 40vw;
         font-size: small;
       }
     }
@@ -153,9 +163,12 @@
         h1 {
           width: 90vw;
           font-size: 5vh;
+          margin-left: 0;
+
         }
         h2 {
-          font-size: 3vh;
+          font-size: 2vh;
+          margin-left: 0;
         }
 
         button {

@@ -88,3 +88,16 @@ content-type: application/json
 }
 ###
 GET https://codigo-server.herokuapp.com/Courses  HTTP/1.1
+
+
+###
+GET https://codigo-compiler.herokuapp.com/run  HTTP/1.1
+
+###
+POST https://codigo-compiler.herokuapp.com/run  HTTP/1.1
+content-type: application/json
+
+{
+    "language": "JAVASCRIPT",
+    "code":"console.log()"
+}

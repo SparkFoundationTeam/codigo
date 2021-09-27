@@ -22,6 +22,7 @@ const AllCourses = () => {
   const [searchTerm, setSearchTerm] = useState('');
   let [showFiltered, setShowfiltered] = useState(false);
   let [filteredCourses, setfilteredCourses] = useState([]);
+  let [menu, setMenu] = useState(false);
 
   let [JsCourse, setJsCOurse] = useState([
     {
@@ -114,7 +115,7 @@ const AllCourses = () => {
 
     {
       header: 'Python Development Series',
-      keywords: ['Python Development Series', 'series >>', 'courses >>', 'tutors >> ', 'Python Complete Course', 'python', 'vaishnavi', 'koragonkar', 'automation'],
+      keywords: ['Python Development Series', 'series >>', 'courses >>', 'tutors >> ', 'Python Complete Course', 'python', 'vaishnavi', 'korgaonkar', 'automation'],
 
       coursesCard: [
         {
@@ -137,8 +138,8 @@ const AllCourses = () => {
   ]); //kay zol kela kai nai :):)
   const getCourses = async () => {
     let { data } = await axios.get('https://codigo-server.herokuapp.com/AllCourses/');
-    console.log('data recieved from db iss : ', data); // lvdu saala
-    setJsCOurse(prev => [...prev, ...data]); // boom nko hoyla :)
+    console.log('data recieved from db iss : ', data);
+    setJsCOurse(prev => [...prev, ...data]);
 
     console.log('Modified course array is ', JsCourse);
   };
@@ -149,7 +150,7 @@ const AllCourses = () => {
   }, []);
 
   return (
-    <div id='AllCoursesPageBody'>
+    <div id='AllCoursesPageBody' data-aos='fade-in' data-aos-delay='100' data-aos-offset='0'>
       {/* <h1>{JSON.stringify(dt)}</h1> */}
       <div className='dashboard-navbar'>
         <div className='dashboard-icon'>
@@ -198,9 +199,16 @@ const AllCourses = () => {
         </div>
         <div className='dashboard-links'>
           <ul>
-            <li>Community</li>
-            <li>Kōdo</li>
-            <li>Pixzta</li>
+            <a href='https://community-codigo.netlify.app' target='_blank'>
+              {' '}
+              <li>Community</li>{' '}
+            </a>
+            <a href='https://ide-codigo.netlify.app' target='_blank'>
+              <li>Kōdo</li>
+            </a>
+            <a href='https://pixta-codigo.netlify.app' target='_blank'>
+              <li>Pixta</li>
+            </a>
             <Link to='/dashboard'>
               <li id='DashBoard'>
                 <strong>Dashboard</strong>
@@ -209,7 +217,26 @@ const AllCourses = () => {
           </ul>
         </div>
         <div className='res-NavButton'>
-          <img src={menuIcon}></img>
+          <img src={menuIcon} onClick={() => setMenu(!menu)}></img>
+          <div style={{ display: menu ? 'flex' : 'none' }} data-aos='fade-up' data-aos-duration='5000'>
+            <ul>
+              <a href='https://community-codigo.netlify.app' target='_blank'>
+                {' '}
+                <li>Community</li>{' '}
+              </a>
+              <a href='https://ide-codigo.netlify.app' target='_blank'>
+                <li>Kōdo</li>
+              </a>
+              <a href='https://pixta-codigo.netlify.app' target='_blank'>
+                <li>Pixta</li>
+              </a>
+              <Link to='/dashboard'>
+                <li id='DashBoard'>
+                  <strong>Dashboard</strong>
+                </li>
+              </Link>
+            </ul>
+          </div>
         </div>
       </div>
       <div className='Content'>
