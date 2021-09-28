@@ -1,26 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import './AboutUs.css';
-import Blob2 from '../../../resources/blob (2).svg';
-import Blob1 from '../../../resources/blob (4).svg';
-import Instagram from '../../../resources/insta-icon.png';
-import Mail from '../../../resources/mail-icon.png';
-import LinkedIn from '../../../resources/linkedin-icon.png';
-import Github from '../../../resources/github-icon.png';
-import Resume from '../../../resources/resume2.png';
-import Portfolio from '../../../resources/portfolio.png';
-import { Owners } from './AboutUsData';
-import randomizer from '../../../randomizer';
+import "./AboutUs.css";
+import Blob2 from "../../../resources/blob (2).svg";
+import Blob1 from "../../../resources/blob (4).svg";
+import Instagram from "../../../resources/insta-icon.png";
+import Mail from "../../../resources/mail-icon.png";
+import LinkedIn from "../../../resources/linkedin-icon.png";
+import Github from "../../../resources/github-icon.png";
+import Resume from "../../../resources/resume2.png";
+import Portfolio from "../../../resources/portfolio.png";
+import { Owners } from "./AboutUsData";
+import randomizer from "../../../randomizer";
 
 const AboutUs = () => {
   let [ownersArray, setOwnersArray] = useState(randomizer(Owners));
+
   return (
     <div className='OurCoursesSection'>
       <img className='OwnerBlob1' src={Blob1} />
       <img className='OwnerBlob2' src={Blob2} data-aos='zoom-in-down' data-aos-duration='15000' data-aos-offset='420' />
       <div className='SectionHeader'>About Us</div>
       <h3 className='AboutUs-Des'>
-        códiGo is run by a team of engineers who handle the whole technical process alongwith the educational content delivery. <br /> We thrive to provide you best experience and courses{' '}
+        códiGo is run by a team of engineers who handle the whole technical process alongwith the educational content delivery. <br /> We thrive to provide you best experience and courses{" "}
       </h3>
       <div className='OurTeam'>Our Team</div>
       <div className='CardsContainer' data-aos='fade-right' data-aos-offset='70'>

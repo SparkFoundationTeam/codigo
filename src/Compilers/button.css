@@ -78,6 +78,37 @@
   filter: drop-shadow(-2px 2px 5px grey);
 }
 
+@media (max-width: 500px) {
+  .butt-container {
+    position: absolute;
+    top: 35%;
+
+    text-align: center;
+    height: auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    /* margin-bottom: 2vh; */
+    /* width: 120vw; */
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    /* margin: auto; */
+  }
+  .butt-leftmost {
+    width: 20vw;
+    /* padding: 0; */
+    font-size: 1rem;
+  }
+  .butt-rightmost {
+    width: 20vw;
+    /* padding: 0; */
+    font-size: 1rem;
+    color: red;
+  }
+  .butt-middle {
+    width: auto;
+    height: auto;
+  }
+}
 /* toh compiler che buttons component  
           <div class="button-container">
             <button class="button-leftmost">First</button>

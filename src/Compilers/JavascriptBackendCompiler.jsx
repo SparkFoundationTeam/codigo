@@ -71,6 +71,7 @@ const JavascriptBackendCompiler = ({ Button1, Button1Text, Button2, Button2Text,
           </textarea>
         </div>
 
+        {/* <div style={{ background: "orange", textAlign: "center", position: "relative" }}> */}
         <div className='butt-container'>
           <button
             className='butt-leftmost'
@@ -100,6 +101,7 @@ const JavascriptBackendCompiler = ({ Button1, Button1Text, Button2, Button2Text,
             <b> {Button3} </b>
           </button>
         </div>
+        {/* </div> */}
       </div>
     </div>
   );

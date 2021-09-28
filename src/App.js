@@ -1,42 +1,39 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 
-import LandingPage from './landingPage/landingPage';
+import LandingPage from "./landingPage/landingPage";
 // import LoginPage from './loginPage/loginPage';
-import DashBoard from './Dashboard/Dashboard';
-import AllCourses from './AllCourses/AllCourses';
-import PageNotFound from './PageNotFound';
+import DashBoard from "./Dashboard/Dashboard";
+import AllCourses from "./AllCourses/AllCourses";
+import PageNotFound from "./PageNotFound";
 // import LoginPage from './loginPage/loginakaDashboar';
-import LoginPage from './loginPage/loginPage';
-import { UserContext } from './MainContext';
-import { defaultUser } from './DefaultUser';
+import LoginPage from "./loginPage/loginPage";
+import { UserContext } from "./MainContext";
+import { defaultUser } from "./DefaultUser";
 
 // All Course and Enroll Pages
-import Html01Enroll from './CoursePages/HtmlAtharva/html01-course-enroll';
-import Html01 from './CoursePages/HtmlAtharva/webdev-html01';
+import Html01Enroll from "./CoursePages/HtmlAtharva/html01-course-enroll";
+import Html01 from "./CoursePages/HtmlAtharva/webdev-html01";
 
-import Java01Enroll from './CoursePages/JavaAdika/java01-course-enroll';
-import Java01 from './CoursePages/JavaAdika/javadev-java01';
+import Java01Enroll from "./CoursePages/JavaAdika/java01-course-enroll";
+import Java01 from "./CoursePages/JavaAdika/javadev-java01";
 
-import JS01Enroll from './CoursePages/JSBhavesh/js01-course-enroll';
-import JS01 from './CoursePages/JSBhavesh/javascript01';
+import JS01Enroll from "./CoursePages/JSBhavesh/js01-course-enroll";
+import JS01 from "./CoursePages/JSBhavesh/javascript01";
 
-import Python01Enroll from './CoursePages/PythonVaishnavi/python01-course-enroll';
-import Python01 from './CoursePages/PythonVaishnavi/pydev-python01';
-import ScrollToTop from './ScrollToTop';
+import Python01Enroll from "./CoursePages/PythonVaishnavi/python01-course-enroll";
+import Python01 from "./CoursePages/PythonVaishnavi/pydev-python01";
+import ScrollToTop from "./ScrollToTop";
 
 const App = () => {
   let [signedInUser, setsignedInUser] = useState(defaultUser);
   let [loaded, setLoaded] = useState(false);
 
-
-
-  const authenticated = localStorage.getItem('LoggedIn');
+  const authenticated = localStorage.getItem("LoggedIn");
   return (
     <>
       <Router onLoad={() => window.location.reload()}>
         <ScrollToTop />
-        
 
         <UserContext.Provider value={{ signedInUser, setsignedInUser }}>
           <Switch>
@@ -86,7 +83,6 @@ const App = () => {
           </Switch> */}
 
           {!authenticated && (
-            
             <Switch>
               <Redirect from='/login' to='/login'></Redirect>
               <Redirect from='/dashboard' to='/login'></Redirect>
@@ -110,7 +106,6 @@ const App = () => {
               <Route exact path='/all-courses'>
                 <AllCourses />
               </Route>
-              
 
               <Route exact path='/html01-course-enroll'>
                 <Html01Enroll />
@@ -143,7 +138,6 @@ const App = () => {
           )}
         </UserContext.Provider>
       </Router>
-      
     </>
   );
 };

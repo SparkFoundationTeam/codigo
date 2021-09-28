@@ -101,3 +101,6 @@ content-type: application/json
     "language": "JAVASCRIPT",
     "code":"console.log()"
 }
+
+###
+GET https://codigo-server.herokuapp.com/Courses/attempts?email=31mhadse.bhavesh2001@gmail.com&courseName=Javascript Complete Course&tutorName=Bhavesh Mhadse HTTP/1.1

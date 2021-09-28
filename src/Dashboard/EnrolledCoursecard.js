@@ -7,7 +7,7 @@ import './enrolledCourse.css';
 
 import { ImageMap } from './ImageHashMap';
 
-import Quiz from '../Quiz/Quiz';
+// import Quiz from '../Quiz/Quiz';
 
 import { UserContext } from '../MainContext'; // <- hi line prytek component madhe lagnr jithe user aahe tithe
 import { Link } from 'react-router-dom';
