@@ -14,19 +14,19 @@ const MyCourses = () => {
 
   let converToArray = object => {
     let arr = [];
-    console.log('Object inside converter is : ', object);
-    console.log('type of Object inside converter is : ', typeof object);
+    // console.log('Object inside converter is : ', object);
+    // console.log('type of Object inside converter is : ', typeof object);
 
     const converted = Object.values(object);
 
-    console.log('after conversion ', converted);
-    console.log('after conversion ', typeof converted);
-    //bc kai hotoy
+    // console.log('after conversion ', converted);
+    // console.log('after conversion ', typeof converted);
+    // //bc kai hotoy
 
     return converted;
 
-    console.log(arr);
-    console.log(typeof arr);
+    // console.log(arr);
+    // console.log(typeof arr);
   }; // database madhna object alya nntr redirect mrayla lagnr karan naitr sagla boom hoil thamb atta
   const getUserFromLocalStorage = () => JSON.parse(localStorage.getItem('User'));
 
@@ -40,10 +40,10 @@ const MyCourses = () => {
 
   return (
     <div className='dashboard-CoursesCardContainer'>
-      <h1>{signedInUser.username.toUpperCase()}'s Enrolled courses</h1>
+      <h1 data-aos='fade-in' data-aos-delay='400'>{signedInUser.username.toUpperCase()}'s Enrolled courses</h1>
        {enrolledCourseArray.length === 0 &&  <div className='noCourse'> <img src={noCoursesIcon} /> <h1>No Courses Enrolled</h1> <Link to='/all-courses'><button className='QuizStartButton'>Start Learning</button></Link></div>} 
       {enrolledCourseArray.map(eachObj => (
-        <EnrolledCourseCard tutorName={eachObj.tutorName} tutorImage={eachObj.tutorImage} courseName={eachObj.courseName} courseInfo={eachObj.courseInfo} courseImage={eachObj.courseImage} duration={eachObj.duration} CourseId={eachObj.courseId} hasCompletedQuiz={eachObj.hasCompletedQuiz} id={eachObj._id} courseCertificateName={eachObj.courseNameCertificate} />
+        <EnrolledCourseCard data-aos='fade-in' data-aos-delay='600' tutorName={eachObj.tutorName} tutorImage={eachObj.tutorImage} courseName={eachObj.courseName} courseInfo={eachObj.courseInfo} courseImage={eachObj.courseImage} duration={eachObj.duration} CourseId={eachObj.courseId} hasCompletedQuiz={eachObj.hasCompletedQuiz} id={eachObj._id} courseCertificateName={eachObj.courseNameCertificate} />
       ))}
     </div>
   );

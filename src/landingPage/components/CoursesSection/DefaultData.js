@@ -1,4 +1,7 @@
-import Bhavesh from '../../../resources/bhavesh.jpg';
+import Bhavesh from '../../../resources/bhaveshIcon.jpg';
+import Atharva from "../../../resources/atharva.jpg";
+import Vaishnavi from "../../../resources/vaishIcon.jpg";
+import Adika from "../../../resources/adikaIcon.jpg";
 
 import JSBhavesh from '../../../resources/JSBhavesh.png';
 import HtmlAtharva from '../../../resources/HTMLAtharva.png';
@@ -15,7 +18,7 @@ export const OurCoursesCardInfo = [
       ImageLogo: HtmlAtharva,
       CourseName: 'HTML',
       CourseInfo: 'The complete HTML Course to kick-start Web Development',
-      AuthorPic: Bhavesh,
+      AuthorPic: Atharva,
       AUthorName: 'Atharva Bhagat',
       CourseDuration: '1 Hour',
       Linker: 'html01',
@@ -33,7 +36,7 @@ export const OurCoursesCardInfo = [
       ImageLogo: JavaAdika,
       CourseName: 'Java',
       CourseInfo: 'Java Programming explained thorougly to enter beautiful world of Java',
-      AuthorPic: Bhavesh,
+      AuthorPic: Adika,
       AUthorName: 'Adika Karnataki',
       CourseDuration: '2 Hours',
       Linker: 'java01',
@@ -42,7 +45,7 @@ export const OurCoursesCardInfo = [
       ImageLogo: PythonVaishnavi,
       CourseName: 'Python',
       CourseInfo: 'Complete Python Course loaded with various interesting Concepts',
-      AuthorPic: Bhavesh,
+      AuthorPic: Vaishnavi,
       AUthorName: 'Vaishnavi Korgaonkar',
       CourseDuration: '2 Hours',
       Linker: 'python01',
@@ -54,7 +57,7 @@ export const OurCoursesCardInfo = [
       ImageLogo: HtmlAtharva,
       CourseName: 'HTML',
       CourseInfo: 'The complete HTML Course to kick-start Web Development',
-      AuthorPic: Bhavesh,
+      AuthorPic: Atharva,
       AUthorName: 'Atharva Bhagat',
       CourseDuration: '1 Hour',
     },
@@ -76,7 +79,7 @@ export const OurCoursesCardInfo = [
       ImageLogo: JavaAdika,
       CourseName: 'Java',
       CourseInfo: 'Java Programming explained thorougly to enter beautiful world of Java',
-      AuthorPic: Bhavesh,
+      AuthorPic: Adika,
       AUthorName: 'Adika Karnataki',
       CourseDuration: '2 Hours',
     },
@@ -87,7 +90,7 @@ export const OurCoursesCardInfo = [
       ImageLogo: PythonVaishnavi,
       CourseName: 'Python',
       CourseInfo: 'Complete Python Course loaded with various interesting Concepts',
-      AuthorPic: Bhavesh,
+      AuthorPic: Vaishnavi,
       AUthorName: 'Vaishnavi Korgaonkar',
       CourseDuration: '2 Hours',
     },

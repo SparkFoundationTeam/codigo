@@ -59,6 +59,9 @@
   height: auto;
   display: flex;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #personName {
@@ -70,7 +73,7 @@
   width: 40%;
   height: 40%;
   margin: auto;
-  margin-right: 1rem;
+  margin-right: 1vw;
   margin-left: -2vw;
   /* filter: drop-shadow(10px 10px 10px rgb(0, 213, 213)); */
   transition: all linear 200ms;
@@ -177,6 +180,55 @@
 #logout a {
   color: white;
 }
+#ChangeAvatar {
+  height: 3vh;
+  width: 3vh;
+  z-index: 1000;
+}
+.AvatarChoices {
+  position: absolute;
+  z-index: 10;
+  background-color: rgba(238, 238, 238, 0.445);
+  backdrop-filter: blur(2rem);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: space-evenly;
+  padding: 2vh;
+  margin-top: -2vh;
+  border-radius: 3vh;
+  margin-left: 0.5vw;
+  height: 35vh;
+  width: 17vw;
+  transition: all linear ease-in-out 1s;
+ 
+
+
+}
+.AvatarChoices img {
+  height: 12vh;
+  width: 12vh;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.AvatarChoices img:hover {
+  transform: scale(1.2);
+  transition-duration: 0.5s;
+}
+
+.AvatarChoices div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: space-evenly;
+
+}
+
+.clickedStyles:focus{
+border-left-width: '0.3vw';
+    border-left-color: 'black';
+    background-color: 'rgb(199, 248, 248)';
+    color: 'black';}
 
 @media screen and (max-width: 1000px) {
   .dashboard .dashboard-navbar {
@@ -199,11 +251,11 @@
     margin-left: 3vw;
     overflow: hidden;
     border-radius: 2vh 2vh 2vh 2vh;
-    background-size:45%;
+    background-size: 45%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding:0;
+    padding: 0;
   }
 
   .dashboard .dashboard-sidebar .personal-info {
@@ -216,7 +268,8 @@
   .dashboard .dashboard-sidebar .choices {
     width: 100vw;
     height: 7vh;
-    display: flex;    padding:0;
+    display: flex;
+    padding: 0;
 
     align-items: center;
     justify-content: space-evenly;
@@ -251,7 +304,6 @@
   .dashboard .other-section {
     width: 100%;
     height: auto;
-    
   }
 
   .dashboard .other-section .component {
@@ -260,8 +312,6 @@
     width: 100%;
 
     padding: 0vh 0vw;
-
-    
 
     margin-bottom: 0vh;
     overflow: scroll;

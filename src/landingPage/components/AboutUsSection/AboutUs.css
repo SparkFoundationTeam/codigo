@@ -158,6 +158,25 @@
     width: 100%;
     height: auto;
   }
+
+  .OwnerBlob1 {
+    position: absolute;
+    bottom: 20vh;
+    z-index: 0;
+    width: 150vw;
+    left: -40vh;
+    height: 100vh;
+    transform: rotate(180deg);
+  }
+  
+  .OwnerBlob2 {
+    position: absolute;
+    top: -50vh;
+    z-index: -1;
+    width: 150vw;
+    right: -50vw;
+    height: 300vh;
+  }
   .SectionHeader {
     margin: 0;
     width: 100%;
@@ -178,10 +197,7 @@
     display: none;
   }
 
-  .OwnerBlob1,
-  .OwnerBlob2 {
-    display: none;
-  }
+  
 
   .AboutUs-Des {
     font-size: 1.2vh;

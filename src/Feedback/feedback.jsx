@@ -59,21 +59,21 @@ const FeedbackTemplate = props => {
   const handleRating = async () => {
     const Obj = { CourseName: props.CourseName, TutorName: props.TutorName, newRating: overallNumber };
 
-    console.log('Object send is : ', Obj);
+    // console.log('Object send is : ', Obj);
 
     let { data } = await axios.patch(BackendUrl + 'AllCourses/update-rating', Obj);
-    console.log(data);
+    // console.log(data);
   };
 
   const getalldata = async () => {
     let { d } = axios.get('https://codigo-server.herokuapp.com/AllCourses/html');
-    console.log('All data is ', d);
+    // console.log('All data is ', d);
   };
 
   useEffect(() => {
     getalldata();
 
-    console.log(props.CourseName, props.TutorName);
+    // console.log(props.CourseName, props.TutorName);
   });
 
   return (
@@ -353,7 +353,7 @@ const FeedbackTemplate = props => {
                 setCertificateModal(false);
                 setDisableText('Feedback Submitted');
                 setMakeDisable(true);
-                console.log(overallNumber, fNumber, uNumber, tfNumber);
+                // console.log(overallNumber, fNumber, uNumber, tfNumber);
                 handleRating();
               } //testing ughad
             }}

@@ -16,7 +16,10 @@ import JSBhavesh from '../resources/JSBhavesh.png';
 import HtmlAtharva from '../resources/HTMLAtharva.png';
 import JavaAdika from '../resources/JAVAAdika.png';
 import PythonVaishnavi from '../resources/PYTHONVaishnavi.png';
-import Bhavesh from '../resources/bhavesh.jpg';
+import Bhavesh from "../resources/bhavesh.jpg";
+import Atharva from "../resources/atharva.jpg";
+import Vaishnavi from "../resources/vaishIcon.jpg";
+import Adika from "../resources/adikaIcon.jpg";
 
 const AllCourses = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -53,7 +56,7 @@ const AllCourses = () => {
     let filtered = newarr.filter(eachobj => {
       return eachobj.keywords.join(' ').toLowerCase().includes(searchTerm.toLowerCase());
     });
-    console.log(filtered);
+    // console.log(filtered);
     setfilteredCourses(filtered);
 
     setShowfiltered(true);
@@ -69,7 +72,7 @@ const AllCourses = () => {
           shortCourseName: 'html',
           CourseName: 'Html Complete Course',
           CourseInfo: 'The complete HTML Course to kick-start Web Development',
-          TutorPic: Bhavesh,
+          TutorPic: Atharva,
           TutorName: 'Atharva Bhagat',
           CourseDuration: '1 Hour',
           rating: 5,
@@ -91,7 +94,7 @@ const AllCourses = () => {
           ImageLogo: JavaAdika,
           CourseName: 'Java Complete Course',
           CourseInfo: 'Java Programming explained thorougly to enter beautiful world of Java',
-          TutorPic: Bhavesh,
+          TutorPic: Adika,
           TutorName: 'Adika Karnataki',
           CourseDuration: '2 Hour',
           rating: 5,
@@ -123,7 +126,7 @@ const AllCourses = () => {
           ImageLogo: PythonVaishnavi,
           CourseName: 'Python Complete Course',
           CourseInfo: 'Complete Python Course loaded with various interesting Concepts',
-          TutorPic: Bhavesh,
+          TutorPic: Vaishnavi,
           TutorName: 'Vaishnavi Korgaonkar',
           CourseDuration: '1 Hour',
           rating: 5,
@@ -138,10 +141,10 @@ const AllCourses = () => {
   ]); //kay zol kela kai nai :):)
   const getCourses = async () => {
     let { data } = await axios.get('https://codigo-server.herokuapp.com/AllCourses/');
-    console.log('data recieved from db iss : ', data);
+    // console.log('data recieved from db iss : ', data);
     setJsCOurse(prev => [...prev, ...data]);
 
-    console.log('Modified course array is ', JsCourse);
+    // console.log('Modified course array is ', JsCourse);
   };
   useEffect(() => {
     // getCourses();
@@ -150,7 +153,7 @@ const AllCourses = () => {
   }, []);
 
   return (
-    <div id='AllCoursesPageBody'>
+    <div id='AllCoursesPageBody' data-aos='fade-in' data-aos-delay='100' data-aos-offset='0'>
       {/* <h1>{JSON.stringify(dt)}</h1> */}
       <div className='dashboard-navbar'>
         <div className='dashboard-icon'>
@@ -199,9 +202,16 @@ const AllCourses = () => {
         </div>
         <div className='dashboard-links'>
           <ul>
-            <li>Community</li>
-            <li>Kōdo</li>
-            <li>Pixzta</li>
+            <a href='https://community-codigo.netlify.app' target='_blank'>
+              {' '}
+              <li>Community</li>{' '}
+            </a>
+            <a href='https://ide-codigo.netlify.app' target='_blank'>
+              <li>Kōdo</li>
+            </a>
+            <a href='https://pixta-codigo.netlify.app' target='_blank'>
+              <li>Pixta</li>
+            </a>
             <Link to='/dashboard'>
               <li id='DashBoard'>
                 <strong>Dashboard</strong>
@@ -240,7 +250,7 @@ const AllCourses = () => {
                 <div className='OneSection'>
                   <h2 className='SectHeader'>{eachObject.header}</h2>{' '}
                   {eachObject.coursesCard.map(eachCard => (
-                    <CourseCard shrtcourse={eachCard.shortCourseName} linker={eachCard.Linker} duration={eachCard.CourseDuration} logo={eachCard.ImageLogo} tutor={eachCard.TutorName} tutorImg={eachCard.TutorPic} courseName={eachCard.CourseName} courseDesc={eachCard.CourseInfo} ratings={eachCard.ratings} />
+                    <CourseCard shrtcourse={eachCard.shortCourseName} linker={eachCard.Linker} duration={eachCard.CourseDuration} logo={eachCard.ImageLogo} tutor={eachCard.TutorName} tutorImg={eachCard.TutorPic} courseName={eachCard.CourseName} courseDesc={eachCard.CourseInfo} ratings={eachCard.rating} />
                   ))}
                 </div>
               );
@@ -278,7 +288,7 @@ const AllCourses = () => {
                       }
                     })
                     .map(eachCard => (
-                      <CourseCard linker={eachCard.Linker} duration={eachCard.CourseDuration} logo={eachCard.ImageLogo} tutor={eachCard.TutorName} tutorImg={eachCard.TutorPic} courseName={eachCard.CourseName} courseDesc={eachCard.CourseInfo} ratings={eachCard.CourseRatings} />
+                      <CourseCard linker={eachCard.Linker} duration={eachCard.CourseDuration} logo={eachCard.ImageLogo} tutor={eachCard.TutorName} tutorImg={eachCard.TutorPic} courseName={eachCard.CourseName} courseDesc={eachCard.CourseInfo} ratings={eachCard.ratings} />
                     ))}
                 </div>
               );

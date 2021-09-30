@@ -8,7 +8,7 @@ const MyDrive = () => {
   let [certificateModal, setCertificateModal] = useState(false);
 
   return (
-    <div className='driveContainer'>
+    <div className='driveContainer' data-aos='fade-in' data-aos-delay='200'>
       <div className='InitialShow'>
         <h1>Welcome to códiGo Cloud </h1>
         <h2>Launching soon</h2>

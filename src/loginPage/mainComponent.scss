@@ -107,7 +107,6 @@ form {
     font-size: 2vh;
     text-align: right;
     color: rgb(43, 56, 59);
-    
   }
   #submit {
     width: 50%;
@@ -168,13 +167,11 @@ form {
 .active {
   visibility: visible;
   background-color: white;
-
 }
 
 .hidden {
   display: none;
   background-color: white;
-
 }
 
 #sign {
@@ -206,6 +203,62 @@ h3 {
   }
 }
 
+.resetModal {
+  position: absolute;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: white;
+  z-index: 250;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h1 {
+    position: absolute;
+    right: 20vw;
+    top: 5vh;
+  }
+
+  .resetLogo {
+    @include flexAlign();
+    img {
+      height: 10vh;
+    }
+    margin-bottom: 5vh;
+  }
+
+  .form {
+    h1 {
+      position: unset;
+    }
+    height: 100vh;
+    @include flexAlign();
+    flex-direction: column;
+    justify-content: center;
+    input {
+      width: 30vw;
+      padding: 2vh 2vw;
+      font-size: medium;
+      margin-bottom: 5vh;
+    }
+  }
+
+  button {
+    padding: 1vh 2vw;
+    font-size: large;
+  }
+  #OTPStyle {
+    border: none;
+    outline: none;
+    text-align: center;
+    font-size: 5vh;
+    font-family: Poppins;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   #bgdiv {
     #bg {
@@ -217,7 +270,6 @@ h3 {
     width: 70vw;
     left: 15vw;
     text-align: center;
-    
   }
   #nav {
     width: 100vw;
@@ -258,10 +310,8 @@ h3 {
   }
   #secure {
     width: 100vw;
-    font-size: 1.5vh;
+    font-size: 1vh;
     position: absolute;
-    bottom: 3vh;
-
-    flex-direction: column;
+    bottom: 1vh;
   }
 }

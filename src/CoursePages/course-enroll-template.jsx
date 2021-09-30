@@ -20,7 +20,7 @@ import BackendUrl from '../BackendUrl';
 import { UserContext } from '../MainContext';
 
 const CourseEnrollTemplate = props => {
-    let [menu, setMenu] = useState(false);
+  let [menu, setMenu] = useState(false);
 
   let { signedInUser, setsignedInUser } = useContext(UserContext); // <- ani hi pn
 
@@ -78,7 +78,7 @@ const CourseEnrollTemplate = props => {
     setsignedInUser(getUserFromLocalStorage());
   }, []);
   return (
-    <div>
+    <div data-aos='fade-in' data-aos-delay='100' data-aos-offset='0'>
       <div className='dashboard-navbar'>
         <div className='dashboard-icon'>
           <Link to='/'>
@@ -93,9 +93,16 @@ const CourseEnrollTemplate = props => {
             <Link to='/all-courses'>
               <li>All Courses</li>
             </Link>
-            <a href='https://community-codigo.netlify.app' target='_blank' > <li>Community</li> </a>
-              <a href='https://ide-codigo.netlify.app' target='_blank' ><li>Kōdo</li></a>
-              <a href='https://pixta-codigo.netlify.app' target='_blank' ><li>Pixta</li></a>
+            <a href='https://community-codigo.netlify.app' target='_blank'>
+              {' '}
+              <li>Community</li>{' '}
+            </a>
+            <a href='https://ide-codigo.netlify.app' target='_blank'>
+              <li>Kōdo</li>
+            </a>
+            <a href='https://pixta-codigo.netlify.app' target='_blank'>
+              <li>Pixta</li>
+            </a>
             <Link to='/dashboard'>
               <li id='DashBoard'>
                 <strong>Dashboard</strong>
@@ -103,16 +110,23 @@ const CourseEnrollTemplate = props => {
             </Link>
           </ul>
         </div>
-        <div className='res-NavButton' >
+        <div className='res-NavButton'>
           <img src={menuIcon} onClick={() => setMenu(!menu)}></img>
           <div style={{ display: menu ? 'flex' : 'none' }} data-aos='fade-up' data-aos-duration='5000'>
-            <ul >
-            <Link to='/all-courses'>
-              <li>All Courses</li>
-            </Link>
-              <a href='https://community-codigo.netlify.app' target='_blank' > <li>Community</li> </a>
-              <a href='https://ide-codigo.netlify.app' target='_blank' ><li>Kōdo</li></a>
-              <a href='https://pixta-codigo.netlify.app' target='_blank' ><li>Pixta</li></a>
+            <ul>
+              <Link to='/all-courses'>
+                <li>All Courses</li>
+              </Link>
+              <a href='https://community-codigo.netlify.app' target='_blank'>
+                {' '}
+                <li>Community</li>{' '}
+              </a>
+              <a href='https://ide-codigo.netlify.app' target='_blank'>
+                <li>Kōdo</li>
+              </a>
+              <a href='https://pixta-codigo.netlify.app' target='_blank'>
+                <li>Pixta</li>
+              </a>
               <Link to='/dashboard'>
                 <li id='DashBoard'>
                   <strong>Dashboard</strong>
@@ -163,19 +177,19 @@ const CourseEnrollTemplate = props => {
                   <h4>{props.TutorDesc}</h4>
                 </p>
                 <div className='SocialMedia'>
-                  <a href={props.resumeUrl}>
+                  <a href={props.resumeUrl} target='_blank'>
                     <img className='OwnerSocialMedia' src={Resume} title='Resume'></img>
                   </a>
-                  <a href={props.githubUrl} title='Github Profile'>
+                  <a href={props.githubUrl} title='Github Profile' target='_blank'>
                     <img className='OwnerSocialMedia' src={Github}></img>
                   </a>
-                  <a href={props.linkedUrl}>
+                  <a href={props.linkedUrl} target='_blank'>
                     <img className='OwnerSocialMedia' src={LinkedIn} title='LinkedIN Profile'></img>
                   </a>
-                  <a href={props.instaUrl}>
+                  <a href={props.instaUrl} target='_blank'>
                     <img className='OwnerSocialMedia' src={Instagram} title='Instagram Profile'></img>
                   </a>
-                  <a href={props.mailUrl}>
+                  <a href={props.mailUrl} target='_blank'>
                     <img className='OwnerSocialMedia' src={Mail} title='Email Id'></img>
                   </a>
                 </div>
@@ -183,9 +197,9 @@ const CourseEnrollTemplate = props => {
             </div>
           </div>
           <div className='Syllabus'>
-            <div>
-              <video src={props.video} autoplay controls id='introVideo'></video>
-            </div>
+        {/* <div>
+            <video src={props.video} autoplay controls id='introVideo'></video>
+        </div> */}
             <div id='List'>
               <h3>Course Syllabus</h3>
               <h4>{props.Section1}</h4>

@@ -16,7 +16,7 @@ import afternoon from '../resources/afternoon.gif';
 
 const WelcomeDashboard = () => {
   let { signedInUser, setsignedInUser } = useContext(UserContext); // nai ala<- ani hi pnimport React, { useState, useContext, useEffect } from 'react';
-
+  var x = window.matchMedia("(max-width: 1024px)")
   const user = JSON.parse(localStorage.getItem('User'));
 
   const TimeTotal = () => {
@@ -61,12 +61,12 @@ const WelcomeDashboard = () => {
     certificatesNames.push('No Certificates yet');
   }
 
-  console.log(certificatesNames);
+//   console.log(certificatesNames);
   const listItems = certificatesNames.map(numbers => <p>{numbers}</p>);
 
   return (
-    <div className='WelcomeDashboard'>
-      <div className='HeaderMessage'>
+    <div className='WelcomeDashboard' data-aos='fade-in' data-aos-delay='400' data-aos-offset='0' >
+      <div className='HeaderMessage' >
         <h1>
           {setMessage()}
           {user.fullName.split(' ', 1)}
@@ -75,7 +75,7 @@ const WelcomeDashboard = () => {
       </div>
       <div className='stats'>
         <div className='StatsHolder'>
-          <div className='StatisticsShower'>
+          <div className='StatisticsShower' >
             <img src={enrolledDash} />
 
             <div>
@@ -84,7 +84,7 @@ const WelcomeDashboard = () => {
             </div>
           </div>
 
-          <div className='AccountCard'>
+          <div className='AccountCard' >
             <div style={{ textAlign: 'left' }}>
               <h3>{user.fullName.toUpperCase()}</h3>
               <p>{user._id}</p>
@@ -97,7 +97,7 @@ const WelcomeDashboard = () => {
         </div>
 
         <div className='ROw2'>
-          <div className='NamesShower'>
+          <div className='NamesShower' >
             <div>
               <h2>Earned Certificates</h2>
               <h3>{listItems}</h3>
@@ -106,7 +106,7 @@ const WelcomeDashboard = () => {
             </div>
           </div>
 
-          <div className='StatisticsShower'>
+          <div className='StatisticsShower' >
             <img src={certificateDash} />
 
             <div>

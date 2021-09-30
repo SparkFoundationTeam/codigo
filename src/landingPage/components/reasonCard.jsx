@@ -8,9 +8,9 @@ const card = props => {
         <img src={props.image}></img>
       </div>
       <div >
-        <h2 style={{  fontFamily: 'Poppins'}}>{props.title}</h2>
-        <h4 style={{  fontFamily: 'Poppins'}}>{props.line1}</h4>
-        <h4 style={{  fontFamily: 'Poppins'}}>{props.line2}</h4>
+        <h2 style={{  fontFamily: 'Poppins'}} data-aos='fade-down' data-aos-offset='50'>{props.title}</h2>
+        <h4 style={{  fontFamily: 'Poppins'}} data-aos='fade-up' data-aos-offset='50'>{props.line1}</h4>
+        <h4 style={{  fontFamily: 'Poppins'}} data-aos='fade-up' data-aos-offset='50'>{props.line2}</h4>
       </div>
     </div>
   );

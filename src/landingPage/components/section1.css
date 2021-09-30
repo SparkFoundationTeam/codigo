@@ -3,7 +3,7 @@
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -142,15 +142,16 @@
 }
 
 .Section1 #Content #introVideo {
-  margin-top: 50vh;
-  margin-right: 5vw;
-  height: 30vh;
+  margin: 0 5vw;
+  margin-top: 20vh;
+  height: 50vh;
   border-radius: 25px;
 }
 
 @media screen and (max-width: 1000px) {
   .Section1 {
     margin-left: 0;
+    background-size: 500vh;
   }
   .Section1 #nav {
     -webkit-box-pack: justify;
@@ -209,7 +210,7 @@
   }
   .Section1 #Content #introVideo {
     margin-top: 3vh;
-    margin-right: 0vw;
+    margin: 0vw;
     height: 20vh;
     border-radius: 10px;
     margin-bottom: 10vh;

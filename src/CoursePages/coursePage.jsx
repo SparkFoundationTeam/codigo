@@ -24,7 +24,7 @@ const CoursePageTemplate = props => {
   });
 
   return (
-    <div>
+    <div data-aos='fade-in' data-aos-delay='100' data-aos-offset='0'>
       {/* Nav Bar */}
       <div className='dashboard-navbar'>
         <div className='dashboard-icon'>
@@ -38,9 +38,16 @@ const CoursePageTemplate = props => {
             <Link to='/all-courses'>
               <li>All Courses</li>
             </Link>
-            <a href='https://community-codigo.netlify.app' target='_blank' > <li>Community</li> </a>
-              <a href='https://ide-codigo.netlify.app' target='_blank' ><li>Kōdo</li></a>
-              <a href='https://pixta-codigo.netlify.app' target='_blank' ><li>Pixta</li></a>
+            <a href='https://community-codigo.netlify.app' target='_blank'>
+              {' '}
+              <li>Community</li>{' '}
+            </a>
+            <a href='https://ide-codigo.netlify.app' target='_blank'>
+              <li>Kōdo</li>
+            </a>
+            <a href='https://pixta-codigo.netlify.app' target='_blank'>
+              <li>Pixta</li>
+            </a>
             <Link to='/dashboard'>
               <li id='DashBoard'>
                 <strong>Dashboard</strong>
@@ -48,16 +55,23 @@ const CoursePageTemplate = props => {
             </Link>
           </ul>
         </div>
-        <div className='res-NavButton' >
+        <div className='res-NavButton'>
           <img src={menuIcon} onClick={() => setMenu(!menu)}></img>
           <div style={{ display: menu ? 'flex' : 'none' }} data-aos='fade-up' data-aos-duration='5000'>
-            <ul >
-            <Link to='/all-courses'>
-              <li>All Courses</li>
-            </Link>
-              <a href='https://community-codigo.netlify.app' target='_blank' > <li>Community</li> </a>
-              <a href='https://ide-codigo.netlify.app' target='_blank' ><li>Kōdo</li></a>
-              <a href='https://pixta-codigo.netlify.app' target='_blank' ><li>Pixta</li></a>
+            <ul>
+              <Link to='/all-courses'>
+                <li>All Courses</li>
+              </Link>
+              <a href='https://community-codigo.netlify.app' target='_blank'>
+                {' '}
+                <li>Community</li>{' '}
+              </a>
+              <a href='https://ide-codigo.netlify.app' target='_blank'>
+                <li>Kōdo</li>
+              </a>
+              <a href='https://pixta-codigo.netlify.app' target='_blank'>
+                <li>Pixta</li>
+              </a>
               <Link to='/dashboard'>
                 <li id='DashBoard'>
                   <strong>Dashboard</strong>
@@ -94,7 +108,7 @@ const CoursePageTemplate = props => {
             <img src={feedbackIcon}></img> <span className='tooltiptext'>Feedback</span>
           </div>
         </a>
-      </div> 
+      </div>
 
       {/* Section 1  */}
       <div className='BooksBox' id='VideoBox'>

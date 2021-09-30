@@ -264,6 +264,94 @@ h3 button {
   padding-left: 80px;
 }
 
+.resetModal {
+  position: absolute;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: white;
+  z-index: 250;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.resetModal h1 {
+  position: absolute;
+  right: 20vw;
+  top: 5vh;
+}
+
+.resetModal .resetLogo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 5vh;
+}
+
+.resetModal .resetLogo img {
+  height: 10vh;
+}
+
+.resetModal .form {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-content: center;
+}
+
+.resetModal .form h1 {
+  position: unset;
+}
+
+.resetModal .form input {
+  width: 30vw;
+  padding: 2vh 2vw;
+  font-size: medium;
+  margin-bottom: 5vh;
+}
+
+.resetModal button {
+  padding: 1vh 2vw;
+  font-size: large;
+}
+
+.resetModal #OTPStyle {
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: 5vh;
+  font-family: Poppins;
+}
+
 @media screen and (max-width: 1000px) {
   #bgdiv #bg {
     display: none;
@@ -325,13 +413,9 @@ h3 button {
   }
   #secure {
     width: 100vw;
-    font-size: 1.5vh;
+    font-size: 1vh;
     position: absolute;
-    bottom: 3vh;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    bottom: 1vh;
   }
 }
 /*# sourceMappingURL=mainComponent.css.map */

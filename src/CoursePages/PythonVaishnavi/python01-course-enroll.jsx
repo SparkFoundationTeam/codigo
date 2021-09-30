@@ -2,7 +2,9 @@ import React from 'react';
 import Template from '../course-enroll-template';
 import video from '../../resources/video.mp4';
 
-import tutorImg from '../../resources/bhavesh.jpg';
+import tutorImg from '../../resources/vaishIcon.jpg';
+import resume from '../../resources/Vaishnavi Korgaonkar.pdf'
+
 
 const EnrollPage = () => {
   return (
@@ -17,10 +19,10 @@ const EnrollPage = () => {
         TutorImg={tutorImg}
         TutorName='Vaishnavi Korgaonkar'
         TutorDesc='Full Stack Developer who loves Python | 10+ Personal Projects'
-        resumeUrl='url'
-        githubUrl='url de ikde athya'
-        instaUrl='https://instagram.com/ath.ar.va'
-        linkedUrl='https://linkedin.com/in/atharva-bhagat-2108'
+        resumeUrl={resume}
+        githubUrl='https://github.com/vaishnavi2512'
+        instaUrl='https://instagram.com/vaishnavi2512'
+        linkedUrl='https://www.linkedin.com/in/vaishnavi-korgaonkar-2a37b4216/'
         mailUrl='mailto:vaishnavikorgaonkar@gmail.com?subject=I have a query for Python Course&body=Hey Vaishnavi !!'
         Section1='Section 1 : Introduction to Web Development '
         Section2='Section 2 : Basic Html Tags '

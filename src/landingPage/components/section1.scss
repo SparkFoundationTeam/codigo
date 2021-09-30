@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap");
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -94,9 +94,7 @@
         color: rgb(255, 255, 255);
       }
 
-      
-
-      button  {
+      button {
         margin-bottom: 5vh;
         margin-top: 5vh;
         width: 20vw;
@@ -117,9 +115,10 @@
       }
     }
     #introVideo {
-      margin-top: 50vh;
-      margin-right: 5vw;
-      height: 30vh;
+      margin: 0 5vw;
+      margin-top: 20vh;
+
+      height: 50vh;
 
       border-radius: 25px;
     }
@@ -129,6 +128,7 @@
 @media screen and (max-width: 1000px) {
   .Section1 {
     margin-left: 0;
+    background-size: 500vh;
 
     #nav {
       justify-content: space-between;
@@ -164,7 +164,6 @@
           width: 90vw;
           font-size: 5vh;
           margin-left: 0;
-
         }
         h2 {
           font-size: 2vh;
@@ -180,7 +179,7 @@
       }
       #introVideo {
         margin-top: 3vh;
-        margin-right: 0vw;
+        margin: 0vw;
         height: 20vh;
 
         border-radius: 10px;
