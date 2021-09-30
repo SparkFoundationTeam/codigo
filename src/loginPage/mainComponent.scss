@@ -246,17 +246,16 @@ h3 {
     }
   }
 
-  button{
-      padding:1vh 2vw;
-      font-size: large;
+  button {
+    padding: 1vh 2vw;
+    font-size: large;
   }
-  #OTPStyle{
-      border:none;
-      outline: none;
-      text-align: center;
-      font-size: 5vh;
-      font-family: Poppins;
-
+  #OTPStyle {
+    border: none;
+    outline: none;
+    text-align: center;
+    font-size: 5vh;
+    font-family: Poppins;
   }
 }
 
@@ -311,10 +310,8 @@ h3 {
   }
   #secure {
     width: 100vw;
-    font-size: 1.5vh;
+    font-size: 1vh;
     position: absolute;
-    bottom: 3vh;
-
-    flex-direction: column;
+    bottom: 1vh;
   }
 }

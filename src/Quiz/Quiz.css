@@ -96,11 +96,11 @@
 }
 
 .QuizBackButton {
-    background-color: transparent;
-    outline: none;
-    border :none;
-    color: white;
-    cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
 .QuizInstructions img {
@@ -108,6 +108,7 @@
   height: 50vh;
   right: 2vw;
   bottom: 0;
+  z-index: -1;
 }
 
 .QuizEnd h1 {
@@ -126,7 +127,7 @@
 }
 
 #Congratulations {
-  font-family: 'Richard Hamilton';
+  font-family: "Richard Hamilton";
   font-size: 5vh;
   width: 30%;
   padding: 0.5rem;
@@ -162,6 +163,12 @@
   background-repeat: no-repeat;
   background-size: 5px 50%, 50% 5px, 5px 50%, 50% 5px;
   background-position: right top, right top, left bottom, left bottom, 5px 5px;
+}
+
+.CertificateModal button {
+  background-color: antiquewhite;
+  color: white;
+  text-decoration: none;
 }
 
 .CertificateModal img {

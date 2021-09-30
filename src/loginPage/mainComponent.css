@@ -413,13 +413,9 @@ h3 button {
   }
   #secure {
     width: 100vw;
-    font-size: 1.5vh;
+    font-size: 1vh;
     position: absolute;
-    bottom: 3vh;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    bottom: 1vh;
   }
 }
 /*# sourceMappingURL=mainComponent.css.map */

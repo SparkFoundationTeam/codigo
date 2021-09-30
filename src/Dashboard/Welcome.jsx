@@ -61,7 +61,7 @@ const WelcomeDashboard = () => {
     certificatesNames.push('No Certificates yet');
   }
 
-  console.log(certificatesNames);
+//   console.log(certificatesNames);
   const listItems = certificatesNames.map(numbers => <p>{numbers}</p>);
 
   return (

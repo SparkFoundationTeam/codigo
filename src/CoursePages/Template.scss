@@ -126,15 +126,16 @@
 .Syllabus {
   display: flex;
   align-items: center;
-  width: 80vw;
+  width: 90vw;
 
-  justify-content: space-evenly;
+  justify-content: center;
+  text-align: center;
   margin-top: 5vh;
   h3 {
     margin-bottom: 2vh;
   }
   h4 {
-    font-size: large;
+    font-size: larger;
   }
 }
 
@@ -247,6 +248,7 @@ h3 {
     margin-top: 3vh;
     margin-left: 2vw;
     flex-direction: column;
+    
   }
 
   .TitleDesc {

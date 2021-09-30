@@ -1,15 +1,31 @@
-import React from 'react';
-import PageTemplate from '../coursePage';
-import Book1 from './HTML CSS JavaScript by ARB.pdf';
-import Quiz from '../../Quiz/Quiz';
-import WebDevCompiler from '../../Compilers/WebDevCompiler';
-import Footer from '../../footer';
-import FeedbackTemplate from '../../Feedback/feedback';
+import React from "react";
+import PageTemplate from "../coursePage";
+import Book1 from "./HTML CSS JavaScript by ARB.pdf";
+import Quiz from "../../Quiz/Quiz";
+import WebDevCompiler from "../../Compilers/WebDevCompiler";
+import Footer from "../../footer";
+import FeedbackTemplate from "../../Feedback/feedback";
 
 const Html01 = () => {
   return (
     <div>
-      <PageTemplate CourseName='Html Complete Course' Section1=' Introduction to Web Development ' Section2=' Basic Html Tags ' Section3=' Html Forms, Tables, Multimedia, Lists ' Section4=' HTML Semantics and Embeddings ' Section5='Intoduction to basic CSS ' video='https://youtube.com/embed/9xIKMpzcbcc' Book1={Book1} Book1Name='HTML Cheat Sheet' Author1=' Atharva Bhagat' Book1Desc='This cheat sheet contains all necessary tags and material to start practising HTML' Book1={Book1} Book2Name='HTML CSS JS Notes' Author2=' Atharva Bhagat' Book2Desc='This book contains handwritten notes of HTML , CSS and JavaScript' />
+      <PageTemplate
+        CourseName='Html Complete Course'
+        Section1=' Introduction to Web Development '
+        Section2=' Basic Html Tags '
+        Section3=' Html Forms, Tables, Multimedia, Lists '
+        Section4=' HTML Semantics and Embeddings '
+        Section5='Intoduction to basic CSS '
+        video='https://youtube.com/embed/9xIKMpzcbcc'
+        Book1={Book1}
+        Book1Name='HTML Cheat Sheet'
+        Author1=' Atharva Bhagat'
+        Book1Desc='This cheat sheet contains all necessary tags and material to start practising HTML'
+        Book1={Book1}
+        Book2Name='HTML CSS JS Notes'
+        Author2=' Atharva Bhagat'
+        Book2Desc='This book contains handwritten notes of HTML , CSS and JavaScript'
+      />
 
       <WebDevCompiler
         Language='html'
@@ -116,7 +132,7 @@ const Html01 = () => {
     '
       />
 
-      <Quiz name='Html Complete Course' TutorName='Atharva Bhagat' courseId='webdev-html01' />
+      <Quiz name='Html Complete Course' tutorName='Atharva Bhagat' courseId='webdev-html01' />
       {/* <Quiz name='Javascript Complete Course' tutorName='Bhavesh Mhadse' courseID='javascript01' /> */}
 
       <FeedbackTemplate CourseName='Html Complete Course' TutorName='Atharva Bhagat' ratings='4.7' five='20' four='14' three='3' two='2' one='1' understandable='4.8' friendly='4.8' technical='4.7' />

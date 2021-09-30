@@ -3,7 +3,7 @@ function randomizeArray() {}
 export default randomizeArray = array => {
   let newArray = [...array];
 
-  console.log("newArray Before : ", newArray);
+//   console.log("newArray Before : ", newArray);
 
   let currentIndex, randomizingIndex;
 
@@ -12,7 +12,7 @@ export default randomizeArray = array => {
     [newArray[randomizingIndex], newArray[currentIndex]] = [newArray[currentIndex], newArray[randomizingIndex]];
   }
 
-  console.log("newArray After : ", newArray);
+//   console.log("newArray After : ", newArray);
 
   return newArray;
 };

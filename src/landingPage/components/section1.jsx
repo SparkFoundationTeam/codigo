@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import logo from '../../resources/codiGo.png';
 import './section1.css';
-import video from '../../resources/video.mp4';
+import video from '../../resources/LandingIntro.mp4';
 import { Link } from 'react-router-dom';
 import userIcon from '../../resources/userIcon.png';
-import string from '../../resources/string.gif';
+import thumb from '../../resources/MainThumbnail.png';
+
 
 const Section1 = () => {
   const authenticated = localStorage.getItem('LoggedIn');
@@ -97,7 +98,7 @@ const Section1 = () => {
         </div>
 
         <div>
-          <video src={video} autoplay controls id='introVideo' data-aos='fade-up' data-aos-offset='100'></video>
+          <video src={video} autoplay controls id='introVideo' poster={thumb} data-aos='fade-up' data-aos-offset='100'></video>
         </div>
       </div>
     </div>

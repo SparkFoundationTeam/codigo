@@ -175,10 +175,11 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 80vw;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  width: 90vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
   margin-top: 5vh;
 }
 
@@ -187,7 +188,7 @@
 }
 
 .Syllabus h4 {
-  font-size: large;
+  font-size: larger;
 }
 
 #introVideo {

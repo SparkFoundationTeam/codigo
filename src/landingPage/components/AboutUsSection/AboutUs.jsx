@@ -34,27 +34,27 @@ const AboutUs = () => {
                 <div className='Ownerole'>Co-Founder</div>
               </div>
 
-              <ul className='OwnerDetails'>
+              <ul className='OwnerDetails' data-aos='fade-down' data-aos-offset='25'>
                 {OwnerObject.OwnerSkills.map(eachskills => (
                   <li>{eachskills}</li>
                 ))}
               </ul>
-              <div className='OwnerSocialMediaContainer'>
-                <a href={OwnerObject.resumeUrl}>
+              <div className='OwnerSocialMediaContainer' data-aos='fade-up' data-aos-offset='25'>
+                <a href={OwnerObject.resumeUrl} target='_blank' >
                   <img className='OwnerSocialMedia' src={Resume} title='Resume'></img>
                 </a>
 
-                <a href={OwnerObject.githubUrl} title='Github Profile'>
+                <a href={OwnerObject.githubUrl} title='Github Profile' target='_blank'>
                   <img className='OwnerSocialMedia' src={Github} title='Github Profile'></img>
                 </a>
-                <a href={OwnerObject.linkedUrl}>
-                  <img className='OwnerSocialMedia' src={LinkedIn} title='LinkedIN Profile'></img>
+                <a href={OwnerObject.linkedurl} target='_blank'>
+                  <img className='OwnerSocialMedia' src={LinkedIn} title='LinkedIN Profile' ></img>
                 </a>
-                <a href={OwnerObject.instaUrl}>
+                <a href={OwnerObject.instaUrl} target='_blank'>
                   <img className='OwnerSocialMedia' src={Instagram} title='Instagram Profile'></img>
                 </a>
 
-                <a href={OwnerObject.mailUrl}>
+                <a href={OwnerObject.mailUrl} target='_blank'>
                   <img className='OwnerSocialMedia' src={Mail} title='Email Id'></img>
                 </a>
               </div>

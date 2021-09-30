@@ -1,8 +1,10 @@
-import React from 'react';
-import Template from '../course-enroll-template';
-import video from '../../resources/video.mp4';
+import React from "react";
+import Template from "../course-enroll-template";
+import video from "../../resources/video.mp4";
 
-import tutorImg from '../../resources/bhavesh.jpg';
+import tutorImg from "../../resources/bhaveshIcon.jpg";
+import resume from '../../resources/Bhavesh Mhadse.pdf'
+
 
 const EnrollPage = () => {
   return (
@@ -17,17 +19,16 @@ const EnrollPage = () => {
         TutorImg={tutorImg}
         TutorName='Bhavesh Mhadse'
         TutorDesc='Full Stack Developer who loves Javascript | 10+ Personal Projects'
-        resumeUrl='url'
-        githubUrl='url de ikde athya'
-        instaUrl='https://instagram.com/ath.ar.va'
-        linkedUrl='https://linkedin.com/in/atharva-bhagat-2108'
+        resumeUrl={resume}
+        githubUrl='https://github.com/bhaveshmhadse'
+        instaUrl='https://www.instagram.com/bhaaaavesh__'
+        linkedUrl='https://www.linkedin.com/in/bhavesh-mhadse-053442216/'
         mailUrl='mailto:bhaveshmhadse9@gmail.com?subject=I have a query for Javascript Course&body=Hey Bhavesh !!'
         Section1='Section 1 : Introduction to Javascript'
         Section2='Section 2 : Basic Programming Concepts '
         Section3='Section 3 : OOPS in Javascript '
         Section4='Section 4 : Javascript the wierd parts '
-        video={video}
-      ></Template>
+        video={video}></Template>
     </div>
   );
 };

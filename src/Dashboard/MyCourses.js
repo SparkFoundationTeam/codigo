@@ -14,19 +14,19 @@ const MyCourses = () => {
 
   let converToArray = object => {
     let arr = [];
-    console.log('Object inside converter is : ', object);
-    console.log('type of Object inside converter is : ', typeof object);
+    // console.log('Object inside converter is : ', object);
+    // console.log('type of Object inside converter is : ', typeof object);
 
     const converted = Object.values(object);
 
-    console.log('after conversion ', converted);
-    console.log('after conversion ', typeof converted);
-    //bc kai hotoy
+    // console.log('after conversion ', converted);
+    // console.log('after conversion ', typeof converted);
+    // //bc kai hotoy
 
     return converted;
 
-    console.log(arr);
-    console.log(typeof arr);
+    // console.log(arr);
+    // console.log(typeof arr);
   }; // database madhna object alya nntr redirect mrayla lagnr karan naitr sagla boom hoil thamb atta
   const getUserFromLocalStorage = () => JSON.parse(localStorage.getItem('User'));
 

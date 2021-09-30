@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
 import screenfull from "screenfull";
 
+import { Link } from "react-router-dom";
+
 import "./Quiz.css";
 
 import { QuizArr } from "./DefaultQuizQuestions";
@@ -16,6 +18,8 @@ import timer from "../resources/timer.gif";
 import codigoIcon from "../resources/codiGo.png";
 import axios from "axios";
 import BackendUrl from "../BackendUrl";
+
+import randomizer from "../randomizer";
 
 const Quiz = ({ name, tutorName, courseId }) => {
   // Quiz
@@ -33,8 +37,8 @@ const Quiz = ({ name, tutorName, courseId }) => {
   let [QuizOver, setQuizOver] = useState(false);
   let [buttonVal, setButtonVal] = useState("Next");
 
-  let [minutes, setMinutes] = useState(0);
-  let [seconds, setSeconds] = useState(25);
+  let [minutes, setMinutes] = useState(20);
+  let [seconds, setSeconds] = useState(0);
   let [Finisher, setFinisher] = useState(false);
 
   // Styles :)
@@ -59,10 +63,11 @@ const Quiz = ({ name, tutorName, courseId }) => {
   const isLastQuestion = () => currentQuestionIndex == quizArray.length - 1;
   const nextQuestion = () => {
     if (isLastQuestion()) {
+      if (choiceIsCorrect()) setplayerScore(prev => prev + parseInt(quizArray[currentQuestionIndex].points)); // sod bghu  nNBtGHRT O .. ppt THAMB E EK LINE
+
       setButtonVal("Submit");
       if (!QuizOver) {
         setQuizOver(true);
-        if (choiceIsCorrect()) setplayerScore(prev => prev + quizArray[currentQuestionIndex].points);
 
         if (screenfull.isEnabled) {
           if (screenfull.isFullscreen) screenfull.exit();
@@ -73,15 +78,21 @@ const Quiz = ({ name, tutorName, courseId }) => {
         setdisableAll(false);
       }
       setShowQuiz(false);
+      // karan array 0 indexed astat ani apan ANSWERS NORMAL MANSA SAKJHE KELE  :) me index wise taklele BARPAaYn BApRaAYn ata woh gadbad distayt ATHARVA EK NOTICE KELAY KA ? ky JITHE JITHE TU KAITR KRTOTS TIT HhEA  SThIhThH E LAFDI AAHET  ha shh=
 
       setShowEnd(true);
 
       return;
     }
-    if (choiceIsCorrect()) setplayerScore(prev => prev + quizArray[currentQuestionIndex].points);
+    if (choiceIsCorrect()) setplayerScore(prev => prev + parseInt(quizArray[currentQuestionIndex].points)); // sod bghu  nNBtGHRT O .. ppt THAMB E EK LINE
 
-    setCurrentQuestionIndex(prevIdx => prevIdx + 1);
-    setplayerChoice(undefined);
+    if (true) {
+      setCurrentQuestionIndex(prevIdx => prevIdx + 1);
+      setplayerChoice(undefined);
+    }
+    // console.log("corre")
+
+    // lvdya mi barobar kelta 2 points tuch mg ardhe 3 ardhe 2 bc saalaa toughyness
   };
 
   const handleButtonClick = e => setplayerChoice(e.target.name);
@@ -94,8 +105,9 @@ const Quiz = ({ name, tutorName, courseId }) => {
   };
 
   useEffect(() => {
+    // ha useeffect lvde lavtoy karan toh sarkha trigger hotoy
     // console.log('Name ', name);
-    // console.log(Finisher, seconds);
+    // console.log(Finisher, thambbbbbb
 
     if (showQuiz) {
       let myInterval = setInterval(() => {
@@ -106,7 +118,7 @@ const Quiz = ({ name, tutorName, courseId }) => {
           else {
             setMinutes(minutes - 1);
             setSeconds(59);
-          }
+          } ////////////
         }
       }, 1000);
 
@@ -121,21 +133,22 @@ const Quiz = ({ name, tutorName, courseId }) => {
     }
   });
   const getUserFromLocalStorage = () => JSON.parse(localStorage.getItem("User"));
-
+  //
   const getUserAttempts = async () => {
     setsignedInUser(getUserFromLocalStorage());
-    console.log(signedInUser);
+    // console.log(signedInUser);
     // let obj = {
     //   email: signedInUser.email,
     //   tutorName: tutorName,
     //   courseName: name,
     // };
-    console.log("Props are ", signedInUser.email, name, tutorName);
+    // console.log("Props are ", signedInUser.email, name, tutorName);
 
-    let data = await axios.get("https://codigo-server.herokuapp.com/Courses/attempts?email=31mhadse.bhavesh2001@gmail.com&courseName=Javascript Complete Course&tutorName=Bhavesh Mhadse");
-    // let data = await axios.get(`https://codigo-server.herokuapp.com/Courses/attempts?email=${signedInUser.email}&courseName=${name}&tutorName=${tutorName}`);
-    console.log("data from getuser attempts is ", data.data);
-    return data.data;
+    // let data = await axios.get("https://codigo-server.herokuapp.com/Courses/attempts?email=31mhadse.bhavesh2001@gmail.com&courseName=Javascript Complete Course&tutorName=Bhavesh Mhadse");
+    let data = await axios.get(`https://codigo-server.herokuapp.com/Courses/attempts?email=${signedInUser.email}&courseName=${name}&tutorName=${tutorName}`);
+    // console.log("data from getuser attempts is ", data.data);
+    // return data.data;
+    setAttempts(data.data);
   };
 
   // direct attempts gheu nai shakat ka l  api la sangayla lagel ki konuser ani kuthla course email is
@@ -144,18 +157,36 @@ const Quiz = ({ name, tutorName, courseId }) => {
     language = language[0];
     // if (true) alert('language is ', language.toString());
     let data = await axios.get(BackendUrl + `Quiz/${language}`);
-    console.log("Quiz", data.data);
-    setQuizArray(data.data);
+    // console.log("Quiz", data.data);
+    // console.log("Inside getquiz questions!");
+
+    let quizArray = randomizer(data.data);
+    // console.log("quiz questrions areeeeeeee", data.data);
+    //kara ajun  sdhya cha 10 kadhu qsns 20 nhiet ani mhane mjha mule mazmore clean code :)
+
+    let point2 = randomizer(quizArray.filter(eachObj => eachObj.points == 2));
+    let point3 = randomizer(quizArray.filter(eachObj => eachObj.points == 3));
+
+    // point2.length = 2;
+    // point3.length = 2;
+
+    if (true) setQuizArray([...point2, ...point3]); // kalla
+
+    // console.log(point2); /// kallaa
+    // console.log(point3);
+    // console.log("I am final", point3.concat(point2));
+
+    // setQuizArray(randomizer(point3.concat(point2)));
   };
 
   useEffect(() => {
-    setAttempts(getUserAttempts());
+    getUserAttempts();
     getQuizQuestions();
   }, []);
 
   return (
     <div className='BooksBox' id={showQuiz ? "Quizz" : "QuizSection"}>
-      <h1>{JSON.stringify(attempts)}</h1>
+      {/* <h1>{JSON.stringify(attempts)}</h1> */}
       <img src={BlobP1} id='bp1' />
       <img src={BlobP2} id='bp2' />
       <div className='quiz-container'>
@@ -173,13 +204,12 @@ const Quiz = ({ name, tutorName, courseId }) => {
                   {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
                 </span>
               )}
-              Total questions are {quizArray.length}
+              {/* Total questions are {quizArray.length} */}
             </div>
             <h2>
               <b>{quizArray[currentQuestionIndex].points}</b> Points
             </h2>
             <button disabled={!disableAll} name='0' onClick={handleButtonClick} className='quiz-options' style={playerChoice == 0 ? clickedStyles : {}}>
-              {" "}
               {quizArray[currentQuestionIndex].options[0]}
             </button>
             <button disabled={!disableAll} name='1' onClick={handleButtonClick} className='quiz-options' style={playerChoice == 1 ? clickedStyles : {}}>
@@ -196,10 +226,11 @@ const Quiz = ({ name, tutorName, courseId }) => {
                 {buttonVal}
               </button>
             </div>
+            {/* <h1>player score is {playerScore}</h1> */}
           </div>
         )}
 
-        {showEnd && <EndGame CourseName={name} PlayerScore={playerScore} TotalScore={totalScore} />}
+        {showEnd && <EndGame Email={signedInUser.email} TutorName={tutorName} CourseName={name} PlayerScore={playerScore} TotalScore={totalScore} />}
       </div>
     </div>
   );
@@ -213,25 +244,34 @@ const Instructions = ({ Attempt, CourseName, TutorName, CourseId, setQ, setI, Em
   const getUserFromLocalStorage = () => JSON.parse(localStorage.getItem("User"));
 
   const getUserAttempts = async () => {
-    console.log("Props in instructions are are ", signedInUser.email, CourseName, TutorName);
+    // console.log("Props in instructions are are ", signedInUser.email, CourseName, TutorName);
 
     let email = getUserFromLocalStorage().email;
 
-    console.log("New method ", email);
+    // console.log("New method ", email);
     // let data = await axios.get("https://codigo-server.herokuapp.com/Courses/attempts?email=31mhadse.bhavesh2001@gmail.com&courseName=Javascript Complete Course&tutorName=Bhavesh Mhadse");
     let data = await axios.get(`https://codigo-server.herokuapp.com/Courses/attempts?email=${Email}&courseName=${CourseName}&tutorName=${TutorName}`);
     // let data = await axios.get(`https://codigo-server.herokuapp.com/Courses/attempts?email=${signedInUser.email}&courseName=${name}&tutorName=${tutorName}`);
-    console.log("data from getuser attempts is ", data.data);
+    // console.log("data from getuser attempts is ", data.data);
     // return data.data.toString();
     if (true) setattemp(data.data);
   };
-
+  const increaseAttempts = async () => {
+    let obj = {
+      courseName: CourseName,
+      tutorName: TutorName,
+      email: Email, //hm
+    };
+    let data = await axios.patch(`https://codigo-server.herokuapp.com/Courses/attempts`, obj);
+    // console.log("Attemtppspspsss", data.data);
+    setattemp(data.data.numberOfAttempts);
+  };
   useEffect(() => {
     // setattemp(getUserAttempts());
     getUserAttempts();
-    console.log("Em is ", Email);
+    // console.log("Em is ", Email);
     // alert(Attempt);
-  }, []);
+  }, []); //maar try
 
   return (
     <>
@@ -255,13 +295,14 @@ const Instructions = ({ Attempt, CourseName, TutorName, CourseId, setQ, setI, Em
         <br />
         <p>
           {" "}
-          <b> You can attempt the quiz only 3 times</b> <b> Your Attempts are Exhausted </b>{" "}
+          <b> You can attempt the quiz only 3 times</b>{" "}
         </p>
         <br />
         {!(attemp > 4) && (
           <button
             onClick={() => {
               setCertificateModal(true);
+              increaseAttempts();
             }}
             className='QuizStartButton'
             id='StartQuiz'
@@ -304,12 +345,31 @@ const Instructions = ({ Attempt, CourseName, TutorName, CourseId, setQ, setI, Em
   );
 };
 
-const EndGame = ({ CourseName, PlayerScore, TotalScore }) => {
+const EndGame = ({ CourseName, PlayerScore, TotalScore, Email, TutorName }) => {
   let [certificateModal, setCertificateModal] = useState(false);
+
+  let { signedInUser, setsignedInUser } = useContext(UserContext); // <- ani hi pn
+
+  const determineScoreANdSetCompletedQuiz = async () => {
+    // console.log("In score determining...............");
+    if (PlayerScore < 2) return;
+
+    let obj = {
+      email: Email,
+      tutorName: TutorName,
+      courseName: CourseName,
+    };
+
+    let data = await axios.patch(BackendUrl + "Courses/feedback", obj);
+
+    // console.log(data.data);
+  };
 
   useEffect(() => {
     // if (PlayerScore < 10) {//
-    console.log(PlayerScore);
+    determineScoreANdSetCompletedQuiz();
+
+    // console.log(PlayerScore);
     // }
   }, []);
   return (
@@ -321,23 +381,26 @@ const EndGame = ({ CourseName, PlayerScore, TotalScore }) => {
         <h2>
           Your Score : {PlayerScore}/{TotalScore}{" "}
         </h2>
-        <h1 id='Congratulations' style={PlayerScore < 3 ? { display: "none" } : {}}>
+        <h1 id='Congratulations' style={PlayerScore < 35 ? { display: "none" } : {}}>
           Congratulations !!
         </h1>
-        <h1 id='Congratulations' style={PlayerScore > 3 ? { display: "none" } : {}}>
+        <h1 id='Congratulations' style={PlayerScore >= 35 ? { display: "none" } : {}}>
           Practise more and take test again
         </h1>
-        <img src={PlayerScore > 3 ? badge : failbadge} />
+        <img src={PlayerScore >= 35 ? badge : failbadge} />
 
-        <button onClick={() => setCertificateModal(true)} className='QuizStartButton' id='ViewCertificate' style={PlayerScore < 3 ? { visibility: "hidden" } : {}}>
+        <button onClick={() => setCertificateModal(true)} className='QuizStartButton' id='ViewCertificate' style={PlayerScore < 35 ? { visibility: "hidden" } : {}}>
           VIEW CERTIFICATE
         </button>
       </div>
       <div className='CertificateModal' style={certificateModal ? {} : { visibility: "hidden" }}>
         <img src={codigoIcon} />
-        <h2>Certificate successfully mailed to registered account</h2>
+        <h2>Download Certificate from Dashboard Courses</h2>
         <button onClick={() => setCertificateModal(false)} className='QuizStartButton'>
           Okay
+        </button>
+        <button className='QuizStartButton'>
+          <Link to='/dashboard'>Take Me to Dashboard </Link>
         </button>
       </div>
     </>

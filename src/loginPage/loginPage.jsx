@@ -1,26 +1,28 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect } from "react";
 
-import './mainComponent.css';
+import "./mainComponent.css";
 // import { useHistory } from 'react-router-dom';
-import NavBar from '../navBar.jsx';
-import BackendUrl from '../BackendUrl.js';
-import axios from 'axios';
+import NavBar from "../navBar.jsx";
+import BackendUrl from "../BackendUrl.js";
+import axios from "axios";
 
-import bg from '../resources/login7.gif';
-import user from '../resources/user.gif';
-import password from '../resources/password.gif';
-import secured from '../resources/secured.gif';
-import email from '../resources/email.gif';
-import location from '../resources/location.gif';
-import type from '../resources/type.gif';
-import mobile from '../resources/mobileIcon.gif';
-import book from '../resources/book.gif';
-import signupIcon from '../resources/true.gif';
+import bg from "../resources/login7.gif";
+import user from "../resources/user.gif";
+import password from "../resources/password.gif";
+import secured from "../resources/secured.gif";
+import email from "../resources/email.gif";
+import location from "../resources/location.gif";
+import type from "../resources/type.gif";
+import mobile from "../resources/mobileIcon.gif";
+import book from "../resources/book.gif";
+import signupIcon from "../resources/true.gif";
+
+import { db } from "../fireBase";
 
 // import { Route, BrowserRouter, Switch, Link, Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 
-import { defaultUser } from '../DefaultUser.js';
-import { UserContext } from '../MainContext'; // <- hi line prytek component madhe lagnr jithe user aahe tithe
+import { defaultUser } from "../DefaultUser.js";
+import { UserContext } from "../MainContext"; // <- hi line prytek component madhe lagnr jithe user aahe tithe
 
 const LoginPage = ({ setlG }) => {
   let { signedInUser, setsignedInUser } = useContext(UserContext);
@@ -37,15 +39,15 @@ const LoginPage = ({ setlG }) => {
   let [resetModalChange, setResetModalChange] = useState(false);
 
   let pattern = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-  let MobilePattern = new RegExp('[0-9]{10}');
+  let MobilePattern = new RegExp("[0-9]{10}");
   let [User, setUser] = useState(defaultUser);
 
   let [signupSuccess, setsignupSuccess] = useState(false);
 
-  let [passResEmail, setPassResEmail] = useState('');
-  let [passResOtp, setPassResOtp] = useState('');
-  let [passResPassword, setPassResPassword] = useState('');
-  let [passResConfirmPassword, setPassResConfirmPassword] = useState(''); //je main ahe
+  let [passResEmail, setPassResEmail] = useState("");
+  let [passResOtp, setPassResOtp] = useState("");
+  let [passResPassword, setPassResPassword] = useState("");
+  let [passResConfirmPassword, setPassResConfirmPassword] = useState(""); //je main ahe
   let [genratedOtp, setGenratedOtp] = useState(-1);
 
   const getOTP = () => Math.floor(Math.random() * 1000000);
@@ -53,17 +55,17 @@ const LoginPage = ({ setlG }) => {
   const sendOtp = async () => {
     const OTP = getOTP();
     setGenratedOtp(prev => OTP);
-    console.log(OTP);
+    // console.log(OTP);
     let obj = { email: passResEmail, otp: OTP };
 
-    let d = await axios.post(BackendUrl + 'User/passwords', obj);
+    let d = await axios.post(BackendUrl + "User/passwords", obj);
     //baray
   };
 
   const verifyOTP = async => {
     // e.preventDefault();
     if (genratedOtp != passResOtp) {
-      alert('Otp doesnt Match!!!');
+      alert("Otp doesnt Match!!!");
       return false;
     }
     return true;
@@ -71,15 +73,15 @@ const LoginPage = ({ setlG }) => {
 
   const resetPass = async () => {
     if (passResConfirmPassword !== passResPassword) {
-      alert('Paswords doesnt match!');
+      alert("Paswords doesnt match!");
       return;
     }
 
-    let data = await axios.patch('https://codigo-server.herokuapp.com/user', {
+    let data = await axios.patch("https://codigo-server.herokuapp.com/user", {
       email: passResEmail,
       updates: { password: passResPassword },
     });
-    alert('Successfully Reset Password');
+    alert("Successfully Reset Password");
 
     if (true) window.location.reload();
   };
@@ -91,28 +93,28 @@ const LoginPage = ({ setlG }) => {
   //mobile
   const hasFilledAllFields = () => {
     if (!User.fullName) {
-      alert('Please Fill Name');
+      alert("Please Fill Name");
       return false;
     } else if (!User.collegeName) {
-      alert('Please Select University');
+      alert("Please Select University");
       return false;
     } else if (!User.username || User.username.length > 12) {
-      alert('Please Enter Username with less than 12 characters:)');
+      alert("Please Enter Username with less than 12 characters:)");
       return false;
     } else if (!User.mobileNumber || MobilePattern.test(User.mobileNumber) === false) {
-      alert('Please Enter Valid Mobile No.');
+      alert("Please Enter Valid Mobile No.");
       return false;
     } else if (!User.email || pattern.test(User.email) === false) {
-      alert('Please enter valid email-address');
+      alert("Please enter valid email-address");
       return false;
     } else if (!(User.password === User.confirmPassword)) {
-      alert('Password Doesnt Match ');
+      alert("Password Doesnt Match ");
       return false;
-    } else if (!User.state || User.state === 'Default') {
-      alert('Please Select Your State');
+    } else if (!User.state || User.state === "Default") {
+      alert("Please Select Your State");
       return false;
-    } else if (!User.participantType || User.participantType === 'Default') {
-      alert('Please Select Participant Type');
+    } else if (!User.participantType || User.participantType === "Default") {
+      alert("Please Select Participant Type");
       return false;
     }
     return true;
@@ -124,29 +126,38 @@ const LoginPage = ({ setlG }) => {
     let loggedInUser = await axios.get(BackendUrl + `user?username=${User.username}&password=${User.password}`);
     // await axios.get(BackendUrl + `user?email=${User.username}&password=${User.password}`);
 
-    console.log('User we got through mongo Db is : ', loggedInUser);
+    // console.log("User we got through mongo Db is : ", loggedInUser);
 
     const loggedInUserMessage = loggedInUser.data.message;
 
-    if (loggedInUserMessage === 'No User Found') {
+    if (loggedInUserMessage === "No User Found") {
       setWrongPassword(true);
       return;
     }
     setWrongPassword(false);
     loggedInUser = loggedInUser.data.user[0];
-    localStorage.setItem('LoggedIn', true);
+    localStorage.setItem("LoggedIn", true);
     setUser(defaultUser);
     setsignedInUser(loggedInUser);
     setUserFromLocalStorage(loggedInUser);
+
+    localStorage.setItem("Interests", []);
+    localStorage.setItem("Strengths", []);
+    localStorage.setItem("Weaknesses", []);
   };
-  const setUserFromLocalStorage = user => localStorage.setItem('User', JSON.stringify(user));
-  const getUserFromLocalStorage = () => JSON.parse(localStorage.getItem('User'));
+  const setUserFromLocalStorage = user => localStorage.setItem("User", JSON.stringify(user));
+  const getUserFromLocalStorage = () => JSON.parse(localStorage.getItem("User"));
 
   const handleSignUp = e => {
     e.preventDefault();
 
-    if (isAlreadyPresent(User.username, usernamesArray) || isAlreadyPresent(User.email, emailsArray)) {
-      alert('Username or email is already present');
+    if (isAlreadyPresent(User.email, emailsArray)) {
+      alert("Email is already registered");
+      return; // :) chal :)
+    }
+
+    if (isAlreadyPresent(User.username, usernamesArray)) {
+      alert("Username is already present");
       return; // :) chal :)
     }
 
@@ -154,9 +165,9 @@ const LoginPage = ({ setlG }) => {
       return; // ek min thamb atta
     }
 
-    console.log('New User has Sign-Up with following Details : ', User);
+    // console.log("New User has Sign-Up with following Details : ", User);
 
-    axios.post(BackendUrl + 'User', User);
+    axios.post(BackendUrl + "User", User);
     setsignupSuccess(true);
     setTimeout(() => {
       setsignupSuccess(false);
@@ -176,24 +187,24 @@ const LoginPage = ({ setlG }) => {
   };
 
   const getUsernamesAndemails = async () => {
-    console.log('Getting usernames and emails');
-    let data = await axios.get(BackendUrl + 'user/usernames');
+    // console.log("Getting usernames and emails");
+    let data = await axios.get(BackendUrl + "user/usernames");
     data = data.data;
 
     let [usernames, emails] = data;
 
     setUsernameArray(usernames);
-    setEmailsArray(email);
+    setEmailsArray(emails);
 
-    console.log('Usernames aree : ', usernames);
-    console.log('emails aree : ', emails);
+    // console.log("Usernames aree : ", usernames);
+    // console.log("emails aree : ", emails);
   };
 
   const checkBackendProblem = async e => {
     e.preventDefault();
     let obj = {};
-    let d = await axios.patch(BackendUrl + 'Courses/attempts', obj);
-    console.log('succesful attempt ', d);
+    let d = await axios.patch(BackendUrl + "Courses/attempts", obj);
+    // console.log("succesful attempt ", d);
   };
 
   useEffect(() => {
@@ -208,11 +219,11 @@ const LoginPage = ({ setlG }) => {
         <img id='bg' src={bg}></img>
       </div>
 
-      <div className='resetModal' style={{ display: resetModal ? '' : 'none' }}>
-        <h1 style={{ cursor: 'pointer' }} onClick={() => setResetModal(false)}>
+      <div className='resetModal' style={{ display: resetModal ? "" : "none" }}>
+        <h1 style={{ cursor: "pointer" }} onClick={() => setResetModal(false)}>
           X
         </h1>
-        <div className='form' style={{ display: resetModalEmail ? '' : 'none' }}>
+        <div className='form' style={{ display: resetModalEmail ? "" : "none" }}>
           <div className='resetLogo'>
             <img src={secured} />
             <h1>
@@ -224,16 +235,15 @@ const LoginPage = ({ setlG }) => {
           <input name='email' type='email' value={passResEmail} onChange={e => setPassResEmail(e.target.value)} placeholder='Enter Registered Email'></input>
           <button
             onClick={() => {
-              alert('OTP Sent to email');
+              alert("OTP Sent to email");
               setResetModalEmail(false);
               setResetModalOTP(true);
               sendOtp(passResEmail);
-            }}
-          >
+            }}>
             Send OTP
           </button>
         </div>
-        <div className='form' style={{ display: resetModalOTP ? '' : 'none' }}>
+        <div className='form' style={{ display: resetModalOTP ? "" : "none" }}>
           <div className='resetLogo'>
             <img src={secured} />
             <h1>
@@ -248,13 +258,12 @@ const LoginPage = ({ setlG }) => {
             onClick={() => {
               setResetModalOTP(!verifyOTP());
               setResetModalChange(verifyOTP());
-            }}
-          >
+            }}>
             Verify
           </button>
         </div>
 
-        <div className='form' style={{ display: resetModalChange ? '' : 'none' }}>
+        <div className='form' style={{ display: resetModalChange ? "" : "none" }}>
           <div className='resetLogo'>
             <img src={secured} />
             <h1>
@@ -271,13 +280,12 @@ const LoginPage = ({ setlG }) => {
               resetPass();
               //   setResetModal(false);
               //   window.location.reload();
-            }}
-          >
+            }}>
             Submit
           </button>
         </div>
       </div>
-      <form className={login ? 'active' : 'hidden'}>
+      <form className={login ? "active" : "hidden"}>
         <h1>Welcome Back</h1>
         <hr />
         <div className='formElem'>
@@ -293,20 +301,19 @@ const LoginPage = ({ setlG }) => {
           onClick={async e => {
             await handleLogin(e);
           }}
-          id='submit'
-        >
+          id='submit'>
           {}
           Login
         </button>
         {/* <button onClick={checkBackendProblem}>Check Backend</button> */}
 
-        <h4 onClick={() => setResetModal(true)} style={{ cursor: 'pointer' }}>
+        <h4 onClick={() => setResetModal(true)} style={{ cursor: "pointer" }}>
           Forgot Details? Get Help logging in
         </h4>
-        <h3 style={WrongPassword ? { color: 'red', visibility: 'visible' } : { visibility: 'hidden' }}> Username and Password do not match</h3>
+        <h3 style={WrongPassword ? { color: "red", visibility: "visible" } : { visibility: "hidden" }}> Username and Password do not match</h3>
       </form>
 
-      <form id='signUp' className={login ? 'hidden' : 'active'}>
+      <form id='signUp' className={login ? "hidden" : "active"}>
         <h1>Signup to códiGo</h1>
         <div className='formElem'>
           <img src={email}></img>
@@ -395,19 +402,19 @@ const LoginPage = ({ setlG }) => {
         <input onClick={handleSignUp} type='submit' value='SIGN UP' id='submit'></input>
       </form>
 
-      <div className='successNotifier' style={{ visibility: signupSuccess ? 'visible' : 'hidden' }}>
+      <div className='successNotifier' style={{ visibility: signupSuccess ? "visible" : "hidden" }}>
         <img src={signupIcon} />
         <h2>Signup Successful</h2>
       </div>
-      <div id='sign' style={{ display: login ? '' : 'none' }}>
+      <div id='sign' style={{ display: login ? "" : "none" }}>
         <h3>
-          {' '}
+          {" "}
           Don't have an Account ? <button onClick={setter}> Sign Up for free </button>
         </h3>
       </div>
-      <div id='sign' style={{ display: login ? 'none' : ' ' }}>
+      <div id='sign' style={{ display: login ? "none" : " " }}>
         <h3>
-          {' '}
+          {" "}
           Already have an Account ? <button onClick={setter}> Log In</button>
         </h3>
       </div>
@@ -419,7 +426,7 @@ const LoginPage = ({ setlG }) => {
         <div>
           <h3>
             Your Information is safe with us
-            <br /> Secured by{' '}
+            <br /> Secured by{" "}
             <b>
               códiGo<em>Hash</em>
             </b>

@@ -2,7 +2,10 @@ import React from 'react';
 import Template from '../course-enroll-template';
 import video from '../../resources/video.mp4';
 
-import tutorImg from '../../resources/bhavesh.jpg';
+import tutorImg from '../../resources/atharva.jpg';
+import resume from '../../resources/Atharva Bhagat.pdf'
+
+
 
 const EnrollPage = () => {
  return (
@@ -17,8 +20,8 @@ const EnrollPage = () => {
         TutorImg = {tutorImg}
         TutorName='Atharva Bhagat'
         TutorDesc='Full Stack Developer who loves UI / UX Designing | 10+ Personal Projects'
-        resumeUrl='url'
-        githubUrl= 'url de ikde athya'
+        resumeUrl= {resume}
+        githubUrl= 'https://github.com/AtharvaBhagat'
         instaUrl= 'https://instagram.com/ath.ar.va'
         linkedUrl= 'https://linkedin.com/in/atharva-bhagat-2108'
         mailUrl='mailto:atharvabhagat@ieee.org?subject=I have a query for HTML Course&body=Hey Atharva !!'

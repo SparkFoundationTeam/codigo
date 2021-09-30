@@ -2,7 +2,8 @@ import React from 'react';
 import Template from '../course-enroll-template';
 import video from '../../resources/video.mp4';
 
-import tutorImg from '../../resources/bhavesh.jpg';
+import tutorImg from '../../resources/adikaIcon.jpg';
+import resume from '../../resources/Adika Karnataki.pdf'
 
 const EnrollPage = () => {
   return (
@@ -17,11 +18,11 @@ const EnrollPage = () => {
         TutorImg={tutorImg}
         TutorName='Adika Karnataki'
         TutorDesc='Enthusiast Programmer who loves Java Programming | 10+ Personal Projects'
-        resumeUrl='url'
-        githubUrl='url de ikde athya'
-        instaUrl='https://instagram.com/ath.ar.va'
-        linkedUrl='https://linkedin.com/in/atharva-bhagat-2108'
-        mailUrl='mailto:atharvabhagat@ieee.org?subject=I have a query for HTML Course&body=Hey Atharva !!'
+        resumeUrl={resume}
+        githubUrl='https://github.com/adika2321'
+        instaUrl= 'https://instagram.com/adikakarnataki'
+    linkedUrl= 'https://linkedin.com/in/adika-karnataki'
+        mailUrl='mailto:adikakarnataki@gmail.com?subject=I have a query for Java Course&body=Hey Adika !!'
         Section1='Section 1 : Introduction to Java Development '
         Section2='Section 2 : Data Types in Java '
         Section3='Section 3 : Exception handling in Java '

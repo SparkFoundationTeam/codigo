@@ -43,21 +43,23 @@ const DashBoard = () => {
     color: 'black',
   });
   const getUserFromLocalStorage = () => {
-    console.log(localStorage.getItem('User'));
+    // console.log(localStorage.getItem('User'));
     return JSON.parse(localStorage.getItem('User'));
   };
 
   let [avatarArray, setAvatar] = useState([male1, male2, female1, female2]);
 
   let dothisaftersometime = () => {
-    console.log('after 3 seconds');
-    console.log('Dashboard');
-    console.log(signedInUser);
+    // console.log('after 3 seconds');
+    // console.log('Dashboard');
+    // console.log(signedInUser);
     setIndex(4);
     for (let something of signedInUser.enrolledCourses) {
-      console.log(something);
+    //   console.log(something);
     }
   };
+
+  
 
   let userAvatarChoice = localStorage.getItem('UserAvatar');
 
