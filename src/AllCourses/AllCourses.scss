@@ -1,4 +1,4 @@
-@import url('http://fonts.cdnfonts.com/css/richard-hamilton');
+@import url("http://fonts.cdnfonts.com/css/richard-hamilton");
 
 .dashboard-navbar {
   width: 100%;
@@ -101,7 +101,7 @@ datalist option {
 }
 
 #AllCoursesPageBody {
-  background-image: url('../resources/pattern1Blob.png');
+  background-image: url("../resources/pattern1Blob.png");
   background-size: contain;
   background-repeat: repeat;
   background-size: 40vh;
@@ -109,7 +109,7 @@ datalist option {
 }
 
 .SectHeader {
-  font-family: 'Richard Hamilton';
+  font-family: "Poppins";
   color: darkgoldenrod;
 }
 
@@ -301,7 +301,6 @@ h6 {
 
 @media screen and (max-width: 1000px) {
   .SectHeader {
-    font-family: 'Richard Hamilton';
     color: darkgoldenrod;
     font-size: small;
   }
@@ -323,7 +322,7 @@ h6 {
     align-items: flex-end;
     flex-direction: column;
     div {
-        margin-top: 2vh;
+      margin-top: 2vh;
       padding: 2vh;
       border-radius: 5vh 0vh;
       background-color: white;
@@ -333,7 +332,7 @@ h6 {
       text-align: right;
       backdrop-filter: blur(5rem);
       filter: drop-shadow(10px 10px 10px rgb(163, 163, 163));
-     
+
       ul {
         height: 15vh;
         display: flex;
@@ -341,15 +340,13 @@ h6 {
         flex-direction: column;
         justify-content: space-evenly;
       }
-      ul  li {
+      ul li {
         list-style: none;
-        
       }
       a {
-          color: black;
+        color: black;
         text-decoration: none;
       }
-      
     }
   }
 
@@ -388,7 +385,7 @@ h6 {
     align-items: center;
 
     .SectHeader {
-      font-family: 'Richard Hamilton';
+      font-family: "Poppins";
       color: darkgoldenrod;
     }
     a {

@@ -19,8 +19,6 @@ import signupIcon from "../resources/true.gif";
 
 import { db } from "../fireBase";
 
-// import { Route, BrowserRouter, Switch, Link, Redirect } from 'react-router-dom/cjs/react-router-dom.min';
-
 import { defaultUser } from "../DefaultUser.js";
 import { UserContext } from "../MainContext"; // <- hi line prytek component madhe lagnr jithe user aahe tithe
 
@@ -145,15 +143,22 @@ const LoginPage = ({ setlG }) => {
     localStorage.setItem("Strengths", []);
     localStorage.setItem("Weaknesses", []);
   };
+
   const setUserFromLocalStorage = user => localStorage.setItem("User", JSON.stringify(user));
   const getUserFromLocalStorage = () => JSON.parse(localStorage.getItem("User"));
 
+  const isAlreadyPresent = (target, targetArray) => {
+    for (let values of targetArray) {
+      if (target == values) return true;
+    }
+    return false;
+  };
   const handleSignUp = e => {
     e.preventDefault();
 
     if (isAlreadyPresent(User.email, emailsArray)) {
       alert("Email is already registered");
-      return; // :) chal :)
+      return; 
     }
 
     if (isAlreadyPresent(User.username, usernamesArray)) {
@@ -177,13 +182,6 @@ const LoginPage = ({ setlG }) => {
 
   const setter = () => {
     setLogin(prev => !prev);
-  };
-
-  const isAlreadyPresent = (target, targetArray) => {
-    for (let values of targetArray) {
-      if (target === values) return true;
-    }
-    return false;
   };
 
   const getUsernamesAndemails = async () => {

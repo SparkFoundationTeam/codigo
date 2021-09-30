@@ -55,7 +55,7 @@ const JavascriptBackendCompiler = ({ Button1, Button1Text, Button2, Button2Text,
         <div id='Compiler' onLoad={run}>
           <b id='codeAlongLabel'>códiGo CODE ALONG </b>
 
-          <textarea onChange={e => setuserCode(e.target.value)} value={userCode} id='CodeEditor' placeholder='Write your Code Here' style={{ padding: "1vw  1.5vw", fontSize: "1.6rem", fontWeight: "500" }}>
+          <textarea onChange={e => setuserCode(e.target.value)} value={userCode} id='CodeEditor' placeholder='Write your Code Here' style={{ padding: "1vh" }}>
             {userCode}
           </textarea>
 
@@ -66,37 +66,39 @@ const JavascriptBackendCompiler = ({ Button1, Button1Text, Button2, Button2Text,
           </button>
 
           <p id='outputLabel'>OUTPUT</p>
-          <textarea id='output-window' value={output} style={{ color: Color, fontSize: Size, fontWeight: "900" }}>
+          <textarea id='output-window' value={output} style={{ color: Color, fontWeight: "900" }}>
             {JSON.stringify(output)}
           </textarea>
         </div>
 
         {/* <div style={{ background: "orange", textAlign: "center", position: "relative" }}> */}
-        <div className='butt-container'>
+        <div className='button-container'>
           <button
-            className='butt-leftmost'
+            className='button-leftmost'
             onClick={e => {
-              setuserCode(`${Button1Text}`);
+              setuserCode("console.log('Hello world')");
               setIndex(1);
             }}
-            style={index == 1 ? clickedLeftMost : {}}>
+            // style={index == 1 ? { background: "white", borderTopColor: "grey", borderLeftColor: "grey" } : {}}
+          >
             <b> {Button1} </b>
           </button>
           <button
-            className='butt-middle'
+            className='button-middle'
             onClick={() => {
-              setuserCode(`${Button2Text}`);
+              setuserCode("const add = (a, b) => a + b");
               setIndex(2);
             }}
-            style={index == 2 ? clickedMiddle : {}}>
+            // style={index == 2 ? { background: "white", border: "transparent", zIndex: "-9" } : {}}>
+          >
             <b> {Button2} </b>
           </button>
           <button
             onClick={() => {
-              setuserCode(`${Button3Text}`);
+              setuserCode("class Person {  } ");
               setIndex(3);
             }} //baray
-            className='butt-rightmost'
+            className='button-rightmost'
             style={index == 3 ? clickedRightMost : {}}>
             <b> {Button3} </b>
           </button>

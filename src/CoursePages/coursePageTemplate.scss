@@ -4,9 +4,10 @@
   justify-content: center;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
 #CourseHeader {
-  font-family: 'Richard Hamilton';
-  color: goldenrod;
+    font-family: 'Poppins', cursive;  color: goldenrod;
 }
 
 .dashboard-navbar {
@@ -275,6 +276,10 @@
     background: -webkit-linear-gradient(right, rgb(255, 19, 125), rgb(4, 180, 180));
     background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  a{
+      text-decoration: none;
   }
 
   width: 100vw;

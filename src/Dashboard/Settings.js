@@ -40,7 +40,7 @@ const Settings = () => {
       }
     })
     .catch(error => {
-    //   console.log("Error getting document:", error);
+      //   console.log("Error getting document:", error);
     });
 
   const handleUserSettings = e => {
@@ -220,7 +220,8 @@ const Settings = () => {
 
           <p>Interests</p>
           <textarea className='settings-input AboutYouData' disabled name='firstname' id='InterestsShower' value={interestsArray} />
-          <button className='SelectMeButton'
+          <button
+            className='SelectMeButton'
             onClick={() => {
               setInterestsDiv(!interestsDiv);
             }}>
@@ -302,7 +303,8 @@ const Settings = () => {
           </div>
           <p> Strengths</p>
           <textarea className='settings-input AboutYouData' name='lastname' id='StrengthsShower' disabled value={strengthsArray} />
-          <button className='SelectMeButton'
+          <button
+            className='SelectMeButton'
             onClick={() => {
               setStrengthsDiv(!strengthsDiv);
             }}>
@@ -375,7 +377,8 @@ const Settings = () => {
           <p> Weakness</p>
 
           <textarea disabled className='settings-input AboutYouData' name='lastname' id='WeaknessShower' value={weakArray} />
-          <button className='SelectMeButton'
+          <button
+            className='SelectMeButton'
             onClick={() => {
               setWeakDiv(!weakDiv);
             }}>

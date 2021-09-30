@@ -17,20 +17,22 @@ const EnrolledCourse = ({ tutorName, tutorImage, courseName, courseInfo, courseI
 
   let [imageMap, setImageMap] = useState(ImageMap);
 
-  const handleCertificate = () => {
+  const handleCertificate = async () => {
     // console.log(signedInUser);
     if (hasCompletedQuiz) {
       let Obj = { tutorName: tutorName.split(" ")[0].toLowerCase(), userName: signedInUser.fullName, course: courseCertificateName, email: signedInUser.email, id: id };
-      axios.post(BackendUrl + "Certificates", Obj);
-      alert("Certificate delivered to registered email");
-    //   console.log(Obj);
+      let data = await axios.post(BackendUrl + "Certificates", Obj);
+      console.log("Certificate is ", data.data);
+      //   alert("Certificate delivered to registered email"); // fuct backend url chukla asel
+
+      //   console.log(Obj);
+      console.log(Obj);
     } else {
       alert("You are not yet Eligible . Please pass the Quiz");
     }
   };
-  const handleCourse = () => {};
 
-//   console.log(courseName);
+  //   console.log(courseName);
 
   return (
     <div className='dashboard-CoursesCard'>

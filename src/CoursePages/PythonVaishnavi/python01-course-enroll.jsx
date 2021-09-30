@@ -10,7 +10,7 @@ const EnrollPage = () => {
   return (
     <div>
       <Template
-        CourseName='Python Complete Course'
+        CourseName='Python Complete Course (Releasing Soon)'
         CourseID='pydev-python01'
         SeriesName='códiGo : Python Development Series'
         CourseDesc='Complete Python Course loaded with various interesting Concepts'
@@ -24,11 +24,11 @@ const EnrollPage = () => {
         instaUrl='https://instagram.com/vaishnavi2512'
         linkedUrl='https://www.linkedin.com/in/vaishnavi-korgaonkar-2a37b4216/'
         mailUrl='mailto:vaishnavikorgaonkar@gmail.com?subject=I have a query for Python Course&body=Hey Vaishnavi !!'
-        Section1='Section 1 : Introduction to Web Development '
-        Section2='Section 2 : Basic Html Tags '
-        Section3='Section 3 : Html Forms, Tables, Multimedia, Lists '
-        Section4='Section 4 : HTML Semantics and Embeddings '
-        Section5='Section 5 : Intoduction to basic CSS '
+        Section1=' Introduction to Python'
+        Section2=' Python Data Types '
+        Section3=' Conditional Statements '
+        Section4=' OOPS in Python '
+        Section5='Python Libraries '
         video={video}
       ></Template>
     </div>

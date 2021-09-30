@@ -176,7 +176,7 @@ const CoursePageTemplate = props => {
               </div>
               <div className='AuthorTitle'>
                 <b>Author :</b>
-                {props.Author1}
+                {props.Author2}
               </div>
             </div>
             <div>
@@ -190,6 +190,32 @@ const CoursePageTemplate = props => {
                 <div className='ViewBook'>View </div>
               </a>
               <a href={props.Book2} download>
+                <div className='DownloadBook'>Download </div>
+              </a>
+            </div>
+          </div>
+        
+          <div className='BookInfo'>
+            <div>
+              <div className='BookTitle'>
+                <b>Book :</b> {props.Book3Name}
+              </div>
+              <div className='AuthorTitle'>
+                <b>Author :</b>
+                {props.Author3}
+              </div>
+            </div>
+            <div>
+              <div className='BookDesc'>
+                <b>Description {'>'}</b> <br />
+                {props.Book3Desc}
+              </div>
+            </div>
+            <div id='BookLinks'>
+              <a href={props.Book3}>
+                <div className='ViewBook'>View </div>
+              </a>
+              <a href={props.Book3} download>
                 <div className='DownloadBook'>Download </div>
               </a>
             </div>

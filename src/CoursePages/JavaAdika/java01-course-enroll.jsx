@@ -9,7 +9,7 @@ const EnrollPage = () => {
   return (
     <div>
       <Template
-        CourseName='Java Complete Course'
+        CourseName='Java Complete Course (Releasing Soon)'
         CourseID='javadev-java01'
         SeriesName='códiGo : Java Programming Series'
         CourseDesc='Java Programming explained thorougly to enter beautiful world of Java'
