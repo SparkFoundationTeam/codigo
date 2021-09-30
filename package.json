@@ -23,7 +23,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "baray": "react-scripts build && git add . && git commit -m 'UI' && git push -u origin master" 
   },
   "eslintConfig": {
     "extends": [
