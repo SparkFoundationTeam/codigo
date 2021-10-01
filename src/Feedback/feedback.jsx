@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import '../CoursePages/coursePageTemplate.css';
-import '../Quiz/Quiz.css';
+import React, { useEffect, useState } from "react";
+import "../CoursePages/coursePageTemplate.css";
+import "../Quiz/Quiz.css";
 
-import star from '../resources/star.png';
-import starFilled from '../resources/starfilled.png';
+import star from "../resources/star.png";
+import starFilled from "../resources/starfilled.png";
 
-import BlobP1 from '../resources/pattern1Blob.png';
-import BlobP2 from '../resources/pattern2Blob.png';
-import codigoIcon from '../resources/codiGo.png';
-import axios from 'axios';
-import BackendUrl from '../BackendUrl';
+import BlobP1 from "../resources/pattern1Blob.png";
+import BlobP2 from "../resources/pattern2Blob.png";
+import codigoIcon from "../resources/codiGo.png";
+import axios from "axios";
+import BackendUrl from "../BackendUrl";
 
 const FeedbackTemplate = props => {
   let [certificateModal, setCertificateModal] = useState(false);
@@ -42,7 +42,7 @@ const FeedbackTemplate = props => {
   let [tfNumber, settfNumber] = useState();
 
   let [makeDisable, setMakeDisable] = useState(false);
-  let [disableText, setDisableText] = useState('Submit Your Feedback');
+  let [disableText, setDisableText] = useState("Submit Your Feedback");
 
   let [allFields, setAllFields] = useState(false);
 
@@ -61,12 +61,12 @@ const FeedbackTemplate = props => {
 
     // console.log('Object send is : ', Obj);
 
-    let { data } = await axios.patch(BackendUrl + 'AllCourses/update-rating', Obj);
+    let { data } = await axios.patch(BackendUrl + "AllCourses/update-rating", Obj);
     // console.log(data);
   };
 
   const getalldata = async () => {
-    let { d } = axios.get('https://codigo-server.herokuapp.com/AllCourses/html');
+    let { d } = axios.get("https://codigo-server.herokuapp.com/AllCourses/html");
     // console.log('All data is ', d);
   };
 
@@ -91,29 +91,29 @@ const FeedbackTemplate = props => {
             </div>
             <div>
               <div className='RatingsSpanner'>
-                {' '}
+                {" "}
                 <h3>5</h3>
-                <hr style={{ width: `${props.five * 2}vh`, backgroundColor: 'Green' }}></hr>
+                <hr style={{ width: `${props.five * 2}vh`, backgroundColor: "Green" }}></hr>
               </div>
               <div className='RatingsSpanner'>
-                {' '}
+                {" "}
                 <h3>4</h3>
-                <hr style={{ width: `${props.four * 2}vh`, backgroundColor: 'lightGreen' }}></hr>
+                <hr style={{ width: `${props.four * 2}vh`, backgroundColor: "lightGreen" }}></hr>
               </div>
               <div className='RatingsSpanner'>
-                {' '}
+                {" "}
                 <h3>3</h3>
-                <hr style={{ width: `${props.three * 2}vh`, backgroundColor: 'yellow' }}></hr>
+                <hr style={{ width: `${props.three * 2}vh`, backgroundColor: "yellow" }}></hr>
               </div>
               <div className='RatingsSpanner'>
-                {' '}
+                {" "}
                 <h3>2</h3>
-                <hr style={{ width: `${props.two * 2}vh`, backgroundColor: 'orange' }}></hr>
+                <hr style={{ width: `${props.two * 2}vh`, backgroundColor: "orange" }}></hr>
               </div>
               <div className='RatingsSpanner'>
-                {' '}
+                {" "}
                 <h3>1</h3>
-                <hr style={{ width: `${props.one * 2}vh`, backgroundColor: 'red' }}></hr>
+                <hr style={{ width: `${props.one * 2}vh`, backgroundColor: "red" }}></hr>
               </div>
             </div>
           </div>
@@ -138,7 +138,7 @@ const FeedbackTemplate = props => {
         <button disabled={makeDisable} className='QuizStartButton' onClick={() => setCertificateModal(true)}>
           {disableText}
         </button>
-        <div className='FeedBackModal'  style={certificateModal ? {} : { visibility: 'hidden' }}>
+        <div className='FeedBackModal' style={certificateModal ? {} : { visibility: "hidden" }}>
           <img src={codigoIcon} id='feedbackicon' />
 
           <div className='OverallRatingsFeedBack'>
@@ -351,17 +351,16 @@ const FeedbackTemplate = props => {
             onClick={() => {
               if (checkFeedbackAllClicked()) {
                 setCertificateModal(false);
-                setDisableText('Feedback Submitted');
+                setDisableText("Feedback Submitted");
                 setMakeDisable(true);
                 // console.log(overallNumber, fNumber, uNumber, tfNumber);
                 handleRating();
               } //testing ughad
             }}
-            className='QuizStartButton'
-          >
+            className='QuizStartButton'>
             Submit FeedBack
           </button>
-          <h4 style={allFields ? {} : { visibility: 'hidden' }}>Please Select All Ratings</h4>
+          <h4 style={allFields ? {} : { visibility: "hidden" }}>Please Select All Ratings</h4>
         </div>
       </div>
     </div>

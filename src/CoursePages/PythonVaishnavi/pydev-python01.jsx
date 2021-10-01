@@ -21,7 +21,7 @@ const Html01 = () => {
         Section3=' Conditional Statements '
         Section4=' OOPS in Python '
         Section5='Python Libraries '
-        video=""
+        video=''
         Book3={Book3}
         Book3Name='Python Cheat Sheet'
         Author3='Online Resource'

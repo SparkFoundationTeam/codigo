@@ -3,8 +3,7 @@ import Template from "../course-enroll-template";
 import video from "../../resources/video.mp4";
 
 import tutorImg from "../../resources/bhaveshIcon.jpg";
-import resume from '../../resources/Bhavesh Mhadse.pdf'
-
+import resume from "../../resources/Bhavesh Mhadse.pdf";
 
 const EnrollPage = () => {
   return (

@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import LandingSection1 from './components/section1';
-import WhyCodigo from './components/whyCodigo';
-import OurCourses from './components/CoursesSection/OurCourses';
-import AboutUs from './components/AboutUsSection/AboutUs';
-import Footer from '../footer';
+import LandingSection1 from "./components/section1";
+import WhyCodigo from "./components/whyCodigo";
+import OurCourses from "./components/CoursesSection/OurCourses";
+import AboutUs from "./components/AboutUsSection/AboutUs";
+import Footer from "../footer";
 
 const landingPage = () => {
   return (

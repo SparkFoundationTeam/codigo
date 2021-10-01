@@ -78,6 +78,17 @@ content-type: application/json
    "keywords": ["Java", "series >>", "courses >>", "tutors >> ", "Programming", "adika", "karnataki", "gui"]
 }
 ###
+POST https://codigo-server.herokuapp.com/Certificates  HTTP/1.1
+content-type: application/json
+
+{
+    "userName": "Atharva firebase nai vapraycha !! tu fkt backend la haaath nko lavat jau :)",
+    "tutorName":"bhavesh",
+    "course":"Javascript",
+    "id":"sdsdsd",
+    "email":"bhaveshmhadse9@gmail.com"
+}
+###
 PATCH  https://codigo-server.herokuapp.com/AllCourses/update-rating  HTTP/1.1
 content-type: application/json
 

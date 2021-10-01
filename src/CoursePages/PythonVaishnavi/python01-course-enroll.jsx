@@ -1,10 +1,9 @@
-import React from 'react';
-import Template from '../course-enroll-template';
-import video from '../../resources/video.mp4';
+import React from "react";
+import Template from "../course-enroll-template";
+import video from "../../resources/video.mp4";
 
-import tutorImg from '../../resources/vaishIcon.jpg';
-import resume from '../../resources/Vaishnavi Korgaonkar.pdf'
-
+import tutorImg from "../../resources/vaishIcon.jpg";
+import resume from "../../resources/Vaishnavi Korgaonkar.pdf";
 
 const EnrollPage = () => {
   return (
@@ -29,8 +28,7 @@ const EnrollPage = () => {
         Section3=' Conditional Statements '
         Section4=' OOPS in Python '
         Section5='Python Libraries '
-        video={video}
-      ></Template>
+        video={video}></Template>
     </div>
   );
 };
