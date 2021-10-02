@@ -350,19 +350,19 @@ const EndGame = ({ CourseName, PlayerScore, TotalScore, Email, TutorName }) => {
 
   let { signedInUser, setsignedInUser } = useContext(UserContext); // <- ani hi pn
 
-  const setUserFromLocalStorage = user => localStorage.setItem("User", JSON.stringify(user));
   const getUserFromLocalStorage = () => JSON.parse(localStorage.getItem("User"));
+  const setUserFromLocalStorage = user => localStorage.setItem("User", JSON.stringify(user));
 
   const fetchUserFromDb = async () => {
     let data = await axios.get(BackendUrl + `User?email=${Email}`);
 
-    console.log("from endgame", data.data);
+    // console.log("from endgame", data.data);
   };
 
   const determineScoreANdSetCompletedQuiz = async () => {
     // console.log("In score determining...............");
-    if (PlayerScore <= 35) return; // hm kr try
-    alert("retruned because player score is ", PlayerScore);
+    if (PlayerScore < 35) return; // hm kr try
+    // alert("retruned because player score is ", PlayerScore);
 
     let obj = {
       email: Email,
@@ -371,17 +371,22 @@ const EndGame = ({ CourseName, PlayerScore, TotalScore, Email, TutorName }) => {
     };
 
     let data = await axios.patch(BackendUrl + "Courses/feedback", obj);
-    let dat = await axios.get(BackendUrl + `User?email=${Email}`);
 
-    if (true) setUserFromLocalStorage(data.data.user);
+    // console.log("Data iss.......", data.data[0]);     
 
-    // console.log(data.data);
-  }; 
+    if (true) setUserFromLocalStorage(data.data[0]);
+
+    let datatwo = await axios.get(BackendUrl + `User?email=${Email}`);
+
+    // if (true) setUserFromLocalStorage(data.data.user);
+
+    // console.log("Checking", datatwo.data);
+  };
 
   useEffect(() => {
-    // if (PlayerScore < 10) {//
+    // if (PlayerScore < 10) {// ha  undefined ahe  dhaat am.da kela ajj sakali hoin atta
     determineScoreANdSetCompletedQuiz();
-    fetchUserFromDb();
+    // fetchUserFromDb();
 
     // console.log(PlayerScore);
     // }

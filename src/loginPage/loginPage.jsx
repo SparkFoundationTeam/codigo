@@ -17,6 +17,8 @@ import mobile from "../resources/mobileIcon.gif";
 import book from "../resources/book.gif";
 import signupIcon from "../resources/true.gif";
 
+import Encrypter from "../encrypter";
+
 import { db } from "../fireBase";
 
 import { defaultUser } from "../DefaultUser.js";
@@ -121,8 +123,10 @@ const LoginPage = ({ setlG }) => {
   const handleLogin = async e => {
     e.preventDefault();
 
+    // let newPass = Encrypter(User.password.toString());
+
     let loggedInUser = await axios.get(BackendUrl + `user?username=${User.username}&password=${User.password}`);
-    // await axios.get(BackendUrl + `user?email=${User.username}&password=${User.password}`);
+    // await axios.get(BackendUrl + `user?email=${User.username}&password=${User.password}`); ha
 
     // console.log("User we got through mongo Db is : ", loggedInUser);
 
@@ -153,12 +157,12 @@ const LoginPage = ({ setlG }) => {
     }
     return false;
   };
-  const handleSignUp = e => {
+  const handleSignUp = async e => {
     e.preventDefault();
 
     if (isAlreadyPresent(User.email, emailsArray)) {
       alert("Email is already registered");
-      return; 
+      return;
     }
 
     if (isAlreadyPresent(User.username, usernamesArray)) {
@@ -171,8 +175,12 @@ const LoginPage = ({ setlG }) => {
     }
 
     // console.log("New User has Sign-Up with following Details : ", User);
+    let newPas = Encrypter(User.password.toString());
+    // alert("newPass is", newPas);
 
-    axios.post(BackendUrl + "User", User);
+    if (true) setUser(prev => ({ ...prev, password: newPas }));
+    // alert("user is ", JSON.stringify(User));
+    let data = await axios.post(BackendUrl + "User", User);
     setsignupSuccess(true);
     setTimeout(() => {
       setsignupSuccess(false);

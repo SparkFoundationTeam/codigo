@@ -408,7 +408,8 @@ h6 {
 @media screen and (max-width: 1000px) {
   .SectHeader {
     color: darkgoldenrod;
-    font-size: small;
+    font-size: 1.2vh;
+    text-align: center;
   }
   .res-NavButton {
     overflow: visible;

@@ -9,18 +9,13 @@ content-type: application/json
 }
 
 ###
-GET https://codigo-server.herokuapp.com/User  HTTP/1.1 
+GET  https://codigo-server.herokuapp.com/User  HTTP/1.1 
 ###
-GET https://codigo-server.herokuapp.com/Courses  HTTP/1.1
-content-type: application/json
-
-{
-  "email":"bhaveshmhadse9@gmail.com",
-  "tutorName": "Bhavesh Mhadse",
-  "courseName": "Javascript Complete Course"
-}
+GET https://codigo-server.herokuapp.com/Quiz/html  HTTP/1.1
 
 
+
+ba
 
 ###
 GET  https://codigo-server.herokuapp.com/AllCourses/  HTTP/1.1
