@@ -74,6 +74,7 @@ const LoginPage = ({ setlG }) => {
   const resetPass = async () => {
     if (passResConfirmPassword !== passResPassword) {
       alert("Paswords doesnt match!");
+      // reset password cha modal
       return;
     }
 
@@ -81,7 +82,7 @@ const LoginPage = ({ setlG }) => {
       email: passResEmail,
       updates: { password: passResPassword },
     });
-    alert("Successfully Reset Password");
+    if (true) alert("Successfully Reset Password");
 
     if (true) window.location.reload();
   };
@@ -239,8 +240,10 @@ const LoginPage = ({ setlG }) => {
               </b>
             </h1>
           </div>
-          <input name='email' type='email' value={passResEmail} onChange={e => setPassResEmail(e.target.value)} placeholder='Enter Registered Email'></input>
-          <button
+          <input name='email' type='email' value={passResEmail} onChange={e => setPassResEmail(e.target.value)} placeholder='Your Email'></input>
+          <button 
+
+          // he na mobile madhe ekdam chota aahe whatsapp 
             onClick={() => {
               alert("OTP Sent to email");
               setResetModalEmail(false);

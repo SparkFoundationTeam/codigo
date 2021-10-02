@@ -353,6 +353,39 @@ h3 button {
 }
 
 @media screen and (max-width: 1000px) {
+  .resetModal .form {
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    justify-content: center;
+  }
+  .resetModal .form h1 {
+    position: unset;
+  }
+  .resetModal .form input {
+    width: 80vw;
+    padding: 2vh 2vw;
+    font-size: medium;
+    margin-bottom: 5vh;
+  }
+  .resetModal #OTPStyle {
+    border: none;
+    outline: none;
+    text-align: center;
+    font-size: 2.5vh;
+    font-family: Poppins;
+  }
   #bgdiv #bg {
     display: none;
   }
