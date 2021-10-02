@@ -274,15 +274,15 @@ h3 {
         padding: 2vh 2vw;
         font-size: medium;
         margin-bottom: 5vh;
-      } 
+      }
     }
     #OTPStyle {
-        border: none;
-        outline: none;
-        text-align: center;
-        font-size: 2.5vh; 
-        font-family: Poppins;
-      }
+      border: none;
+      outline: none;
+      text-align: center;
+      font-size: 2.5vh;
+      font-family: Poppins;
+    }
   }
 
   #bgdiv {
@@ -305,19 +305,26 @@ h3 {
     }
   }
   form {
+    height: 65vh;
     h1 {
-      font-size: 4vh;
+      font-size: 3vh;
+    }
+
+    img {
+      transform: scale(0.8);
     }
     width: 100vw;
-
+    transform: scale(0.9);
     .formElem {
       input,
       select {
         width: 80vw;
+        height: 4vh;
       }
     }
     #submit {
       width: 80vw;
+      height: 5vh;
     }
     h4 {
       width: 80%;
@@ -327,6 +334,7 @@ h3 {
     width: 100vw;
     font-size: 2vh;
     @include flexAlign();
+    margin-top: 0;
   }
   #sec {
     width: 80vw;

@@ -29,7 +29,7 @@ const LoginPage = ({ setlG }) => {
 
   const [WrongPassword, setWrongPassword] = useState(false);
 
-  const [login, setLogin] = useState(true);
+  const [login, setLogin] = useState(false);
   let [usernamesArray, setUsernameArray] = useState([]);
   let [emailsArray, setEmailsArray] = useState([]);
 
@@ -127,6 +127,7 @@ const LoginPage = ({ setlG }) => {
     // let newPass = Encrypter(User.password.toString());
 
     let loggedInUser = await axios.get(BackendUrl + `user?username=${User.username}&password=${User.password}`);
+
     // await axios.get(BackendUrl + `user?email=${User.username}&password=${User.password}`); ha
 
     // console.log("User we got through mongo Db is : ", loggedInUser);
@@ -134,9 +135,16 @@ const LoginPage = ({ setlG }) => {
     const loggedInUserMessage = loggedInUser.data.message;
 
     if (loggedInUserMessage === "No User Found") {
-      setWrongPassword(true);
-      return;
+      let loggedwithEmail = await axios.get(BackendUrl + `user?email=${User.username}&password=${User.password}`);
+      const loggedInUserMessagefromEmail = loggedwithEmail.data.message;
+
+      if (loggedInUserMessagefromEmail === "No User Found") {
+        setWrongPassword(true);
+        return;
+      }
+      loggedInUser = loggedwithEmail
     }
+
     setWrongPassword(false);
     loggedInUser = loggedInUser.data.user[0];
     localStorage.setItem("LoggedIn", true);
@@ -241,9 +249,8 @@ const LoginPage = ({ setlG }) => {
             </h1>
           </div>
           <input name='email' type='email' value={passResEmail} onChange={e => setPassResEmail(e.target.value)} placeholder='Your Email'></input>
-          <button 
-
-          // he na mobile madhe ekdam chota aahe whatsapp 
+          <button
+            // he na mobile madhe ekdam chota aahe whatsapp
             onClick={() => {
               alert("OTP Sent to email");
               setResetModalEmail(false);
@@ -331,10 +338,10 @@ const LoginPage = ({ setlG }) => {
         </div>
         <div className='formElem'>
           <img src={user}></img>
-          <input name='fullName' value={User.fullName} onChange={handleChange} type='text' placeholder='Enter your FullName' autoFocus></input>
+          <input name='fullName' value={User.fullName} onChange={handleChange} type='text' placeholder='Enter your Full Name' ></input>
         </div>
         <div className='formElem'>
-          <input name='username' value={User.username} onChange={handleChange} type='text' placeholder='Choose a username' autoFocus></input>
+          <input name='username' value={User.username} onChange={handleChange} type='text' placeholder='Choose a Username' ></input>
         </div>
         <div className='formElem'>
           <img src={password}></img>

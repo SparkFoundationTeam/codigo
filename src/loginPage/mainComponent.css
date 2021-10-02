@@ -411,17 +411,26 @@ h3 button {
     height: 8vh;
   }
   form {
+    height: 65vh;
     width: 100vw;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
   }
   form h1 {
-    font-size: 4vh;
+    font-size: 3vh;
+  }
+  form img {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
   }
   form .formElem input,
   form .formElem select {
     width: 80vw;
+    height: 4vh;
   }
   form #submit {
     width: 80vw;
+    height: 5vh;
   }
   form h4 {
     width: 80%;
@@ -438,6 +447,7 @@ h3 button {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    margin-top: 0;
   }
   #sec {
     width: 80vw;
