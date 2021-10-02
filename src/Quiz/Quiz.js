@@ -167,8 +167,8 @@ const Quiz = ({ name, tutorName, courseId }) => {
     let point2 = randomizer(quizArray.filter(eachObj => eachObj.points == 2));
     let point3 = randomizer(quizArray.filter(eachObj => eachObj.points == 3));
 
-    // point2.length = 2;
-    // point3.length = 2;
+    point2.length = 10;
+    point3.length = 10;
 
     if (true) setQuizArray([...point2, ...point3]); // kalla
 
@@ -372,7 +372,7 @@ const EndGame = ({ CourseName, PlayerScore, TotalScore, Email, TutorName }) => {
 
     let data = await axios.patch(BackendUrl + "Courses/feedback", obj);
 
-    // console.log("Data iss.......", data.data[0]);     
+    // console.log("Data iss.......", data.data[0]);
 
     if (true) setUserFromLocalStorage(data.data[0]);
 
