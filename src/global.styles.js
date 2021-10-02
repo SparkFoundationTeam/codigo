@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const OurCoursesSection = styled.div`
   width: auto;
@@ -66,12 +66,12 @@ export const CourseSelectorButton = styled.button`
   font-size: 1rem;
   border: 2px solid teal;
   color: black;
-  cursor:pointer;
+  cursor: pointer;
   font-weight: 900;
   background: transparent;
   border-radius: 2vh;
   transition: all ease-in-out 200ms;
-  padding: 0.6rem 1rem ;
+  padding: 0.6rem 1rem;
   &:hover {
     color: white;
     border: 2px solid transparent;
@@ -83,7 +83,7 @@ export const CourseSelectorButton = styled.button`
     width: 45%;
     margin: 0.5rem;
     height: auto;
-    border-radius:1vh;
+    border-radius: 1vh;
   }
 `;
 
@@ -169,9 +169,12 @@ export const CourseIcon = styled.img`
 export const TutorImage = styled.img`
   margin: 0;
   height: 2.5vw;
-  border-radius: 30rem;
+  image-rendering: auto;
+  width: 2.5vw;
+  border-radius: 50%;
   @media (max-width: 600px) {
     height: 5vh;
+    width: 5vh;
   }
 `;
 export const TutorName = styled.div`
@@ -194,7 +197,7 @@ export const Timing = styled.div`
   float: right;
   color: black;
   place-items: center;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   display: flex;
   margin-left: 12%;
   font-size: 1.5vh;

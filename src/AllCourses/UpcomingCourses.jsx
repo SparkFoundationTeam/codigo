@@ -5,7 +5,7 @@ import CSSAtharva from "../resources/CSSAtharva.png";
 import CAdika from "../resources/CAdika.png";
 import PythonBhavesh from "../resources/PYTHONVaishnavi.png";
 import CPVaish from "../resources/CPPVaishnavi.png";
-import Bhavesh from "../resources/bhavesh.jpg";
+import Bhavesh from "../resources/bhaveshIcon.jpg";
 import Atharva from "../resources/atharva.jpg";
 import Vaishnavi from "../resources/vaishIcon.jpg";
 import Adika from "../resources/adikaIcon.jpg";
