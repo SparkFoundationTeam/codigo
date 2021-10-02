@@ -184,7 +184,8 @@ const LoginPage = ({ setlG }) => {
     setsignupSuccess(true);
     setTimeout(() => {
       setsignupSuccess(false);
-      setLogin(true);
+
+      window.location.reload();
     }, 2000);
   };
 

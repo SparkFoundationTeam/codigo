@@ -226,7 +226,7 @@ const Quiz = ({ name, tutorName, courseId }) => {
                 {buttonVal}
               </button>
             </div>
-            <h1>player score is {playerScore}</h1>
+            {/* <h1>player score is {playerScore}</h1> */}
           </div>
         )}
 
