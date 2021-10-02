@@ -22,11 +22,12 @@ const EnrolledCourse = ({ tutorName, tutorImage, courseName, courseInfo, courseI
     if (hasCompletedQuiz) {
       let Obj = { tutorName: tutorName.split(" ")[0].toLowerCase(), userName: signedInUser.fullName, course: courseCertificateName, email: signedInUser.email, id: id };
       let data = await axios.post(BackendUrl + "Certificates", Obj);
-      console.log("Certificate is ", data.data);
-      //   alert("Certificate delivered to registered email"); // fuct backend url chukla asel
+
+      //   console.log("Certificate is ", data.data);
+      alert("Certificate has been delivered to registered email");
 
       //   console.log(Obj);
-      console.log(Obj);
+      //   console.log(Obj);
     } else {
       alert("You are not yet Eligible . Please pass the Quiz");
     }
