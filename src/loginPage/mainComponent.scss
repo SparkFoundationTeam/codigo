@@ -183,7 +183,6 @@ form {
     font-weight: bold;
     color: rgb(13, 209, 209);
     border: none;
-    background-color: rgba(255, 255, 255, 0);
   }
 }
 
@@ -257,6 +256,18 @@ h3 {
     font-size: 5vh;
     font-family: Poppins;
   }
+}
+
+.SetterLogin {
+  width: 100%;
+  margin-top: 0.5vh;
+  padding: 0.5vh;
+
+  border: 1px solid gray;
+}
+
+.SignUpNow {
+  margin-top: -10vh;
 }
 
 @media screen and (max-width: 1000px) {
