@@ -1,11 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-import { CourseSelectorButtonContainer, CourseSelectorButton, CoursesCardContainer, ButtonContainerDiv, TutorImageContainer, OurCoursesSection, CourseCardHeader, CourseCardInfo, TutorContainer, SectionHeader, CoursesCard, TutorImage, CourseIcon, AllCourses, TutorName, Timing } from '../../../global.styles';
+import {
+  CourseSelectorButtonContainer,
+  CourseSelectorButton,
+  CoursesCardContainer,
+  ButtonContainerDiv,
+  TutorImageContainer,
+  OurCoursesSection,
+  CourseCardHeader,
+  CourseCardInfo,
+  TutorContainer,
+  SectionHeader,
+  CoursesCard,
+  TutorImage,
+  CourseIcon,
+  AllCourses,
+  TutorName,
+  Timing,
+} from "../../../global.styles";
 
-import randomizer from '../../../randomizer';
+import randomizer from "../../../randomizer";
 
-import { CoursesArray, OurCoursesCardInfo } from './DefaultData';
+import { CoursesArray, OurCoursesCardInfo } from "./DefaultData";
 
 const OurCourses = () => {
   let [coursesArray, setcoursesArray] = useState(CoursesArray);
@@ -13,9 +30,9 @@ const OurCourses = () => {
 
   let [courseIndex, setCourseIndex] = useState(0);
   let [clickedCourseButtonStyles, setclickedCourseButtonStyles] = useState({
-    color: 'white',
-    background: 'rgb(4, 163, 163)',
-    border: '2px solid transparent',
+    color: "white",
+    background: "rgb(4, 163, 163)",
+    border: "2px solid transparent",
   });
 
   const shuffleCards = () => {
@@ -42,16 +59,16 @@ const OurCourses = () => {
       <ButtonContainerDiv>
         <CourseSelectorButtonContainer>
           {coursesArray.map((eachCourse, buttonIndex) => (
-            <CourseSelectorButton style={courseIndex === buttonIndex ? clickedCourseButtonStyles : {}} onClick={() => setCourseIndex(buttonIndex)}>
+            <CourseSelectorButton key={`${eachCourse.toString()}${buttonIndex}`} style={courseIndex === buttonIndex ? clickedCourseButtonStyles : {}} onClick={() => setCourseIndex(buttonIndex)}>
               {eachCourse}
             </CourseSelectorButton>
           ))}
         </CourseSelectorButtonContainer>
       </ButtonContainerDiv>
       <CoursesCardContainer data-aos='fade-down' data-aos-offset='150'>
-        {CardInfoArray[courseIndex].map(eachObj => {
+        {CardInfoArray[courseIndex].map((eachObj, idx) => {
           return (
-            <CoursesCard  >
+            <CoursesCard key={`${eachObj.toString()}-${idx}`}>
               <CourseIcon src={eachObj.ImageLogo} />
               <CourseCardHeader>{eachObj.CourseName}</CourseCardHeader>
               <CourseCardInfo>{eachObj.CourseInfo}</CourseCardInfo>

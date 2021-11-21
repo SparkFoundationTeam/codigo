@@ -1,7 +1,5 @@
-import React from 'react';
-import './AllCourses.css'
-
-
+import React from "react";
+import "./AllCourses.css";
 
 const UpcomingCourseCard = props => {
   return (

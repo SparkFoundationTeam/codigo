@@ -16,7 +16,7 @@ import JSBhavesh from '../resources/JSBhavesh.png';
 import HtmlAtharva from '../resources/HTMLAtharva.png';
 import JavaAdika from '../resources/JAVAAdika.png';
 import PythonVaishnavi from '../resources/PYTHONVaishnavi.png';
-import Bhavesh from "../resources/bhavesh.jpg";
+import Bhavesh from "../resources/bhaveshIcon.jpg";
 import Atharva from "../resources/atharva.jpg";
 import Vaishnavi from "../resources/vaishIcon.jpg";
 import Adika from "../resources/adikaIcon.jpg";

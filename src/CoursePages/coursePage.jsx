@@ -1,26 +1,26 @@
-import React, { useState, useContext, useEffect } from 'react';
-import screenfull from 'screenfull';
+import React, { useState, useContext, useEffect } from "react";
+import screenfull from "screenfull";
 
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import codiGoIcon from '../resources/codiGo.png';
-import menuIcon from '../resources/menuRes.png';
-import './coursePageTemplate.css';
-import BlobP1 from '../resources/pattern1Blob.png';
-import BlobP2 from '../resources/pattern2Blob.png';
-import videoIcon from '../resources/videos.png';
-import bookIcon from '../resources/books.png';
-import codeIcon from '../resources/code.png';
-import certificateIcon from '../resources/certificateIcon.png';
-import feedbackIcon from '../resources/feedback.png';
-import RunCode from '../resources/RunCode.png';
+import codiGoIcon from "../resources/codiGo.png";
+import menuIcon from "../resources/menuRes.png";
+import "./coursePageTemplate.css";
+import BlobP1 from "../resources/pattern1Blob.png";
+import BlobP2 from "../resources/pattern2Blob.png";
+import videoIcon from "../resources/videos.png";
+import bookIcon from "../resources/books.png";
+import codeIcon from "../resources/code.png";
+import certificateIcon from "../resources/certificateIcon.png";
+import feedbackIcon from "../resources/feedback.png";
+import RunCode from "../resources/RunCode.png";
 
 const CoursePageTemplate = props => {
   let [index, setIndex] = useState();
   let [menu, setMenu] = useState(false);
 
   let [clickedStyles, setClickStyle] = useState({
-    borderLeft: '5px teal solid',
+    borderLeft: "5px teal solid",
   });
 
   return (
@@ -39,8 +39,8 @@ const CoursePageTemplate = props => {
               <li>All Courses</li>
             </Link>
             <a href='https://community-codigo.netlify.app' target='_blank'>
-              {' '}
-              <li>Community</li>{' '}
+              {" "}
+              <li>Community</li>{" "}
             </a>
             <a href='https://ide-codigo.netlify.app' target='_blank'>
               <li>Kōdo</li>
@@ -57,14 +57,14 @@ const CoursePageTemplate = props => {
         </div>
         <div className='res-NavButton'>
           <img src={menuIcon} onClick={() => setMenu(!menu)}></img>
-          <div style={{ display: menu ? 'flex' : 'none' }} data-aos='fade-up' data-aos-duration='5000'>
+          <div style={{ display: menu ? "flex" : "none" }} data-aos='fade-up' data-aos-duration='5000'>
             <ul>
               <Link to='/all-courses'>
                 <li>All Courses</li>
               </Link>
               <a href='https://community-codigo.netlify.app' target='_blank'>
-                {' '}
-                <li>Community</li>{' '}
+                {" "}
+                <li>Community</li>{" "}
               </a>
               <a href='https://ide-codigo.netlify.app' target='_blank'>
                 <li>Kōdo</li>
@@ -118,11 +118,10 @@ const CoursePageTemplate = props => {
             if (screenfull.isEnabled) {
               screenfull.request();
             }
-          }}
-        >
+          }}>
           <iframe src={props.video} frameBorder='0' allow='accelerometer; autoplay; fullscreen; picture-in-picture'></iframe>
           <div id='List'>
-            <h3>TimeLine {'>'}</h3>
+            <h3>TimeLine {">"}</h3>
             <h4>{props.Section1}</h4>
             <h4>{props.Section2}</h4>
             <h4>{props.Section3}</h4>
@@ -155,7 +154,7 @@ const CoursePageTemplate = props => {
             </div>
             <div>
               <div className='BookDesc'>
-                <b>Description {'>'}</b> <br />
+                <b>Description {">"}</b> <br />
                 {props.Book1Desc}
               </div>
             </div>
@@ -176,12 +175,12 @@ const CoursePageTemplate = props => {
               </div>
               <div className='AuthorTitle'>
                 <b>Author :</b>
-                {props.Author1}
+                {props.Author2}
               </div>
             </div>
             <div>
               <div className='BookDesc'>
-                <b>Description {'>'}</b> <br />
+                <b>Description {">"}</b> <br />
                 {props.Book2Desc}
               </div>
             </div>
@@ -190,6 +189,32 @@ const CoursePageTemplate = props => {
                 <div className='ViewBook'>View </div>
               </a>
               <a href={props.Book2} download>
+                <div className='DownloadBook'>Download </div>
+              </a>
+            </div>
+          </div>
+
+          <div className='BookInfo'>
+            <div>
+              <div className='BookTitle'>
+                <b>Book :</b> {props.Book3Name}
+              </div>
+              <div className='AuthorTitle'>
+                <b>Author :</b>
+                {props.Author3}
+              </div>
+            </div>
+            <div>
+              <div className='BookDesc'>
+                <b>Description {">"}</b> <br />
+                {props.Book3Desc}
+              </div>
+            </div>
+            <div id='BookLinks'>
+              <a href={props.Book3}>
+                <div className='ViewBook'>View </div>
+              </a>
+              <a href={props.Book3} download>
                 <div className='DownloadBook'>Download </div>
               </a>
             </div>

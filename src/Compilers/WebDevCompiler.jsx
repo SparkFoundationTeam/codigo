@@ -1,45 +1,45 @@
-import React, { useState, useContext, useEffect } from 'react';
-import '../CoursePages/coursePageTemplate.css';
+import React, { useState, useContext, useEffect } from "react";
+import "../CoursePages/coursePageTemplate.css";
 
-import BlobP1 from '../resources/pattern1Blob.png';
-import BlobP2 from '../resources/pattern2Blob.png';
-import RunCode from '../resources/RunCode.png';
+import BlobP1 from "../resources/pattern1Blob.png";
+import BlobP2 from "../resources/pattern2Blob.png";
+import RunCode from "../resources/RunCode.png";
 
 const WebDevCompiler = props => {
   let [editorText, setEditorText] = useState(`${props.Button1Text}`);
   let [index, setIndex] = useState(1);
 
-//   let [clickedStyles, setClickStyle] = useState({
-//     backgroundColor: 'rgb(13, 0, 85)',
-//     color: 'white',
-//   });
+  //   let [clickedStyles, setClickStyle] = useState({
+  //     backgroundColor: 'rgb(13, 0, 85)',
+  //     color: 'white',
+  //   });
 
   useEffect(() => {}, []);
 
   const CodeRunnerHtml = e => {
     setEditorText(e.target.value);
-    let frame = document.getElementById('output-window').contentWindow.document;
+    let frame = document.getElementById("output-window").contentWindow.document;
     frame.open();
-    if (props.Language == 'html') {
+    if (props.Language == "html") {
       frame.write(editorText);
     }
-    if (props.Language == 'css') {
-      frame.write('<style>' + editorText + '</style>');
+    if (props.Language == "css") {
+      frame.write("<style>" + editorText + "</style>");
     }
     frame.close();
   };
 
   const CodeRunner = () => {
-    let frame = document.getElementById('output-window').contentWindow.document;
+    let frame = document.getElementById("output-window").contentWindow.document;
     frame.open();
-    if (props.Language == 'html') {
+    if (props.Language == "html") {
       frame.write(editorText);
     }
-    if (props.Language == 'js') {
-      frame.write('<script>' + editorText + '</script>');
+    if (props.Language == "js") {
+      frame.write("<script>" + editorText + "</script>");
     }
-    if (props.Language == 'css') {
-      frame.write('<style>' + editorText + '</style>');
+    if (props.Language == "css") {
+      frame.write("<style>" + editorText + "</style>");
     }
     frame.close();
   };
@@ -52,8 +52,7 @@ const WebDevCompiler = props => {
           id='Compiler'
           onLoad={() => {
             CodeRunner();
-          }}
-        >
+          }}>
           <b id='codeAlongLabel'>códiGo CODE ALONG </b>
 
           <textarea onChange={e => CodeRunnerHtml(e)} value={editorText} id='CodeEditor' placeholder='Write your Code Here'>
@@ -77,7 +76,7 @@ const WebDevCompiler = props => {
               setIndex(1);
             }}
             onMouseOver={() => {
-              if (props.Language != 'js') CodeRunner();
+              if (props.Language != "js") CodeRunner();
             }}
             // style={index === 1 ? clickedStyles : {}}
           >
@@ -90,7 +89,7 @@ const WebDevCompiler = props => {
               setIndex(2);
             }}
             onMouseOver={() => {
-              if (props.Language != 'js') CodeRunner();
+              if (props.Language != "js") CodeRunner();
             }}
             // style={index === 2 ? clickedStyles : {}}
           >
@@ -103,7 +102,7 @@ const WebDevCompiler = props => {
               setIndex(3);
             }}
             onMouseOver={() => {
-              if (props.Language != 'js') CodeRunner();
+              if (props.Language != "js") CodeRunner();
             }}
             // style={index === 3 ? clickedStyles : {}}
           >
@@ -116,7 +115,7 @@ const WebDevCompiler = props => {
               setIndex(4);
             }}
             onMouseOver={() => {
-              if (props.Language != 'js') CodeRunner();
+              if (props.Language != "js") CodeRunner();
             }}
             // style={index === 4 ? clickedStyles : {}}
           >
@@ -129,21 +128,21 @@ const WebDevCompiler = props => {
               setIndex(5);
             }}
             onMouseOver={() => {
-              if (props.Language != 'js') CodeRunner();
+              if (props.Language != "js") CodeRunner();
             }}
             // style={index === 5 ? clickedStyles : {}}
           >
             <b> {props.Button5} </b>
           </button>
           <button
-            
             onClick={() => {
               setEditorText(`${props.Button6Text}`);
               setIndex(6);
             }}
             onMouseOver={() => {
-              if (props.Language != 'js') CodeRunner();
-            }}className='button-rightmost'
+              if (props.Language != "js") CodeRunner();
+            }}
+            className='button-rightmost'
             // style={index === 6 ? clickedStyles : {}}
           >
             <b> {props.Button6} </b>

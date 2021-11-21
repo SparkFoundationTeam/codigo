@@ -9,18 +9,13 @@ content-type: application/json
 }
 
 ###
-GET https://codigo-server.herokuapp.com/User  HTTP/1.1 
+GET  https://codigo-server.herokuapp.com/User  HTTP/1.1 
 ###
-GET https://codigo-server.herokuapp.com/Courses  HTTP/1.1
-content-type: application/json
-
-{
-  "email":"bhaveshmhadse9@gmail.com",
-  "tutorName": "Bhavesh Mhadse",
-  "courseName": "Javascript Complete Course"
-}
+GET https://codigo-server.herokuapp.com/Quiz/html  HTTP/1.1
 
 
+
+ba
 
 ###
 GET  https://codigo-server.herokuapp.com/AllCourses/  HTTP/1.1
@@ -78,6 +73,17 @@ content-type: application/json
    "keywords": ["Java", "series >>", "courses >>", "tutors >> ", "Programming", "adika", "karnataki", "gui"]
 }
 ###
+POST https://codigo-server.herokuapp.com/Certificates  HTTP/1.1
+content-type: application/json
+
+{
+    "userName": "Atharva firebase nai vapraycha !! tu fkt backend la haaath nko lavat jau :)",
+    "tutorName":"bhavesh",
+    "course":"Javascript",
+    "id":"sdsdsd",
+    "email":"bhaveshmhadse9@gmail.com"
+}
+###
 PATCH  https://codigo-server.herokuapp.com/AllCourses/update-rating  HTTP/1.1
 content-type: application/json
 
@@ -103,17 +109,35 @@ content-type: application/json
 }
 
 ###
-GET https://codigo-server.herokuapp.com/Courses?email=31mhadse.bhavesh2001@gmail.com&courseName=Javascript Complete Course&tutorName=Bhavesh Mhadse HTTP/1.1
+POST https://codigo-server.herokuapp.com/Certificates HTTP/1.1
+content-type: application/json
+
+{
+    "course": "códiGo : Javascript Development Series > Javascript Complete Course",
+    "email": "bhaveshmhadse9@gmail.com", 
+    "id": "614da328dcf5700016bfccef",
+    "tutorName": "bhavesh",
+    "userName": "Bhavesh Mhadse"
+}
+//heroku mc
+// createPdfDocument(obj.tutorName,
+// obj.userName,
+// obj.course,
+//  obj.id,  haa 
+//obj.email);nai ala cha aiichi gand hyacha thamb
+
+###
+GET https://codigo-server.herokuapp.com/Courses?email=atharva.r.bhagat@gmail.com&courseName=Javascript Complete Course&tutorName=Bhavesh Mhadse HTTP/1.1
 
 ###
 PATCH https://codigo-server.herokuapp.com/Courses/feedback HTTP/1.1
 content-Type: application/json
 
 {
-    "email":"31mhadse.bhavesh2001@gmail.com",
+    "email":"atharva.r.bhagat@gmail.com",
     "tutorName":"Bhavesh Mhadse",
     "courseName":"Javascript Complete Course"
 }
-//baray
+//baray// 
 
 //te response close krna mouse nai jaate

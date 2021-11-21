@@ -9,12 +9,12 @@
   overflow: visible;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap");
 
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 #DashBoard {
   width: fit-content;
@@ -54,7 +54,7 @@
   display: inline-block;
   cursor: pointer;
   transition-duration: 0.3s;
-  content: '';
+  content: "";
   position: absolute;
   background: linear-gradient(to right, rgb(255, 19, 125), rgb(4, 180, 180));
   width: 140%;
@@ -161,6 +161,7 @@ h3 {
   #TutorIcon {
     margin: 1vh;
     height: 16vh;
+    width: 16vh;
 
     border-radius: 10vh;
   }
@@ -248,7 +249,6 @@ h3 {
     margin-top: 3vh;
     margin-left: 2vw;
     flex-direction: column;
-    
   }
 
   .TitleDesc {

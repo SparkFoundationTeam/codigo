@@ -1,6 +1,8 @@
 import React from "react";
 import PageTemplate from "../coursePage";
 import Book1 from "./HTML CSS JavaScript by ARB.pdf";
+import Book2 from "./UltimateHTML.pdf";
+import Book3 from "./TagsSheet.pdf";
 import Quiz from "../../Quiz/Quiz";
 import WebDevCompiler from "../../Compilers/WebDevCompiler";
 import Footer from "../../footer";
@@ -18,13 +20,17 @@ const Html01 = () => {
         Section5='Intoduction to basic CSS '
         video='https://youtube.com/embed/9xIKMpzcbcc'
         Book1={Book1}
-        Book1Name='HTML Cheat Sheet'
+        Book1Name='HTML CSS JS Notes'
         Author1=' Atharva Bhagat'
-        Book1Desc='This cheat sheet contains all necessary tags and material to start practising HTML'
-        Book1={Book1}
-        Book2Name='HTML CSS JS Notes'
-        Author2=' Atharva Bhagat'
-        Book2Desc='This book contains handwritten notes of HTML , CSS and JavaScript'
+        Book1Desc='This book contains handwritten notes of HTML , CSS and JavaScript'
+        Book2={Book2}
+        Book2Name='HTML Cheat Sheet'
+        Author2='Online resource'
+        Book2Desc='This cheat sheet contains all necessary tags and material to start practising HTML'
+        Book3={Book3}
+        Book3Name='HTML Tags Sheet'
+        Author3='Online resource'
+        Book3Desc='This contains all necessary tags in a nutshell'
       />
 
       <WebDevCompiler

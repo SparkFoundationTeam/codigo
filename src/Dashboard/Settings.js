@@ -12,18 +12,6 @@ const Settings = () => {
 
   let [showPasswordModal, setShowPasswordModal] = useState(false);
 
-  //   const fetchUser = async () => {
-  //     let data = await axios.get('https://codigo-server.herokuapp.com/user?username=Bhavesh_123'); // first
-  //     console.log('The real data with email is : ', data.data.user[0]);
-
-  //     let userFromDatabase = data.data.user[0];
-
-  //     setUserFromLocalStorage({ ...signedInUser, ...userFromDatabase }); // he ajun kraychay sort out <_ db mai hm
-  //     console.log(typeof userFromDatabase);
-  //     console.log('from local : ', setsignedInUser(getUserFromLocalStorage()));
-  //     console.log('User is : ', signedInUser);
-  //   };
-
   db.collection("Statistics")
     .doc(signedInUser.email)
     .get()
@@ -31,7 +19,6 @@ const Settings = () => {
       if (doc.exists) {
         localStorage.setItem("Interests", doc.data().interests.toString());
         localStorage.setItem("Strengths", doc.data().strengths.toString());
-
         localStorage.setItem("Weaknesses", doc.data().weaknesses.toString());
         // console.log('This',doc.data());
       } else {
@@ -40,7 +27,7 @@ const Settings = () => {
       }
     })
     .catch(error => {
-    //   console.log("Error getting document:", error);
+      //   console.log("Error getting document:", error);
     });
 
   const handleUserSettings = e => {
@@ -220,7 +207,8 @@ const Settings = () => {
 
           <p>Interests</p>
           <textarea className='settings-input AboutYouData' disabled name='firstname' id='InterestsShower' value={interestsArray} />
-          <button className='SelectMeButton'
+          <button
+            className='SelectMeButton'
             onClick={() => {
               setInterestsDiv(!interestsDiv);
             }}>
@@ -302,7 +290,8 @@ const Settings = () => {
           </div>
           <p> Strengths</p>
           <textarea className='settings-input AboutYouData' name='lastname' id='StrengthsShower' disabled value={strengthsArray} />
-          <button className='SelectMeButton'
+          <button
+            className='SelectMeButton'
             onClick={() => {
               setStrengthsDiv(!strengthsDiv);
             }}>
@@ -375,7 +364,8 @@ const Settings = () => {
           <p> Weakness</p>
 
           <textarea disabled className='settings-input AboutYouData' name='lastname' id='WeaknessShower' value={weakArray} />
-          <button className='SelectMeButton'
+          <button
+            className='SelectMeButton'
             onClick={() => {
               setWeakDiv(!weakDiv);
             }}>

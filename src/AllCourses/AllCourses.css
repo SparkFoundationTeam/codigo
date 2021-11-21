@@ -132,7 +132,7 @@ datalist option {
 }
 
 .SectHeader {
-  font-family: 'Richard Hamilton';
+  font-family: "Poppins";
   color: darkgoldenrod;
 }
 
@@ -216,7 +216,7 @@ datalist option {
 
 .OneSection a .CoursesCard .span img {
   height: 3vh;
-  width: auto;
+  width: 3vh;
   margin: 0.5vh 1vw;
 }
 
@@ -365,6 +365,7 @@ h6 {
 
 .UpcomingCoursesCard .span img {
   height: 3vh;
+  width: 3vh;
   margin: 0.5vh 1vw;
 }
 
@@ -407,9 +408,9 @@ h6 {
 
 @media screen and (max-width: 1000px) {
   .SectHeader {
-    font-family: 'Richard Hamilton';
     color: darkgoldenrod;
-    font-size: small;
+    font-size: 1.2vh;
+    text-align: center;
   }
   .res-NavButton {
     overflow: visible;
@@ -519,7 +520,7 @@ h6 {
             align-items: center;
   }
   .OneSection .SectHeader {
-    font-family: 'Richard Hamilton';
+    font-family: "Poppins";
     color: darkgoldenrod;
   }
   .OneSection a .CoursesCard {
@@ -574,6 +575,7 @@ h6 {
   }
   .OneSection a .CoursesCard .span img {
     height: 2vh;
+    width: 2vh;
   }
   .OneSection a .CoursesCard h5 {
     font-size: 1vh;
@@ -683,6 +685,7 @@ h6 {
   }
   .UpcomingCoursesCard .span img {
     height: 2vh;
+    width: 2vh;
   }
   .UpcomingCoursesCard h5 {
     font-size: 1vh;

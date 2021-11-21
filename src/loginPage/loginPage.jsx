@@ -17,9 +17,9 @@ import mobile from "../resources/mobileIcon.gif";
 import book from "../resources/book.gif";
 import signupIcon from "../resources/true.gif";
 
-import { db } from "../fireBase";
+import Encrypter from "../encrypter";
 
-// import { Route, BrowserRouter, Switch, Link, Redirect } from 'react-router-dom/cjs/react-router-dom.min';
+import { db } from "../fireBase";
 
 import { defaultUser } from "../DefaultUser.js";
 import { UserContext } from "../MainContext"; // <- hi line prytek component madhe lagnr jithe user aahe tithe
@@ -29,7 +29,7 @@ const LoginPage = ({ setlG }) => {
 
   const [WrongPassword, setWrongPassword] = useState(false);
 
-  const [login, setLogin] = useState(true);
+  const [login, setLogin] = useState(false);
   let [usernamesArray, setUsernameArray] = useState([]);
   let [emailsArray, setEmailsArray] = useState([]);
 
@@ -74,6 +74,7 @@ const LoginPage = ({ setlG }) => {
   const resetPass = async () => {
     if (passResConfirmPassword !== passResPassword) {
       alert("Paswords doesnt match!");
+      // reset password cha modal
       return;
     }
 
@@ -81,7 +82,7 @@ const LoginPage = ({ setlG }) => {
       email: passResEmail,
       updates: { password: passResPassword },
     });
-    alert("Successfully Reset Password");
+    if (true) alert("Successfully Reset Password");
 
     if (true) window.location.reload();
   };
@@ -123,17 +124,27 @@ const LoginPage = ({ setlG }) => {
   const handleLogin = async e => {
     e.preventDefault();
 
+    // let newPass = Encrypter(User.password.toString());
+
     let loggedInUser = await axios.get(BackendUrl + `user?username=${User.username}&password=${User.password}`);
-    // await axios.get(BackendUrl + `user?email=${User.username}&password=${User.password}`);
+
+    // await axios.get(BackendUrl + `user?email=${User.username}&password=${User.password}`); ha
 
     // console.log("User we got through mongo Db is : ", loggedInUser);
 
     const loggedInUserMessage = loggedInUser.data.message;
 
     if (loggedInUserMessage === "No User Found") {
-      setWrongPassword(true);
-      return;
+      let loggedwithEmail = await axios.get(BackendUrl + `user?email=${User.username}&password=${User.password}`);
+      const loggedInUserMessagefromEmail = loggedwithEmail.data.message;
+
+      if (loggedInUserMessagefromEmail === "No User Found") {
+        setWrongPassword(true);
+        return;
+      }
+      loggedInUser = loggedwithEmail;
     }
+
     setWrongPassword(false);
     loggedInUser = loggedInUser.data.user[0];
     localStorage.setItem("LoggedIn", true);
@@ -145,15 +156,22 @@ const LoginPage = ({ setlG }) => {
     localStorage.setItem("Strengths", []);
     localStorage.setItem("Weaknesses", []);
   };
+
   const setUserFromLocalStorage = user => localStorage.setItem("User", JSON.stringify(user));
   const getUserFromLocalStorage = () => JSON.parse(localStorage.getItem("User"));
 
-  const handleSignUp = e => {
+  const isAlreadyPresent = (target, targetArray) => {
+    for (let values of targetArray) {
+      if (target == values) return true;
+    }
+    return false;
+  };
+  const handleSignUp = async e => {
     e.preventDefault();
 
     if (isAlreadyPresent(User.email, emailsArray)) {
       alert("Email is already registered");
-      return; // :) chal :)
+      return;
     }
 
     if (isAlreadyPresent(User.username, usernamesArray)) {
@@ -166,24 +184,22 @@ const LoginPage = ({ setlG }) => {
     }
 
     // console.log("New User has Sign-Up with following Details : ", User);
+    let newPas = Encrypter(User.password.toString());
+    // alert("newPass is", newPas);
 
-    axios.post(BackendUrl + "User", User);
+    if (true) setUser(prev => ({ ...prev, password: newPas }));
+    // alert("user is ", JSON.stringify(User));
+    let data = await axios.post(BackendUrl + "User", User);
     setsignupSuccess(true);
     setTimeout(() => {
       setsignupSuccess(false);
-      setLogin(true);
+
+      window.location.reload();
     }, 2000);
   };
 
   const setter = () => {
     setLogin(prev => !prev);
-  };
-
-  const isAlreadyPresent = (target, targetArray) => {
-    for (let values of targetArray) {
-      if (target === values) return true;
-    }
-    return false;
   };
 
   const getUsernamesAndemails = async () => {
@@ -232,8 +248,9 @@ const LoginPage = ({ setlG }) => {
               </b>
             </h1>
           </div>
-          <input name='email' type='email' value={passResEmail} onChange={e => setPassResEmail(e.target.value)} placeholder='Enter Registered Email'></input>
+          <input name='email' type='email' value={passResEmail} onChange={e => setPassResEmail(e.target.value)} placeholder='Your Email'></input>
           <button
+            // he na mobile madhe ekdam chota aahe whatsapp
             onClick={() => {
               alert("OTP Sent to email");
               setResetModalEmail(false);
@@ -290,7 +307,7 @@ const LoginPage = ({ setlG }) => {
         <hr />
         <div className='formElem'>
           <img src={user}></img>
-          <input name='username' value={User.username} type='text' onChange={handleChange} placeholder='Enter Username' autoFocus></input>
+          <input name='username' value={User.username} type='text' onChange={handleChange} placeholder='Enter Email / Username' autoFocus></input>
         </div>
         <div className='formElem'>
           <img src={password}></img>
@@ -321,10 +338,10 @@ const LoginPage = ({ setlG }) => {
         </div>
         <div className='formElem'>
           <img src={user}></img>
-          <input name='fullName' value={User.fullName} onChange={handleChange} type='text' placeholder='Enter your FullName' autoFocus></input>
+          <input name='fullName' value={User.fullName} onChange={handleChange} type='text' placeholder='Enter your Full Name'></input>
         </div>
         <div className='formElem'>
-          <input name='username' value={User.username} onChange={handleChange} type='text' placeholder='Choose a username' autoFocus></input>
+          <input name='username' value={User.username} onChange={handleChange} type='text' placeholder='Choose a Username'></input>
         </div>
         <div className='formElem'>
           <img src={password}></img>
@@ -406,16 +423,16 @@ const LoginPage = ({ setlG }) => {
         <img src={signupIcon} />
         <h2>Signup Successful</h2>
       </div>
-      <div id='sign' style={{ display: login ? "" : "none" }}>
+      <div id='sign' className='SignUpNow'   style={{ display: login ? "" : "none"  }}>
         <h3>
           {" "}
-          Don't have an Account ? <button onClick={setter}> Sign Up for free </button>
+          Don't have an Account ? <br></br><button className='SetterLogin'onClick={setter}> Sign Up for free </button>
         </h3>
       </div>
       <div id='sign' style={{ display: login ? "none" : " " }}>
         <h3>
           {" "}
-          Already have an Account ? <button onClick={setter}> Log In</button>
+          Already have an Account ? <br></br><button className='SetterLogin' onClick={setter}>Log In</button>
         </h3>
       </div>
       <hr id='sec'></hr>

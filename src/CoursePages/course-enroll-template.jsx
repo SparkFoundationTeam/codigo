@@ -1,23 +1,23 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-import Footer from '../footer';
-import codiGoIcon from '../resources/codiGo.png';
-import './Template.css';
-import menuIcon from '../resources/menuRes.png';
-import BlobP1 from '../resources/pattern1Blob.png';
-import BlobP2 from '../resources/pattern2Blob.png';
+import Footer from "../footer";
+import codiGoIcon from "../resources/codiGo.png";
+import "./Template.css";
+import menuIcon from "../resources/menuRes.png";
+import BlobP1 from "../resources/pattern1Blob.png";
+import BlobP2 from "../resources/pattern2Blob.png";
 
-import Instagram from '../resources/insta-icon.png';
-import Mail from '../resources/mail-icon.png';
-import LinkedIn from '../resources/linkedin-icon.png';
-import Github from '../resources/github-icon.png';
-import Resume from '../resources/resume2.png';
+import Instagram from "../resources/insta-icon.png";
+import Mail from "../resources/mail-icon.png";
+import LinkedIn from "../resources/linkedin-icon.png";
+import Github from "../resources/github-icon.png";
+import Resume from "../resources/resume2.png";
 
-import axios from 'axios';
-import BackendUrl from '../BackendUrl';
+import axios from "axios";
+import BackendUrl from "../BackendUrl";
 
-import { UserContext } from '../MainContext';
+import { UserContext } from "../MainContext";
 
 const CourseEnrollTemplate = props => {
   let [menu, setMenu] = useState(false);
@@ -32,23 +32,23 @@ const CourseEnrollTemplate = props => {
         tutorName: props.TutorName,
         courseName: props.CourseName,
         courseId: props.CourseID,
-        courseNameCertificate: props.SeriesName + ' > ' + props.CourseName,
+        courseNameCertificate: props.SeriesName + " > " + props.CourseName,
       },
     };
 
     console.log(obj);
-    let d = await axios.post(BackendUrl + 'Courses', obj);
+    let d = await axios.post(BackendUrl + "Courses", obj);
     console.log(d);
 
     // axios.patch(BackendUrl+`user?username=${signedInUser.username}`)
     let loggedInUser = await axios.get(BackendUrl + `user?username=${signedInUser.username}&password=${signedInUser.password}`);
 
-    console.log('User we got through mongo Db is : ', loggedInUser);
+    console.log("User we got through mongo Db is : ", loggedInUser);
 
     const loggedInUserMessage = loggedInUser.data.message;
 
     loggedInUser = loggedInUser.data.user[0];
-    localStorage.setItem('LoggedIn', true);
+    localStorage.setItem("LoggedIn", true);
     setsignedInUser(loggedInUser);
     setUserFromLocalStorage(loggedInUser); //hoil atta
     /**
@@ -65,11 +65,11 @@ const CourseEnrollTemplate = props => {
 
     console.log();
   };
-  const setUserFromLocalStorage = user => localStorage.setItem('User', JSON.stringify(user));
+  const setUserFromLocalStorage = user => localStorage.setItem("User", JSON.stringify(user));
 
   const getUserFromLocalStorage = () => {
-    console.log(localStorage.getItem('User'));
-    return JSON.parse(localStorage.getItem('User'));
+    console.log(localStorage.getItem("User"));
+    return JSON.parse(localStorage.getItem("User"));
   };
 
   const rateSomeOne = () => {};
@@ -86,7 +86,7 @@ const CourseEnrollTemplate = props => {
           </Link>
         </div>
         <h2 id='NavHeader'>
-          {props.CourseName} {'>'} Information
+          {props.CourseName} {">"} Information
         </h2>
         <div className='dashboard-links'>
           <ul>
@@ -94,8 +94,8 @@ const CourseEnrollTemplate = props => {
               <li>All Courses</li>
             </Link>
             <a href='https://community-codigo.netlify.app' target='_blank'>
-              {' '}
-              <li>Community</li>{' '}
+              {" "}
+              <li>Community</li>{" "}
             </a>
             <a href='https://ide-codigo.netlify.app' target='_blank'>
               <li>Kōdo</li>
@@ -112,14 +112,14 @@ const CourseEnrollTemplate = props => {
         </div>
         <div className='res-NavButton'>
           <img src={menuIcon} onClick={() => setMenu(!menu)}></img>
-          <div style={{ display: menu ? 'flex' : 'none' }} data-aos='fade-up' data-aos-duration='5000'>
+          <div style={{ display: menu ? "flex" : "none" }} data-aos='fade-up' data-aos-duration='5000'>
             <ul>
               <Link to='/all-courses'>
                 <li>All Courses</li>
               </Link>
               <a href='https://community-codigo.netlify.app' target='_blank'>
-                {' '}
-                <li>Community</li>{' '}
+                {" "}
+                <li>Community</li>{" "}
               </a>
               <a href='https://ide-codigo.netlify.app' target='_blank'>
                 <li>Kōdo</li>
@@ -137,7 +137,7 @@ const CourseEnrollTemplate = props => {
         </div>
       </div>
       <div className='ContentHolder'>
-        <img src={BlobP1} id='bp1' style={{ position: 'absolute', height: '80vh', top: '-25vh', left: '-10vh', zIndex: -1 }} />
+        <img src={BlobP1} id='bp1' style={{ position: "absolute", height: "80vh", top: "-25vh", left: "-10vh", zIndex: -1 }} />
         <img src={BlobP2} id='bp2' />
         <div className='MainContent'>
           <div className='SectionInfo'>
@@ -197,7 +197,7 @@ const CourseEnrollTemplate = props => {
             </div>
           </div>
           <div className='Syllabus'>
-        {/* <div>
+            {/* <div>
             <video src={props.video} autoplay controls id='introVideo'></video>
         </div> */}
             <div id='List'>

@@ -78,6 +78,10 @@
   filter: drop-shadow(-2px 2px 5px grey);
 }
 
+.inp{
+    
+}
+
 @media (max-width: 500px) {
   .butt-container {
     position: absolute;

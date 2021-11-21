@@ -24,3 +24,7 @@ function get_encoded_character(index, string, offset) {
 
   return String.fromCharCode(asciii_value);
 }
+
+const getEncryptedString = str => encoder(str, 5);
+
+export default getEncryptedString;

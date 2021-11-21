@@ -1,5 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
 #CourseHeader {
-  font-family: 'Richard Hamilton';
+  font-family: 'Poppins', cursive;
   color: goldenrod;
 }
 
@@ -364,6 +365,10 @@
   background: -webkit-linear-gradient(right, #ff137d, #04b4b4);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.BooksBox a {
+  text-decoration: none;
 }
 
 .BooksBox .BooksContainer {

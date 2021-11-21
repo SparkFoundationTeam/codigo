@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./AboutUs.css";
 import Blob2 from "../../../resources/blob (2).svg";
@@ -15,6 +15,20 @@ import randomizer from "../../../randomizer";
 const AboutUs = () => {
   let [ownersArray, setOwnersArray] = useState(randomizer(Owners));
 
+  const fetchUser = () => {
+    let def = [...Owners];
+    let isEven = new Date().getMinutes() % 2 == 0;
+    if (isEven) {
+      setOwnersArray(def);
+    } else {
+      [def[0], def[1]] = [def[1], def[0]];
+      if (true) setOwnersArray(def);
+    }
+  };
+  useEffect(() => {
+    setTimeout(fetchUser, 2000);
+  }, []);
+
   return (
     <div className='OurCoursesSection'>
       <img className='OwnerBlob1' src={Blob1} />
@@ -25,9 +39,9 @@ const AboutUs = () => {
       </h3>
       <div className='OurTeam'>Our Team</div>
       <div className='CardsContainer' data-aos='fade-right' data-aos-offset='70'>
-        {ownersArray.map(OwnerObject => {
+        {ownersArray.map((OwnerObject, idx) => {
           return (
-            <div className='OwnersCards'>
+            <div className='OwnersCards' key={`${OwnerObject.toString()}-${idx}`}>
               <div className='OwnerInfo'>
                 <img className='OwnerImage' src={OwnerObject.OwnerImage} />
                 <div className='OwnerName'>{OwnerObject.OwnerName}</div>
@@ -35,12 +49,12 @@ const AboutUs = () => {
               </div>
 
               <ul className='OwnerDetails' data-aos='fade-down' data-aos-offset='25'>
-                {OwnerObject.OwnerSkills.map(eachskills => (
-                  <li>{eachskills}</li>
+                {OwnerObject.OwnerSkills.map((eachskills, idx) => (
+                  <li key={`${eachskills.toString()}-${idx}`}>{eachskills}</li>
                 ))}
               </ul>
               <div className='OwnerSocialMediaContainer' data-aos='fade-up' data-aos-offset='25'>
-                <a href={OwnerObject.resumeUrl} target='_blank' >
+                <a href={OwnerObject.resumeUrl} target='_blank'>
                   <img className='OwnerSocialMedia' src={Resume} title='Resume'></img>
                 </a>
 
@@ -48,7 +62,7 @@ const AboutUs = () => {
                   <img className='OwnerSocialMedia' src={Github} title='Github Profile'></img>
                 </a>
                 <a href={OwnerObject.linkedurl} target='_blank'>
-                  <img className='OwnerSocialMedia' src={LinkedIn} title='LinkedIN Profile' ></img>
+                  <img className='OwnerSocialMedia' src={LinkedIn} title='LinkedIN Profile'></img>
                 </a>
                 <a href={OwnerObject.instaUrl} target='_blank'>
                   <img className='OwnerSocialMedia' src={Instagram} title='Instagram Profile'></img>
