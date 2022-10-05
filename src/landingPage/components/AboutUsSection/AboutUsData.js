@@ -27,7 +27,7 @@ export const Owners = [
     instaUrl: "https://instagram.com/ath.ar.va",
     linkedurl: "https://linkedin.com/in/atharva-bhagat-2108",
     mailUrl: "mailto:atharvabhagat@ieee.org?subject=I have a query for you&body=Hey Atharva !!",
-    resumeUrl: resumeAtharva
+    resumeUrl: resumeAtharva,
   },
   {
     OwnerName: "Adika Karnataki",
@@ -37,7 +37,7 @@ export const Owners = [
     instaUrl: "https://instagram.com/adikakarnataki",
     linkedurl: "https://linkedin.com/in/adika-karnataki",
     mailUrl: "mailto:adikakarnataki@gmail.com?subject=I have a query for you&body=Hey Adika !!",
-    resumeUrl: resumeAdika
+    resumeUrl: resumeAdika,
   },
   {
     OwnerName: "Vaishnavi Korgaonkar",
@@ -47,14 +47,14 @@ export const Owners = [
     instaUrl: "https://instagram.com/vaishnavii_2512",
     linkedurl: "https://www.linkedin.com/in/vaishnavi-korgaonkar-2a37b4216/",
     mailUrl: "mailto:vaishnavi2512@gmail.com?subject=I have a query for you&body=Hey Vaishnavi !!",
-    resumeUrl: resumeVaish
+    resumeUrl: resumeVaish,
   },
 ];
 
 export const randomizeArray = array => {
   let newArray = [...array];
 
-//   console.log("newArray Before : ", newArray);
+  //   console.log("newArray Before : ", newArray);
 
   let currentIndex, randomizingIndex;
 
@@ -63,7 +63,7 @@ export const randomizeArray = array => {
     [newArray[randomizingIndex], newArray[currentIndex]] = [newArray[currentIndex], newArray[randomizingIndex]];
   }
 
-//   console.log("newArray After : ", newArray);
+  //   console.log("newArray After : ", newArray);
 
   return newArray;
 };

@@ -307,7 +307,7 @@ const LoginPage = ({ setlG }) => {
         <hr />
         <div className='formElem'>
           <img src={user}></img>
-          <input name='username' value={User.username} type='text' onChange={handleChange} placeholder='Enter Email / Username' autoFocus></input>
+          <input name='username' value={User.username} type='text' onChange={handleChange} placeholder='Enter Email / Username' autoFocus={true}></input>
         </div>
         <div className='formElem'>
           <img src={password}></img>
@@ -334,7 +334,7 @@ const LoginPage = ({ setlG }) => {
         <h1>Signup to códiGo</h1>
         <div className='formElem'>
           <img src={email}></img>
-          <input name='email' value={User.email} onChange={handleChange} type='email' placeholder='Enter your email-address' autoFocus></input>
+          <input name='email' value={User.email} onChange={handleChange} type='email' placeholder='Enter your email-address' autoFocus={true}></input>
         </div>
         <div className='formElem'>
           <img src={user}></img>
@@ -423,16 +423,23 @@ const LoginPage = ({ setlG }) => {
         <img src={signupIcon} />
         <h2>Signup Successful</h2>
       </div>
-      <div id='sign' className='SignUpNow'   style={{ display: login ? "" : "none"  }}>
+      <div id='sign' className='SignUpNow' style={{ display: login ? "" : "none" }}>
         <h3>
           {" "}
-          Don't have an Account ? <br></br><button className='SetterLogin'onClick={setter}> Sign Up for free </button>
+          Don't have an Account ? <br></br>
+          <button className='SetterLogin' onClick={setter}>
+            {" "}
+            Sign Up for free{" "}
+          </button>
         </h3>
       </div>
       <div id='sign' style={{ display: login ? "none" : " " }}>
         <h3>
           {" "}
-          Already have an Account ? <br></br><button className='SetterLogin' onClick={setter}>Log In</button>
+          Already have an Account ? <br></br>
+          <button className='SetterLogin' onClick={setter}>
+            Log In
+          </button>
         </h3>
       </div>
       <hr id='sec'></hr>

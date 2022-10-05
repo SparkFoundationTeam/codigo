@@ -15,8 +15,6 @@ GET https://codigo-server.herokuapp.com/Quiz/html  HTTP/1.1
 
 
 
-ba
-
 ###
 GET  https://codigo-server.herokuapp.com/AllCourses/  HTTP/1.1
 content-type: application/json

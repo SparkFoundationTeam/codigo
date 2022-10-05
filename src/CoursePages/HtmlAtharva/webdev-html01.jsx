@@ -11,27 +11,7 @@ import FeedbackTemplate from "../../Feedback/feedback";
 const Html01 = () => {
   return (
     <div>
-      <PageTemplate
-        CourseName='Html Complete Course'
-        Section1=' Introduction to Web Development '
-        Section2=' Basic Html Tags '
-        Section3=' Html Forms, Tables, Multimedia, Lists '
-        Section4=' HTML Semantics and Embeddings '
-        Section5='Intoduction to basic CSS '
-        video='https://youtube.com/embed/9xIKMpzcbcc'
-        Book1={Book1}
-        Book1Name='HTML CSS JS Notes'
-        Author1=' Atharva Bhagat'
-        Book1Desc='This book contains handwritten notes of HTML , CSS and JavaScript'
-        Book2={Book2}
-        Book2Name='HTML Cheat Sheet'
-        Author2='Online resource'
-        Book2Desc='This cheat sheet contains all necessary tags and material to start practising HTML'
-        Book3={Book3}
-        Book3Name='HTML Tags Sheet'
-        Author3='Online resource'
-        Book3Desc='This contains all necessary tags in a nutshell'
-      />
+      <PageTemplate CourseName='Html Complete Course' Section1=' Introduction to Web Development ' Section2=' Basic Html Tags ' Section3=' Html Forms, Tables, Multimedia, Lists ' Section4=' HTML Semantics and Embeddings ' Section5='Intoduction to basic CSS ' video='https://youtube.com/embed/9xIKMpzcbcc' Book1={Book1} Book1Name='HTML CSS JS Notes' Author1=' Atharva Bhagat' Book1Desc='This book contains handwritten notes of HTML , CSS and JavaScript' Book2={Book2} Book2Name='HTML Cheat Sheet' Author2='Online resource' Book2Desc='This cheat sheet contains all necessary tags and material to start practising HTML' Book3={Book3} Book3Name='HTML Tags Sheet' Author3='Online resource' Book3Desc='This contains all necessary tags in a nutshell' />
 
       <WebDevCompiler
         Language='html'

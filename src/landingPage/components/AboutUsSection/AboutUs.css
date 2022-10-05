@@ -1,7 +1,7 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -168,7 +168,7 @@
     height: 100vh;
     transform: rotate(180deg);
   }
-  
+
   .OwnerBlob2 {
     position: absolute;
     top: -50vh;
@@ -196,8 +196,6 @@
   .OurTeam {
     display: none;
   }
-
-  
 
   .AboutUs-Des {
     font-size: 1.2vh;

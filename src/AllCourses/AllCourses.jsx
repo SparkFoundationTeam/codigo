@@ -1,28 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-import './AllCourses.css';
+import "./AllCourses.css";
 
-import CourseCard from './CoursesCard';
-import UpcomingCourses from './UpcomingCourses';
-import Footer from '../footer';
+import CourseCard from "./CoursesCard";
+import UpcomingCourses from "./UpcomingCourses";
+import Footer from "../footer";
 
-import axios from 'axios';
+import axios from "axios";
 
-import codiGoIcon from '../resources/codiGo.png';
-import searchIcon from '../resources/search.png';
-import menuIcon from '../resources/menuRes.png';
-import JSBhavesh from '../resources/JSBhavesh.png';
-import HtmlAtharva from '../resources/HTMLAtharva.png';
-import JavaAdika from '../resources/JAVAAdika.png';
-import PythonVaishnavi from '../resources/PYTHONVaishnavi.png';
+import codiGoIcon from "../resources/codiGo.png";
+import searchIcon from "../resources/search.png";
+import menuIcon from "../resources/menuRes.png";
+import JSBhavesh from "../resources/JSBhavesh.png";
+import HtmlAtharva from "../resources/HTMLAtharva.png";
+import JavaAdika from "../resources/JAVAAdika.png";
+import PythonVaishnavi from "../resources/PYTHONVaishnavi.png";
 import Bhavesh from "../resources/bhaveshIcon.jpg";
 import Atharva from "../resources/atharva.jpg";
 import Vaishnavi from "../resources/vaishIcon.jpg";
 import Adika from "../resources/adikaIcon.jpg";
 
 const AllCourses = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   let [showFiltered, setShowfiltered] = useState(false);
   let [filteredCourses, setfilteredCourses] = useState([]);
   let [menu, setMenu] = useState(false);
@@ -30,23 +30,23 @@ const AllCourses = () => {
   let [JsCourse, setJsCOurse] = useState([
     {
       ImageLogo: JSBhavesh,
-      CourseName: 'Javascript Complete Course',
-      CourseInfo: 'Become Zero-To-Hero in Javascript and start building Web-Applications',
+      CourseName: "Javascript Complete Course",
+      CourseInfo: "Become Zero-To-Hero in Javascript and start building Web-Applications",
       TutorPic: Bhavesh,
-      TutorName: 'Bhavesh Mhadse',
-      shortCourseName: 'javascript',
-      CourseDuration: '2 Hours',
+      TutorName: "Bhavesh Mhadse",
+      shortCourseName: "javascript",
+      CourseDuration: "2 Hours",
       rating: 2,
-      Linker: 'js01',
-      SeriesName: 'JavaScript Development Series',
-      keywords: ['js', 'javascript', 'clean coding', 'series >>', 'courses >>', 'tutors >> ', 'bhavesh', 'mhadse', 'web'],
+      Linker: "js01",
+      SeriesName: "JavaScript Development Series",
+      keywords: ["js", "javascript", "clean coding", "series >>", "courses >>", "tutors >> ", "bhavesh", "mhadse", "web"],
     },
   ]);
 
   let [dt, setData] = useState([]);
 
   const handleRendering = () => {
-    if (searchTerm === '') {
+    if (searchTerm === "") {
       setShowfiltered(false);
       return;
     } else {
@@ -54,7 +54,7 @@ const AllCourses = () => {
     }
     let newarr = [...demo, ...demoTwo];
     let filtered = newarr.filter(eachobj => {
-      return eachobj.keywords.join(' ').toLowerCase().includes(searchTerm.toLowerCase());
+      return eachobj.keywords.join(" ").toLowerCase().includes(searchTerm.toLowerCase());
     });
     // console.log(filtered);
     setfilteredCourses(filtered);
@@ -64,45 +64,45 @@ const AllCourses = () => {
 
   let [demo, setDemo] = useState([
     {
-      header: ' Web Development Series',
-      keywords: ['Web Development Series', 'series >>', 'courses >>', 'tutors >> ', 'HTML Complete Course', 'html', 'css', 'web', 'atharva', 'bhagat', 'react'],
+      header: " Web Development Series",
+      keywords: ["Web Development Series", "series >>", "courses >>", "tutors >> ", "HTML Complete Course", "html", "css", "web", "atharva", "bhagat", "react"],
       coursesCard: [
         {
           ImageLogo: HtmlAtharva,
-          shortCourseName: 'html',
-          CourseName: 'Html Complete Course',
-          CourseInfo: 'The complete HTML Course to kick-start Web Development',
+          shortCourseName: "html",
+          CourseName: "Html Complete Course",
+          CourseInfo: "The complete HTML Course to kick-start Web Development",
           TutorPic: Atharva,
-          TutorName: 'Atharva Bhagat',
-          CourseDuration: '1 Hour',
+          TutorName: "Atharva Bhagat",
+          CourseDuration: "1 Hour",
           rating: 5,
           totalRating: 0,
           ratingsArr: [0, 0, 0, 0, 0],
-          Linker: 'html01',
-          SeriesName: 'Web Development Series',
-          keywords: ['html', 'series >>', 'courses >>', 'tutors >> ', 'css', 'atharva', 'web', 'bhagat', 'react'],
+          Linker: "html01",
+          SeriesName: "Web Development Series",
+          keywords: ["html", "series >>", "courses >>", "tutors >> ", "css", "atharva", "web", "bhagat", "react"],
         },
       ],
     },
     {
-      header: 'Java Programming Series',
-      keywords: ['Java Programming Series', 'series >>', 'courses >>', 'tutors >> ', 'Java Complete Course', 'Java', 'Programming', 'adika', 'karnataki', 'gui'],
+      header: "Java Programming Series",
+      keywords: ["Java Programming Series", "series >>", "courses >>", "tutors >> ", "Java Complete Course", "Java", "Programming", "adika", "karnataki", "gui"],
 
       coursesCard: [
         {
-          shortCourseName: 'java',
+          shortCourseName: "java",
           ImageLogo: JavaAdika,
-          CourseName: 'Java Complete Course',
-          CourseInfo: 'Java Programming explained thorougly to enter beautiful world of Java',
+          CourseName: "Java Complete Course",
+          CourseInfo: "Java Programming explained thorougly to enter beautiful world of Java",
           TutorPic: Adika,
-          TutorName: 'Adika Karnataki',
-          CourseDuration: '2 Hour',
+          TutorName: "Adika Karnataki",
+          CourseDuration: "2 Hour",
           rating: 5,
           totalRating: 0,
           ratingsArr: [0, 0, 0, 0, 0],
-          Linker: 'java01',
-          SeriesName: 'Java Development Series',
-          keywords: ['Java', 'series >>', 'courses >>', 'tutors >> ', 'Programming', 'adika', 'karnataki', 'gui'],
+          Linker: "java01",
+          SeriesName: "Java Development Series",
+          keywords: ["Java", "series >>", "courses >>", "tutors >> ", "Programming", "adika", "karnataki", "gui"],
         },
       ],
     },
@@ -110,37 +110,37 @@ const AllCourses = () => {
 
   let [demoTwo, setDemoTwo] = useState([
     {
-      header: 'Javascript Development Series',
-      keywords: ['Javascript Development Series', 'series >>', 'courses >>', 'tutors >> ', 'Javascript Complete Course', 'js', 'javascript', 'clean coding', 'bhavesh', 'mhadse'],
+      header: "Javascript Development Series",
+      keywords: ["Javascript Development Series", "series >>", "courses >>", "tutors >> ", "Javascript Complete Course", "js", "javascript", "clean coding", "bhavesh", "mhadse"],
 
       coursesCard: JsCourse,
     },
 
     {
-      header: 'Python Development Series',
-      keywords: ['Python Development Series', 'series >>', 'courses >>', 'tutors >> ', 'Python Complete Course', 'python', 'vaishnavi', 'korgaonkar', 'automation'],
+      header: "Python Development Series",
+      keywords: ["Python Development Series", "series >>", "courses >>", "tutors >> ", "Python Complete Course", "python", "vaishnavi", "korgaonkar", "automation"],
 
       coursesCard: [
         {
-          shortCourseName: 'python',
+          shortCourseName: "python",
           ImageLogo: PythonVaishnavi,
-          CourseName: 'Python Complete Course',
-          CourseInfo: 'Complete Python Course loaded with various interesting Concepts',
+          CourseName: "Python Complete Course",
+          CourseInfo: "Complete Python Course loaded with various interesting Concepts",
           TutorPic: Vaishnavi,
-          TutorName: 'Vaishnavi Korgaonkar',
-          CourseDuration: '1 Hour',
+          TutorName: "Vaishnavi Korgaonkar",
+          CourseDuration: "1 Hour",
           rating: 5,
           totalRating: 0,
           ratingsArr: [0, 0, 0, 0, 0],
-          Linker: 'python01',
-          SeriesName: 'Python Development Series',
-          keywords: ['python', 'series >>', 'courses >>', 'tutors >> ', 'vaishnavi', 'korgaonkar', 'automation'],
+          Linker: "python01",
+          SeriesName: "Python Development Series",
+          keywords: ["python", "series >>", "courses >>", "tutors >> ", "vaishnavi", "korgaonkar", "automation"],
         },
       ],
     },
   ]); //kay zol kela kai nai :):)
   const getCourses = async () => {
-    let { data } = await axios.get('https://codigo-server.herokuapp.com/AllCourses/');
+    let { data } = await axios.get("https://codigo-server.herokuapp.com/AllCourses/");
     // console.log('data recieved from db iss : ', data);
     setJsCOurse(prev => [...prev, ...data]);
 
@@ -176,8 +176,7 @@ const AllCourses = () => {
             onSelect={event => {
               setSearchTerm(event.target.value);
               handleRendering();
-            }}
-          ></input>
+            }}></input>
 
           <datalist id='AllCoursesList'>
             <option value='Courses >>'> </option>
@@ -203,8 +202,8 @@ const AllCourses = () => {
         <div className='dashboard-links'>
           <ul>
             <a href='https://community-codigo.netlify.app' target='_blank'>
-              {' '}
-              <li>Community</li>{' '}
+              {" "}
+              <li>Community</li>{" "}
             </a>
             <a href='https://ide-codigo.netlify.app' target='_blank'>
               <li>Kōdo</li>
@@ -221,11 +220,11 @@ const AllCourses = () => {
         </div>
         <div className='res-NavButton'>
           <img src={menuIcon} onClick={() => setMenu(!menu)}></img>
-          <div style={{ display: menu ? 'flex' : 'none' }} data-aos='fade-up' data-aos-duration='5000'>
+          <div style={{ display: menu ? "flex" : "none" }} data-aos='fade-up' data-aos-duration='5000'>
             <ul>
               <a href='https://community-codigo.netlify.app' target='_blank'>
-                {' '}
-                <li>Community</li>{' '}
+                {" "}
+                <li>Community</li>{" "}
               </a>
               <a href='https://ide-codigo.netlify.app' target='_blank'>
                 <li>Kōdo</li>
@@ -248,7 +247,7 @@ const AllCourses = () => {
             {demo.map(eachObject => {
               return (
                 <div className='OneSection'>
-                  <h2 className='SectHeader'>{eachObject.header}</h2>{' '}
+                  <h2 className='SectHeader'>{eachObject.header}</h2>{" "}
                   {eachObject.coursesCard.map(eachCard => (
                     <CourseCard shrtcourse={eachCard.shortCourseName} linker={eachCard.Linker} duration={eachCard.CourseDuration} logo={eachCard.ImageLogo} tutor={eachCard.TutorName} tutorImg={eachCard.TutorPic} courseName={eachCard.CourseName} courseDesc={eachCard.CourseInfo} ratings={eachCard.rating} />
                   ))}
@@ -263,7 +262,7 @@ const AllCourses = () => {
             {demoTwo.map(eachObject => {
               return (
                 <div className='OneSection'>
-                  <h2 className='SectHeader'>{eachObject.header}</h2>{' '}
+                  <h2 className='SectHeader'>{eachObject.header}</h2>{" "}
                   {eachObject.coursesCard.map(eachCard => (
                     <CourseCard shrtcourse={eachCard.shortCourseName} linker={eachCard.Linker} duration={eachCard.CourseDuration} logo={eachCard.ImageLogo} tutor={eachCard.TutorName} tutorImg={eachCard.TutorPic} courseName={eachCard.CourseName} courseDesc={eachCard.CourseInfo} ratings={eachCard.rating} />
                   ))}
@@ -277,13 +276,13 @@ const AllCourses = () => {
           <div className='column'>
             {filteredCourses.map(eachObject => {
               return (
-                <div className='OneSection' style={{ marginLeft: '50%' }}>
+                <div className='OneSection' style={{ marginLeft: "50%" }}>
                   <h2 className='SectHeader'>{eachObject.header}</h2>
                   {eachObject.coursesCard
                     .filter(val => {
-                      if (searchTerm === '') {
+                      if (searchTerm === "") {
                         return val;
-                      } else if (val.CourseName.toLowerCase().includes(searchTerm.toLowerCase()) || val.TutorName.toLowerCase().includes(searchTerm.toLowerCase()) || val.CourseInfo.toLowerCase().includes(searchTerm.toLowerCase()) || val.SeriesName.toLowerCase().includes(searchTerm.toLowerCase()) || val.keywords.join(' ').toLowerCase().includes(searchTerm.toLowerCase())) {
+                      } else if (val.CourseName.toLowerCase().includes(searchTerm.toLowerCase()) || val.TutorName.toLowerCase().includes(searchTerm.toLowerCase()) || val.CourseInfo.toLowerCase().includes(searchTerm.toLowerCase()) || val.SeriesName.toLowerCase().includes(searchTerm.toLowerCase()) || val.keywords.join(" ").toLowerCase().includes(searchTerm.toLowerCase())) {
                         return val;
                       }
                     })
@@ -295,7 +294,7 @@ const AllCourses = () => {
             })}
           </div>
         )}
-      </div>{' '}
+      </div>{" "}
       <UpcomingCourses />
       <Footer />
     </div>

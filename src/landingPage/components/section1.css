@@ -2,7 +2,7 @@
 * {
   margin: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: "Raleway", sans-serif;
 }
 
@@ -47,11 +47,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .Section1 #nav button img {
@@ -59,12 +59,12 @@
   margin-right: 1vw;
   height: 2vh;
   -webkit-transition-duration: 0.7s;
-          transition-duration: 0.7s;
+  transition-duration: 0.7s;
 }
 
 .Section1 #nav button:hover {
   -webkit-transition-duration: 0.7s;
-          transition-duration: 0.7s;
+  transition-duration: 0.7s;
   border: none;
   background: -webkit-gradient(linear, right top, left top, from(#17c8c8), to(rgba(42, 235, 171, 0.253)));
   background: linear-gradient(to left, #17c8c8, rgba(42, 235, 171, 0.253));
@@ -75,7 +75,7 @@
   margin: 0;
   height: 2vh;
   -webkit-transition-duration: 0.7s;
-          transition-duration: 0.7s;
+  transition-duration: 0.7s;
 }
 
 .Section1 #Content {
@@ -91,12 +91,12 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .Section1 #Content #Text h1,
@@ -127,7 +127,7 @@
   border-radius: 10px;
   border: none;
   -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
+  transition-duration: 0.5s;
   font-weight: bold;
 }
 
@@ -138,7 +138,7 @@
   background: linear-gradient(to right, transparent, transparent);
   cursor: pointer;
   -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
+  transition-duration: 0.5s;
 }
 
 .Section1 #Content #introVideo {
@@ -155,8 +155,8 @@
   }
   .Section1 #nav {
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
   }
   .Section1 #nav img {
     height: 5vh;
@@ -172,22 +172,22 @@
   .Section1 #Content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     overflow: hidden;
     height: 90vh;
     width: 100vw;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
   .Section1 #Content #Text {
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     margin-top: 2vh;
     width: 100vw;
     height: 75vh;

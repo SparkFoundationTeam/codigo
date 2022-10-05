@@ -74,7 +74,6 @@ const Quiz = ({ name, tutorName, courseId }) => {
         }
       }
       if (QuizOver) {
-        // alert(`Questions Finished Your Score is : ${playerScore} / ${totalScore}`);
         setdisableAll(false);
       }
       setShowQuiz(false);
@@ -90,7 +89,6 @@ const Quiz = ({ name, tutorName, courseId }) => {
       setCurrentQuestionIndex(prevIdx => prevIdx + 1);
       setplayerChoice(undefined);
     }
-    // console.log("corre")
 
     // lvdya mi barobar kelta 2 points tuch mg ardhe 3 ardhe 2 bc saalaa toughyness
   };
@@ -105,10 +103,6 @@ const Quiz = ({ name, tutorName, courseId }) => {
   };
 
   useEffect(() => {
-    // ha useeffect lvde lavtoy karan toh sarkha trigger hotoy
-    // console.log('Name ', name);
-    // console.log(Finisher, thambbbbbb
-
     if (showQuiz) {
       let myInterval = setInterval(() => {
         if (seconds > 0) setSeconds(seconds - 1);
@@ -136,18 +130,7 @@ const Quiz = ({ name, tutorName, courseId }) => {
   //
   const getUserAttempts = async () => {
     setsignedInUser(getUserFromLocalStorage());
-    // console.log(signedInUser);
-    // let obj = {
-    //   email: signedInUser.email,
-    //   tutorName: tutorName,
-    //   courseName: name,
-    // };
-    // console.log("Props are ", signedInUser.email, name, tutorName);
-
-    // let data = await axios.get("https://codigo-server.herokuapp.com/Courses/attempts?email=31mhadse.bhavesh2001@gmail.com&courseName=Javascript Complete Course&tutorName=Bhavesh Mhadse");
     let data = await axios.get(`https://codigo-server.herokuapp.com/Courses/attempts?email=${signedInUser.email}&courseName=${name}&tutorName=${tutorName}`);
-    // console.log("data from getuser attempts is ", data.data);
-    // return data.data;
     setAttempts(data.data);
   };
 
@@ -157,11 +140,8 @@ const Quiz = ({ name, tutorName, courseId }) => {
     language = language[0];
     // if (true) alert('language is ', language.toString());
     let data = await axios.get(BackendUrl + `Quiz/${language}`);
-    // console.log("Quiz", data.data);
-    // console.log("Inside getquiz questions!");
 
     let quizArray = randomizer(data.data);
-    // console.log("quiz questrions areeeeeeee", data.data);
     //kara ajun  sdhya cha 10 kadhu qsns 20 nhiet ani mhane mjha mule mazmore clean code :)
 
     let point2 = randomizer(quizArray.filter(eachObj => eachObj.points == 2));
@@ -171,12 +151,6 @@ const Quiz = ({ name, tutorName, courseId }) => {
     point3.length = 10;
 
     if (true) setQuizArray([...point2, ...point3]); // kalla
-
-    // console.log(point2); /// kallaa
-    // console.log(point3);
-    // console.log("I am final", point3.concat(point2));
-
-    // setQuizArray(randomizer(point3.concat(point2)));
   };
 
   useEffect(() => {
@@ -186,7 +160,6 @@ const Quiz = ({ name, tutorName, courseId }) => {
 
   return (
     <div className='BooksBox' id={showQuiz ? "Quizz" : "QuizSection"}>
-      {/* <h1>{JSON.stringify(attempts)}</h1> */}
       <img src={BlobP1} id='bp1' />
       <img src={BlobP2} id='bp2' />
       <div className='quiz-container'>
@@ -204,7 +177,6 @@ const Quiz = ({ name, tutorName, courseId }) => {
                   {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
                 </span>
               )}
-              {/* Total questions are {quizArray.length} */}
             </div>
             <h2>
               <b>{quizArray[currentQuestionIndex].points}</b> Points
@@ -226,7 +198,6 @@ const Quiz = ({ name, tutorName, courseId }) => {
                 {buttonVal}
               </button>
             </div>
-            {/* <h1>player score is {playerScore}</h1> */}
           </div>
         )}
 
@@ -236,24 +207,11 @@ const Quiz = ({ name, tutorName, courseId }) => {
   );
 }; //yay
 const Instructions = ({ Attempt, CourseName, TutorName, CourseId, setQ, setI, Email }) => {
-  let [certificateModal, setCertificateModal] = useState(false);
-  let { signedInUser, setsignedInUser } = useContext(UserContext); // <- ani hi pn
-
   let [attemp, setattemp] = useState(1);
-
-  const getUserFromLocalStorage = () => JSON.parse(localStorage.getItem("User"));
+  let [certificateModal, setCertificateModal] = useState(false);
 
   const getUserAttempts = async () => {
-    // console.log("Props in instructions are are ", signedInUser.email, CourseName, TutorName);
-
-    let email = getUserFromLocalStorage().email;
-
-    // console.log("New method ", email);
-    // let data = await axios.get("https://codigo-server.herokuapp.com/Courses/attempts?email=31mhadse.bhavesh2001@gmail.com&courseName=Javascript Complete Course&tutorName=Bhavesh Mhadse");
     let data = await axios.get(`https://codigo-server.herokuapp.com/Courses/attempts?email=${Email}&courseName=${CourseName}&tutorName=${TutorName}`);
-    // let data = await axios.get(`https://codigo-server.herokuapp.com/Courses/attempts?email=${signedInUser.email}&courseName=${name}&tutorName=${tutorName}`);
-    // console.log("data from getuser attempts is ", data.data);
-    // return data.data.toString();
     if (true) setattemp(data.data);
   };
   const increaseAttempts = async () => {
@@ -263,28 +221,21 @@ const Instructions = ({ Attempt, CourseName, TutorName, CourseId, setQ, setI, Em
       email: Email, //hm
     };
     let data = await axios.patch(`https://codigo-server.herokuapp.com/Courses/attempts`, obj);
-    // console.log("Attemtppspspsss", data.data);
     setattemp(data.data.numberOfAttempts);
   };
   useEffect(() => {
-    // setattemp(getUserAttempts());
     getUserAttempts();
-    // console.log("Em is ", Email);
-    // alert(Attempt);
   }, []); //maar try
 
   return (
     <>
       <div className='QuizInstructions'>
         <h1>{CourseName} </h1>
-        {/* <h1 style={{ color: 'black' }}>attempts are {Attempt}</h1> */}
         <h1>Certificate Quiz</h1>
         <br />
         <hr />
         <br />
         <h2>INSTRUCTIONS</h2>
-        {/* <p>{JSON.stringify(signedInUser.email)}</p> */}
-        {/* <p>attempts are {attemp}</p> */}
         <br />
         <p> You will be given 20 Questions to Attempt </p> <br />
         <p> 10 questions will have 2 points and 10 questions of 3 points </p>
@@ -305,10 +256,7 @@ const Instructions = ({ Attempt, CourseName, TutorName, CourseId, setQ, setI, Em
               increaseAttempts();
             }}
             className='QuizStartButton'
-            id='StartQuiz'
-            //   disabled={!(Attempt < 4)}
-            //   style={attempt < 4 ? { display: 'block' } : { display: 'none' }}
-          >
+            id='StartQuiz'>
             TAKE QUIZ {"/>"}
           </button>
         )}
@@ -320,7 +268,6 @@ const Instructions = ({ Attempt, CourseName, TutorName, CourseId, setQ, setI, Em
         <h2>Make sure you have stable internet connection </h2>
         <button
           onClick={() => {
-            // handleAttempts(); //logic tar laav thamb alo 5 mintat
             setCertificateModal(false);
             setI(false);
             setQ(true);
@@ -348,21 +295,10 @@ const Instructions = ({ Attempt, CourseName, TutorName, CourseId, setQ, setI, Em
 const EndGame = ({ CourseName, PlayerScore, TotalScore, Email, TutorName }) => {
   let [certificateModal, setCertificateModal] = useState(false);
 
-  let { signedInUser, setsignedInUser } = useContext(UserContext); // <- ani hi pn
-
-  const getUserFromLocalStorage = () => JSON.parse(localStorage.getItem("User"));
   const setUserFromLocalStorage = user => localStorage.setItem("User", JSON.stringify(user));
 
-  const fetchUserFromDb = async () => {
-    let data = await axios.get(BackendUrl + `User?email=${Email}`);
-
-    // console.log("from endgame", data.data);
-  };
-
   const determineScoreANdSetCompletedQuiz = async () => {
-    // console.log("In score determining...............");
     if (PlayerScore < 35) return; // hm kr try
-    // alert("retruned because player score is ", PlayerScore);
 
     let obj = {
       email: Email,
@@ -372,24 +308,11 @@ const EndGame = ({ CourseName, PlayerScore, TotalScore, Email, TutorName }) => {
 
     let data = await axios.patch(BackendUrl + "Courses/feedback", obj);
 
-    // console.log("Data iss.......", data.data[0]);
-
     if (true) setUserFromLocalStorage(data.data[0]);
-
-    let datatwo = await axios.get(BackendUrl + `User?email=${Email}`);
-
-    // if (true) setUserFromLocalStorage(data.data.user);
-
-    // console.log("Checking", datatwo.data);
   };
 
   useEffect(() => {
-    // if (PlayerScore < 10) {// ha  undefined ahe  dhaat am.da kela ajj sakali hoin atta
     determineScoreANdSetCompletedQuiz();
-    // fetchUserFromDb();
-
-    // console.log(PlayerScore);
-    // }
   }, []);
   return (
     <>

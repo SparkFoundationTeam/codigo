@@ -3,8 +3,8 @@
 * {
   margin: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -20,15 +20,15 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 #cards h1 {
@@ -74,11 +74,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .reasonCard {
@@ -91,20 +91,20 @@
   background-color: rgba(255, 255, 255, 0.965);
   border: none;
   -webkit-filter: drop-shadow(10px 10px 10px grey);
-          filter: drop-shadow(10px 10px 10px grey);
+  filter: drop-shadow(10px 10px 10px grey);
   border-radius: 10px;
   height: 15vh;
   width: 30vw;
   overflow: hidden;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-transition-duration: 0.7s;
-          transition-duration: 0.7s;
+  transition-duration: 0.7s;
 }
 
 .reasonCard h2 {
@@ -124,17 +124,17 @@
 
 .reasonCard:hover {
   -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  transform: scale(1.2);
   -webkit-transition-duration: 1s;
-          transition-duration: 1s;
+  transition-duration: 1s;
   z-index: 5;
 }
 
 @media screen and (max-width: 1000px) {
   #cards {
     -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
     height: auto;
   }
   #cards #blob #blob2 {
@@ -143,13 +143,13 @@
   .Row {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
   .reasonCard {
     border: none;
     -webkit-filter: drop-shadow(10px 10px 10px grey);
-            filter: drop-shadow(10px 10px 10px grey);
+    filter: drop-shadow(10px 10px 10px grey);
     width: 80vw;
     height: 10vh;
     margin: 0.75vh;

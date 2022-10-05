@@ -65,13 +65,13 @@
     }
   }
 
-  @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
   .AccountCard {
     text-align: center;
     height: 30vh;
     width: 43vw;
     border-radius: 1vw;
-    background-image: url('../resources/cardBG2.png');
+    background-image: url("../resources/cardBG2.png");
     color: white;
     background-size: cover;
     display: flex;
@@ -80,7 +80,7 @@
     justify-content: space-between;
 
     p {
-      font-family: 'Orbitron';
+      font-family: "Orbitron";
     }
     align-items: flex-start;
     position: relative;
@@ -225,11 +225,6 @@
       flex-direction: column;
       justify-content: space-between;
 
-      
-
-      
-      
-
       align-items: flex-start;
       position: relative;
 
@@ -239,7 +234,6 @@
         right: 5vw;
         bottom: 2vh;
         font-size: medium;
-        
       }
       img {
         position: static;

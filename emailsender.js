@@ -4,13 +4,6 @@ class SendEmail {
   sendEmail = (To, Subject, topic, recieverName, attachPdf) => {
     const transporter = nodemailer.createTransport({
       service: "gmail",
-      //   host: "smtp.gmail.com",
-      //   port: 587,
-      //   secure: false,
-      // auth: {
-      //     user: "saideepclasses1818@gmail.com",
-      //     pass: "Saideep@1818"
-      // }
       auth: {
         user: "codigoteams@gmail.com",
         pass: "BhAtAdVs@54321",

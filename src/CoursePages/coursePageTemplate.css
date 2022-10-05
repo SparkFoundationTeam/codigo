@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
 #CourseHeader {
-  font-family: 'Poppins', cursive;
+  font-family: "Poppins", cursive;
   color: goldenrod;
 }
 
@@ -20,22 +20,22 @@
   background-repeat: no-repeat;
   background-size: 5px;
   -webkit-backdrop-filter: blur(0.1rem);
-          backdrop-filter: blur(0.1rem);
+  backdrop-filter: blur(0.1rem);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   position: fixed;
   top: 0;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .CourseSidebar .CourseBar {
@@ -43,15 +43,15 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 5vw;
   cursor: pointer;
   -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
+  transition-duration: 0.5s;
   margin-top: 2vh;
 }
 
@@ -95,15 +95,15 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   margin-top: 10vh;
 }
 
@@ -116,18 +116,18 @@
 .VideoBox #List {
   background-color: rgba(255, 255, 255, 0.438);
   -webkit-backdrop-filter: blur(0.2rem);
-          backdrop-filter: blur(0.2rem);
+  backdrop-filter: blur(0.2rem);
   margin: 0vw 2vw;
   width: 70vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .VideoBox #List h4,
@@ -141,15 +141,15 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -165,17 +165,17 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   position: relative;
   margin-left: 2vw;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   margin-top: 5vh;
   width: 90vw;
   height: 80vh;
@@ -183,7 +183,7 @@
   padding-top: 5vh;
   background-color: rgba(253, 253, 253, 0.486);
   -webkit-backdrop-filter: blur(0.6rem);
-          backdrop-filter: blur(0.6rem);
+  backdrop-filter: blur(0.6rem);
   background-image: -webkit-gradient(linear, left top, left bottom, from(aqua), to(purple)), -webkit-gradient(linear, left top, right top, from(purple), to(aqua)), -webkit-gradient(linear, left top, left bottom, from(purple), to(aqua)), -webkit-gradient(linear, right top, left top, from(purple), to(aqua));
   background-image: linear-gradient(aqua, purple), linear-gradient(to right, purple, aqua), linear-gradient(to bottom, purple, aqua), linear-gradient(to left, purple, aqua);
   background-repeat: no-repeat;
@@ -202,7 +202,7 @@
   left: -1.5vw;
   top: 4vh;
   -webkit-transform: rotate(270deg);
-          transform: rotate(270deg);
+  transform: rotate(270deg);
   background: -webkit-linear-gradient(right, #ff137d, #04b4b4);
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -271,7 +271,7 @@
   border-right-color: transparent;
   border-bottom-color: transparent;
   -webkit-filter: drop-shadow(5px 2px 5px grey);
-          filter: drop-shadow(5px 2px 5px grey);
+  filter: drop-shadow(5px 2px 5px grey);
   -webkit-transition: all ease-in-out linear 200ms;
   transition: all ease-in-out linear 200ms;
 }
@@ -279,7 +279,7 @@
 .CodeAlong .button-leftmost:focus {
   background: white;
   -webkit-filter: drop-shadow(5px 2px 5px transparent);
-          filter: drop-shadow(5px 2px 5px transparent);
+  filter: drop-shadow(5px 2px 5px transparent);
   border-left-color: grey;
   border-top-color: grey;
   z-index: -100;
@@ -287,7 +287,7 @@
 
 .CodeAlong .button-leftmost:hover + .button-middle {
   -webkit-filter: drop-shadow(-2px 2px 5px grey);
-          filter: drop-shadow(-2px 2px 5px grey);
+  filter: drop-shadow(-2px 2px 5px grey);
 }
 
 .CodeAlong .button-middle {
@@ -297,13 +297,13 @@
   border: 2px solid transparent;
   background: #d2f3f3;
   -webkit-filter: drop-shadow(5px 2px 5px grey);
-          filter: drop-shadow(5px 2px 5px grey);
+  filter: drop-shadow(5px 2px 5px grey);
 }
 
 .CodeAlong .button-middle:focus {
   background: white;
   -webkit-filter: drop-shadow(5px 5px 5px transparent);
-          filter: drop-shadow(5px 5px 5px transparent);
+  filter: drop-shadow(5px 5px 5px transparent);
   border-right-color: transparent;
   border-top-color: grey;
   border-bottom-color: grey;
@@ -312,7 +312,7 @@
 
 .CodeAlong .button-middle:hover + .button-middle {
   -webkit-filter: drop-shadow(-5px 2px 5px grey);
-          filter: drop-shadow(-5px 2px 5px grey);
+  filter: drop-shadow(-5px 2px 5px grey);
 }
 
 .CodeAlong .button-rightmost {
@@ -327,7 +327,7 @@
   border-right-color: transparent;
   border-bottom-color: transparent;
   -webkit-filter: drop-shadow(5px 2px 5px grey);
-          filter: drop-shadow(5px 2px 5px grey);
+  filter: drop-shadow(5px 2px 5px grey);
   -webkit-transition: all ease-in-out linear 200ms;
   transition: all ease-in-out linear 200ms;
 }
@@ -335,7 +335,7 @@
 .CodeAlong .button-rightmost:focus {
   background: white;
   -webkit-filter: drop-shadow(5px 2px 5px transparent);
-          filter: drop-shadow(5px 2px 5px transparent);
+  filter: drop-shadow(5px 2px 5px transparent);
   border-right-color: grey;
   border-top-color: grey;
   z-index: -100;
@@ -343,7 +343,7 @@
 
 .CodeAlong .button-rightmost:hover + .button-middle {
   -webkit-filter: drop-shadow(-2px 2px 5px grey);
-          filter: drop-shadow(-2px 2px 5px grey);
+  filter: drop-shadow(-2px 2px 5px grey);
 }
 
 .BooksBox {
@@ -351,11 +351,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -376,18 +376,18 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   padding: 5rem;
   -webkit-backdrop-filter: blur(0.6rem);
-          backdrop-filter: blur(0.6rem);
+  backdrop-filter: blur(0.6rem);
   width: 72vw;
   height: 80vh;
   background-color: rgba(253, 253, 253, 0.486);
@@ -464,15 +464,15 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .MetricsItem h3 {
@@ -485,14 +485,14 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
   height: 100%;
 }
 
@@ -508,8 +508,8 @@
 
 #FeedBack .BooksContainer {
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
   position: relative;
 }
 
@@ -519,10 +519,10 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   width: 100%;
 }
 
@@ -533,8 +533,8 @@
   width: 20vw;
   overflow: hidden;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 #FeedBack .BooksContainer .RatingsBar .RatingsSpanner hr {
@@ -551,19 +551,19 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
   text-align: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   padding: 5rem;
   -webkit-backdrop-filter: blur(6rem);
-          backdrop-filter: blur(6rem);
+  backdrop-filter: blur(6rem);
   width: 90%;
   height: 60vh;
   top: 10%;
@@ -591,11 +591,11 @@
   display: flex;
   width: 70%;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .OverallRatingsFeedBack img {
@@ -613,8 +613,8 @@
   display: flex;
   width: 50%;
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
 }
 
 @media screen and (max-width: 1000px) {
@@ -641,8 +641,8 @@
     margin-top: 5vh;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     height: 80%;
   }
   .Performance {
@@ -651,8 +651,8 @@
   .Performance div {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
   .RatingsChart {
     width: 80vw;
@@ -667,11 +667,11 @@
     margin-bottom: 3vh;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
   .FeedBackModal .OverallRatingsFeedBack h2 {
     margin-bottom: 1vh;
@@ -707,8 +707,8 @@
     height: auto;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
   .BooksBox #bp1 {
     visibility: hidden;
@@ -722,8 +722,8 @@
   .BooksBox .BookInfo {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
   .BooksBox .BookInfo .BookTitle,
   .BooksBox .BookInfo .AuthorTitle,
@@ -746,11 +746,11 @@
     display: flex;
     width: 80vw;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
   .BooksBox .BookInfo .ViewBook,
   .BooksBox .BookInfo .DownloadBook {
@@ -769,8 +769,8 @@
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
   .CodeAlong .button-container button {
     font-size: 2vw;
@@ -790,8 +790,8 @@
   .CodeAlong .CodeContainer #Compiler {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
   .CodeAlong .CodeContainer #Compiler #CodeEditor {
     height: 80vh;
@@ -812,11 +812,11 @@
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     width: 100%;
   }
 }

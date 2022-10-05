@@ -6,8 +6,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: fixed;
   z-index: 10;
   background-color: white;
@@ -46,17 +46,17 @@
   display: inline-block;
   cursor: pointer;
   -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
 
 .dashboard-navbar .dashboard-links ul li:hover {
   color: #f00080;
   -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
   -webkit-transition: all ease-in-out;
   transition: all ease-in-out;
   -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
 
 #courseSearch {
@@ -70,11 +70,11 @@
   display: flex;
   height: 4vh;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 #courseSearch #courseSearchBar {
@@ -120,7 +120,7 @@ datalist option {
   padding-bottom: 5vh;
   background-color: rgba(253, 253, 253, 0.486);
   -webkit-backdrop-filter: blur(0.1rem);
-          backdrop-filter: blur(0.1rem);
+  backdrop-filter: blur(0.1rem);
 }
 
 #AllCoursesPageBody {
@@ -144,11 +144,11 @@ datalist option {
   width: 50vw;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .OneSection a {
@@ -167,9 +167,9 @@ datalist option {
   display: -ms-flexbox;
   display: flex;
   -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
+  transition-duration: 0.2s;
   -webkit-filter: drop-shadow(10px 10px 10px grey);
-          filter: drop-shadow(10px 10px 10px grey);
+  filter: drop-shadow(10px 10px 10px grey);
 }
 
 .OneSection a .CoursesCard .infoBox {
@@ -177,12 +177,12 @@ datalist option {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .OneSection a .CoursesCard img {
@@ -210,8 +210,8 @@ datalist option {
   display: flex;
   width: 20vw;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .OneSection a .CoursesCard .span img {
@@ -227,7 +227,7 @@ datalist option {
 .OneSection a .CoursesCard:hover {
   background-color: #f5efef;
   -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
+  transition-duration: 0.2s;
 }
 
 .OneSection a .CoursesCard:hover img,
@@ -236,14 +236,14 @@ datalist option {
 .OneSection a .CoursesCard:hover h5,
 .OneSection a .CoursesCard:hover h4 {
   -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
+  transition-duration: 0.2s;
 }
 
 .OneSection a .CoursesCard:hover h6 {
   display: visible;
   color: #046666;
   -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
+  transition-duration: 0.2s;
 }
 
 .OneSection a .CoursesCard:hover h6:hover {
@@ -269,17 +269,17 @@ h6 {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   background-color: rgba(253, 253, 253, 0.486);
   -webkit-backdrop-filter: blur(0.1rem);
-          backdrop-filter: blur(0.1rem);
+  backdrop-filter: blur(0.1rem);
 }
 
 .CardHolder {
@@ -297,14 +297,14 @@ h6 {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .UpcomingCoursesCard {
@@ -317,9 +317,9 @@ h6 {
   display: -ms-flexbox;
   display: flex;
   -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
+  transition-duration: 0.2s;
   -webkit-filter: drop-shadow(10px 10px 10px grey);
-          filter: drop-shadow(10px 10px 10px grey);
+  filter: drop-shadow(10px 10px 10px grey);
 }
 
 .UpcomingCoursesCard .infoBox {
@@ -327,12 +327,12 @@ h6 {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .UpcomingCoursesCard img {
@@ -359,8 +359,8 @@ h6 {
   display: flex;
   width: 20vw;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .UpcomingCoursesCard .span img {
@@ -383,7 +383,7 @@ h6 {
 .UpcomingCoursesCard:hover {
   background-color: #f5efef;
   -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
+  transition-duration: 0.2s;
 }
 
 .UpcomingCoursesCard:hover img,
@@ -392,14 +392,14 @@ h6 {
 .UpcomingCoursesCard:hover h5,
 .UpcomingCoursesCard:hover h4 {
   -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
+  transition-duration: 0.2s;
 }
 
 .UpcomingCoursesCard:hover h6 {
   display: visible;
   color: #046666;
   -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
+  transition-duration: 0.2s;
 }
 
 .UpcomingCoursesCard:hover h6:hover {
@@ -426,12 +426,12 @@ h6 {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
   .res-NavButton img {
     height: 3vh;
@@ -447,16 +447,16 @@ h6 {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
     text-align: right;
     -webkit-backdrop-filter: blur(5rem);
-            backdrop-filter: blur(5rem);
+    backdrop-filter: blur(5rem);
     -webkit-filter: drop-shadow(10px 10px 10px #a3a3a3);
-            filter: drop-shadow(10px 10px 10px #a3a3a3);
+    filter: drop-shadow(10px 10px 10px #a3a3a3);
   }
   .res-NavButton div ul {
     height: 15vh;
@@ -465,11 +465,11 @@ h6 {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
   }
   .res-NavButton div ul li {
     list-style: none;
@@ -491,8 +491,8 @@ h6 {
     width: 58vw;
     margin-left: -12vw;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
   #courseSearch #courseSearchBar {
     height: 3vh;
@@ -501,7 +501,7 @@ h6 {
   .dashboard-navbar .dashboard-icon .dashboard-pic {
     position: absolute;
     -webkit-transform: scale(0.5);
-            transform: scale(0.5);
+    transform: scale(0.5);
     left: -5vw;
     top: 1vh;
   }
@@ -513,11 +513,11 @@ h6 {
     width: 50vw;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
   .OneSection .SectHeader {
     font-family: "Poppins";
@@ -535,24 +535,24 @@ h6 {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
+    transition-duration: 0.2s;
     -webkit-filter: drop-shadow(10px 10px 10px grey);
-            filter: drop-shadow(10px 10px 10px grey);
+    filter: drop-shadow(10px 10px 10px grey);
   }
   .OneSection a .CoursesCard .infoBox {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
   .OneSection a .CoursesCard img {
     height: 10vh;
@@ -570,8 +570,8 @@ h6 {
     display: flex;
     width: 35vw;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
   }
   .OneSection a .CoursesCard .span img {
     height: 2vh;
@@ -608,7 +608,7 @@ h6 {
   .OneSection a .CoursesCard:hover {
     background-color: #f5efef;
     -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
+    transition-duration: 0.2s;
   }
   .OneSection a .CoursesCard:hover img,
   .OneSection a .CoursesCard:hover p,
@@ -616,13 +616,13 @@ h6 {
   .OneSection a .CoursesCard:hover h5,
   .OneSection a .CoursesCard:hover h4 {
     -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
+    transition-duration: 0.2s;
   }
   .OneSection a .CoursesCard:hover h6 {
     display: visible;
     color: #046666;
     -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
+    transition-duration: 0.2s;
   }
   .OneSection a .CoursesCard:hover h6:hover {
     color: #4b4300;
@@ -630,8 +630,8 @@ h6 {
   .Upcoming .CardHolder {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     margin-top: 5vh;
   }
   .CardsContainer1 {
@@ -649,21 +649,21 @@ h6 {
     display: -ms-flexbox;
     display: flex;
     -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
+    transition-duration: 0.2s;
     -webkit-filter: drop-shadow(10px 10px 10px grey);
-            filter: drop-shadow(10px 10px 10px grey);
+    filter: drop-shadow(10px 10px 10px grey);
   }
   .UpcomingCoursesCard .infoBox {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
   .UpcomingCoursesCard img {
     height: 10vh;
@@ -680,8 +680,8 @@ h6 {
     display: flex;
     width: 50vw;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
   }
   .UpcomingCoursesCard .span img {
     height: 2vh;
@@ -719,7 +719,7 @@ h6 {
   .UpcomingCoursesCard:hover {
     background-color: #f5efef;
     -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
+    transition-duration: 0.2s;
   }
   .UpcomingCoursesCard:hover img,
   .UpcomingCoursesCard:hover p,
@@ -727,13 +727,13 @@ h6 {
   .UpcomingCoursesCard:hover h5,
   .UpcomingCoursesCard:hover h4 {
     -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
+    transition-duration: 0.2s;
   }
   .UpcomingCoursesCard:hover h6 {
     display: visible;
     color: #046666;
     -webkit-transition-duration: 0.2s;
-            transition-duration: 0.2s;
+    transition-duration: 0.2s;
   }
   .UpcomingCoursesCard:hover h6:hover {
     color: #4b4300;
@@ -742,8 +742,8 @@ h6 {
     margin-top: 8vh;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
 }
 /*# sourceMappingURL=AllCourses.css.map */

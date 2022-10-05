@@ -1,24 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import {
-  CourseSelectorButtonContainer,
-  CourseSelectorButton,
-  CoursesCardContainer,
-  ButtonContainerDiv,
-  TutorImageContainer,
-  OurCoursesSection,
-  CourseCardHeader,
-  CourseCardInfo,
-  TutorContainer,
-  SectionHeader,
-  CoursesCard,
-  TutorImage,
-  CourseIcon,
-  AllCourses,
-  TutorName,
-  Timing,
-} from "../../../global.styles";
+import { CourseSelectorButtonContainer, CourseSelectorButton, CoursesCardContainer, ButtonContainerDiv, TutorImageContainer, OurCoursesSection, CourseCardHeader, CourseCardInfo, TutorContainer, SectionHeader, CoursesCard, TutorImage, CourseIcon, AllCourses, TutorName, Timing } from "../../../global.styles";
 
 import randomizer from "../../../randomizer";
 

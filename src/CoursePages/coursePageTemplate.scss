@@ -4,10 +4,11 @@
   justify-content: center;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
 
 #CourseHeader {
-    font-family: 'Poppins', cursive;  color: goldenrod;
+  font-family: "Poppins", cursive;
+  color: goldenrod;
 }
 
 .dashboard-navbar {
@@ -71,7 +72,7 @@
 }
 
 .VideoBox {
-  background-image: url('../resources/pattern1Blob.png');
+  background-image: url("../resources/pattern1Blob.png");
   background-size: contain;
   background-repeat: repeat;
   background-size: 60vh;
@@ -278,8 +279,8 @@
     -webkit-text-fill-color: transparent;
   }
 
-  a{
-      text-decoration: none;
+  a {
+    text-decoration: none;
   }
 
   width: 100vw;
@@ -534,7 +535,7 @@
   }
 
   #CourseHeader {
-      min-width: 40vw;
+    min-width: 40vw;
     font-size: small;
     margin-left: 30vw;
   }

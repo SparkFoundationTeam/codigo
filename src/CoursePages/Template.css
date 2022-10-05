@@ -6,8 +6,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: fixed;
   z-index: 10;
   background-color: white;
@@ -17,7 +17,7 @@
 * {
   margin: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: "Raleway", sans-serif;
 }
 
@@ -50,11 +50,11 @@
   display: flex;
   list-style: none;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: auto;
   height: auto;
 }
@@ -65,18 +65,18 @@
   display: flex;
   list-style: none;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   color: black;
   font-size: 1.2rem;
   font-weight: 800;
   display: inline-block;
   cursor: pointer;
   -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  transition-duration: 0.3s;
   content: "";
   position: absolute;
   background: -webkit-gradient(linear, left top, right top, from(#ff137d), to(#04b4b4));
@@ -87,9 +87,9 @@
   bottom: -10px;
   right: -20%;
   -webkit-transform: scaleX(0);
-          transform: scaleX(0);
+  transform: scaleX(0);
   -webkit-transform-origin: right;
-          transform-origin: right;
+  transform-origin: right;
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
@@ -99,9 +99,9 @@
 .dashboard-navbar .dashboard-links ul li:hover::before {
   color: #f00080;
   -webkit-transform: scaleX(1);
-          transform: scaleX(1);
+  transform: scaleX(1);
   -webkit-transform-origin: left;
-          transform-origin: left;
+  transform-origin: left;
 }
 
 .res-NavButton {
@@ -113,17 +113,17 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .MainContent {
   margin: 12vh 0vh;
   -webkit-backdrop-filter: blur(0.2rem);
-          backdrop-filter: blur(0.2rem);
+  backdrop-filter: blur(0.2rem);
   width: 95vw;
   background-color: rgba(235, 248, 246, 0.486);
   background-image: -webkit-gradient(linear, left top, left bottom, from(aqua), to(purple)), -webkit-gradient(linear, left top, right top, from(purple), to(aqua)), -webkit-gradient(linear, left top, left bottom, from(purple), to(aqua)), -webkit-gradient(linear, right top, left top, from(purple), to(aqua));
@@ -173,12 +173,12 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 90vw;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   text-align: center;
   margin-top: 5vh;
 }
@@ -203,7 +203,7 @@ h3 {
 .TutorCard {
   background-color: white;
   -webkit-backdrop-filter: blur(0.5rem);
-          backdrop-filter: blur(0.5rem);
+  backdrop-filter: blur(0.5rem);
   padding: 2vh;
   margin: 2vh 3vw;
   position: relative;
@@ -259,14 +259,14 @@ h3 {
   width: 1.7vw;
   height: 3.5vh;
   -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
+  transition-duration: 0.5s;
 }
 
 .OwnerSocial:hover {
   -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  transform: scale(1.2);
   -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
+  transition-duration: 0.5s;
 }
 
 #bp1 {
@@ -304,8 +304,8 @@ h3 {
   .ContentHolder {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     border-radius: 10px;
   }
   .MainContent {
@@ -317,8 +317,8 @@ h3 {
     margin-left: 2vw;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
   .TitleDesc {
     display: -webkit-box;
@@ -361,7 +361,7 @@ h3 {
     background: -webkit-gradient(linear, left top, right bottom, from(white), to(rgba(255, 255, 255, 0.856)));
     background: linear-gradient(to right bottom, white, rgba(255, 255, 255, 0.856));
     -webkit-backdrop-filter: blur(0.5rem);
-            backdrop-filter: blur(0.5rem);
+    backdrop-filter: blur(0.5rem);
     padding: 2vh;
     margin: 2vh 3vw;
     position: relative;
@@ -386,7 +386,7 @@ h3 {
   .OwnerSocialMedia,
   .SocialMedia {
     -webkit-transform: scale(1.3);
-            transform: scale(1.3);
+    transform: scale(1.3);
   }
   #List {
     margin-top: 3vh;

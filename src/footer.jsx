@@ -6,9 +6,7 @@ import insta from "./resources/insta-icon.png";
 import logo from "./resources/codiGo.png";
 import sponsor from "./resources/thumbsUP2.png";
 
-
 const Footer = () => {
-  
   return (
     <div id='footer'>
       <img src={logo} id='logoFooter'></img>

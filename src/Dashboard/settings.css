@@ -30,11 +30,10 @@
   transform: translate(1vh, 1.3vh);
 }
 .SelectMeButton {
-    float: right;
+  float: right;
   border: none;
   padding: 1vh;
   background-color: rgba(187, 238, 238, 0.568);
-  
 }
 .itemsStats {
   list-style: none;

@@ -51,19 +51,6 @@ const CourseEnrollTemplate = props => {
     localStorage.setItem("LoggedIn", true);
     setsignedInUser(loggedInUser);
     setUserFromLocalStorage(loggedInUser); //hoil atta
-    /**
-       {
-  "email":"bhaveshmhadse9@gmail.com",
-  "course": {
-    "duration": "2 hrs",
-    "tutorName": "Bhavesh Mhadse",
-    "courseName": "Nodejs zero to hero",
-    "courseNameCertificate": "CodiGo Python" 
-  }
-}
-       */
-
-    console.log();
   };
   const setUserFromLocalStorage = user => localStorage.setItem("User", JSON.stringify(user));
 
@@ -197,9 +184,6 @@ const CourseEnrollTemplate = props => {
             </div>
           </div>
           <div className='Syllabus'>
-            {/* <div>
-            <video src={props.video} autoplay controls id='introVideo'></video>
-        </div> */}
             <div id='List'>
               <h3>Course Syllabus</h3>
               <h4>{props.Section1}</h4>

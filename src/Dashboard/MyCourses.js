@@ -13,22 +13,10 @@ const MyCourses = () => {
   let { signedInUser, setsignedInUser } = useContext(UserContext); // nai ala<- ani hi pnimport React, { useState, useContext, useEffect } from 'react';
 
   let converToArray = object => {
-    let arr = [];
-    // console.log('Object inside converter is : ', object);
-    // console.log('type of Object inside converter is : ', typeof object);
-
     const converted = Object.values(object);
 
-    // console.log('after conversion ', converted);
-    // console.log('after conversion ', typeof converted);
-    // //bc kai hotoy
-
     return converted;
-
-    // console.log(arr);
-    // console.log(typeof arr);
   }; // database madhna object alya nntr redirect mrayla lagnr karan naitr sagla boom hoil thamb atta
-  const getUserFromLocalStorage = () => JSON.parse(localStorage.getItem("User"));
 
   useEffect(() => {
     // for (let baray in signedInUser.enrolledCourses) {
@@ -54,21 +42,7 @@ const MyCourses = () => {
         </div>
       )}
       {enrolledCourseArray.map((eachObj, idx) => (
-        <EnrolledCourseCard
-          data-aos='fade-in'
-          key={idx}
-          data-aos-delay='600'
-          tutorName={eachObj.tutorName}
-          tutorImage={eachObj.tutorImage}
-          courseName={eachObj.courseName}
-          courseInfo={eachObj.courseInfo}
-          courseImage={eachObj.courseImage}
-          duration={eachObj.duration}
-          CourseId={eachObj.courseId}
-          hasCompletedQuiz={eachObj.hasCompletedQuiz}
-          id={eachObj._id}
-          courseCertificateName={eachObj.courseNameCertificate}
-        />
+        <EnrolledCourseCard data-aos='fade-in' key={idx} data-aos-delay='600' tutorName={eachObj.tutorName} tutorImage={eachObj.tutorImage} courseName={eachObj.courseName} courseInfo={eachObj.courseInfo} courseImage={eachObj.courseImage} duration={eachObj.duration} CourseId={eachObj.courseId} hasCompletedQuiz={eachObj.hasCompletedQuiz} id={eachObj._id} courseCertificateName={eachObj.courseNameCertificate} />
       ))}
     </div>
   );

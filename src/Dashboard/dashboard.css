@@ -41,7 +41,7 @@
 }
 .dashboard .dashboard-sidebar {
   width: 19vw;
-  background-image: url('../resources/dash2.jpg');
+  background-image: url("../resources/dash2.jpg");
   background-size: cover;
   backdrop-filter: blur(0.2rem);
   border-radius: 0vh 5vh 5vh 0vh;
@@ -200,9 +200,6 @@
   height: 35vh;
   width: 17vw;
   transition: all linear ease-in-out 1s;
- 
-
-
 }
 .AvatarChoices img {
   height: 12vh;
@@ -221,14 +218,14 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: space-evenly;
-
 }
 
-.clickedStyles:focus{
-border-left-width: '0.3vw';
-    border-left-color: 'black';
-    background-color: 'rgb(199, 248, 248)';
-    color: 'black';}
+.clickedStyles:focus {
+  border-left-width: "0.3vw";
+  border-left-color: "black";
+  background-color: "rgb(199, 248, 248)";
+  color: "black";
+}
 
 @media screen and (max-width: 1000px) {
   .dashboard .dashboard-navbar {

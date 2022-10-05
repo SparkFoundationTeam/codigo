@@ -1,21 +1,20 @@
-import React, { useState } from 'react';
-import logo from '../../resources/codiGo.png';
-import './section1.css';
-import video from '../../resources/LandingIntro.mp4';
-import { Link } from 'react-router-dom';
-import userIcon from '../../resources/userIcon.png';
-import thumb from '../../resources/MainThumbnail.png';
-
+import React, { useState } from "react";
+import logo from "../../resources/codiGo.png";
+import "./section1.css";
+import video from "../../resources/LandingIntro.mp4";
+import { Link } from "react-router-dom";
+import userIcon from "../../resources/userIcon.png";
+import thumb from "../../resources/MainThumbnail.png";
 
 const Section1 = () => {
-  const authenticated = localStorage.getItem('LoggedIn');
+  const authenticated = localStorage.getItem("LoggedIn");
 
   var TxtRotate = function (el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
     this.loopNum = 0;
     this.period = parseInt(period, 10) || 2000;
-    this.txt = '';
+    this.txt = "";
     this.tick();
     this.isDeleting = false;
   };
@@ -30,7 +29,7 @@ const Section1 = () => {
       this.txt = fullTxt.substring(0, this.txt.length + 1);
     }
 
-    this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+    this.el.innerHTML = '<span className="wrap">' + this.txt + "</span>";
 
     var that = this;
     var delta = 300 - Math.random() * 100;
@@ -42,7 +41,7 @@ const Section1 = () => {
     if (!this.isDeleting && this.txt === fullTxt) {
       delta = this.period;
       this.isDeleting = true;
-    } else if (this.isDeleting && this.txt === '') {
+    } else if (this.isDeleting && this.txt === "") {
       this.isDeleting = false;
       this.loopNum++;
       delta = 500;
@@ -53,17 +52,17 @@ const Section1 = () => {
     }, delta);
   };
 
-  window.onload = function () {
-    var elements = document.getElementsByClassName('txt-rotate');
+  window.onLoad = function () {
+    var elements = document.getElementsByClassName("txt-rotate");
     for (var i = 0; i < elements.length; i++) {
-      var toRotate = elements[i].getAttribute('data-rotate');
-      var period = elements[i].getAttribute('data-period');
+      var toRotate = elements[i].getAttribute("data-rotate");
+      var period = elements[i].getAttribute("data-period");
       if (toRotate) {
         new TxtRotate(elements[i], JSON.parse(toRotate), period);
       }
     }
-    var css = document.createElement('style');
-    css.innerHTML = '.txt-rotate > .wrap { border-right: 0.08em solid #666 }';
+    var css = document.createElement("style");
+    css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
     document.body.appendChild(css);
   };
 
@@ -74,8 +73,8 @@ const Section1 = () => {
 
         <Link to='/login'>
           <button id='SignupDashBoardIndicator'>
-            {' '}
-            <img src={userIcon} id='stringGif'></img> {!authenticated ? 'Sign In' : ' Dashboard'}
+            {" "}
+            <img src={userIcon} id='stringGif'></img> {!authenticated ? "Sign In" : " Dashboard"}
           </button>
         </Link>
       </div>
@@ -83,22 +82,21 @@ const Section1 = () => {
         <div id='Text' data-aos='fade-right'>
           <h1>Learn in the simplest way with códiGo tutors and add value to your career.</h1>
 
-          <Link to={authenticated ? '/dashboard' : '/login'}>
+          <Link to={authenticated ? "/dashboard" : "/login"}>
             <button>Start Your Journey &gt;</button>
           </Link>
 
           <h2
-            onload={() => {
+            onLoad={() => {
               window.location.reload();
-            }}
-          >
+            }}>
             códiGo makes
-            <span class='txt-rotate' data-period='500' data-rotate='[ " your career excellent.", " you future ready.", " life buzzling !" ]'></span>
+            <span className='txt-rotate' data-period='500' data-rotate='[ " your career excellent.", " you future ready.", " life buzzling !" ]'></span>
           </h2>
         </div>
 
         <div>
-          <video src={video} autoplay controls id='introVideo' poster={thumb} data-aos='fade-up' data-aos-offset='100'></video>
+          <video src={video} autoPlay controls id='introVideo' poster={thumb} data-aos='fade-up' data-aos-offset='100'></video>
         </div>
       </div>
     </div>

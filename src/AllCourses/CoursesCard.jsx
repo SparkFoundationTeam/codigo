@@ -16,10 +16,10 @@ const CourseCard = props => {
 
     try {
       let prefferedRating = data.filter(eachobj => eachobj.TutorName == props.tutor && eachobj.CourseName == props.courseName);
-    //   console.log("done ", prefferedRating[0].rating);
+      //   console.log("done ", prefferedRating[0].rating);
       setRating(prefferedRating[0].rating);
     } catch {
-    //   console.log("baray");
+      //   console.log("baray");
     }
   };
   useEffect(() => {

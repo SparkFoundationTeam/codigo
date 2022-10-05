@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import LoginPage from './loginPage';
-import DashBoard from '../Dashboard/Dashboard';
+import LoginPage from "./loginPage";
+import DashBoard from "../Dashboard/Dashboard";
 
 const LoginNDashBoard = () => {
   let [showLoginComponent, setshowLoginComponent] = useState(true);

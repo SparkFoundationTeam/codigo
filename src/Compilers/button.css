@@ -78,8 +78,7 @@
   filter: drop-shadow(-2px 2px 5px grey);
 }
 
-.inp{
-    
+.inp {
 }
 
 @media (max-width: 500px) {
@@ -113,12 +112,3 @@
     height: auto;
   }
 }
-/* toh compiler che buttons component  
-          <div class="button-container">
-            <button class="button-leftmost">First</button>
-            <button class="button-middle">Second</button>
-            <button class="button-middle">Third</button>
-            <button class="button-middle">Fourth</button>
-            <button class="button-rightmost">Last</button>
-          </div>
-  */
