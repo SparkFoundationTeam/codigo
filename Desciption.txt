@@ -1,0 +1,30 @@
+Overview:-
+Aestex-The smart apparel shopping system
+
+
+Our aim is to deliver queueless, counterless shopping system to help fast and smart shopping.It will convey enhanced shopping experience for both the customers and shop owners.
+No more need to wait in the long queues for dressing room trials. Our system will be a quick and rousing practice for experimental shoppers. It can ensure the perfect buy everytime with Digital online dressing attribute (on 3d figure) .
+Incorporating nearly human-less methodology (leading to less investment or initial capital).Also keeping up with cashless India programme.
+
+Features:-
+
+- Barcode generation (By shop owners).
+- Effortless barcode scanning 
+- Quick/automated payment.
+- Shows similar product recommendation.
+- Virtual dressing room (with AR).
+- Secure payment gateway.
+- (Contactless shopping methodology.)
+- AI/ML based approach.
+
+
+
+
+
+
+
+
+
+
+
+
