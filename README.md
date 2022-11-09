@@ -12,11 +12,13 @@
 </div>
 
 
-## Contributors
+## Contributors 
 <br>
+<center>
 <a href="https://github.com/codiGoTeams/codiGoSource/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=codiGoTeams/codiGoSource" />
 </a>
+</center>
 
 ## Github Stats  
 <div align="center"> 
@@ -26,5 +28,4 @@
 </center>
 </div>
 <br><br>
-
 
