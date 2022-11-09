@@ -11,9 +11,20 @@
 <img src="https://github.com/codiGoTeams/codiGoSource/blob/main/Readme/techstack.png" align="center" style="width: 100%"/>
 </div>
 
-## Github Stats  
 
+## Contributors
+<br>
+<a href="https://github.com/codiGoTeams/codiGoSource/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=codiGoTeams/codiGoSource" />
+</a>
+
+## Github Stats  
+<div align="center"> 
 <center>
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=codiGoTeams&" align="left" style="width: 40%" />
-<img src="https://github-readme-stats.vercel.app/api?username=codiGoTeams&show_icons=true&count_private=true&hide_border=true" align="left" style="width: 40%" />
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=codiGoTeams&" align="center" style="width: 40%" />
+<img src="https://github-readme-stats.vercel.app/api?username=codiGoTeams&show_icons=true&count_private=true&hide_border=true" align="center" style="width: 40%" />
 </center>
+</div>
+<br><br>
+
+
