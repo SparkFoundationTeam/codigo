@@ -12,7 +12,7 @@ const landingPage = () => {
       <LandingSection1 />
       <WhyCodigo />
       <OurCourses />
-      <AboutUs />
+      {/* <AboutUs /> */}
       <Footer />
     </div>
   );
