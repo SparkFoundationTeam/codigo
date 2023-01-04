@@ -40,7 +40,7 @@ const Settings = () => {
     setUserFromLocalStorage(signedInUser);
 
     // await setsignedInUser(prevUser => ({ ...prevUser, password: newpass }));
-    let data = await axios.patch("https://codigo-server.herokuapp.com/user", {
+    let data = await axios.patch("https://codigo-server.vercel.app/user", {
       email: signedInUser.email,
       updates: { ...signedInUser },
     });
@@ -75,7 +75,7 @@ const Settings = () => {
       return;
     } else {
       await setsignedInUser(prevUser => ({ ...prevUser, password: newpass }));
-      let data = await axios.patch("https://codigo-server.herokuapp.com/user", {
+      let data = await axios.patch("https://codigo-server.vercel.app/user", {
         email: signedInUser.email,
         updates: { password: newpass },
       });

@@ -140,7 +140,7 @@ const AllCourses = () => {
     },
   ]); //kay zol kela kai nai :):)
   const getCourses = async () => {
-    let { data } = await axios.get("https://codigo-server.herokuapp.com/AllCourses/");
+    let { data } = await axios.get("https://codigo-server.vercel.app/AllCourses/");
     // console.log('data recieved from db iss : ', data);
     setJsCOurse(prev => [...prev, ...data]);
 

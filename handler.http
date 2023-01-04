@@ -1,5 +1,5 @@
 ###
-PATCH https://codigo-server.herokuapp.com/Courses/attempts  HTTP/1.1
+PATCH https://codigo-server.vercel.app/Courses/attempts  HTTP/1.1
 content-type: application/json
 
 {
@@ -9,14 +9,14 @@ content-type: application/json
 }
 
 ###
-GET  https://codigo-server.herokuapp.com/User  HTTP/1.1 
+GET  https://codigo-server.vercel.app/User  HTTP/1.1 
 ###
-GET https://codigo-server.herokuapp.com/Quiz/html  HTTP/1.1
+GET https://codigo-server.vercel.app/Quiz/html  HTTP/1.1
 
 
 
 ###
-GET  https://codigo-server.herokuapp.com/AllCourses/  HTTP/1.1
+GET  https://codigo-server.vercel.app/AllCourses/  HTTP/1.1
 content-type: application/json
 
 {
@@ -24,7 +24,7 @@ content-type: application/json
   "TutorName": "Bhavesh Mhadse"
 }
 ###
-GET https://codigo-server.herokuapp.com/AllCourses/html  HTTP/1.1
+GET https://codigo-server.vercel.app/AllCourses/html  HTTP/1.1
 
 #   "CourseName": "Javascript Complete Course",
 #   "TutorName":  "Bhavesh Mhadse",
@@ -52,7 +52,7 @@ GET https://codigo-server.herokuapp.com/AllCourses/html  HTTP/1.1
 #   "SeriesName": "JavaScript Development Series",
 #   "keywords": ["js", "javascript", "clean coding", "series >>", "courses >>", "tutors >> ", "athya", "baray", "web"]
 ###
-POST https://codigo-server.herokuapp.com/AllCourses/  HTTP/1.1
+POST https://codigo-server.vercel.app/AllCourses/  HTTP/1.1
 content-type: application/json
 
 { 
@@ -71,7 +71,7 @@ content-type: application/json
    "keywords": ["Java", "series >>", "courses >>", "tutors >> ", "Programming", "adika", "karnataki", "gui"]
 }
 ###
-POST https://codigo-server.herokuapp.com/Certificates  HTTP/1.1
+POST https://codigo-server.vercel.app/Certificates  HTTP/1.1
 content-type: application/json
 
 {
@@ -82,7 +82,7 @@ content-type: application/json
     "email":"bhaveshmhadse9@gmail.com"
 }
 ###
-PATCH  https://codigo-server.herokuapp.com/AllCourses/update-rating  HTTP/1.1
+PATCH  https://codigo-server.vercel.app/AllCourses/update-rating  HTTP/1.1
 content-type: application/json
 
 {
@@ -91,7 +91,7 @@ content-type: application/json
     "newRating":1
 }
 ###
-GET https://codigo-server.herokuapp.com/Courses  HTTP/1.1
+GET https://codigo-server.vercel.app/Courses  HTTP/1.1
 
 
 ###
@@ -107,7 +107,7 @@ content-type: application/json
 }
 
 ###
-POST https://codigo-server.herokuapp.com/Certificates HTTP/1.1
+POST https://codigo-server.vercel.app/Certificates HTTP/1.1
 content-type: application/json
 
 {
@@ -125,10 +125,10 @@ content-type: application/json
 //obj.email);nai ala cha aiichi gand hyacha thamb
 
 ###
-GET https://codigo-server.herokuapp.com/Courses?email=atharva.r.bhagat@gmail.com&courseName=Javascript Complete Course&tutorName=Bhavesh Mhadse HTTP/1.1
+GET https://codigo-server.vercel.app/Courses?email=atharva.r.bhagat@gmail.com&courseName=Javascript Complete Course&tutorName=Bhavesh Mhadse HTTP/1.1
 
 ###
-PATCH https://codigo-server.herokuapp.com/Courses/feedback HTTP/1.1
+PATCH https://codigo-server.vercel.app/Courses/feedback HTTP/1.1
 content-Type: application/json
 
 {

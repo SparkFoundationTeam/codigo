@@ -10,7 +10,7 @@ const CourseCard = props => {
   let [rating, setRating] = useState(5);
 
   const getCourses = async () => {
-    let { data } = await axios.get(`https://codigo-server.herokuapp.com/AllCourses/${props.shrtcourse}`);
+    let { data } = await axios.get(`https://codigo-server.vercel.app/AllCourses/${props.shrtcourse}`);
 
     // console.log("data is ", data);
 

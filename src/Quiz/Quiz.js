@@ -130,7 +130,7 @@ const Quiz = ({ name, tutorName, courseId }) => {
   //
   const getUserAttempts = async () => {
     setsignedInUser(getUserFromLocalStorage());
-    let data = await axios.get(`https://codigo-server.herokuapp.com/Courses/attempts?email=${signedInUser.email}&courseName=${name}&tutorName=${tutorName}`);
+    let data = await axios.get(`https://codigo-server.vercel.app/Courses/attempts?email=${signedInUser.email}&courseName=${name}&tutorName=${tutorName}`);
     setAttempts(data.data);
   };
 
@@ -211,7 +211,7 @@ const Instructions = ({ Attempt, CourseName, TutorName, CourseId, setQ, setI, Em
   let [certificateModal, setCertificateModal] = useState(false);
 
   const getUserAttempts = async () => {
-    let data = await axios.get(`https://codigo-server.herokuapp.com/Courses/attempts?email=${Email}&courseName=${CourseName}&tutorName=${TutorName}`);
+    let data = await axios.get(`https://codigo-server.vercel.app/Courses/attempts?email=${Email}&courseName=${CourseName}&tutorName=${TutorName}`);
     if (true) setattemp(data.data);
   };
   const increaseAttempts = async () => {
@@ -220,7 +220,7 @@ const Instructions = ({ Attempt, CourseName, TutorName, CourseId, setQ, setI, Em
       tutorName: TutorName,
       email: Email, //hm
     };
-    let data = await axios.patch(`https://codigo-server.herokuapp.com/Courses/attempts`, obj);
+    let data = await axios.patch(`https://codigo-server.vercel.app/Courses/attempts`, obj);
     setattemp(data.data.numberOfAttempts);
   };
   useEffect(() => {

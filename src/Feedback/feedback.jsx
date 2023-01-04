@@ -66,7 +66,7 @@ const FeedbackTemplate = props => {
   };
 
   const getalldata = async () => {
-    let { d } = axios.get("https://codigo-server.herokuapp.com/AllCourses/html");
+    let { d } = axios.get("https://codigo-server.vercel.app/AllCourses/html");
     // console.log('All data is ', d);
   };
 

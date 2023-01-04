@@ -78,7 +78,7 @@ const LoginPage = ({ setlG }) => {
       return;
     }
 
-    let data = await axios.patch("https://codigo-server.herokuapp.com/user", {
+    let data = await axios.patch("https://codigo-server.vercel.app/user", {
       email: passResEmail,
       updates: { password: passResPassword },
     });

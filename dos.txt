@@ -1,7 +1,7 @@
 // kai kai kraychay athya note krun thev na
 
 
-//   "proxy": "https://codigo-server.herokuapp.com",
+//   "proxy": "https://codigo-server.vercel.app/",
 ikdun mi backend pn bghtoy 
 
 sagla KAY  THAMB 
