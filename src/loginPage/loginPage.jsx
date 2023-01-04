@@ -13,6 +13,7 @@ import secured from "../resources/secured.gif";
 import email from "../resources/email.gif";
 import location from "../resources/location.gif";
 import type from "../resources/type.gif";
+
 import mobile from "../resources/mobileIcon.gif";
 import book from "../resources/book.gif";
 import signupIcon from "../resources/true.gif";
@@ -58,8 +59,15 @@ const LoginPage = ({ setlG }) => {
     // console.log(OTP);
     let obj = { email: passResEmail, otp: OTP };
 
-    let d = await axios.post(BackendUrl + "User/passwords", obj);
+    let { data: d } = await axios.post(BackendUrl + "User/passwords", obj);
     //baray
+    console.log("d is:", d);
+
+    if (d?.success == true) return alert("Otp sent to registered mail.");
+    else {
+      alert("Unable to send otp is:");
+    }
+    // console.log(''' is:', '')
   };
 
   const verifyOTP = async => {
@@ -252,7 +260,7 @@ const LoginPage = ({ setlG }) => {
           <button
             // he na mobile madhe ekdam chota aahe whatsapp
             onClick={() => {
-              alert("OTP Sent to email");
+              //   alert("OTP Sent to email");
               setResetModalEmail(false);
               setResetModalOTP(true);
               sendOtp(passResEmail);
