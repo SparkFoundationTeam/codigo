@@ -95,10 +95,10 @@ GET https://codigo-server.vercel.app/Courses  HTTP/1.1
 
 
 ###
-GET https://codigo-compiler.herokuapp.com/run  HTTP/1.1
+GET https://codi-go-compiler.vercel.app/run  HTTP/1.1
 
 ###
-POST https://codigo-compiler.herokuapp.com/run  HTTP/1.1
+POST https://codi-go-compiler.vercel.app/run  HTTP/1.1
 content-type: application/json
 
 {
