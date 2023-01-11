@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import "../CoursePages/coursePageTemplate.css";
 import "./button.css";
@@ -25,13 +25,40 @@ const JavascriptBackendCompiler = ({ Button1, Button1Text, Button2, Button2Text,
   let [clickedMiddle, setClickedMiddle] = useState(Middle);
   let [clickedRightMost, setClickedRightMost] = useState(RightMost);
 
+  let [globalObject, setglobalObject] = useState({ n: userCode });
+
   const run = async () => {
     let obj = {
       language: "JAVASCRIPT",
-      code: userCode,
+      //   sayMyName: () => userCode,
     };
 
-    let data = await axios.post(BackendCompilerUrl, obj);
+    var iframe = document.getElementById("output-windo"),
+      iframeWin = iframe.contentWindow || iframe,
+      iframeDoc = iframe.contentDocument || iframeWin.document;
+
+    iframe.src = "";
+
+    // let allArr = userCode.replaceAll("console.log", "document.writeln");
+    // iframeDoc.open();/
+
+    // console.log("allArr is:", allArr);
+
+    // document.DOCUMENT_POSITION_DISCONNECTED
+
+    // let variables = allArr.filter(eachObj => !eachObj.includes("document.write"));
+    // let writing = allArr.filter(eachObj => eachObj.includes("document.write"));
+    // console.log("arr is:", allArr);
+
+    // variables.forEach(obj => iframeDoc.write(`<script>${obj}</script>`));
+    // writing.forEach(obj => iframeDoc.write(`<script>${obj}</script>`));
+    iframeDoc.write(`<script> console.clear()</script>`);
+    // iframeDoc.src(`<script>${userCode}</script>`);
+    iframeDoc.write(`<script>${userCode}</script>`);
+    // iframeDoc.close();
+
+    // let data = await axios.post(BackendCompilerUrl, obj);
+    let data = { data: { stdout: "example", err: false } };
 
     let { stdout, err } = data.data;
 
@@ -66,9 +93,13 @@ const JavascriptBackendCompiler = ({ Button1, Button1Text, Button2, Button2Text,
           </button>
 
           <p id='outputLabel'>OUTPUT</p>
-          <textarea id='output-window' value={output} style={{ color: Color, fontWeight: "900" }}>
-            {JSON.stringify(output)}
-          </textarea>
+          <iframe id='output-windo' style={{ color: Color, fontWeight: "900", fontSize: 32 }}>
+            {/* {JSON.stringify(output)} */}
+            {`<script>console.log("Baray")</script>`}
+          </iframe>
+          {/* <pre id='output-window'></pre> */}
+          {/* <p id='myLog'></p> */}
+          {/* <div>Baray</div> */}
         </div>
 
         {/* <div style={{ background: "orange", textAlign: "center", position: "relative" }}> */}
