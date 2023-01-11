@@ -19,9 +19,23 @@ const EnrolledCourse = ({ tutorName, tutorImage, courseName, courseInfo, courseI
 
   const handleCertificate = async () => {
     // console.log(signedInUser);
-    if (hasCompletedQuiz) {
+    const { data: completedCourses } = await axios.get(`http://localhost:5000/Courses/AllEnrolledCourses?email=${signedInUser.email}`);
+    console.log("completedCourses is:", completedCourses);
+
+    if (completedCourses.length == 0) return alert("not completed the course");
+
+    let course = completedCourses.filter(eachObj => eachObj.tutorName == tutorName && eachObj.courseName == courseName);
+    console.log("course is:", course);
+
+    if (course[0] && course[0].hasCompletedQuiz) {
+      alert("Certificate sent to registered email.");
+
+      // if (hasCompletedQuiz) {
       let Obj = { tutorName: tutorName.split(" ")[0].toLowerCase(), userName: signedInUser.fullName, course: courseCertificateName, email: signedInUser.email, id: id };
+      console.log("Obj is:", Obj);
+
       let data = await axios.post(BackendUrl + "Certificates", Obj);
+      console.log("data.data is:", data.data);
 
       //   console.log("Certificate is ", data.data);
       alert("Certificate has been delivered to registered email");
@@ -55,7 +69,7 @@ const EnrolledCourse = ({ tutorName, tutorImage, courseName, courseInfo, courseI
         </Link>
 
         <button onClick={handleCertificate} className='dashboard-buttons'>
-          Download Certificate
+          Download Certificate re
         </button>
       </div>
       {/* {showQuiz && <Quiz name={courseName} course={{ tutorName, tutorImage, courseName, courseInfo, courseImage, duration, hasCompletedQuiz }} />} */}
